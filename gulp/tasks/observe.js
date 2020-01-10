@@ -1,6 +1,6 @@
 const CONFIG     = require('../config');
 
-const html       = require('./html');
+const { html }      = require('./html');
 const scripts    = require('./scripts');
 const styles     = require('./styles');
 const svg        = require('./svg');

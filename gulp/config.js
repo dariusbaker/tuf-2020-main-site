@@ -7,7 +7,7 @@ module.exports = {
   SRC: {
     ROOT: SRC,
     DATA: `${DATA}/*.json`,
-    HTML: `${SRC}/*.{nunjucks,html}`,
+    HTML: `${SRC}/html/pages/**/*.{njk,nunjucks,html}`,
     JS  : `${SRC}/js`,
     CSS : `${SRC}/css`,
     IMG : `${SRC}/img`,
@@ -34,6 +34,6 @@ module.exports = {
   },
 
   NUNJUCKS_OPTIONS: {
-    path: `${SRC}/html`
+    path: [`./src/html`, `./src`]
   }
 };

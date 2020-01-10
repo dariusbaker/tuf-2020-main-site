@@ -3,9 +3,9 @@ const data       = require('gulp-data');
 const fs         = require('fs');
 const htmlmin    = require('gulp-htmlmin');
 const nunjucks   = require('gulp-nunjucks-render');
-const { src }    = require('gulp');
-const { dest }   = require('gulp');
+const { src, dest }    = require('gulp');
 const { reload } = require('./browsersync');
+const del    = require('del');
 
 function getData(type) {
   const data = JSON.parse(fs.readFileSync(`data/${type}.json`));
@@ -23,4 +23,19 @@ function html() {
     .pipe(reload());
 }
 
-module.exports = html;
+function cleanHomeFolder() {
+  return del([`${CONFIG.DIST.ROOT}/home`]);
+}
+
+function moveHomePageFolderToRoot() {
+  return src(`${CONFIG.DIST.ROOT}/home/index.html`)
+    // .pipe(del([`${CONFIG.DIST.ROOT}/home`]))
+    .pipe(dest(CONFIG.DIST.ROOT))
+    .pipe(reload());
+}
+
+module.exports = {
+  html,
+  moveHomePageFolderToRoot,
+  cleanHomeFolder,
+};

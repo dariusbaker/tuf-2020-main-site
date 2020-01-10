@@ -3,7 +3,7 @@
 ## Features
 * Mostly static site.
 * Content-based, not device-based, breakpoints.
-* Micro-animations, subtle movement—hover states, scroll-based movement. Examples: [Ueno](https://ueno.co/), 
+* Micro-animations, subtle movement—hover states, scroll-based movement. Examples: [Ueno](https://ueno.co/), [Wickret](https://wickret.cuberto.com).
 
 ## Browser support
 * Current versions and -1.

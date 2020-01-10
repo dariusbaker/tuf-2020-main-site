@@ -1,0 +1,84 @@
+/**
+ * SASS variables
+ * Color names are derived from http://chir.ag/projects/name-that-color/.
+ */
+$colors: (
+  alabaster  : #f8f8f8,
+  aqua       : #00fcff,
+  athens-gray: #f2f2f5,
+  alto       : #d8d8d8,
+  blue-ribbon: #2465FB,
+  cherub     : #fbe4e8,
+  dodger-blue: #4880ff,
+  ghost      : #ceced3,
+  malibu     : #76a0ff,
+  manatee    : #81869f,
+  mauve      : #e3c4ff,
+  mischka    : #cdcfd9,
+  mystic     : #e6e8f1,
+  pampas     : #efece8,
+  periwinkle : #d1dfff,
+  santas-gray: #a1a5b7,
+  scarpa     : #545459,
+  sundown    : #fdafbb,
+  violet     : #9013fe,
+  watermelon : #ff647c,
+  zircon     : #ecf2ff,
+);
+
+$easing: (
+  back-in     : cubic-bezier(.6, -.28, .735, .045),
+  back-out    : cubic-bezier(.175, .885, .32, 1.275),
+  expo-in     : cubic-bezier(.95, .05, .795, .035),
+  expo-out    : cubic-bezier(.19, 1, .22, 1),
+  expo-in-out : cubic-bezier(1, 0, 0, 1),
+  quad-in     : cubic-bezier(.55, .085, .68, .53),
+  quad-out    : cubic-bezier(.25, .46, .45, .94),
+  quart-in    : cubic-bezier(.895, .03, .685, .22),
+  quart-out   : cubic-bezier(.165, .84, .44, 1),
+  quart-in-out: cubic-bezier(.77, 0, .175, 1),
+);
+
+$sidebar-width: 400;
+
+/**
+ * Custom properties
+ */
+:root {
+  --color-alabaster  : #{map-get($colors, alabaster)};
+  --color-aqua       : #{map-get($colors, aqua)};
+  --color-athens-gray: #{map-get($colors, athens-gray)};
+  --color-alto       : #{map-get($colors, alto)};
+  --color-blue-ribbon: #{map-get($colors, blue-ribbon)};
+  --color-cherub     : #{map-get($colors, cherub)};
+  --color-dodger-blue: #{map-get($colors, dodger-blue)};
+  --color-malibu     : #{map-get($colors, malibu)};
+  --color-manatee    : #{map-get($colors, manatee)};
+  --color-mauve      : #{map-get($colors, mauve)};
+  --color-mischka    : #{map-get($colors, mischka)};
+  --color-mystic     : #{map-get($colors, mystic)};
+  --color-pampas     : #{map-get($colors, pampas)};
+  --color-periwinkle : #{map-get($colors, periwinkle)};
+  --color-santas-gray: #{map-get($colors, santas-gray)};
+  --color-scarpa     : #{map-get($colors, scarpa)};
+  --color-sundown    : #{map-get($colors, sundown)};
+  --color-violet     : #{map-get($colors, violet)};
+  --color-watermelon : #{map-get($colors, watermelon)};
+  --color-white      : #fff;
+  --color-zircon     : #{map-get($colors, zircon)};
+
+  --color-ghost      : #{lighten(map-get($colors, santas-gray), 15%)};
+
+  --type-default: 'Chivo', sans-serif;
+
+  --ease-back-in     : #{map-get($easing, back-in)};
+  --ease-back-out    : #{map-get($easing, back-out)};
+  --ease-expo-in     : #{map-get($easing, expo-in)};
+  --ease-expo-out    : #{map-get($easing, expo-out)};
+  --ease-expo-in-out : #{map-get($easing, expo-in-out)};
+  --ease-quad-in     : #{map-get($easing, quad-in)};
+  --ease-quad-out    : #{map-get($easing, quad-out)};
+  --ease-quart-in    : #{map-get($easing, quart-in)};
+  --ease-quart-out   : #{map-get($easing, quart-out)};
+  --ease-quart-in-out: #{map-get($easing, quart-in-out)};
+}

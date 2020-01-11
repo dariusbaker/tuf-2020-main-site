@@ -1,0 +1,45 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-button {
+  display: block;
+
+  padding: rem(8) rem(24);
+
+  box-sizing: border-box;
+
+  font-size: rem(16);
+
+  font-weight: $tuf-font-weight-bold;
+
+  text-transform: uppercase;
+
+  color: $tuf-color-white;
+
+  border-radius: rem(30);
+
+  &--primary {
+    border: rem(2) solid $tuf-color-clickable;
+
+    transition: border-color .25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: transparentize($tuf-color-clickable, .2);
+    }
+  }
+
+  &--secondary {
+    background-color: $tuf-color-button;
+
+    transition: background-color .25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: transparentize($tuf-color-button, .2);
+    }
+  }
+}

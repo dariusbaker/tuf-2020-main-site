@@ -1,3 +1,5 @@
+{% from "../macros/button.njk" import button_link %}
+
 <header class="tuf-header tuf-header--transparent">
   <a href="#main" class="tuf-header-skip">
     Skip to content
@@ -17,5 +19,15 @@
       </a>
       {% endfor %}
     </ul>
+
+    {% if global.nav_cta %}
+      {{
+        button_link(
+          type="secondary",
+          label=global.nav_cta.label,
+          href=global.nav_cta.href
+        )
+      }}
+    {% endif %}
   </nav>
 </header>

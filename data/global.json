@@ -4,11 +4,11 @@
   "nav_items": [
     {
       "label": "Our clients",
-      "href": "#tuf-clients"
+      "href": "/#tuf-clients"
     },
     {
       "label": "Ask Ava",
-      "href": "#ask-ava"
+      "href": "/#ask-ava"
     },
     {
       "label": "Case Studies",
@@ -16,15 +16,15 @@
     },
     {
       "label": "What do you seek?",
-      "href": "#what-do-you-seek"
+      "href": "/#what-do-you-seek"
     },
     {
       "label": "What we do",
-      "href": "#what-we-do"
+      "href": "/#what-we-do"
     }
   ],
   "nav_cta": {
     "label": "Talk to us",
-    "href": "#talk-to-us"
+    "href": "/#talk-to-us"
   }
 }

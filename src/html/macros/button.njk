@@ -1,0 +1,36 @@
+{%
+  macro button(
+    classses = '',
+    disabled = false,
+    type = 'primary',
+    id = '',
+    label = ''
+  )
+%}
+
+<button
+  class="tuf-button tuf-button--{{type}} {{classes}}"
+  {% if id %} id="{{ id }}" {% endif %}
+  {% if disabled %} disabled {% endif %}
+>
+  {{label}}
+</button>
+{% endmacro %}
+
+{% macro button_link(
+  classes = '',
+  type = 'primary',
+  id = '',
+  label = '',
+  href = '',
+  target = '_self') %}
+<a
+  class="tuf-button tuf-button--link tuf-button--{{type}} {{classes}}"
+  href="{{href}}"
+  target="{{target}}"
+  {% if id %} id="{{ id }}" {% endif %}
+  {% if target == '_blank' %} rel="noopener noreferrer" {% endif %}
+  >
+  {{label}}
+</a>
+{% endmacro %}

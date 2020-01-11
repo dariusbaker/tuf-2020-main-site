@@ -80,3 +80,8 @@ $sidebar-width: 400;
   --ease-quart-out   : #{map-get($easing, quart-out)};
   --ease-quart-in-out: #{map-get($easing, quart-in-out)};
 }
+
+$z-elements: header, skip_content, screen_lock, dialog;
+
+$tuf-header-padding: rem(16) rem(16);
+$tuf-header-padding-t: rem(24) rem(40);

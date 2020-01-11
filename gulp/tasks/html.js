@@ -16,6 +16,7 @@ function html() {
   return src(CONFIG.SRC.HTML)
     .pipe(data({
       meta: getData('meta'),
+      global: getData('global'),
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))

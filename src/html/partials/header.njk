@@ -1,0 +1,21 @@
+<header class="tuf-header tuf-header--transparent">
+  <a href="#main" class="tuf-header-skip">
+    Skip to content
+  </a>
+  <a href="/" class="tuf-header-logo">
+    <img
+      src="/assets/img/tuf-logo.png"
+      alt="{{global.app_title}}" />
+  </a>
+  <nav class="tuf-header-nav">
+    <ul class="tuf-header-nav-items">
+      {% for nav_item in global.nav_items %}
+      <a
+        href="{{nav_item.href}}"
+        class="tuf-header-nav-item">
+        {{nav_item.label}}
+      </a>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,30 @@
+{
+  "app_title": "The Universe Fantastic",
+  "theme_color": "#2465fb",
+  "nav_items": [
+    {
+      "label": "Our clients",
+      "href": "#tuf-clients"
+    },
+    {
+      "label": "Ask Ava",
+      "href": "#ask-ava"
+    },
+    {
+      "label": "Case Studies",
+      "href": "/case-studies"
+    },
+    {
+      "label": "What do you seek?",
+      "href": "#what-do-you-seek"
+    },
+    {
+      "label": "What we do",
+      "href": "#what-we-do"
+    }
+  ],
+  "nav_cta": {
+    "label": "Talk to us",
+    "href": "#talk-to-us"
+  }
+}

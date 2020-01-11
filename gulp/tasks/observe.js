@@ -9,7 +9,7 @@ const { series } = require('gulp');
 
 function observe(done) {
   watch(CONFIG.SRC.DATA, html);
-  watch(`${CONFIG.SRC.ROOT}/**/*.{nunjucks,html}`, html);
+  watch(`${CONFIG.SRC.ROOT}/**/*.{njk,html}`, html);
   watch(CONFIG.SRC.JS, scripts);
   watch(CONFIG.SRC.CSS, styles);
   watch(CONFIG.SRC.SVG, series(svg, html));

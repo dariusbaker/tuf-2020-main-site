@@ -3,7 +3,7 @@ const data       = require('gulp-data');
 const fs         = require('fs');
 const htmlmin    = require('gulp-htmlmin');
 const nunjucks   = require('gulp-nunjucks-render');
-const { src, dest }    = require('gulp');
+const { src, dest, series }    = require('gulp');
 const { reload } = require('./browsersync');
 const del    = require('del');
 
@@ -12,7 +12,13 @@ function getData(type) {
   return data;
 }
 
-function html() {
+const html = series(
+  templating,
+  moveHomePageFolderToRoot,
+  cleanHomeFolder
+);
+
+function templating() {
   return src(CONFIG.SRC.HTML)
     .pipe(data({
       meta: getData('meta'),
@@ -20,8 +26,7 @@ function html() {
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))
-    .pipe(dest(CONFIG.DIST.ROOT))
-    .pipe(reload());
+    .pipe(dest(CONFIG.DIST.ROOT));
 }
 
 function cleanHomeFolder() {
@@ -30,13 +35,10 @@ function cleanHomeFolder() {
 
 function moveHomePageFolderToRoot() {
   return src(`${CONFIG.DIST.ROOT}/home/index.html`)
-    // .pipe(del([`${CONFIG.DIST.ROOT}/home`]))
     .pipe(dest(CONFIG.DIST.ROOT))
     .pipe(reload());
 }
 
 module.exports = {
   html,
-  moveHomePageFolderToRoot,
-  cleanHomeFolder,
 };

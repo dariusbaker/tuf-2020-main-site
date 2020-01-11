@@ -4,8 +4,8 @@
   "description": "We’ve got pizza to share and loads of love to give. Yeah, we talkin’ about pizza dripping with love sauce. Mmm, brand love. Talk to us!",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#2465fb",
-  "theme_color": "#2465fb",
+  "background_color": "#8227dc",
+  "theme_color": "#8227dc",
   "icons": [
     {
       "src": "/assets/img/tuf-icon-128x128.png",

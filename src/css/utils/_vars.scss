@@ -69,8 +69,6 @@ $sidebar-width: 400;
 
   --color-ghost      : #{lighten(map-get($colors, santas-gray), 15%)};
 
-  --type-default     : 'Montserrat', sans-serif;
-
   --ease-back-in     : #{map-get($easing, back-in)};
   --ease-back-out    : #{map-get($easing, back-out)};
   --ease-expo-in     : #{map-get($easing, expo-in)};

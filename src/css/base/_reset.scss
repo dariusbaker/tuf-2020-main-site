@@ -41,9 +41,13 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
+// Get rid of gap under images by making them display: inline-block; by default
 img {
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  height: auto;
   max-width: 100%;
-  display: block;
+  vertical-align: middle;
 }
 
 /* Natural flow and rhythm in articles by default */

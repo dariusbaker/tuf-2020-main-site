@@ -22,16 +22,16 @@
 
   margin-top: rem(88);
 
-  &-cta {
+  &__cta {
     margin-top: rem(24);
     text-align: center;
   }
 
-  &-cta-link {
+  &__cta__link {
     display: inline-block;
   }
 
-  &-header {
+  &__header {
     font-size: rem(40);
 
     line-height: 1.25;
@@ -43,7 +43,7 @@
     margin-top: 0;
   }
 
-  &-footnote {
+  &__footnote {
     display: flex;
 
     flex-direction: column;
@@ -78,7 +78,7 @@
   }
 
   @media (min-width: rem(768) and (max-width: rem(1024))) {
-    &-footnote {
+    &__footnote {
       font-size: rem(18);
 
       &-highlight {
@@ -86,7 +86,7 @@
       }
     }
 
-    &-header {
+    &__header {
       font-size: rem(60);
     }
   }
@@ -96,11 +96,11 @@
       margin-top: rem(132);
     }
 
-    &-cta {
+    &__cta {
       margin-top: rem(32);
     }
 
-    &-footnote {
+    &__footnote {
       max-width: rem(252);
       font-size: rem(24);
       margin-bottom: rem(48);
@@ -112,7 +112,7 @@
       }
     }
 
-    &-header {
+    &__header {
       font-size: rem(80);
       margin-top: rem(104);
     }

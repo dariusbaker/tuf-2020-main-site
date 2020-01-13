@@ -1,3 +1,6 @@
+@import '../utils/vars';
+@import '../utils/colors';
+
 html,
 body {
   background: $tuf-color-primary;
@@ -23,8 +26,35 @@ body {
   overflow: hidden;
 }
 
+.tuf-backdrop {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: index($z-elements, screen_lock);
+
+  width: 100%;
+  height: 100%;
+
+  background-color: transparentize($tuf-color-secondary, .4);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: opacity .2s ease-in-out;
+}
+
 .tuf-no-scroll {
   overflow: hidden;
+
+  .tuf-backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .tuf-section {

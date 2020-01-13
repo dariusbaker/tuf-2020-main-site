@@ -1,3 +1,5 @@
+import { debounce } from '../utils.js';
+
 export default class Header {
   constructor() {
     this._CONST = {
@@ -7,8 +9,11 @@ export default class Header {
         bottom: 'bottom'
       },
       scrolled_class: 'tuf-header--scrolled',
-      animating_header: 'tuf-header--animating',
-      transparent_header: 'tuf-header--transparent'
+      animating_header_class: 'tuf-header--animating',
+      transparent_header_class: 'tuf-header--transparent',
+      lock_scroll_class: 'tuf-no-scroll',
+      drawer_opened_class: 'tuf-header-nav-drawer--opened',
+      drawer_nav_items_class: 'tuf-header-nav-drawer-nav-item',
     };
 
     this._isScrolling = false;
@@ -21,11 +26,21 @@ export default class Header {
     this._allowTransitionEnd = false;
 
     this._lastPosY = 0;
+    this._drawerOpen = false;
+    this._screenLock = false;
 
     this._headerElement = document.querySelector('.tuf-header');
+    this._mobileNavTogglerElement = document.querySelector('.tuf-header-mobile-menu-toggler');
+    this._screenLockElement = document.querySelector('.tuf-backdrop');
+    this._mobileNavDrawerElement = document.getElementById('tuf-nav-drawer');
+    this._drawerNavItemsElement = document.querySelectorAll('.tuf-header-nav-drawer-nav-item');
 
+    this._windowResizeEventHandler = () => this._resizeEvent();
     this._scrollEventHandler = () => this._scrollHandler();
     this._transitionEndHandler = () => this._handleTransitionEnd();
+    this._mobileTogglerHandler = () => this._navButtonToggleEvent();
+    this._screenLockClickHandler = (e) => this._screenLockClickEvent(e);
+    this._drawerNavItemsClickHandler = () => this._hideNavDrawer();
 
     // add scroll event listener
     window.addEventListener(
@@ -33,8 +48,84 @@ export default class Header {
       this._scrollEventHandler
     );
 
+    // add resize event
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        this._resizeEvent();
+      }, 300)
+    );
+
+    // add button nav toggler
+    this._mobileNavTogglerElement.addEventListener('click', this._mobileTogglerHandler);
+
     // add transition end listener
     this._headerElement.addEventListener('transitionend', this._transitionEndHandler);
+
+    // add lockscreen click listener
+    this._screenLockElement.addEventListener('click', this._screenLockClickHandler);
+
+    // bind each nav items click event
+    this._drawerNavItemsElement.forEach((elem) => elem.addEventListener('click', this._drawerNavItemsClickHandler));
+  }
+
+  _resizeEvent() {
+    if (this._drawerOpen) {
+      let mql = window.matchMedia('(min-width: 1024px)');
+
+      if (mql.matches) {
+        this._hideNavDrawer();
+      }
+    }
+  }
+
+  _navButtonToggleEvent() {
+    if (this._drawerOpen) {
+      this._hideNavDrawer();
+    } else {
+      this._showNavDrawer();
+    }
+  }
+
+  _showNavDrawer() {
+    this._drawerOpen = true;
+    this._mobileNavTogglerElement.setAttribute('aria-expanded', true);
+
+    this._mobileNavDrawerElement.setAttribute('aria-hidden', false);
+
+    this._mobileNavDrawerElement.classList.add(this._CONST.drawer_opened_class);
+
+    this._showLockScreen();
+  }
+
+  _hideNavDrawer() {
+    this._drawerOpen = false;
+    this._mobileNavTogglerElement.setAttribute('aria-expanded', false);
+
+    this._mobileNavDrawerElement.setAttribute('aria-hidden', true);
+
+    this._mobileNavDrawerElement.classList.remove(this._CONST.drawer_opened_class);
+
+    this._hideLockScreen();
+  }
+
+  _showLockScreen() {
+    document.body.classList.add(this._CONST.lock_scroll_class);
+    this._screenLock = true;
+  }
+
+  _hideLockScreen() {
+    document.body.classList.remove(this._CONST.lock_scroll_class);
+    this._screenLock = false;
+  }
+
+  _screenLockClickEvent(e) {
+    // if drawer is open and element clicked is part of drawer, close it
+    if (this._drawerOpen) {
+      if (!this._mobileNavDrawerElement.contains(e.target)) {
+        this._hideNavDrawer();
+      }
+    }
   }
 
   _scrollHandler() {
@@ -63,7 +154,7 @@ export default class Header {
     if (this._allowTransitionEnd) {
       this._animating = false;
       this._allowTransitionEnd = false;
-      this._headerElement.classList.remove(this._CONST.animating_header);
+      this._headerElement.classList.remove(this._CONST.animating_header_class);
     }
   }
 
@@ -72,7 +163,7 @@ export default class Header {
     this._allowTransitionEnd = true;
 
     this._headerElement.classList.add(
-      this._CONST.animating_header,
+      this._CONST.animating_header_class,
       this._CONST.scrolled_class
     );
   }
@@ -82,7 +173,7 @@ export default class Header {
     this._allowTransitionEnd = true;
 
     // Add animation class to header-bar elements
-    this._headerElement.classList.add(this._CONST.animating_header);
+    this._headerElement.classList.add(this._CONST.animating_header_class);
 
     // Remove Scrolled class to header-bar elements
     this._headerElement.classList.remove(this._CONST.scrolled_class);
@@ -123,7 +214,7 @@ export default class Header {
 
     // This is for preventing the nav from getting lock in a hidden state.
     } else if (this._isAtTop  && !this._animating && hasScrolledClass) {
-      this._headerElement.classList.add(this._CONST.transparent_header);
+      this._headerElement.classList.add(this._CONST.transparent_header_class);
       this._showNav();
     }
 
@@ -131,9 +222,9 @@ export default class Header {
 
     // if it's at top, apply transparent header
     if (this._isAtTop) {
-      this._headerElement.classList.add(this._CONST.transparent_header);
+      this._headerElement.classList.add(this._CONST.transparent_header_class);
     } else {
-      this._headerElement.classList.remove(this._CONST.transparent_header);
+      this._headerElement.classList.remove(this._CONST.transparent_header_class);
     }
 
     this._lastPosY = window.scrollY;

@@ -23,11 +23,17 @@
 
   padding: $tuf-header-padding;
 
-  background-color: $tuf-color-primary;
+  background-color: $tuf-color-secondary;
 
   box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,.26);
 
-  transition: background-color 125ms linear;
+  transform: translate3d(0, 0, 0);
+
+  transition: background-color 125ms linear, transform 400ms ease;
+
+  &--scrolled {
+    transform: translate3d(0, -100%, 0);
+  }
 
   &--transparent {
     background-color: transparent;

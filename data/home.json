@@ -11,5 +11,55 @@
   "mission": {
     "title": "Our mission is simple:",
     "content": "To build businesses and brands so well that all may prosper under the light of the Universe across cultures, space and time."
-  }
+  },
+  "clients": [
+    {
+      "name": "Accenture",
+      "image": "/assets/img/tuf-client-accenture.png"
+    },
+    {
+      "name": "AIA",
+      "image": "/assets/img/tuf-client-aia.png"
+    },
+    {
+      "name": "Facebook",
+      "image": "/assets/img/tuf-client-facebook.png"
+    },
+    {
+      "name": "River Safari",
+      "image": "/assets/img/tuf-client-rs.png"
+    },
+    {
+      "name": "Starbucks",
+      "image": "/assets/img/tuf-client-sb.png"
+    },
+    {
+      "name": "Robert Half",
+      "image": "/assets/img/tuf-client-rh.png"
+    },
+    {
+      "name": "Rate",
+      "image": "/assets/img/tuf-client-rate.png"
+    },
+    {
+      "name": "Asher",
+      "image": "/assets/img/tuf-client-asher.png"
+    },
+    {
+      "name": "Davidsons",
+      "image": "/assets/img/tuf-client-davidsons.png"
+    },
+    {
+      "name": "Fullerton",
+      "image": "/assets/img/tuf-client-fullerton.png"
+    },
+    {
+      "name": "PropNex",
+      "image": "/assets/img/tuf-client-propnex.png"
+    },
+    {
+      "name": "Wantedly",
+      "image": "/assets/img/tuf-client-wantedly.png"
+    }
+  ]
 }

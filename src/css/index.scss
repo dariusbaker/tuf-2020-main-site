@@ -9,6 +9,12 @@
 @import 'base/base';
 @import 'base/layout';
 
+// glide carousel
+// Required Core Stylesheet
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 // components
 @import 'components/button';
 

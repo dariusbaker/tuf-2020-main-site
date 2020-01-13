@@ -72,11 +72,23 @@ body {
     width: 100%;
   }
 
+  &--no-padding {
+    padding: 0;
+  }
+
   @media (min-width: rem(600)) {
     padding: 0 rem(32);
+
+    &--no-padding {
+      padding: 0;
+    }
   }
 
   @media (min-width: rem(1024)) {
     padding: 0 rem(48);
+
+    &--no-padding {
+      padding: 0;
+    }
   }
 }

@@ -43,3 +43,56 @@
     }
   }
 }
+
+.tuf-home-clients {
+  $grid-size: rem(24);
+  $grid-rows: 4;
+
+  &-list,
+  &-list-items,
+  &-list-bg {
+    width: 100%;
+    height: calc((#{$grid-size} * #{$grid-rows}) + #{rem(1)});
+  }
+
+  &-list-bg {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: calc(100% - (#{rem(16)} * 2));
+
+    margin: 0 rem(16);
+
+    background-size: $grid-size $grid-size;
+    background-image:
+      linear-gradient(to right, transparentize($tuf-color-secondary, .8) rem(1), transparent rem(1)),
+      linear-gradient(to bottom, transparentize($tuf-color-secondary, .8) rem(1), transparent rem(1));
+
+
+    @media (min-width: rem(600)) {
+      width: calc(100% - (#{rem(32)} * 2));
+      margin: 0 rem(32);
+    }
+
+    @media (min-width: rem(1024)) {
+      width: calc(100% - (#{rem(48)} * 2));
+      margin: 0 rem(48);
+    }
+  }
+
+  &-list-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: auto;
+      height: rem(46);
+    }
+  }
+}

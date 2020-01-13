@@ -58,15 +58,18 @@ body {
 }
 
 .tuf-section {
+  position: relative;
+  width: 100%;
+
   margin: 0 auto;
 
-  padding: rem(64) rem(16) 0;
+  padding: 0 rem(16);
 
   @media (min-width: rem(600)) {
-    padding: rem(64) rem(32) 0;
+    padding: 0 rem(32);
   }
 
   @media (min-width: rem(1024)) {
-    padding: rem(108) rem(48) 0;
+    padding: 0 rem(48);
   }
 }

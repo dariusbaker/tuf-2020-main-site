@@ -23,6 +23,7 @@ function templating() {
     .pipe(data({
       meta: getData('meta'),
       global: getData('global'),
+      home: getData('home'),
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))

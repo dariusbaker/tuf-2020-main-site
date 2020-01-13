@@ -1,0 +1,23 @@
+{% from "../macros/button.njk" import button_link %}
+
+<section class="tuf-section">
+  <div class="tuf-home-hero">
+    <h1 class="tuf-home-hero-header">
+      {{home.hero.title|safe}}
+    </h1>
+    <div class="tuf-home-hero-footnote">
+      <p>{{home.hero.footnote_1}}</p>
+      <p class="tuf-home-hero-footnote-highlight">{{home.hero.footnote_2}}</p>
+    </div>
+  </div>
+  <div class="tuf-home-hero-cta">
+    {{
+      button_link(
+        classes="tuf-home-hero-cta-link",
+        type="primary",
+        label=home.hero.cta.label,
+        href=home.hero.cta.href
+      )
+    }}
+  </div>
+</section>

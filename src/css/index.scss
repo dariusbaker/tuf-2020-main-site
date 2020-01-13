@@ -9,8 +9,9 @@
 @import 'base/base';
 @import 'base/layout';
 
-// partials
-@import 'partials/header';
-
 // components
 @import 'components/button';
+
+// partials
+@import 'partials/header';
+@import 'partials/home-hero';

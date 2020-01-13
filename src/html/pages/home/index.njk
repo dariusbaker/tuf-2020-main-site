@@ -21,16 +21,18 @@
 <!-- clients section -->
 <section
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
-  <h1 class="tuf-home-clients-title">
+  <h1 class="tuf-home-clients__title">
     {{home.clients.title}}
   </h1>
-  <div class="tuf-home-clients-carousel">
-    <div class="tuf-home-clients-list-bg"></div>
-    <div class="tuf-home-clients-list">
+  <div class="tuf-home-clients__carousel">
+    <div class="tuf-home-clients__list-bg"></div>
+    <div class="tuf-home-clients__list">
       <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides glide__track tuf-home-clients-list-items">
+        <ul class="glide__slides glide__track tuf-home-clients__list-items">
           {% for client in home.clients.items %}
-          <li aria-label="{{client.name}}" class="glide__slide tuf-home-clients-list-item">
+          <li
+            aria-label="{{client.name}}"
+            class="glide__slide tuf-home-clients__list-item">
             <img src="{{client.image}}" alt="{{client.name}}" />
           </li>
           {% endfor %}
@@ -42,11 +44,11 @@
 <!-- end of clients section -->
 
 <section class="tuf-section tuf-home-testimonials-section">
-  <div class="tuf-home-testimonials-list">
+  <div class="tuf-home-testimonials__list">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides glide__track tuf-home-testimonials-list-items">
+      <ul class="glide__slides glide__track tuf-home-testimonials__list-items">
         {% for testimonial in home.testimonials.items %}
-        <li class="glide__slide tuf-home-testimonials-list-item">
+        <li class="glide__slide tuf-home-testimonials__list-item">
           <blockquote>
             <p>
               {{testimonial.content}}
@@ -60,7 +62,7 @@
       </ul>
     </div>
 
-    <div class="glide__bullets tuf-home-testimonials-list-paginations" data-glide-el="controls[nav]">
+    <div class="glide__bullets tuf-home-testimonials__list-paginations" data-glide-el="controls[nav]">
       {% for testimonial in home.testimonials.items %}
       <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
       {% endfor %}

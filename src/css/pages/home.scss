@@ -48,7 +48,7 @@
   $grid-size: rem(24);
   $grid-rows: 4;
 
-  &-carousel::before {
+  &__carousel::before {
     display: block;
     content: '';
 
@@ -61,7 +61,7 @@
     }
   }
 
-  &-title {
+  &__title {
     font-size: rem(60);
     color: transparentize($tuf-color-secondary, .7);
     font-weight: $tuf-font-weight-bold;
@@ -71,14 +71,14 @@
     }
   }
 
-  &-list,
-  &-list-items,
-  &-list-bg {
+  &__list,
+  &__list-items,
+  &__list-bg {
     width: 100%;
     height: calc((#{$grid-size} * #{$grid-rows}) + #{rem(1)});
   }
 
-  &-list-bg {
+  &__list-bg {
     position: absolute;
 
     bottom: 0;
@@ -107,7 +107,7 @@
     }
   }
 
-  &-list-item {
+  &__list-item {
     display: flex;
 
     align-items: center;
@@ -121,7 +121,7 @@
 }
 
 .tuf-home-testimonials {
-  &-list {
+  &__list {
     max-width: rem(640);
 
     &-paginations {

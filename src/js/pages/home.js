@@ -1,7 +1,7 @@
 class Home {
   constructor() {
     // initialise clients list
-    new Glide('.tuf-home-clients-list', {
+    new Glide('.tuf-home-clients__list', {
       type: 'carousel',
       autoplay: 3000,
       perView: 8,
@@ -17,7 +17,7 @@ class Home {
     }).mount();
 
     // initialise testimonials
-    new Glide('.tuf-home-testimonials-list', {
+    new Glide('.tuf-home-testimonials__list', {
       type: 'carousel',
       perView: 1,
     }).mount();

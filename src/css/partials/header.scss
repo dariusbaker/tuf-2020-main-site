@@ -235,7 +235,25 @@
     }
 
     &-logo {
+      height: rem(35);
+    }
+  }
+
+  @media (min-width: rem(1024)) {
+    &-nav-item,
+    &-nav-item-secondary-btn {
+      font-size: rem(14);
+    }
+  }
+
+  @media (min-width: rem(1300)) {
+    &-logo {
       height: rem(60);
+    }
+
+    &-nav-item,
+    &-nav-item-secondary-btn {
+      font-size: rem(16);
     }
   }
 }

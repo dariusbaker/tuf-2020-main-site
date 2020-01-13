@@ -18,18 +18,23 @@
 </section>
 <!-- end of mission section -->
 
-<section class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
-  <div class="tuf-home-clients-list-bg">
-  </div>
-  <div class="tuf-home-clients-list">
-    <div class="glide__track tuf-home-clients-list" data-glide-el="track">
-      <ul class="glide__slides glide__track tuf-home-clients-list-items">
-        {% for client in home.clients %}
-        <li class="glide__slide tuf-home-clients-list-item">
-          <img src="{{client.image}}" alt="{{client.name}}" />
-        </li>
-        {% endfor %}
-      </ul>
+<section
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
+  <h1 class="tuf-home-clients-title">
+    {{home.clients.title}}
+  </h1>
+  <div class="tuf-home-clients-carousel">
+    <div class="tuf-home-clients-list-bg"></div>
+    <div class="tuf-home-clients-list">
+      <div class="glide__track tuf-home-clients-list" data-glide-el="track">
+        <ul class="glide__slides glide__track tuf-home-clients-list-items">
+          {% for client in home.clients.items %}
+          <li aria-label="{{client.name}}" class="glide__slide tuf-home-clients-list-item">
+            <img src="{{client.image}}" alt="{{client.name}}" />
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

@@ -48,6 +48,29 @@
   $grid-size: rem(24);
   $grid-rows: 4;
 
+  &-carousel::before {
+    display: block;
+    content: '';
+
+    width: 100%;
+
+    margin-top: rem(-35);
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(-65);
+    }
+  }
+
+  &-title {
+    font-size: rem(60);
+    color: transparentize($tuf-color-secondary, .7);
+    font-weight: $tuf-font-weight-bold;
+
+    @media (min-width: rem(1024)) {
+      font-size: rem(120);
+    }
+  }
+
   &-list,
   &-list-items,
   &-list-bg {

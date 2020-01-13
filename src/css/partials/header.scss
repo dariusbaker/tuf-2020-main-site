@@ -40,6 +40,42 @@
     box-shadow: none;
   }
 
+  &-mobile-menu-toggler {
+    position: relative;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    width: rem(32);
+    height: rem(32);
+
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: rem(16);
+      height: rem(2);
+
+      background-color: $tuf-color-clickable;
+
+      border-radius: rem(2);
+
+      transition: transform 400ms ease, opacity 250ms ease;
+
+      &:nth-child(2) {
+        margin-left: rem(-16);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
   &-skip {
     @include element-invisible;
 

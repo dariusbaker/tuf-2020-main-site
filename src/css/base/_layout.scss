@@ -23,16 +23,20 @@ body {
   overflow: hidden;
 }
 
+.tuf-no-scroll {
+  overflow: hidden;
+}
+
 .tuf-section {
   margin: 0 auto;
 
-  padding: 0 16px;
+  padding: rem(64) rem(16) 0;
 
-  @media (min-width: 600px) {
-    padding: 0 32px;
+  @media (min-width: rem(600)) {
+    padding: rem(64) rem(32) 0;
   }
 
-  @media (min-width: 1024px) {
-    padding: 0 48px;
+  @media (min-width: rem(1024)) {
+    padding: rem(108) rem(48) 0;
   }
 }

@@ -40,7 +40,7 @@
     box-shadow: none;
   }
 
-  &-mobile-menu-toggler {
+  &__mobile-menu-toggler {
     position: relative;
     display: flex;
 
@@ -76,7 +76,7 @@
     }
   }
 
-  &-nav-drawer {
+  &__nav-drawer {
     position: fixed;
 
     display: flex;
@@ -97,7 +97,7 @@
 
     transition: transform .35s ease-in-out;
 
-    &-logo {
+    &__logo {
       height: rem(30);
 
       margin: rem(16);
@@ -108,7 +108,7 @@
       }
     }
 
-    &-nav {
+    &__nav {
       display: flex;
 
       flex-direction: column;
@@ -123,12 +123,12 @@
       border-top: rem(1) solid $tuf-color-clickable;
     }
 
-    &-nav-secondary {
+    &__nav-secondary {
       padding: rem(16) rem(16) 0;
       border-top: rem(1) solid $tuf-color-clickable;
     }
 
-    &-nav-items .tuf-header-nav-item {
+    &__nav-items .tuf-header__nav-item {
       display: flex;
 
       height: rem(48);
@@ -143,7 +143,7 @@
     }
   }
 
-  &-skip {
+  &__skip {
     @include element-invisible;
 
     position: absolute;
@@ -167,7 +167,7 @@
     }
   }
 
-  &-logo {
+  &__logo {
     height: rem(30);
 
     img {
@@ -176,7 +176,7 @@
     }
   }
 
-  &-nav {
+  &__nav {
     display: none;
 
     &-items {
@@ -234,25 +234,25 @@
       padding: $tuf-header-padding-t;
     }
 
-    &-logo {
+    &__logo {
       height: rem(35);
     }
   }
 
   @media (min-width: rem(1024)) {
-    &-nav-item,
-    &-nav-item-secondary-btn {
+    &__nav-item,
+    &__nav-item-secondary-btn {
       font-size: rem(14);
     }
   }
 
   @media (min-width: rem(1300)) {
-    &-logo {
+    &__logo {
       height: rem(60);
     }
 
-    &-nav-item,
-    &-nav-item-secondary-btn {
+    &__nav-item,
+    &__nav-item-secondary-btn {
       font-size: rem(16);
     }
   }

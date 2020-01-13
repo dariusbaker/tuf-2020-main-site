@@ -24,6 +24,7 @@
       {% if global.nav_cta %}
         {{
           button_link(
+            classes="tuf-header-nav-item-secondary-btn",
             type="secondary",
             label=global.nav_cta.label,
             href=global.nav_cta.href
@@ -67,7 +68,6 @@
       {% if global.nav_cta %}
         {{
           button_link(
-            classes="tuf-header-nav-drawer-nav-secondary-btn"
             type="secondary",
             label=global.nav_cta.label,
             href=global.nav_cta.href

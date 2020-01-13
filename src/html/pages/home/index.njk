@@ -18,6 +18,7 @@
 </section>
 <!-- end of mission section -->
 
+<!-- clients section -->
 <section
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
   <h1 class="tuf-home-clients-title">
@@ -26,7 +27,7 @@
   <div class="tuf-home-clients-carousel">
     <div class="tuf-home-clients-list-bg"></div>
     <div class="tuf-home-clients-list">
-      <div class="glide__track tuf-home-clients-list" data-glide-el="track">
+      <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides glide__track tuf-home-clients-list-items">
           {% for client in home.clients.items %}
           <li aria-label="{{client.name}}" class="glide__slide tuf-home-clients-list-item">
@@ -35,6 +36,34 @@
           {% endfor %}
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+<!-- end of clients section -->
+
+<section class="tuf-section tuf-home-testimonials-section">
+  <div class="tuf-home-testimonials-list">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides glide__track tuf-home-testimonials-list-items">
+        {% for testimonial in home.testimonials.items %}
+        <li class="glide__slide tuf-home-testimonials-list-item">
+          <blockquote>
+            <p>
+              {{testimonial.content}}
+            </p>
+            <footer>
+              — {{testimonial.name}}
+            </footer>
+          </blockquote>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="glide__bullets tuf-home-testimonials-list-paginations" data-glide-el="controls[nav]">
+      {% for testimonial in home.testimonials.items %}
+      <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
+      {% endfor %}
     </div>
   </div>
 </section>

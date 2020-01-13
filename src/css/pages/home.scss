@@ -119,3 +119,57 @@
     }
   }
 }
+
+.tuf-home-testimonials {
+  &-list {
+    max-width: rem(640);
+
+    &-paginations {
+      bottom: rem(-32);
+
+      .glide__bullet {
+        background-color: transparentize($tuf-color-secondary, .7);
+      }
+
+      .glide__bullet--active {
+        background-color: $tuf-color-turqoise;
+      }
+    }
+
+    &-item {
+      blockquote {
+        font-size: rem(18);
+      }
+
+      blockquote p {
+        margin-bottom:  rem(24);
+
+        text-align: center;
+
+        font-weight: $tuf-font-weight-bold;
+
+        color: $tuf-color-turqoise;
+      }
+
+      blockquote footer {
+        font-weight: $tuf-font-weight-thin;
+
+        color: $tuf-color-white;
+
+        text-align: right;
+
+        @media (min-width: rem(1024)) {
+          text-align: center;
+        }
+      }
+
+      blockquote p::before {
+        content: '\201C';
+      }
+
+      blockquote p::after {
+        content: '\201D';
+      }
+    }
+  }
+}

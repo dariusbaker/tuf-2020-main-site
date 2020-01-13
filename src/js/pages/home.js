@@ -15,6 +15,12 @@ class Home {
         }
       }
     }).mount();
+
+    // initialise testimonials
+    new Glide('.tuf-home-testimonials-list', {
+      type: 'carousel',
+      perView: 1,
+    }).mount();
   }
 }
 

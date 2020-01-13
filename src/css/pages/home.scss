@@ -1,0 +1,47 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-home-mission {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-top: rem(64);
+
+  color: $tuf-color-white;
+
+  line-height: 1.5;
+
+  h2 {
+    font-size: rem(30);
+
+    flex-basis: 30%;
+
+    margin-bottom: rem(24);
+  }
+
+  p {
+    flex-basis: 70%;
+    font-size: rem(18);
+    font-weight: $tuf-font-weight-thin;
+  }
+
+  @media (min-width: rem(768)) {
+    flex-direction: row;
+
+    align-items: center;
+
+    max-width: rem(640);
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-left: rem(32);
+    }
+  }
+}

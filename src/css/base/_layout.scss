@@ -59,11 +59,14 @@ body {
 
 .tuf-section {
   position: relative;
-  width: 100%;
 
   margin: 0 auto;
 
   padding: 0 rem(16);
+
+  &--full-bleed {
+    width: 100%;
+  }
 
   @media (min-width: rem(600)) {
     padding: 0 rem(32);

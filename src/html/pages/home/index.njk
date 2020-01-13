@@ -1,5 +1,18 @@
 {% extends "base.njk" %}
 
 {% block content %}
+<!-- hero section -->
 {% include 'partials/home-hero.njk' %}
+<!-- end of hero section -->
+
+<section class="tuf-section">
+  <div class="tuf-home-mission">
+    <h2>
+      {{home.mission.title}}
+    </h2>
+    <p>
+      {{home.mission.content}}
+    </p>
+  </div>
+</section>
 {% endblock %}

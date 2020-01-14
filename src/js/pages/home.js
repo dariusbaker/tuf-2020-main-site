@@ -1,3 +1,5 @@
+import Glide from '@glidejs/glide';
+
 class Home {
   constructor() {
     // initialise clients list

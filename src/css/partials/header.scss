@@ -148,7 +148,7 @@
 
     position: absolute;
 
-    top: 50%;
+    top: rem(16);
     left: 50%;
 
     padding: rem(8) rem(16);
@@ -159,7 +159,9 @@
 
     outline: none;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
+
+    z-index: index($z-elements, skip_content);
 
     &:focus {
       @include element-invisible-off;

@@ -306,6 +306,132 @@
   }
 }
 
-.tuf-home-clients-what-we-do {
-  
+.tuf-home-what-we-do {
+  &__list {
+    width: 100%;
+
+    max-width: rem(1440);
+
+    padding: $tuf-content-padding;
+
+    @media (min-width: rem(600)) {
+      padding: $tuf-content-padding-t;
+    }
+
+    @media (min-width: rem(1024)) {
+      padding: $tuf-content-padding-d;
+    }
+  }
+
+  &__list-items {
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+
+    align-items: stretch;
+  }
+
+  &__list-item {
+    position: relative;
+    width: 100%;
+    min-width: rem(310);
+
+    height: auto;
+
+    @media (min-width: rem(768)) {
+      width: calc((100% - (#{rem(24)} * 3)) / 4);
+    }
+
+    &__card {
+      display: flex;
+
+      flex-direction: column;
+
+      width: 100%;
+      height: 100%;
+
+      box-sizing: border-box;
+
+      padding: rem(24);
+
+      border: rem(1) solid transparentize($tuf-color-secondary, .6);
+
+      &__title,
+      &__content,
+      &__footnote,
+      &__link {
+        color: $tuf-color-white;
+      }
+
+      &__content,
+      &__footnote {
+        font-weight: $tuf-font-weight-regular;
+      }
+
+      &__title {
+        margin: rem(24) 0;
+
+        font-size: rem(30);
+
+        line-height: 1.2;
+      }
+
+      &__content {
+        margin-bottom: rem(24);
+        font-size: rem(18);
+      }
+
+      &__footnote {
+        font-size: rem(16);
+
+        margin-bottom: rem(64);
+      }
+
+      &__link {
+        position: absolute;
+
+        display: flex;
+
+        align-items: center;
+
+        bottom: rem(24);
+        left: 0;
+
+        width: 100%;
+        height: rem(40);
+
+        padding: 0 rem(24);
+
+        font-size: rem(18);
+
+        font-weight: $tuf-font-weight-medium;
+
+        &__icon {
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+
+          width: rem(40);
+          height: rem(40);
+
+          margin-right: rem(16);
+
+          border: rem(2) solid $tuf-color-clickable;
+          border-radius: rem(40);
+        }
+
+        svg {
+          width: rem(24);
+          height: rem(24);
+
+          color: $tuf-color-clickable;
+        }
+      }
+    }
+  }
 }

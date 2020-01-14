@@ -65,7 +65,7 @@ body {
 
   margin-bottom: rem(80);
 
-  padding: 0 rem(16);
+  padding: $tuf-content-padding;
 
   &--full-bleed {
     width: 100%;
@@ -76,7 +76,7 @@ body {
   }
 
   @media (min-width: rem(600)) {
-    padding: 0 rem(32);
+    padding: $tuf-content-padding-t;
 
     &--no-padding {
       padding: 0;
@@ -84,7 +84,7 @@ body {
   }
 
   @media (min-width: rem(1024)) {
-    padding: 0 rem(48);
+    padding: $tuf-content-padding-d;
 
     &--no-padding {
       padding: 0;

@@ -45,9 +45,9 @@
 <section
   id="{{home.clients.slug}}" 
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
-  <h1 class="tuf-section-title tuf-home-clients__title">
+  <h2 class="tuf-section-title tuf-home-clients__title">
     {{home.clients.title}}
-  </h1>
+  </h2>
   <div class="tuf-home-clients__carousel">
     <div class="tuf-home-clients__list-bg"></div>
     <div class="tuf-home-clients__list">
@@ -95,6 +95,49 @@
   </div>
 </section>
 <!-- end of testimonials section -->
+
+<!-- what we do section -->
+<section
+  id="{{home.what_we_do.slug}}"
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-what-we-do-section">
+  <h2 class="tuf-section-title tuf-home-what-we-do__title">
+    {{home.what_we_do.title}}
+  </h2>
+  <div class="tuf-home-what-we-do__list">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides glide__track tuf-home-what-we-do__list-items">
+        {% for item in home.what_we_do.items %}
+        <li class="glide__slide tuf-home-what-we-do__list-item">
+          <a
+            href="{{item.href}}"
+            class="glide__slide tuf-home-what-we-do__list-item__card">
+            <img src="{{item.image}}" alt="{{item.title}}" class="tuf-home-what-we-do__list-item__card__image" />
+            <h3 class="tuf-home-what-we-do__list-item__card__title">
+              {{item.title|safe}}
+            </h3>
+            <p class="tuf-home-what-we-do__list-item__card__content">
+              {{item.content|safe}}
+            </p>
+            <small class="tuf-home-what-we-do__list-item__card__footnote">
+              {{item.footnote|safe}}
+            </small>
+            <button class="tuf-home-what-we-do__list-item__card__link">
+              <div class="tuf-home-what-we-do__list-item__card__link__icon">
+                <svg role="img">
+                  <use xlink:href="#icon-arrow-right" />
+                </svg>
+              </div>
+              {{item.cta_label}}
+            </button>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- end of what we do section -->
+{% endblock %}
 
 
 {% block page_script %}

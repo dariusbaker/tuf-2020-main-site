@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- hero section -->
-<section class="tuf-section tuf-section--full-bleed">
+<section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
   <img class="tuf-home-hero__bg" src="/assets/img/hero-hand.png" />
   <div class="tuf-home-hero">
     <h1 class="tuf-home-hero__header">
@@ -29,7 +29,7 @@
 <!-- end of hero section -->
 
 <!-- mission section -->
-<section class="tuf-section tuf-home-mission-section">
+<section id="{{home.mission.slug}}"  class="tuf-section tuf-home-mission-section">
   <div class="tuf-home-mission">
     <h2>
       {{home.mission.title}}
@@ -43,8 +43,9 @@
 
 <!-- clients section -->
 <section
+  id="{{home.clients.slug}}" 
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
-  <h1 class="tuf-home-clients__title">
+  <h1 class="tuf-section-title tuf-home-clients__title">
     {{home.clients.title}}
   </h1>
   <div class="tuf-home-clients__carousel">
@@ -66,7 +67,8 @@
 </section>
 <!-- end of clients section -->
 
-<section class="tuf-section tuf-home-testimonials-section">
+<!-- testimonials section -->
+<section id="{{home.testimonials.slug}}" class="tuf-section tuf-home-testimonials-section">
   <div class="tuf-home-testimonials__list">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides glide__track tuf-home-testimonials__list-items">
@@ -92,7 +94,7 @@
     </div>
   </div>
 </section>
-{% endblock %}
+<!-- end of testimonials section -->
 
 
 {% block page_script %}

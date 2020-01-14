@@ -4,6 +4,16 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+.tuf-section-title {
+  font-size: rem(60);
+  color: transparentize($tuf-color-secondary, .7);
+  font-weight: $tuf-font-weight-bold;
+
+  @media only screen and (min-width: rem(1024)) {
+    font-size: rem(120);
+  }
+}
+
 .tuf-home-hero {
   position: relative;
   display: flex;
@@ -185,16 +195,6 @@
     }
   }
 
-  &__title {
-    font-size: rem(60);
-    color: transparentize($tuf-color-secondary, .7);
-    font-weight: $tuf-font-weight-bold;
-
-    @media only screen and (min-width: rem(1024)) {
-      font-size: rem(120);
-    }
-  }
-
   &__list,
   &__list-items,
   &__list-bg {
@@ -304,4 +304,8 @@
       max-width: rem(640);
     }
   }
+}
+
+.tuf-home-clients-what-we-do {
+  
 }

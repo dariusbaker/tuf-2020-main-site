@@ -1,5 +1,6 @@
 {
   "hero": {
+    "slug": "home-hero",
     "title": "Greetings from the Universe Fantastic",
     "footnote_1": "The creative brand agency of the",
     "footnote_2": "Past, Present & Future.",
@@ -9,10 +10,12 @@
     }
   },
   "mission": {
+    "slug": "our-mission",
     "title": "Our mission is simple:",
     "content": "To build businesses and brands so well that all may prosper under the light of the Universe across cultures, space and time."
   },
   "clients": {
+    "slug": "our-clients",
     "title": "Our clients",
     "items": [
       {
@@ -66,6 +69,7 @@
     ]
   },
   "testimonials": {
+    "slug": "testimonials",
     "items": [
       {
         "name": "Zeus the mighty pug",

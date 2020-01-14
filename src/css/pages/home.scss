@@ -259,6 +259,8 @@
     &-paginations {
       bottom: rem(-32);
 
+      z-index: index($z-elements, carousel_navigations);
+
       .glide__bullet {
         background-color: transparentize($tuf-color-secondary, .7);
       }

@@ -77,11 +77,7 @@ class Home {
     const whatWeDoSlideClones = document.querySelectorAll('.tuf-home-what-we-do__list .glide__slide--clone');
 
     whatWeDoSlideClones.forEach((elem) => {
-      try {
-        elem.parentNode.removeChild(elem);
-      } catch (e) {
-        console.log(elem);
-      }
+      elem.parentNode.removeChild(elem);
     });
   }
 }

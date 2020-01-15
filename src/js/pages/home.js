@@ -42,17 +42,21 @@ class Home {
 
   _initWhatWeDoCarousel() {
     this._whatWeDoCarousel = new Glide(".tuf-home-what-we-do__list", {
-      type: 'slider',
+      type: "slider",
       focusAt: "center",
-      perView: 1,
+      perView: 3,
       gap: 24,
       rewind: false,
       breakpoints: {
-        1310: {
+        1000: {
+          perView: 3
+        },
+        900: {
           perView: 2
         },
         600: {
-          perView: 2
+          perView: 1.5,
+          peek: 40
         },
         480: {
           perView: 1,

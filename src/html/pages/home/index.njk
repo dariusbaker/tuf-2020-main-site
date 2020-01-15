@@ -1,4 +1,5 @@
 {% from "macros/button.njk" import button_link %}
+{% from "macros/case-study-card.njk" import case_study_card %}
 
 {% extends "base.njk" %}
 
@@ -163,6 +164,38 @@
   }}
 </section>
 <!-- end of what we do section -->
+
+<!-- case studies section -->
+<section class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-case-studies">
+  <h2 class="tuf-section-title tuf-home-case-studies__title">
+    {{home.case_studies.title}}
+  </h2>
+  <ul class="tuf-home-case-studies__list" aria-label="{{home.case_studies.title}}">
+    {% for item in home.case_studies.items %}
+    <li class="tuf-home-case-studies__list__item">
+    {{
+      case_study_card(
+        classses = '',
+        href = item.href,
+        title = item.title,
+        tags = item.tags,
+        image = item.image
+      )
+    }}
+    <li>
+    {% endfor %}
+  </ul>
+  {{
+    button_link(
+      classes="tuf-home-case-studies__cta",
+      type="primary",
+      label=home.case_studies.cta.label,
+      href=home.case_studies.cta.href
+    )
+  }}
+</section>
+<!-- end of case studies section -->
+
 {% endblock %}
 
 

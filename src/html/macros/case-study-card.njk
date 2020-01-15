@@ -1,0 +1,26 @@
+{%
+  macro case_study_card(
+    classses = '',
+    href = '',
+    title = '',
+    tags = [],
+    image = ''
+  )
+%}
+<a href="{{href}}" class="tuf-case-study-card {{classes}}">
+  <img
+    class="tuf-case-study-card__image"
+    src="{{image}}"
+    alt="{{title}}" />
+  <div class="tuf-case-study-card__content">
+    <h3 class="tuf-case-study-card__content__title">
+      {{title}}
+    </h3>
+    <ul class="tuf-case-study-card__content__tags" aria-label="tags">
+      {% for tag in tags %}
+      <li class="tuf-case-study-card__content__tags__item">{{tag}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</a>
+{% endmacro %}

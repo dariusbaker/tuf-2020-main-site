@@ -198,6 +198,25 @@
 </section>
 <!-- end of case studies section -->
 
+<!-- instagram section -->
+<section class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-instagram">
+  <h2 class="tuf-section-title tuf-home-instagram__title">
+    {{home.instagram.title}}
+  </h2>
+  <ul class="tuf-home-instagram__list" aria-label="{{home.instagram.title}}">
+    {% for item in home.instagram.items %}
+    <li class="tuf-home-instagram__list__item">
+      <a
+        href="{{item.href}}"
+        target="_blank"
+        rel="noopener noreferrer">
+        <img src="{{item.image}}" alt="{{item.alt}}" />
+      </a>
+    <li>
+    {% endfor %}
+  </ul>
+</section>
+<!-- end of instagram section -->
 
 {% endblock %}
 

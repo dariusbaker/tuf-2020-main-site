@@ -194,5 +194,26 @@
         ]
       }
     ]
+  },
+  "instagram": {
+    "slug": "instagram",
+    "title": "The Universe Fantastagram",
+    "items": [
+      {
+        "alt": "#luckycat",
+        "image": "/assets/img/tuf-home-ig-cat.jpg",
+        "href": "https://www.instagram.com/p/B4BkCwYBWVD/"
+      },
+      {
+        "alt": "#worldoctopusday",
+        "image": "/assets/img/tuf-home-ig-octopus.jpg",
+        "href": "https://www.instagram.com/p/B3V7q3dBDVQ/"
+      },
+      {
+        "alt": "#internationalcoffeeday2019",
+        "image": "/assets/img/tuf-home-ig-agency.jpg",
+        "href": "https://www.instagram.com/p/B3EqejjHX4X/"
+      }
+    ]
   }
 }

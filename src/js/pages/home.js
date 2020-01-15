@@ -63,11 +63,15 @@ class Home {
   }
 
   _toggleWhatWeDoCarousel() {
+    // only enable carousel if width < 1310px
     let mql = window.matchMedia("(min-width: 1310px)");
 
     if (mql.matches) {
       this._whatWeDoCarousel.destroy();
       this._whatWeDoCarousel = null;
+
+      // on glide destroy, it is some what failed to remove the clone items
+      // we need to do this manually
       this._removeWhatWeDoGlideSlideClone();
     } else {
       this._initWhatWeDoCarousel();

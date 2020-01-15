@@ -379,6 +379,19 @@
 
       border: rem(1) solid transparentize($tuf-color-secondary, .6);
 
+      transition: border-color .25s ease-in-out;
+
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $tuf-color-turqoise;
+      }
+
       &__title,
       &__content,
       &__footnote,

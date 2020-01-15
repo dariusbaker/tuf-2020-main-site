@@ -45,13 +45,18 @@ class Home {
       type: "carousel",
       focusAt: "center",
       perView: 4,
-      // gap: 24,
+      gap: 24,
       breakpoints: {
         1310: {
           perView: 2
         },
         600: {
           perView: 2
+        },
+        480: {
+          perView: 1,
+          focusAt: 1,
+          peek: 40
         }
       }
     }).mount();

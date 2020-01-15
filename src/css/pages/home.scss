@@ -319,8 +319,6 @@
 
     max-width: rem(1440);
 
-    padding: 0;
-
     @media (min-width: rem(1310)) {
       padding: $tuf-content-padding-d;
     }
@@ -346,7 +344,7 @@
 
   &__list-item {
     position: relative;
-    width: rem(310);
+    width: 100%;
 
     height: auto;
 

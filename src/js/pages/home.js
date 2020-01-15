@@ -1,5 +1,7 @@
 import Glide from '@glidejs/glide';
 
+import { debounce } from '../utils';
+
 class Home {
   constructor() {
     // initialise clients list
@@ -23,6 +25,59 @@ class Home {
       type: 'carousel',
       perView: 1,
     }).mount();
+
+    this._whatWeDoCarousel = null;
+
+    this._initWhatWeDoCarousel();
+
+    this._toggleWhatWeDoCarousel();
+
+    window.addEventListener(
+      'resize',
+      debounce(() => {
+        this._toggleWhatWeDoCarousel();
+      }, 300)
+    );
+  }
+
+  _initWhatWeDoCarousel() {
+    this._whatWeDoCarousel = new Glide(".tuf-home-what-we-do__list", {
+      type: "carousel",
+      focusAt: "center",
+      perView: 4,
+      // gap: 24,
+      breakpoints: {
+        1310: {
+          perView: 2
+        },
+        600: {
+          perView: 2
+        }
+      }
+    }).mount();
+  }
+
+  _toggleWhatWeDoCarousel() {
+    let mql = window.matchMedia("(min-width: 1310px)");
+
+    if (mql.matches) {
+      this._whatWeDoCarousel.destroy();
+      this._removeWhatWeDoGlideSlideClone();
+    } else {
+      this._initWhatWeDoCarousel();
+    }
+  }
+
+  _removeWhatWeDoGlideSlideClone() {
+    const whatWeDoSlideClones = document.querySelectorAll('.tuf-home-what-we-do__list .glide__slide--clone');
+
+    whatWeDoSlideClones.forEach((elem) => {
+      try {
+        elem.parentNode.removeChild(elem);
+      } catch (e) {
+        console.log(elem);
+      }
+    });
   }
 }
 

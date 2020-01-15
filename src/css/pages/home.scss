@@ -4,6 +4,21 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+// carousel style overwrite
+.glide__bullets {
+  bottom: rem(-32);
+
+  z-index: index($z-elements, carousel_navigations);
+
+  .glide__bullet {
+    background-color: transparentize($tuf-color-secondary, .7);
+  }
+
+  .glide__bullet--active {
+    background-color: $tuf-color-turqoise;
+  }
+}
+
 .tuf-section-title {
   font-size: rem(60);
   color: transparentize($tuf-color-secondary, .7);
@@ -256,20 +271,6 @@
   &__list {
     margin: 0 auto;
 
-    &-paginations {
-      bottom: rem(-32);
-
-      z-index: index($z-elements, carousel_navigations);
-
-      .glide__bullet {
-        background-color: transparentize($tuf-color-secondary, .7);
-      }
-
-      .glide__bullet--active {
-        background-color: $tuf-color-turqoise;
-      }
-    }
-
     &-item {
       blockquote {
         font-size: rem(18);
@@ -318,14 +319,16 @@
 
     max-width: rem(1440);
 
-    padding: $tuf-content-padding;
+    padding: 0;
 
-    @media (min-width: rem(600)) {
-      padding: $tuf-content-padding-t;
-    }
-
-    @media (min-width: rem(1024)) {
+    @media (min-width: rem(1310)) {
       padding: $tuf-content-padding-d;
+    }
+  }
+
+  &__list-paginations {
+    @media (min-width: rem(1310)) {
+      display: none;
     }
   }
 
@@ -343,12 +346,24 @@
 
   &__list-item {
     position: relative;
-    width: 100%;
+    width: rem(310);
 
     height: auto;
 
     @media (min-width: rem(768)) {
       width: calc((100% - (#{rem(24)} * 3)) / 4);
+    }
+
+    @media (min-width: rem(1310)) {
+      width: calc((100% - (#{rem(24)} * 3)) / 4);
+
+      &:nth-child(4n+2) {
+        margin: 0 rem(12) 0 rem(24);
+      }
+
+      &:nth-child(4n+3) {
+        margin: 0 rem(24) 0 rem(12);
+      }
     }
 
     &__card {

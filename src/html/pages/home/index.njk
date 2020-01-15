@@ -134,6 +134,11 @@
         {% endfor %}
       </ul>
     </div>
+    <div class="glide__bullets tuf-home-what-we-do__list-paginations" data-glide-el="controls[nav]">
+      {% for item in home.what_we_do.items %}
+      <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
+      {% endfor %}
+    </div>
   </div>
 </section>
 <!-- end of what we do section -->

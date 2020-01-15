@@ -143,6 +143,24 @@
       {% endfor %}
     </div>
   </div>
+  <div class="tuf-home-what-we-do__footnote">
+    <div class="tuf-home-what-we-do__footnote__content">
+      <h4 class="tuf-home-what-we-do__footnote__content__title">
+        {{home.what_we_do.footnote.title}}
+      </h4>
+      <p>
+        {{home.what_we_do.footnote.content}}
+      </p>
+    </div>
+  </div>
+  {{
+    button_link(
+      classes="tuf-home-what-we-do__cta",
+      type="primary",
+      label=home.what_we_do.cta.label,
+      href=home.what_we_do.cta.href
+    )
+  }}
 </section>
 <!-- end of what we do section -->
 {% endblock %}

@@ -315,6 +315,7 @@
 
 .tuf-home-what-we-do {
   &__list {
+    position: relative;
     width: 100%;
 
     max-width: rem(1440);
@@ -469,6 +470,57 @@
 
           color: $tuf-color-clickable;
         }
+      }
+    }
+  }
+
+  &__cta {
+    width: fit-content;
+
+    margin: 0 auto;
+  }
+
+  &__footnote {
+    padding: $tuf-content-padding;
+
+    @media (min-width: rem(600)) {
+      padding: $tuf-content-padding-t;
+    }
+
+    @media (min-width: rem(1024)) {
+      padding: $tuf-content-padding-d;
+    }
+
+    &__content {
+      padding: rem(24);
+      box-sizing: border-box;
+
+      margin: 0 auto;
+
+      margin-top: rem(64);
+      margin-bottom: rem(48);
+
+      text-align: center;
+
+      border: rem(2) solid $tuf-color-turqoise;
+
+      color: $tuf-color-white;
+
+      @media (min-width: rem(768)) {
+        max-width: rem(640);
+      }
+
+      &__title {
+        font-size: rem(18);
+        font-weight: $tuf-font-weight-bold;
+        line-height: 1.3;
+        margin-bottom: rem(16);
+      }
+
+      p {
+        font-size: rem(15);
+        font-weight: $tuf-font-weight-regular;
+        line-height: 1.2;
       }
     }
   }

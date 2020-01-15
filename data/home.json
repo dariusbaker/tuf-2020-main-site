@@ -84,6 +84,14 @@
   "what_we_do": {
     "slug": "what-we-do",
     "title": "What we do",
+    "footnote": {
+      "title": "Interested in applying for the Enterprise Development Grant (EDG)?",
+      "content": "Our consultants are RMC-certified. Speak to us to find out if you’re eligible for grants up to 70%. All grants subject to approval by Enterprise Singapore."
+    },
+    "cta": {
+      "label": "Talk to us",
+      "href": "/#talk-to-us"
+    },
     "items": [
       {
         "title": "Business & Brand Development",

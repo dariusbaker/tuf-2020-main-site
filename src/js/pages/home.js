@@ -47,9 +47,10 @@ class Home {
       perView: 3,
       gap: 24,
       rewind: false,
+      startAt: 1,
       breakpoints: {
         1000: {
-          perView: 3
+          perView: 3,
         },
         900: {
           perView: 2
@@ -68,15 +69,17 @@ class Home {
 
   _toggleWhatWeDoCarousel() {
     // only enable carousel if width < 1310px
-    let mql = window.matchMedia("(min-width: 1310px)");
+    let mql = window.matchMedia('(min-width: 1310px)');
 
     if (mql.matches) {
-      this._whatWeDoCarousel.destroy();
-      this._whatWeDoCarousel = null;
+      if (this._whatWeDoCarousel) {
+        this._whatWeDoCarousel.destroy();
+        this._whatWeDoCarousel = null;
 
-      // on glide destroy, it is some what failed to remove the clone items
-      // we need to do this manually
-      this._removeWhatWeDoGlideSlideClone();
+        // on glide destroy, it is some what failed to remove the clone items
+        // we need to do this manually
+        this._removeWhatWeDoGlideSlideClone();
+      }
     } else {
       this._initWhatWeDoCarousel();
     }

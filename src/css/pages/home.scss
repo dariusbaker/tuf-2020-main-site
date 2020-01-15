@@ -393,20 +393,32 @@
       &__title {
         margin: rem(24) 0;
 
-        font-size: rem(30);
+        font-size: rem(24);
 
         line-height: 1.2;
+
+        @media screen and (min-width: rem(768)) {
+          font-size: rem(30);
+        }
       }
 
       &__content {
         margin-bottom: rem(24);
-        font-size: rem(18);
+        font-size: rem(16);
+
+        @media screen and (min-width: rem(768)) {
+          font-size: rem(18);
+        }
       }
 
       &__footnote {
-        font-size: rem(16);
+        font-size: rem(14);
 
         margin-bottom: rem(64);
+
+        @media screen and (min-width: rem(768)) {
+          font-size: rem(16);
+        }
       }
 
       &__link {
@@ -428,9 +440,13 @@
 
         border: 0;
 
-        font-size: rem(18);
+        font-size: rem(16);
 
         font-weight: $tuf-font-weight-medium;
+
+        @media screen and (min-width: rem(768)) {
+          font-size: rem(18);
+        }
 
         &__icon {
           display: flex;

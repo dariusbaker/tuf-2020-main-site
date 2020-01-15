@@ -42,10 +42,11 @@ class Home {
 
   _initWhatWeDoCarousel() {
     this._whatWeDoCarousel = new Glide(".tuf-home-what-we-do__list", {
-      type: "carousel",
+      type: 'slider',
       focusAt: "center",
-      perView: 4,
+      perView: 1,
       gap: 24,
+      rewind: false,
       breakpoints: {
         1310: {
           perView: 2
@@ -55,7 +56,6 @@ class Home {
         },
         480: {
           perView: 1,
-          focusAt: 1,
           peek: 40
         }
       }
@@ -67,6 +67,7 @@ class Home {
 
     if (mql.matches) {
       this._whatWeDoCarousel.destroy();
+      this._whatWeDoCarousel = null;
       this._removeWhatWeDoGlideSlideClone();
     } else {
       this._initWhatWeDoCarousel();

@@ -166,7 +166,9 @@
 <!-- end of what we do section -->
 
 <!-- case studies section -->
-<section class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-case-studies">
+<section
+  id="{{home.case_studies.slug}}"
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-case-studies">
   <h2 class="tuf-section-title tuf-home-case-studies__title">
     {{home.case_studies.title}}
   </h2>
@@ -195,6 +197,7 @@
   }}
 </section>
 <!-- end of case studies section -->
+
 
 {% endblock %}
 

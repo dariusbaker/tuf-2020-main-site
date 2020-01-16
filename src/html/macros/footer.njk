@@ -1,0 +1,45 @@
+{% macro footer(classes='') %}
+<footer class="tuf-footer {{classes}}">
+  <div class="tuf-footer__social">
+    <p>{{global.follow_us.title}}</p>
+    <ul class="tuf-footer__social__list" aria-label="Social Links">
+      {% for item in global.follow_us.items %}
+      <li class="tuf-footer__social__list__item">
+        <a
+          href="{{item.href}}"
+          rel="noopener noreferrer"
+          target="_blank">
+          <svg role="img" aria-label="{{item.name}}">
+            <use xlink:href="#{{item.icon}}" />
+          </svg>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="tuf-footer__main-content">
+    <small>{{global.footer.title}}</small>
+    <address>
+      {% set br = joiner('<br />') %}
+      {% for item in global.footer.address -%}
+        {{ br() | safe }} {{ item }}
+      {%- endfor %}
+      <br/>
+      <a class="tuf-footer__main-content__links tuf-footer__main-content__address-link" href="mailto:{{global.footer.email}}">
+        {{global.footer.email}}
+      </a>
+    </address>
+    <nav>
+      <ul>
+        {% for item in global.footer.nav_items %}
+        <li>
+          <a class="tuf-footer__main-content__links" href="{{item.href}}">
+            {{item.label}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</footer>
+{% endmacro %}

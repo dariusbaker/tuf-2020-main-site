@@ -1,0 +1,109 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-footer {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: $tuf-content-padding;
+
+  padding-bottom: rem(64);
+
+  @media (min-width: rem(600)) {
+    padding: $tuf-content-padding-t;
+
+    padding-bottom: rem(64);
+  }
+
+  @media (min-width: rem(1024)) {
+    padding: $tuf-content-padding-d;
+    padding-bottom: rem(64);
+  }
+
+  @media screen and (min-width: rem(768)) {
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  &__main-content {
+    color: $tuf-color-white;
+
+    &__links {
+      color: $tuf-color-clickable;
+
+      font-size: rem(10);
+      font-weight: $tuf-font-weight-regular;
+
+      @media screen and (min-width: rem(768)) {
+        font-size: rem(14);
+      }
+    }
+
+    &__address-link {
+      display: block;
+      margin-top: rem(24);
+    }
+
+    small {
+      font-size: rem(14);
+      font-weight: $tuf-font-weight-bold;
+
+      @media screen and (min-width: rem(768)) {
+        font-size: rem(18);
+      }
+    }
+
+    address {
+      margin-top: rem(8);
+
+      font-style: normal;
+      font-size: rem(10);
+      font-weight: $tuf-font-weight-regular;
+
+      @media screen and (min-width: rem(768)) {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__social {
+    margin-bottom: rem(64);
+
+    @media screen and (min-width: rem(768)) {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: rem(27);
+      font-weight: $tuf-font-weight-bold;
+
+      color: $tuf-color-white;
+    }
+
+    &__list {
+      display: flex;
+
+      flex-direction: row;
+
+      margin-top: rem(24);
+
+      &__item {
+        &:nth-child(even) {
+          margin: 0 rem(16);
+        }
+
+        svg {
+          width: rem(24);
+          height: rem(24);
+
+          color: $tuf-color-clickable;
+        }
+      }
+    }
+  }
+}

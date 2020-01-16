@@ -1,5 +1,6 @@
 {% from "macros/button.njk" import button_link %}
 {% from "macros/case-study-card.njk" import case_study_card %}
+{% from "macros/footer.njk" import footer with context %}
 
 {% extends "base.njk" %}
 
@@ -217,7 +218,16 @@
   </ul>
 </section>
 <!-- end of instagram section -->
+{# 
+<!-- footer section -->
+{{footer()}}
+<!-- end of footer section --> #}
+{% endblock %}
 
+{% block footer %}
+<!-- footer section -->
+{{footer()}}
+<!-- end of footer section -->
 {% endblock %}
 
 

@@ -26,5 +26,39 @@
   "nav_cta": {
     "label": "Talk to us",
     "href": "/#talk-to-us"
+  },
+  "follow_us": {
+    "title": "Follow us:",
+    "items": [
+      {
+        "name": "Facebook",
+        "icon": "icon-facebook",
+        "href": "https://www.facebook.com/theuniversefantastic/"
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "icon-linkedin",
+        "href": "https://sg.linkedin.com/company/theuniversefantastic"
+      },
+      {
+        "name": "Instagram",
+        "icon": "icon-instagram",
+        "href": "https://www.instagram.com/theuniversefantastic/"
+      }
+    ]
+  },
+  "footer": {
+    "title": "The Universe Fantastic © 2019",
+    "address": [
+      "1013 Geylang East Ave 3 #05-108",
+      "Singapore 389728"
+    ],
+    "email": "seek@theuniversefantastic.co",
+    "nav_items": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      }
+    ]
   }
 }

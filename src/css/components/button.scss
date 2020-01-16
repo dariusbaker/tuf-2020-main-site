@@ -22,8 +22,12 @@
 
   border-radius: rem(30);
 
+  cursor: pointer;
+
   &--primary {
     border: rem(2) solid $tuf-color-clickable;
+
+    background-color: transparent;
 
     transition: border-color .25s ease-in-out;
 

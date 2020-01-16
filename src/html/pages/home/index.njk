@@ -1,4 +1,4 @@
-{% from "macros/button.njk" import button_link %}
+{% from "macros/button.njk" import button_link, button %}
 {% from "macros/case-study-card.njk" import case_study_card %}
 {% from "macros/footer.njk" import footer with context %}
 
@@ -223,8 +223,37 @@
 
 <!-- talk to us section -->
 <section
-  class="tuf-section tuf-home-talk-to-us"
+  class="tuf-section tuf-section--full-bleed tuf-home-talk-to-us"
   id="{{home.talk_to_us.slug}}">
+  <div class="tuf-home-talk-to-us__left">
+    <div>
+      <h2 class="tuf-home-talk-to-us__left__title">
+        {{home.talk_to_us.title}}
+      </h2>
+      <p class="tuf-home-talk-to-us__left__content">
+        {{home.talk_to_us.content}}<br/>
+        <a href="mailto:{{global.footer.email}}">{{home.talk_to_us.email_label}}</a>.
+      </p>
+    </div>
+    {{footer(classes="tuf-home-talk-to-us__footer")}}
+  </div>
+  <div class="tuf-home-talk-to-us__right">
+    <form class="tuf-home-talk-to-us__form">
+      <input type="text" placeholder="Name*" />
+      <input type="email" placeholder="Email*" />
+      <input type="text" placeholder="Contact No." />
+      <input type="text" placeholder="Tell us about your project" />
+    </form>
+    {{
+      button(
+        classses = '',
+        disabled = false,
+        type = 'primary',
+        id = 'submit-form-btn',
+        label = 'Submit'
+      )
+    }}
+  </div>
 </section>
 <!-- end of talk to us section -->
 
@@ -232,7 +261,7 @@
 
 {% block footer %}
 <!-- footer section -->
-{{footer()}}
+{{footer(classes="tuf-home-footer")}}
 <!-- end of footer section -->
 {% endblock %}
 

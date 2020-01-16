@@ -651,3 +651,128 @@
     }
   }
 }
+
+.tuf-home-talk-to-us {
+  display: flex;
+
+  flex-direction: column;
+
+  @media screen and (min-width: rem(1024)) {
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+    flex-basis: 40%;
+    color: $tuf-color-white;
+
+    &__title {
+      margin-bottom: rem(8);
+      font-size: rem(60);
+      font-weight: $tuf-font-weight-bold;
+
+      @media screen and (min-width: rem(1024)) {
+        font-size: rem(80);
+      }
+    }
+
+    &__content {
+      font-size: rem(18);
+      font-weight: $tuf-font-weight-light;
+
+      line-height: 1.5;
+
+      @media screen and (min-width: rem(1024)) {
+        font-size: rem(24);
+      }
+    }
+
+    a {
+      color: $tuf-color-clickable;
+      text-decoration: underline;
+    }
+  }
+
+  &__right {
+    flex-basis: 60%;
+
+    margin-top: rem(40);
+
+    @media screen and (min-width: rem(1024)) {
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: rem(24);
+
+    input {
+      width: 100%;
+      height: rem(48);
+
+      margin-bottom: rem(24);
+
+      background-color: transparent;
+
+      border: 0;
+
+      border-bottom: rem(2) solid transparentize($tuf-color-primary, .6);
+
+      font-size: rem(30);
+
+      color: $tuf-color-white;
+
+      @media screen and (min-width: rem(1024)) {
+        height: rem(90);
+        font-size: rem(60);
+      }
+
+      &:focus {
+        outline: 0;
+        border-color: transparentize($tuf-color-primary, .2);
+      }
+
+      &::placeholder {
+        color: transparentize($tuf-color-primary, .2);
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+
+    @media screen and (min-width: rem(1024)) {
+      display: flex;
+
+      flex-direction: column;
+
+      width: 100%;
+
+      padding: 0;
+
+      margin-top: rem(24);
+
+      .tuf-footer__social {
+        margin-bottom: rem(24);
+      }
+    }
+  }
+}
+
+.tuf-home-footer {
+  display: flex;
+
+  @media screen and (min-width: rem(1024)) {
+    display: none;
+  }
+}

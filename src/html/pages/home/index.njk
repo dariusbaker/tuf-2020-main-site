@@ -200,7 +200,9 @@
 <!-- end of case studies section -->
 
 <!-- instagram section -->
-<section class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-instagram">
+<section
+  id="{{home.instagram.slug}}"
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-instagram">
   <h2 class="tuf-section-title tuf-home-instagram__title">
     {{home.instagram.title}}
   </h2>
@@ -218,10 +220,11 @@
   </ul>
 </section>
 <!-- end of instagram section -->
-{# 
-<!-- footer section -->
-{{footer()}}
-<!-- end of footer section --> #}
+
+<!-- talk to us section -->
+
+<!-- end of talk to us section -->
+
 {% endblock %}
 
 {% block footer %}

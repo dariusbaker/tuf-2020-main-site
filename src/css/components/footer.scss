@@ -9,6 +9,10 @@
 
   flex-direction: column;
 
+  max-width: rem(1440);
+
+  margin: 0 auto;
+
   padding: $tuf-content-padding;
 
   padding-bottom: rem(64);

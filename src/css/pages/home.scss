@@ -652,7 +652,17 @@
         top: rem(36);
         left: 0;
 
+        z-index: index($z-elements, dropdown);
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: rem(16) rem(16) rem(24);
+
         visibility: hidden;
+
+        background-color: $tuf-color-dropdown;
         opacity: 0;
         transform: scale(0);
         transform-origin: top;
@@ -669,6 +679,10 @@
           position: relative;
           top: auto;
           left: auto;
+
+          padding: 0;
+
+          background-color: transparent;
           opacity: 1;
           visibility: visible;
 
@@ -700,6 +714,8 @@
         font-size: rem(18);
         color: transparentize($tuf-color-secondary, .7);
 
+        cursor: pointer;
+
         &__icon {
           display: block;
 
@@ -714,6 +730,7 @@
         }
 
         @media screen and (min-width: rem(1024)) {
+          cursor: default;
           font-size: rem(16);
         }
       }

@@ -4,29 +4,22 @@ import { debounce } from '../utils';
 
 class Home {
   constructor() {
-    // initialise clients list
-    new Glide('.tuf-home-clients__list', {
-      type: 'carousel',
-      autoplay: 3000,
-      perView: 8,
-      focusAt: 'center',
-      breakpoints: {
-        800: {
-          perView: 4
-        },
-        480: {
-          perView: 3
-        }
-      }
-    }).mount();
-
-    // initialise testimonials
-    new Glide('.tuf-home-testimonials__list', {
-      type: 'carousel',
-      perView: 1,
-    }).mount();
+    this._ELEMENTS_CLASSES = {
+      clients: '.tuf-home-clients__list',
+      testimonials: '.tuf-home-testimonials__list',
+      what_we_do: '.tuf-home-what-we-do__list',
+      seek_label: '.tuf-home-what-do-you-seek__content__navigation__label',
+      seek_navigation: '.tuf-home-what-do-you-seek__content__navigation-wrapper',
+      seek_navigation_visible: '.tuf-home-what-do-you-seek__content__navigation-wrapper--visible'
+    };
 
     this._whatWeDoCarousel = null;
+    this._testimonialCarousel = null;
+    this._clientsCarousel = null;
+
+    this._initClientsCarousel();
+
+    this._initTestimonialCarousel();
 
     this._initWhatWeDoCarousel();
 
@@ -40,8 +33,32 @@ class Home {
     );
   }
 
+  _initClientsCarousel() {
+    this._clientsCarousel = new Glide(this._ELEMENTS_CLASSES.clients, {
+      type: 'carousel',
+      autoplay: 3000,
+      perView: 8,
+      focusAt: 'center',
+      breakpoints: {
+        800: {
+          perView: 4
+        },
+        480: {
+          perView: 3
+        }
+      }
+    }).mount();
+  }
+
+  _initTestimonialCarousel() {
+    this._testimonialCarousel = new Glide(this._ELEMENTS_CLASSES.testimonials, {
+      type: 'carousel',
+      perView: 1,
+    }).mount();
+  }
+
   _initWhatWeDoCarousel() {
-    this._whatWeDoCarousel = new Glide(".tuf-home-what-we-do__list", {
+    this._whatWeDoCarousel = new Glide(this._ELEMENTS_CLASSES.what_we_do, {
       type: "slider",
       focusAt: "center",
       perView: 3,

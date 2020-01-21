@@ -38,13 +38,13 @@
   }
 
   &--secondary {
-    background-color: $tuf-color-button;
+    background-color: $tuf-color-primary;
 
     transition: background-color .25s ease-in-out;
 
     &:hover,
     &:focus {
-      background-color: transparentize($tuf-color-button, .2);
+      background-color: transparentize($tuf-color-primary, .2);
     }
   }
 }

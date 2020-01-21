@@ -21,6 +21,7 @@ class Home {
       seek_dialog_type_selector: '#seek-dialog-type',
       seek_dialog_content_selector: '#seek-dialog-content',
       seek_dialog_image_selector: '#seek-dialog-image',
+      seek_dialog_close_selector: '.tuf-home-what-do-you-seek__dialog__close-btn'
     };
 
     this._whatWeDoCarousel = null;
@@ -45,6 +46,10 @@ class Home {
 
     this._seekDialogElem = document.querySelector(
       this._CONST.seek_item_dialog_selector
+    );
+
+    this._seekDialogCloseElem = document.querySelector(
+      this._CONST.seek_dialog_close_selector
     );
 
     this._seekDialogTitleElem = document.querySelector(
@@ -78,6 +83,10 @@ class Home {
         this._toggleSeekOptions();
       }
     };
+
+    this._seekCloseHandler = () => this._closeDialogEvent();
+
+    this._seekDialogCloseElem.addEventListener('click', this._seekCloseHandler);
 
     this._initSeekNav();
     this._bindSeekItemsOptions();
@@ -141,6 +150,18 @@ class Home {
     this._seekNavOpen = !this._seekNavOpen;
   }
 
+  _closeDialogEvent() {
+    if (this._seekDialogOpen) {
+      // hide dialog
+      this._seekDialogElem.classList.remove(this._CONST.seek_item_dialog_visible_class);
+
+      // show idle
+      this._seekIdleItemsElem.classList.remove(this._CONST.seek_items_idle_hidden_class);
+
+      this._seekDialogOpen = false;
+    }
+  }
+
   _showSeekEvent(e) {
     const type = e.target.getAttribute('data-type');
 
@@ -174,7 +195,7 @@ class Home {
     // close nav
     this._toggleSeekOptions();
 
-    console.log(seekDetails);
+    this._seekDialogOpen = true;
   }
 
   _bindSeekItemsOptions() {

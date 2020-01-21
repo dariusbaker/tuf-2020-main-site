@@ -286,5 +286,8 @@
 
 
 {% block page_script %}
+<script>
+  const seekList = JSON.parse('{{home.what_do_you_seek.items|json|safe}}');
+</script>
 <script src="/assets/js/home.min.js"></script>
 {% endblock %}

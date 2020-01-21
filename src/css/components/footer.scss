@@ -24,6 +24,7 @@
   }
 
   @media (min-width: rem(1024)) {
+    display: none;
     padding: $tuf-content-padding-d;
     padding-bottom: rem(64);
   }

@@ -1,4 +1,6 @@
 
+{% from "macros/footer.njk" import footer with context %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,6 +47,9 @@
     <!-- END main -->
 
     {% block footer %}
+    <!-- footer section -->
+    {{footer(classes="tuf-footer")}}
+    <!-- end of footer section -->
     {% endblock %}
 
     <div aria-hidden="true" hidden>

@@ -1,0 +1,36 @@
+{% from "macros/footer.njk" import footer with context %}
+{% from "macros/button.njk" import button %}
+
+<section
+  class="tuf-section tuf-section--full-bleed tuf-talk-to-us"
+  id="{{home.talk_to_us.slug}}">
+  <div class="tuf-talk-to-us__left">
+    <div>
+      <h2 class="tuf-talk-to-us__left__title">
+        {{home.talk_to_us.title|safe}}
+      </h2>
+      <p class="tuf-talk-to-us__left__content">
+        {{home.talk_to_us.content}}<br/>
+        <a href="mailto:{{global.footer.email}}">{{home.talk_to_us.email_label}}</a>.
+      </p>
+    </div>
+    {{footer(classes="tuf-talk-to-us__footer")}}
+  </div>
+  <div class="tuf-talk-to-us__right">
+    <form class="tuf-talk-to-us__form">
+      <input type="text" placeholder="Name*" />
+      <input type="email" placeholder="Email*" />
+      <input type="text" placeholder="Contact No." />
+      <input type="text" placeholder="Tell us about your project" />
+    </form>
+    {{
+      button(
+        classses = '',
+        disabled = false,
+        type = 'primary',
+        id = 'submit-form-btn',
+        label = 'Submit'
+      )
+    }}
+  </div>
+</section>

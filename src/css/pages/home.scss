@@ -624,6 +624,8 @@
 
     flex-direction: column;
 
+    align-items: center;
+
     padding: $tuf-content-padding;
 
     @media (min-width: rem(600)) {
@@ -637,6 +639,43 @@
     }
 
     &__navigation {
+      position: relative;
+      width: rem(240);
+
+      @media screen and (min-width: rem(1024)) {
+        width: auto;
+      }
+
+      &-wrapper {
+        position: absolute;
+        display: block;
+        top: rem(36);
+        left: 0;
+
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: top;
+
+        transition: opacity .25s ease, transform .25s ease-in-out;
+
+        &--visible {
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1);
+        }
+
+        @media screen and (min-width: rem(1024)) {
+          position: relative;
+          top: auto;
+          left: auto;
+          opacity: 1;
+          visibility: visible;
+
+          transform: scale(1);
+        }
+      }
+
       &__label,
       &__item {
         font-weight: $tuf-font-weight-bold;
@@ -650,10 +689,29 @@
       }
 
       &__label {
-        display: block;
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
         margin-bottom: rem(16);
         font-size: rem(18);
         color: transparentize($tuf-color-secondary, .7);
+
+        &__icon {
+          display: block;
+
+          width: rem(24);
+          height: rem(24);
+
+          color: $tuf-color-clickable;
+
+          @media screen and (min-width: rem(1024)) {
+            display: none;
+          }
+        }
 
         @media screen and (min-width: rem(1024)) {
           font-size: rem(16);

@@ -218,7 +218,7 @@
   </h2>
   <div class="tuf-home-what-do-you-seek__content">
     <div class="tuf-home-what-do-you-seek__content__navigation">
-      <label class="tuf-home-what-do-you-seek__content__navigation__label" for="what-do-you-seek-list">
+      <label class="tuf-home-what-do-you-seek__content__navigation__label" for="what-do-you-seek-list" role="label">
         Pick one
         <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
           <use xlink:href="#down" />
@@ -227,7 +227,7 @@
       <div class="tuf-home-what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
         <ul class="tuf-home-what-do-you-seek__content__navigation__items">
           {% for item in home.what_do_you_seek.items %}
-          <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" role="button">
+          <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" tabindex="0" role="option">
             {{item.type}}
           </li>
           {% endfor %}

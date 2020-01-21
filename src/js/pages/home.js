@@ -11,7 +11,15 @@ class Home {
       seek_label_selector: '.tuf-home-what-do-you-seek__content__navigation__label',
       seek_navigation_selector: '.tuf-home-what-do-you-seek__content__navigation-wrapper',
       seek_navigation_visible_class: 'tuf-home-what-do-you-seek__content__navigation-wrapper--visible',
-      seek_item_selector: '.tuf-home-what-do-you-seek__content__navigation__item'
+      seek_item_selector: '.tuf-home-what-do-you-seek__content__navigation__item',
+      seek_item_dialog_selector: '.tuf-home-what-do-you-seek__dialog',
+      seek_item_dialog_visible_class: 'tuf-home-what-do-you-seek__dialog--visible',
+      seek_items_idle_selector: '.tuf-home-what-do-you-seek__content__cards__items',
+      seek_items_idle_hidden_class: 'tuf-home-what-do-you-seek__content__cards__items--hidden',
+      seek_dialog_title_selector: '#seek-dialog-title',
+      seek_dialog_type_selector: '#seek-dialog-type',
+      seek_dialog_content_selector: '#seek-dialog-content',
+      seek_dialog_image_selector: '#seek-dialog-image',
     };
 
     this._whatWeDoCarousel = null;
@@ -30,7 +38,33 @@ class Home {
       this._CONST.seek_item_selector
     );
 
+    this._seekIdleItemsElem = document.querySelector(
+      this._CONST.seek_items_idle_selector
+    );
+
+    this._seekDialogElem = document.querySelector(
+      this._CONST.seek_item_dialog_selector
+    );
+
+    this._seekDialogTitleElem = document.querySelector(
+      this._CONST.seek_dialog_title_selector
+    );
+
+    this._seekDialogTypeElem = document.querySelector(
+      this._CONST.seek_dialog_type_selector
+    );
+
+    this._seekDialogImageElem = document.querySelector(
+      this._CONST.seek_dialog_image_selector
+    );
+
+    this._seekDialogContentElem = document.querySelector(
+      this._CONST.seek_dialog_content_selector
+    );
+
     this._seekNavOpen = false;
+
+    this._seekDialogOpen = false;
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();
@@ -58,6 +92,10 @@ class Home {
         this._initSeekNav();
       }, 300)
     );
+  }
+
+  _getSeekItemByType(type) {
+    return window.seekList.filter((item) => item.type === type);
   }
 
   _initSeekNav() {
@@ -94,7 +132,30 @@ class Home {
   _showSeekEvent(e) {
     const type = e.target.getAttribute('data-type');
 
-    console.log(type);
+    const seekDetails = this._getSeekItemByType(type);
+
+    if (!seekDetails || !seekDetails.length) {
+      return;
+    }
+
+    // bind content
+    this._seekDialogTitleElem.innerText = seekDetails[0].title;
+
+    this._seekDialogTypeElem.innerText = seekDetails[0].type;
+
+    this._seekDialogImageElem.src = seekDetails[0].image;
+
+    this._seekDialogContentElem.innerHTML = seekDetails[0].content.map((item) => `<p>${item}</p>`).join('');
+
+    if (!this._seekDialogOpen) {
+      // hide idle items
+      this._seekIdleItemsElem.classList.add(this._CONST.seek_items_idle_hidden_class);
+
+      // show dialog
+      this._seekDialogElem.classList.add(this._CONST.seek_item_dialog_visible_class);
+    }
+
+    console.log(seekDetails);
   }
 
   _bindSeekItemsOptions() {

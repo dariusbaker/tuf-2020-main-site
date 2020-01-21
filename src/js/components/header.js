@@ -13,7 +13,11 @@ export default class Header {
       transparent_header_class: 'tuf-header--transparent',
       lock_scroll_class: 'tuf-no-scroll',
       drawer_opened_class: 'tuf-header__nav-drawer--opened',
-      drawer_nav_items_class: '.tuf-header__nav-drawer__nav-item',
+      drawer_nav_items_selector: '.tuf-header__nav-drawer__nav-item',
+      header_selector: '.tuf-header',
+      mobile_toggler_selector: '.tuf-header__mobile-menu-toggler',
+      backdrop_selector: '.tuf-backdrop',
+      nav_drawer_selector: '#tuf-nav-drawer'
     };
 
     this._isScrolling = false;
@@ -29,12 +33,24 @@ export default class Header {
     this._drawerOpen = false;
     this._screenLock = false;
 
-    this._headerElement = document.querySelector('.tuf-header');
-    this._mobileNavTogglerElement = document.querySelector('.tuf-header__mobile-menu-toggler');
-    this._screenLockElement = document.querySelector('.tuf-backdrop');
-    this._mobileNavDrawerElement = document.getElementById('tuf-nav-drawer');
+    this._headerElement = document.querySelector(
+      this._CONST.header_selector
+    );
+
+    this._mobileNavTogglerElement = document.querySelector(
+      this._CONST.mobile_toggler_selector
+    );
+
+    this._screenLockElement = document.querySelector(
+      this._CONST.backdrop_selector
+    );
+
+    this._mobileNavDrawerElement = document.querySelector(
+      this._CONST.nav_drawer_selector
+    );
+
     this._drawerNavItemsElement = document.querySelectorAll(
-      this._CONST.drawer_nav_items_class
+      this._CONST.drawer_nav_items_selector
     );
 
     this._windowResizeEventHandler = () => this._resizeEvent();

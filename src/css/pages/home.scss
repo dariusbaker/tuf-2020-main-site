@@ -612,6 +612,25 @@
     }
   }
 
+  &__content-wrapper::before {
+    display: block;
+    content: '';
+
+    width: 100%;
+
+    // 2 lines of title === fontsize * 2
+    // line height is .9
+    margin-top: - ($tuf-section-title * 2) / 2 - ($tuf-section-title * .9);
+
+    @media only screen and (min-width: rem(500)) {
+      margin-top: - ($tuf-section-title-t * 2) / 2 - ($tuf-section-title * .9);
+    }
+
+    @media only screen and (min-width: rem(1024)) {
+      margin-top: - ($tuf-section-title-d * 2) / 2 - ($tuf-section-title * .9);
+    }
+  }
+
   &__content {
     display: flex;
 

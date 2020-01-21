@@ -17,6 +17,7 @@ class Home {
       seek_items_idle_selector: '.tuf-home-what-do-you-seek__content__cards__items',
       seek_items_idle_hidden_class: 'tuf-home-what-do-you-seek__content__cards__items--hidden',
       seek_dialog_title_selector: '#seek-dialog-title',
+      seek_dialog_subtitle_selector: '#seek-dialog-subtitle',
       seek_dialog_type_selector: '#seek-dialog-type',
       seek_dialog_content_selector: '#seek-dialog-content',
       seek_dialog_image_selector: '#seek-dialog-image',
@@ -48,6 +49,10 @@ class Home {
 
     this._seekDialogTitleElem = document.querySelector(
       this._CONST.seek_dialog_title_selector
+    );
+
+    this._seekDialogSubtitleElem = document.querySelector(
+      this._CONST.seek_dialog_subtitle_selector
     );
 
     this._seekDialogTypeElem = document.querySelector(
@@ -116,6 +121,13 @@ class Home {
   }
 
   _toggleSeekOptions() {
+    // only enable carousel if width < 1024px
+    let mql = window.matchMedia('(min-width: 1024px)');
+
+    if (mql.matches) {
+      return;
+    }
+
     if (this._seekNavOpen) {
       this._seekNavigationElem.classList.remove(
         this._CONST.seek_navigation_visible_class
@@ -141,9 +153,13 @@ class Home {
     // bind content
     this._seekDialogTitleElem.innerText = seekDetails[0].title;
 
+    this._seekDialogSubtitleElem.innerText = seekDetails[0].subtitle;
+
     this._seekDialogTypeElem.innerText = seekDetails[0].type;
 
     this._seekDialogImageElem.src = seekDetails[0].image;
+
+    this._seekDialogImageElem.setAttribute('alt', seekDetails[0].title);
 
     this._seekDialogContentElem.innerHTML = seekDetails[0].content.map((item) => `<p>${item}</p>`).join('');
 
@@ -154,6 +170,9 @@ class Home {
       // show dialog
       this._seekDialogElem.classList.add(this._CONST.seek_item_dialog_visible_class);
     }
+
+    // close nav
+    this._toggleSeekOptions();
 
     console.log(seekDetails);
   }

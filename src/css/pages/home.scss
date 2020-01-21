@@ -633,7 +633,7 @@
 
     align-items: center;
 
-    padding: $tuf-content-padding;
+    padding: 0;
 
     @media (min-width: rem(600)) {
       padding: $tuf-content-padding-t;
@@ -648,7 +648,7 @@
     &__navigation {
       flex-basis: 30%;
       position: relative;
-      width: rem(240);
+      width: rem(280);
 
       @media screen and (min-width: rem(1024)) {
         width: auto;
@@ -821,13 +821,110 @@
     top: 0;
     left: 0;
 
+    z-index: index($z-elements, dialog);
+
+    display: flex;
+
+    flex-direction: column;
+
     width: 100%;
     min-height: 100%;
+
+    background-color: $tuf-color-primary;
 
     visibility: hidden;
     opacity: 1;
 
     transition: visibility 0s, opacity .25s ease;
+
+    @media only screen and (min-width: rem(1024)) {
+      flex-direction: row;
+
+      background-color: transparent;
+    }
+
+    &__image {
+      flex-basis: 45%;
+
+      text-align: center;
+
+      img {
+        max-width: rem(188);
+
+        margin-top: rem(32);
+
+        @media only screen and (min-width: rem(1024)) {
+          max-width: rem(360);
+
+          margin-top: 0;
+        }
+      }
+    }
+
+    &__content-wrapper {
+      flex-basis: 55%;
+
+      box-sizing: border-box;
+
+      padding: rem(32) rem(16);
+
+      color: $tuf-color-white;
+
+      @media only screen and (min-width: rem(1024)) {
+        padding: 0 rem(32);
+      }
+    }
+
+    &__type {
+      font-size: rem(18);
+      font-weight: $tuf-font-weight-bold;
+
+      text-transform: uppercase;
+
+      @media only screen and (min-width:rem(1024)) {
+        font-size: rem(24);
+      }
+    }
+
+    &__subtitle {
+      font-size: rem(14);
+
+      font-style: italic;
+
+      font-weight: $tuf-font-weight-light;
+
+      @media only screen and (min-width:rem(1024)) {
+        font-size: rem(18);
+      }
+    }
+
+    &__title {
+      font-size: rem(36);
+      font-weight: $tuf-font-weight-bold;
+      color: $tuf-color-yellow;
+
+      @media only screen and (min-width:rem(1024)) {
+        font-size: rem(48);
+      }
+    }
+
+    &__content {
+      margin-top: rem(24);
+
+      font-size: rem(14);
+
+      font-weight: $tuf-font-weight-light;
+
+      line-height: 1.6;
+
+      p {
+        margin-bottom: rem(16);
+      }
+
+      @media only screen and (min-width:rem(1024)) {
+        font-size: rem(18);
+      }
+    }
 
     &--visible {
       opacity: 1;

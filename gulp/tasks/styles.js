@@ -10,7 +10,9 @@ const { src }      = require('gulp');
 
 const postcssProcessors = [
   autoprefixer,
-  mqpacker,
+  mqpacker({
+    sort: true
+  }),
   cssnano,
 ];
 

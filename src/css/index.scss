@@ -1,13 +1,14 @@
 @import 'utils/vars';
 @import 'utils/colors';
-@import 'utils/type';
 @import 'utils/functions';
 @import 'utils/mixins';
 @import 'utils/helpers';
+@import 'utils/type';
 
 @import 'base/reset';
 @import 'base/base';
 @import 'base/layout';
+@import 'base/type';
 
 // glide carousel
 // Required Core Stylesheet

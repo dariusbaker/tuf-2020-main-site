@@ -13,8 +13,8 @@
       {{home.hero.title|safe}}
     </h1>
     <div class="tuf-home-hero__footnote">
-      <p>{{home.hero.footnote_1}}</p>
-      <p class="tuf-home-hero__footnote-highlight">{{home.hero.footnote_2}}</p>
+      <p>{{home.hero.footnote_1|safe}}</p>
+      <p class="tuf-home-hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
     </div>
   </div>
   <div class="tuf-home-hero__cta">
@@ -34,10 +34,10 @@
 <section id="{{home.mission.slug}}"  class="tuf-section tuf-home-mission-section">
   <div class="tuf-home-mission">
     <h2>
-      {{home.mission.title}}
+      {{home.mission.title|safe}}
     </h2>
     <p>
-      {{home.mission.content}}
+      {{home.mission.content|safe}}
     </p>
   </div>
 </section>
@@ -48,7 +48,7 @@
   id="{{home.clients.slug}}" 
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
   <h2 class="tuf-section-title tuf-home-clients__title">
-    {{home.clients.title}}
+    {{home.clients.title|safe}}
   </h2>
   <div class="tuf-home-clients__carousel">
     <div class="tuf-home-clients__list-bg"></div>
@@ -78,7 +78,7 @@
         <li class="glide__slide tuf-home-testimonials__list-item">
           <blockquote>
             <p>
-              {{testimonial.content}}
+              {{testimonial.content|safe}}
             </p>
             <footer>
               — {{testimonial.name}}
@@ -98,12 +98,23 @@
 </section>
 <!-- end of testimonials section -->
 
+
+<!-- ask ava section -->
+<section
+  id="{{home.ask_ava.slug}}"
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-ask-ava">
+  <h2 class="tuf-section-title tuf-home-ask-ava__title">
+    {{home.ask_ava.title|safe}}
+  </h2>
+</section>
+<!-- end of ask ava section -->
+
 <!-- what we do section -->
 <section
   id="{{home.what_we_do.slug}}"
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-what-we-do-section">
   <h2 class="tuf-section-title tuf-home-what-we-do__title">
-    {{home.what_we_do.title}}
+    {{home.what_we_do.title|safe}}
   </h2>
   <div class="tuf-home-what-we-do__list">
     <div class="glide__track" data-glide-el="track">
@@ -171,7 +182,7 @@
   id="{{home.case_studies.slug}}"
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-case-studies">
   <h2 class="tuf-section-title tuf-home-case-studies__title">
-    {{home.case_studies.title}}
+    {{home.case_studies.title|safe}}
   </h2>
   <ul class="tuf-home-case-studies__list" aria-label="{{home.case_studies.title}}">
     {% for item in home.case_studies.items %}
@@ -199,12 +210,15 @@
 </section>
 <!-- end of case studies section -->
 
+<!-- what do you seek section -->
+<!-- end of what do you seek section -->
+
 <!-- instagram section -->
 <section
   id="{{home.instagram.slug}}"
   class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-instagram">
   <h2 class="tuf-section-title tuf-home-instagram__title">
-    {{home.instagram.title}}
+    {{home.instagram.title|safe}}
   </h2>
   <ul class="tuf-home-instagram__list" aria-label="{{home.instagram.title}}">
     {% for item in home.instagram.items %}
@@ -228,7 +242,7 @@
   <div class="tuf-home-talk-to-us__left">
     <div>
       <h2 class="tuf-home-talk-to-us__left__title">
-        {{home.talk_to_us.title}}
+        {{home.talk_to_us.title|safe}}
       </h2>
       <p class="tuf-home-talk-to-us__left__content">
         {{home.talk_to_us.content}}<br/>

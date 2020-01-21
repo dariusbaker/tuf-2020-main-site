@@ -127,6 +127,9 @@
       }
     ]
   },
+  "ask_ava": {
+    "title": "Ask Ava"
+  },
   "case_studies": {
     "slug": "case-studies",
     "title": "Case Studies",

@@ -31,6 +31,10 @@
 
   transition: background-color 125ms linear, transform 400ms ease;
 
+  @media (min-width: 728px) {
+    padding: $tuf-header-padding-t;
+  }
+
   &--scrolled {
     transform: translate3d(0, -100%, 0);
   }
@@ -172,6 +176,14 @@
   &__logo {
     height: rem(30);
 
+    @media (min-width: 728px) {
+      height: rem(35);
+    }
+
+    @media (min-width: rem(1300)) {
+      height: rem(60);
+    }
+
     img {
       width: auto;
       height: 100%;
@@ -180,6 +192,14 @@
 
   &__nav {
     display: none;
+
+    @media (min-width: 1024px) {
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+    }
 
     &-items {
       margin-right: rem(24);
@@ -195,6 +215,10 @@
       color: $tuf-color-clickable;
 
       outline: none;
+
+      @media (min-width: rem(1024)) {
+        font-size: rem(14);
+      }
 
       &::after {
         position: absolute;
@@ -221,40 +245,12 @@
         }
       }
     }
-
-    @media (min-width: 1024px) {
-      display: flex;
-
-      flex-direction: row;
-
-      align-items: center;
-    }
   }
 
-  @media (min-width: 728px) {
-    & {
-      padding: $tuf-header-padding-t;
-    }
+  &__nav-item-secondary-btn {
+    font-size: rem(14);
 
-    &__logo {
-      height: rem(35);
-    }
-  }
-
-  @media (min-width: rem(1024)) {
-    &__nav-item,
-    &__nav-item-secondary-btn {
-      font-size: rem(14);
-    }
-  }
-
-  @media (min-width: rem(1300)) {
-    &__logo {
-      height: rem(60);
-    }
-
-    &__nav-item,
-    &__nav-item-secondary-btn {
+    @media (min-width: rem(768)) {
       font-size: rem(16);
     }
   }

@@ -64,6 +64,7 @@
 
     @media (min-width: rem(768)) {
       margin-top: rem(64);
+      font-size: rem(30);
     }
   }
 
@@ -193,14 +194,14 @@
 
     width: 100%;
 
-    margin-top: - $tuf-section-title / 2;
+    margin-top: - rem($tuf-section-title / 2);
 
     @media only screen and (min-width: rem(500)) {
-      margin-top: - $tuf-section-title-t / 2;
+      margin-top: - rem($tuf-section-title-t / 2);
     }
 
     @media only screen and (min-width: rem(1024)) {
-      margin-top: - $tuf-section-title-d / 2;
+      margin-top: - rem($tuf-section-title-d / 2);
     }
   }
 
@@ -618,16 +619,14 @@
 
     width: 100%;
 
-    // 2 lines of title === fontsize * 2
-    // line height is .9
-    margin-top: - ($tuf-section-title * 2) / 2 - ($tuf-section-title * .9);
+    margin-top: - rem(($tuf-section-title * 2) - ($tuf-section-title * .9));
 
     @media only screen and (min-width: rem(500)) {
-      margin-top: - ($tuf-section-title-t * 2) / 2 - ($tuf-section-title * .9);
+      margin-top: - rem(($tuf-section-title-t * 2) - ($tuf-section-title-t * .9));
     }
 
     @media only screen and (min-width: rem(1024)) {
-      margin-top: - ($tuf-section-title-d * 2) / 2 - ($tuf-section-title * .9);
+      margin-top: - rem(($tuf-section-title-d * 2) - ($tuf-section-title-d * .9));
     }
   }
 

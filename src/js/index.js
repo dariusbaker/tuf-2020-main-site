@@ -9,7 +9,7 @@ class TUF {
     // initialise header
     new Header();
 
-    var scroll = new SmoothScroll('a[href*="#"]');
+    new SmoothScroll('a[href*="#"]');
   }
 }
 

@@ -3,6 +3,10 @@
 
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/home.css">
+{% endblock %}
+
 {% block content %}
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">

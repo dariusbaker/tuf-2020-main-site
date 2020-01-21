@@ -1,0 +1,41 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-pp-hero {
+  margin-top: rem(88);
+
+  @media (min-width: rem(768)) {
+    flex-direction: row;
+  }
+
+  @media (min-width: rem(1024)) {
+    margin-top: rem(132);
+  }
+}
+
+.tuf-pp-content {
+  font-weight: $tuf-font-weight-light;
+  line-height: 1.5;
+  color: $tuf-color-white;
+
+  &__title {
+    margin: rem(48) 0 rem(24);
+    font-weight: $tuf-font-weight-bold;
+  }
+
+  &__ordered-list {
+    &--1 {
+      list-style-type: decimal;
+      margin-left: rem(20);
+    }
+
+    &--2 {
+      list-style-type: lower-latin;
+      margin-left: rem(40);
+      margin-bottom: rem(16);
+    }
+  }
+}

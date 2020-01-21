@@ -1,0 +1,50 @@
+{% extends "base.njk" %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/privacy-policy.css">
+{% endblock %}
+
+{% block content %}
+<section
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-pp-hero">
+  <h1 class="tuf-section-title tuf-pp-hero__title">
+    {{privacy_policy.title|safe}}
+  </h1>
+</section>
+
+<section
+  class="tuf-section tuf-section--full-bleed tuf-pp-content">
+  {% for item in privacy_policy.items %}
+    <h2 class="tuf-pp-content__title">
+      {{item.title|safe}}
+    </h2>
+    {% if item.content %}
+    <p>
+      {{item.content|safe}}
+    </p>
+    {% else %}
+      <ol class="tuf-pp-content__ordered-list--1">
+      {% for subitem in item.items %}
+        <li>
+          {{subitem.content|safe}}
+          {% if subitem.subitems %}
+            <ol class="tuf-pp-content__ordered-list--2">
+              {% for microitem in subitem.subitems %}
+              <li>
+                {{microitem|safe}}
+              </li>
+              {% endfor %}
+            </ol>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ol>
+    {% endif %}
+  {% endfor %}
+</section>
+
+<!-- talk to us section -->
+{% include 'partials/footer.njk' %}
+<!-- end of talk to us section -->
+
+{% endblock %}

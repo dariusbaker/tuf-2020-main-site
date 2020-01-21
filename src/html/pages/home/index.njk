@@ -211,6 +211,40 @@
 <!-- end of case studies section -->
 
 <!-- what do you seek section -->
+<section
+  id="{{home.what_do_you_seek.slug}}"
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-what-do-you-seek">
+  <h2 class="tuf-section-title tuf-home-what-do-you-seek__title">
+    {{home.what_do_you_seek.title|safe}}
+  </h2>
+  <div class="tuf-home-what-do-you-seek__content">
+    <div class="tuf-home-what-do-you-seek__content__navigation">
+      <label class="tuf-home-what-do-you-seek__content__navigation__label" for="what-do-you-seek-list">
+        Pick one
+      </label>
+      <div class="tuf-home-what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+        <ul class="tuf-home-what-do-you-seek__content__navigation__items">
+          {% for item in home.what_do_you_seek.items %}
+          <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" role="button">
+            {{item.type}}
+          </li>
+          {% endfor %}
+        </ul>
+        <p class="tuf-home-what-do-you-seek__content__navigation__footnote">
+        Or simply
+        </p>
+        {{
+          button_link(
+            classes="tuf-home-what-do-you-seek__content__navigation__cta",
+            type="primary",
+            label=home.what_do_you_seek.cta.label,
+            href=home.what_do_you_seek.cta.href
+          )
+        }}
+      </div>
+    </div>
+  </div>
+</section>
 <!-- end of what do you seek section -->
 
 <!-- instagram section -->

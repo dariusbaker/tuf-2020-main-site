@@ -25,7 +25,7 @@
   ],
   "nav_cta": {
     "label": "Talk to us",
-    "href": "/#talk-to-us"
+    "href": "#talk-to-us"
   },
   "follow_us": {
     "title": "Follow us:",

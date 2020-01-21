@@ -14,11 +14,13 @@
 
   background-color: $tuf-color-secondary;
 
-  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,.26);
-
   transform: translate3d(0, 0, 0);
 
-  transition: background-color 125ms linear, transform 400ms ease;
+  transition: background-color 125ms linear, box-shadow 125ms linear, transform 400ms ease;
+
+  &--shadow {
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,.26);
+  }
 
   &--scrolled {
     transform: translate3d(0, -100%, 0);

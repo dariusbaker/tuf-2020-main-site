@@ -24,6 +24,7 @@ function templating() {
       meta: getData('meta'),
       global: getData('global'),
       home: getData('home'),
+      privacy_policy: getData('privacy-policy'),
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))

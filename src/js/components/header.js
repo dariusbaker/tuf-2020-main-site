@@ -11,6 +11,7 @@ export default class Header {
       scrolled_class: 'tuf-header-wrapper--scrolled',
       animating_header_class: 'tuf-header-wrapper--animating',
       transparent_header_class: 'tuf-header-wrapper--transparent',
+      shadow_header_class: 'tuf-header-wrapper--shadow',
       lock_scroll_class: 'tuf-no-scroll',
       drawer_opened_class: 'tuf-header__nav-drawer--opened',
       drawer_nav_items_selector: '.tuf-header__nav-drawer__nav-item',
@@ -233,6 +234,7 @@ export default class Header {
     // This is for preventing the nav from getting lock in a hidden state.
     } else if (this._isAtTop  && !this._animating && hasScrolledClass) {
       this._headerElement.classList.add(this._CONST.transparent_header_class);
+      this._headerElement.classList.remove(this._CONST.shadow_header_class);
       this._showNav();
     }
 
@@ -240,8 +242,10 @@ export default class Header {
 
     // if it's at top, apply transparent header
     if (this._isAtTop) {
+      this._headerElement.classList.remove(this._CONST.shadow_header_class);
       this._headerElement.classList.add(this._CONST.transparent_header_class);
     } else {
+      this._headerElement.classList.add(this._CONST.shadow_header_class);
       this._headerElement.classList.remove(this._CONST.transparent_header_class);
     }
 

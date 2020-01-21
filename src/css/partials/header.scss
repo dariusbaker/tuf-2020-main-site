@@ -4,13 +4,33 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
-.tuf-header {
+.tuf-header-wrapper {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
 
   z-index: index($z-elements, header);
 
+  background-color: $tuf-color-secondary;
+
+  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,.26);
+
+  transform: translate3d(0, 0, 0);
+
+  transition: background-color 125ms linear, transform 400ms ease;
+
+  &--scrolled {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.tuf-header {
   display: flex;
 
   align-content: center;
@@ -23,25 +43,8 @@
 
   padding: $tuf-header-padding;
 
-  background-color: $tuf-color-secondary;
-
-  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,.26);
-
-  transform: translate3d(0, 0, 0);
-
-  transition: background-color 125ms linear, transform 400ms ease;
-
   @media (min-width: 728px) {
     padding: $tuf-header-padding-t;
-  }
-
-  &--scrolled {
-    transform: translate3d(0, -100%, 0);
-  }
-
-  &--transparent {
-    background-color: transparent;
-    box-shadow: none;
   }
 
   &__mobile-menu-toggler {

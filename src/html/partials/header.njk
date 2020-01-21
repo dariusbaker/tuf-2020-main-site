@@ -1,4 +1,4 @@
-{% from "../macros/button.njk" import button_link %}
+{% from "macros/button.njk" import button_link %}
 
 <header class="tuf-header-wrapper">
   <a href="#main" class="tuf-header__skip">
@@ -68,6 +68,7 @@
       {% if global.nav_cta %}
         {{
           button_link(
+            classes="tuf-header__nav-drawer__nav-item",
             type="secondary",
             label=global.nav_cta.label,
             href=global.nav_cta.href

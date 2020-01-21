@@ -13,7 +13,7 @@ export default class Header {
       transparent_header_class: 'tuf-header--transparent',
       lock_scroll_class: 'tuf-no-scroll',
       drawer_opened_class: 'tuf-header__nav-drawer--opened',
-      drawer_nav_items_class: 'tuf-header__nav-drawer__nav-item',
+      drawer_nav_items_class: '.tuf-header__nav-drawer__nav-item',
     };
 
     this._isScrolling = false;
@@ -33,7 +33,9 @@ export default class Header {
     this._mobileNavTogglerElement = document.querySelector('.tuf-header__mobile-menu-toggler');
     this._screenLockElement = document.querySelector('.tuf-backdrop');
     this._mobileNavDrawerElement = document.getElementById('tuf-nav-drawer');
-    this._drawerNavItemsElement = document.querySelectorAll('.tuf-header__nav-drawer__nav-item');
+    this._drawerNavItemsElement = document.querySelectorAll(
+      this._CONST.drawer_nav_items_class
+    );
 
     this._windowResizeEventHandler = () => this._resizeEvent();
     this._scrollEventHandler = () => this._scrollHandler();

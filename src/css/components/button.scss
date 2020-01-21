@@ -11,7 +11,7 @@
 
   box-sizing: border-box;
 
-  font-size: rem(16);
+  font-size: rem(22);
 
   font-weight: $tuf-font-weight-bold;
 
@@ -23,6 +23,10 @@
   border-radius: rem(30);
 
   cursor: pointer;
+
+  @media (min-width: rem(768)) {
+    font-size: rem(30);
+  }
 
   &--primary {
     border: rem(2) solid $tuf-color-clickable;

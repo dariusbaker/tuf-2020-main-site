@@ -30,12 +30,12 @@
 <!-- end of hero section -->
 
 <!-- mission section -->
-<section id="{{home.mission.slug}}"  class="tuf-section tuf-home-mission-section">
+<section id="{{home.mission.slug}}" class="tuf-section tuf-home-mission-section">
   <div class="tuf-home-mission">
-    <h2>
+    <h2 class="tuf-home-mission__title">
       {{home.mission.title|safe}}
     </h2>
-    <p>
+    <p class="tuf-home-mission__content">
       {{home.mission.content|safe}}
     </p>
   </div>
@@ -216,33 +216,62 @@
   <h2 class="tuf-section-title tuf-home-what-do-you-seek__title">
     {{home.what_do_you_seek.title|safe}}
   </h2>
-  <div class="tuf-home-what-do-you-seek__content">
-    <div class="tuf-home-what-do-you-seek__content__navigation">
-      <label class="tuf-home-what-do-you-seek__content__navigation__label" for="what-do-you-seek-list">
-        Pick one
-        <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
-          <use xlink:href="#down" />
-        </svg>
-      </label>
-      <div class="tuf-home-what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
-        <ul class="tuf-home-what-do-you-seek__content__navigation__items">
+  <div class="tuf-home-what-do-you-seek__content-wrapper">
+    <div class="tuf-home-what-do-you-seek__content">
+      <div class="tuf-home-what-do-you-seek__content__navigation">
+        <label class="tuf-home-what-do-you-seek__content__navigation__label" for="what-do-you-seek-list" role="label">
+          Pick one
+          <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
+            <use xlink:href="#down" />
+          </svg>
+        </label>
+        <div class="tuf-home-what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+          <ul class="tuf-home-what-do-you-seek__content__navigation__items">
+            {% for item in home.what_do_you_seek.items %}
+            <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" tabindex="0" role="option">
+              {{item.type}}
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="tuf-home-what-do-you-seek__content__navigation__footnote">
+          Or simply
+          </p>
+          {{
+            button_link(
+              classes="tuf-home-what-do-you-seek__content__navigation__cta",
+              type="primary",
+              label=home.what_do_you_seek.cta.label,
+              href=home.what_do_you_seek.cta.href
+            )
+          }}
+        </div>
+      </div>
+      <div class="tuf-home-what-do-you-seek__content__cards">
+        <div class="tuf-home-what-do-you-seek__content__cards__items">
           {% for item in home.what_do_you_seek.items %}
-          <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" role="button">
-            {{item.type}}
-          </li>
+          <img class="tuf-home-what-do-you-seek__content__cards__item" src="/assets/img/tuf-seek-card-idle.png" />
           {% endfor %}
-        </ul>
-        <p class="tuf-home-what-do-you-seek__content__navigation__footnote">
-        Or simply
-        </p>
-        {{
-          button_link(
-            classes="tuf-home-what-do-you-seek__content__navigation__cta",
-            type="primary",
-            label=home.what_do_you_seek.cta.label,
-            href=home.what_do_you_seek.cta.href
-          )
-        }}
+        </div>
+
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="seek-dialog-title"
+          class="tuf-home-what-do-you-seek__dialog">
+          <div class="tuf-home-what-do-you-seek__dialog__image">
+            <img src="" alt="" id="seek-dialog-image" />
+          </div>
+          <div class="tuf-home-what-do-you-seek__dialog__content-wrapper">
+            <header>
+              <p id="seek-dialog-type" class="tuf-home-what-do-you-seek__dialog__type"></p>
+              <h3 id="seek-dialog-title" class="tuf-home-what-do-you-seek__dialog__title">
+              </h3>
+              <p id="seek-dialog-subtitle" class="tuf-home-what-do-you-seek__dialog__subtitle"></p>
+            </header>
+            <div id="seek-dialog-content" class="tuf-home-what-do-you-seek__dialog__content">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -279,5 +308,8 @@
 
 
 {% block page_script %}
+<script>
+  var seekList = JSON.parse('{{home.what_do_you_seek.items|json|safe}}');
+</script>
 <script src="/assets/js/home.min.js"></script>
 {% endblock %}

@@ -3,6 +3,10 @@ const DIST   = 'dist';
 const SRC    = 'src';
 const DATA   = 'data';
 
+const nunjucksEnv = function(environment) {
+  environment.addFilter('json', JSON.stringify);
+}
+
 module.exports = {
   SRC: {
     ROOT: SRC,
@@ -34,6 +38,7 @@ module.exports = {
   },
 
   NUNJUCKS_OPTIONS: {
-    path: [`./src/html`, `./src`]
+    path: [`./src/html`, `./src`],
+    manageEnv: nunjucksEnv
   }
 };

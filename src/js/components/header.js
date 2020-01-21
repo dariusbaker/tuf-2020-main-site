@@ -8,13 +8,13 @@ export default class Header {
         up: 'up',
         bottom: 'bottom'
       },
-      scrolled_class: 'tuf-header--scrolled',
-      animating_header_class: 'tuf-header--animating',
-      transparent_header_class: 'tuf-header--transparent',
+      scrolled_class: 'tuf-header-wrapper--scrolled',
+      animating_header_class: 'tuf-header-wrapper--animating',
+      transparent_header_class: 'tuf-header-wrapper--transparent',
       lock_scroll_class: 'tuf-no-scroll',
       drawer_opened_class: 'tuf-header__nav-drawer--opened',
       drawer_nav_items_selector: '.tuf-header__nav-drawer__nav-item',
-      header_selector: '.tuf-header',
+      header_selector: '.tuf-header-wrapper',
       mobile_toggler_selector: '.tuf-header__mobile-menu-toggler',
       backdrop_selector: '.tuf-backdrop',
       nav_drawer_selector: '#tuf-nav-drawer'

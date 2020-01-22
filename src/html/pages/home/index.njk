@@ -222,7 +222,7 @@
   <h2 class="tuf-section-title tuf-home-what-do-you-seek__title">
     {{home.what_do_you_seek.title|safe}}
   </h2>
-  <div class="tuf-content-padding tuf-home-what-do-you-seek__content-wrapper">
+  <div class="tuf-home-what-do-you-seek__content-wrapper">
     <div class="tuf-home-what-do-you-seek__content">
       <div class="tuf-home-what-do-you-seek__content__navigation">
         <label
@@ -259,7 +259,7 @@
         </div>
       </div>
       <div class="tuf-home-what-do-you-seek__content__cards">
-        <div class="tuf-home-what-do-you-seek__content__cards__items">
+        <div class="tuf-content-padding tuf-home-what-do-you-seek__content__cards__items">
           {% for item in home.what_do_you_seek.items %}
           <img class="tuf-home-what-do-you-seek__content__cards__item" src="/assets/img/tuf-seek-card-idle.png" />
           {% endfor %}
@@ -269,7 +269,7 @@
           role="dialog"
           aria-modal="true"
           aria-labelledby="seek-dialog-title"
-          class="tuf-home-what-do-you-seek__dialog">
+          class="tuf-content-padding tuf-home-what-do-you-seek__dialog">
           <div class="tuf-home-what-do-you-seek__dialog__image">
             <img src="" alt="" id="seek-dialog-image" />
           </div>

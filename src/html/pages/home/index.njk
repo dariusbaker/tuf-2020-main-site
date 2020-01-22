@@ -10,7 +10,7 @@
 {% block content %}
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
-  <img class="hero__bg" src="/assets/img/hero-hand.png" />
+  <img class="hero__bg" src="/assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
   <div class="hero">
     <h1 class="hero__header">
       {{home.hero.title|safe}}
@@ -94,7 +94,7 @@
 
     <div class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
       {% for testimonial in home.testimonials.items %}
-      <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
+      <button aria-label="testimonial item {{loop.index}}" class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
       {% endfor %}
     </div>
   </div>
@@ -155,7 +155,7 @@
     </div>
     <div class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
       {% for item in home.what_we_do.items %}
-      <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
+      <button aria-label="what we do list item {{loop.index}}" class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
       {% endfor %}
     </div>
   </div>
@@ -227,8 +227,7 @@
         <label
           data-label="{{home.what_do_you_seek.filter_label | safe}}"
           class="what-do-you-seek__content__navigation__label"
-          for="what-do-you-seek-list"
-          role="label">
+          for="what-do-you-seek-list">
           <span>
             {{home.what_do_you_seek.filter_label | safe}}
           </span>
@@ -260,7 +259,10 @@
       <div class="what-do-you-seek__content__cards">
         <div class="tuf-content-padding what-do-you-seek__content__cards__items">
           {% for item in home.what_do_you_seek.items %}
-          <img class="what-do-you-seek__content__cards__item" src="/assets/img/tuf-seek-card-idle.png" />
+          <img
+            class="what-do-you-seek__content__cards__item"
+            alt="{{home.what_do_you_seek.title|safe}} tarrots card"
+            src="/assets/img/tuf-seek-card-idle.png" />
           {% endfor %}
         </div>
 
@@ -310,7 +312,7 @@
         href="{{item.href}}"
         target="_blank"
         rel="noopener noreferrer">
-        <img src="{{item.image}}" alt="{{meow.alt}}" />
+        <img src="{{item.image}}" alt="{{item.alt}}" />
       </a>
     </li>
     {% endfor %}

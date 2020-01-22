@@ -108,20 +108,29 @@
   <h2 class="tuf-section-title ask-ava__title">
     {{home.ask_ava.title|safe}}
   </h2>
-  <div class="ask-ava__content">
+  <div class="tuf-content-padding ask-ava__content">
     <div class="ask-ava__content__head" role="img" aria-label="Ava">
       <div class="ask-ava__content__head-items">
-        <img class="ask-ava__content__head__bg" src="/assets/img/ava.png" />
+        <img draggable="false" class="ask-ava__content__head__bg" src="/assets/img/ava.png" />
         <div class="ask-ava__content__head__lips">
-          <img class="ask-ava__content__head__lips--default" src="/assets/img/ava-mouth-default.png" />
-          <img class="ask-ava__content__head__lips--a-e" src="/assets/img/ava-mouth-a-e.png" />
-          <img class="ask-ava__content__head__lips--c-ee" src="/assets/img/ava-mouth-c-ee.png" />
-          <img class="ask-ava__content__head__lips--f-v" src="/assets/img/ava-mouth-f-v.png" />
-          <img class="ask-ava__content__head__lips--o" src="/assets/img/ava-mouth-o.png" />
-          <img class="ask-ava__content__head__lips--oo-w" src="/assets/img/ava-mouth-oo-w.png" />
-          <img class="ask-ava__content__head__lips--s-x" src="/assets/img/ava-mouth-s-x.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--default" src="/assets/img/ava-mouth-default.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--a-e" src="/assets/img/ava-mouth-a-e.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="/assets/img/ava-mouth-c-ee.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--o" src="/assets/img/ava-mouth-o.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="/assets/img/ava-mouth-oo-w.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--s-x" src="/assets/img/ava-mouth-s-x.png" />
         </div>
       </div>
+    </div>
+    <div class="ask-ava__content__text">
+      <div id="ask-ava-text" role="log" aria-live="polite">
+        Hello Seeker, how may I be of assistance?
+      </div>
+      <button class="ask-ava__content__text__btn" id="ask-ava-text-next">
+        <svg role="img">
+          <use xlink:href="#icon-arrow-right" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>

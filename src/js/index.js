@@ -6,7 +6,7 @@ class TUF {
     // allow transitions
     document.body.classList.remove('not-ready');
 
-    // initialise header
+    // initialise headerN
     new Header();
 
     new SmoothScroll('a[href*="#"]');

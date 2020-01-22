@@ -191,7 +191,6 @@
     {% set home_case_studies = case_studies | selectattr('featured_in_home') | list | sort(false, false, 'featured_in_home') %}
     {% for item in home_case_studies %}
     <li class="case-studies__list__item">
-
     {{
       case_study_card(
         classses = '',
@@ -201,7 +200,7 @@
         image = item.image
       )
     }}
-    <li>
+    </li>
     {% endfor %}
   </ul>
   {{

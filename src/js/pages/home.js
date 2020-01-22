@@ -171,6 +171,8 @@ class Home {
 
       this._seekDialogOpen = false;
 
+      this._selectedSeekType = null;
+
       // reset label text
       this._updateSeekFilterLabel();
     }

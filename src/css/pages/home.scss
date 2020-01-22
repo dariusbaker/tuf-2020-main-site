@@ -846,11 +846,6 @@
     }
 
     &__close-btn {
-      position: absolute;
-
-      bottom: rem(16);
-      left: 50%;
-
       display: flex;
 
       align-items: center;
@@ -860,21 +855,13 @@
       width: rem(48);
       height: rem(48);
 
+      margin: 0 auto;
+
       border: rem(2) solid $tuf-color-clickable;
 
       border-radius: 50%;
 
       background-color: transparent;
-
-      transform: translate(-50%, 0);
-
-      @media only screen and (min-width: rem(1024)) {
-        bottom: auto;
-        left: auto;
-
-        top: 0;
-        right: 0;
-      }
 
       svg {
         width: rem(24);

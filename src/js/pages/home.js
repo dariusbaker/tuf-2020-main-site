@@ -5,23 +5,23 @@ import { debounce } from '../utils';
 class Home {
   constructor() {
     this._CONST = {
-      clients_selector: '.tuf-home-clients__list',
-      testimonials_selector: '.tuf-home-testimonials__list',
-      what_we_do_selector: '.tuf-home-what-we-do__list',
-      seek_label_selector: '.tuf-home-what-do-you-seek__content__navigation__label',
-      seek_navigation_selector: '.tuf-home-what-do-you-seek__content__navigation-wrapper',
-      seek_navigation_visible_class: 'tuf-home-what-do-you-seek__content__navigation-wrapper--visible',
-      seek_item_selector: '.tuf-home-what-do-you-seek__content__navigation__item',
-      seek_item_dialog_selector: '.tuf-home-what-do-you-seek__dialog',
-      seek_item_dialog_visible_class: 'tuf-home-what-do-you-seek__dialog--visible',
-      seek_items_idle_selector: '.tuf-home-what-do-you-seek__content__cards__items',
-      seek_items_idle_hidden_class: 'tuf-home-what-do-you-seek__content__cards__items--hidden',
+      clients_selector: '.clients__list',
+      testimonials_selector: '.testimonials__list',
+      what_we_do_selector: '.what-we-do__list',
+      seek_label_selector: '.what-do-you-seek__content__navigation__label',
+      seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
+      seek_navigation_visible_class: 'what-do-you-seek__content__navigation-wrapper--visible',
+      seek_item_selector: '.what-do-you-seek__content__navigation__item',
+      seek_item_dialog_selector: '.what-do-you-seek__dialog',
+      seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
+      seek_items_idle_selector: '.what-do-you-seek__content__cards__items',
+      seek_items_idle_hidden_class: 'what-do-you-seek__content__cards__items--hidden',
       seek_dialog_title_selector: '#seek-dialog-title',
       seek_dialog_subtitle_selector: '#seek-dialog-subtitle',
       seek_dialog_type_selector: '#seek-dialog-type',
       seek_dialog_content_selector: '#seek-dialog-content',
       seek_dialog_image_selector: '#seek-dialog-image',
-      seek_dialog_close_selector: '.tuf-home-what-do-you-seek__dialog__close-btn'
+      seek_dialog_close_selector: '.what-do-you-seek__dialog__close-btn'
     };
 
     this._whatWeDoCarousel = null;
@@ -314,7 +314,7 @@ class Home {
   }
 
   _removeWhatWeDoGlideSlideClone() {
-    const whatWeDoSlideClones = document.querySelectorAll('.tuf-home-what-we-do__list .glide__slide--clone');
+    const whatWeDoSlideClones = document.querySelectorAll('.what-we-do__list .glide__slide--clone');
 
     whatWeDoSlideClones.forEach((elem) => {
       elem.parentNode.removeChild(elem);

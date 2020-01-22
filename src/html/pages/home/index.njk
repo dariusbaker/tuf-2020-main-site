@@ -10,20 +10,20 @@
 {% block content %}
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
-  <img class="tuf-home-hero__bg" src="/assets/img/hero-hand.png" />
-  <div class="tuf-home-hero">
-    <h1 class="tuf-home-hero__header">
+  <img class="hero__bg" src="/assets/img/hero-hand.png" />
+  <div class="hero">
+    <h1 class="hero__header">
       {{home.hero.title|safe}}
     </h1>
-    <div class="tuf-home-hero__footnote">
+    <div class="hero__footnote">
       <p>{{home.hero.footnote_1|safe}}</p>
-      <p class="tuf-home-hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
+      <p class="hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
     </div>
   </div>
-  <div class="tuf-home-hero__cta">
+  <div class="hero__cta">
     {{
       button_link(
-        classes="tuf-home-hero__cta__link",
+        classes="hero__cta__link",
         type="primary",
         label=home.hero.cta.label,
         href=home.hero.cta.href
@@ -34,12 +34,12 @@
 <!-- end of hero section -->
 
 <!-- mission section -->
-<section id="{{home.mission.slug}}" class="tuf-section tuf-home-mission-section">
-  <div class="tuf-home-mission">
-    <h2 class="tuf-home-mission__title">
+<section id="{{home.mission.slug}}" class="tuf-section mission-section">
+  <div class="mission">
+    <h2 class="mission__title">
       {{home.mission.title|safe}}
     </h2>
-    <p class="tuf-home-mission__content">
+    <p class="mission__content">
       {{home.mission.content|safe}}
     </p>
   </div>
@@ -49,19 +49,19 @@
 <!-- clients section -->
 <section
   id="{{home.clients.slug}}" 
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-section">
-  <h2 class="tuf-section-title tuf-home-clients__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding clients-section">
+  <h2 class="tuf-section-title clients__title">
     {{home.clients.title|safe}}
   </h2>
-  <div class="tuf-home-clients__carousel">
-    <div class="tuf-home-clients__list-bg"></div>
-    <div class="tuf-home-clients__list">
+  <div class="clients__carousel">
+    <div class="clients__list-bg"></div>
+    <div class="clients__list">
       <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides glide__track tuf-home-clients__list-items">
+        <ul class="glide__slides glide__track clients__list-items">
           {% for client in home.clients.items %}
           <li
             aria-label="{{client.name}}"
-            class="glide__slide tuf-home-clients__list-item">
+            class="glide__slide clients__list-item">
             <img src="{{client.image}}" alt="{{client.name}}" />
           </li>
           {% endfor %}
@@ -73,12 +73,12 @@
 <!-- end of clients section -->
 
 <!-- testimonials section -->
-<section id="{{home.testimonials.slug}}" class="tuf-section tuf-home-testimonials-section">
-  <div class="tuf-home-testimonials__list">
+<section id="{{home.testimonials.slug}}" class="tuf-section testimonials-section">
+  <div class="testimonials__list">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides glide__track tuf-home-testimonials__list-items">
+      <ul class="glide__slides glide__track testimonials__list-items">
         {% for testimonial in home.testimonials.items %}
-        <li class="glide__slide tuf-home-testimonials__list-item">
+        <li class="glide__slide testimonials__list-item">
           <blockquote>
             <p>
               {{testimonial.content|safe}}
@@ -92,7 +92,7 @@
       </ul>
     </div>
 
-    <div class="glide__bullets tuf-home-testimonials__list-paginations" data-glide-el="controls[nav]">
+    <div class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
       {% for testimonial in home.testimonials.items %}
       <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
       {% endfor %}
@@ -105,8 +105,8 @@
 <!-- ask ava section -->
 <section
   id="{{home.ask_ava.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-ask-ava">
-  <h2 class="tuf-section-title tuf-home-ask-ava__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding ask-ava">
+  <h2 class="tuf-section-title ask-ava__title">
     {{home.ask_ava.title|safe}}
   </h2>
 </section>
@@ -115,33 +115,33 @@
 <!-- what we do section -->
 <section
   id="{{home.what_we_do.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-clients-what-we-do-section">
-  <h2 class="tuf-section-title tuf-home-what-we-do__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding what-we-do-section">
+  <h2 class="tuf-section-title what-we-do__title">
     {{home.what_we_do.title|safe}}
   </h2>
-  <div class="tuf-home-what-we-do__list">
+  <div class="what-we-do__list">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides glide__track tuf-home-what-we-do__list-items">
+      <ul class="glide__slides glide__track what-we-do__list-items">
         {% for item in home.what_we_do.items %}
-        <li class="glide__slide tuf-home-what-we-do__list-item">
+        <li class="glide__slide what-we-do__list-item">
           <a
             href="{{item.href}}"
-            class="glide__slide tuf-home-what-we-do__list-item__card">
+            class="glide__slide what-we-do__list-item__card">
             <img
               src="{{item.image}}"
               alt="{{item.title}}"
-              class="tuf-home-what-we-do__list-item__card__image" />
-            <h3 class="tuf-home-what-we-do__list-item__card__title">
+              class="what-we-do__list-item__card__image" />
+            <h3 class="what-we-do__list-item__card__title">
               {{item.title|safe}}
             </h3>
-            <p class="tuf-home-what-we-do__list-item__card__content">
+            <p class="what-we-do__list-item__card__content">
               {{item.content|safe}}
             </p>
-            <small class="tuf-home-what-we-do__list-item__card__footnote">
+            <small class="what-we-do__list-item__card__footnote">
               {{item.footnote|safe}}
             </small>
-            <div class="tuf-home-what-we-do__list-item__card__link">
-              <div class="tuf-home-what-we-do__list-item__card__link__icon">
+            <div class="what-we-do__list-item__card__link">
+              <div class="what-we-do__list-item__card__link__icon">
                 <svg role="img">
                   <use xlink:href="#icon-arrow-right" />
                 </svg>
@@ -153,15 +153,15 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="glide__bullets tuf-home-what-we-do__list-paginations" data-glide-el="controls[nav]">
+    <div class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
       {% for item in home.what_we_do.items %}
       <button class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
       {% endfor %}
     </div>
   </div>
-  <div class="tuf-content-padding tuf-home-what-we-do__footnote">
-    <div class="tuf-home-what-we-do__footnote__content">
-      <h4 class="tuf-home-what-we-do__footnote__content__title">
+  <div class="tuf-content-padding what-we-do__footnote">
+    <div class="what-we-do__footnote__content">
+      <h4 class="what-we-do__footnote__content__title">
         {{home.what_we_do.footnote.title}}
       </h4>
       <p>
@@ -171,7 +171,7 @@
   </div>
   {{
     button_link(
-      classes="tuf-home-what-we-do__cta",
+      classes="what-we-do__cta",
       type="primary",
       label=home.what_we_do.cta.label,
       href=home.what_we_do.cta.href
@@ -183,14 +183,14 @@
 <!-- case studies section -->
 <section
   id="{{home.case_studies.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-case-studies">
-  <h2 class="tuf-section-title tuf-home-case-studies__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding case-studies">
+  <h2 class="tuf-section-title case-studies__title">
     {{home.case_studies.title|safe}}
   </h2>
-  <ul class="tuf-content-padding tuf-home-case-studies__list" aria-label="{{home.case_studies.title}}">
+  <ul class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
     {% set home_case_studies = case_studies | selectattr('featured_in_home') | list | sort(false, false, 'featured_in_home') %}
     {% for item in home_case_studies %}
-    <li class="tuf-home-case-studies__list__item">
+    <li class="case-studies__list__item">
 
     {{
       case_study_card(
@@ -206,7 +206,7 @@
   </ul>
   {{
     button_link(
-      classes="tuf-home-case-studies__cta",
+      classes="case-studies__cta",
       type="primary",
       label=home.case_studies.cta.label,
       href=home.case_studies.cta.href
@@ -218,39 +218,39 @@
 <!-- what do you seek section -->
 <section
   id="{{home.what_do_you_seek.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-what-do-you-seek">
-  <h2 class="tuf-section-title tuf-home-what-do-you-seek__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding what-do-you-seek">
+  <h2 class="tuf-section-title what-do-you-seek__title">
     {{home.what_do_you_seek.title|safe}}
   </h2>
-  <div class="tuf-home-what-do-you-seek__content-wrapper">
-    <div class="tuf-home-what-do-you-seek__content">
-      <div class="tuf-home-what-do-you-seek__content__navigation">
+  <div class="what-do-you-seek__content-wrapper">
+    <div class="what-do-you-seek__content">
+      <div class="what-do-you-seek__content__navigation">
         <label
           data-label="{{home.what_do_you_seek.filter_label | safe}}"
-          class="tuf-home-what-do-you-seek__content__navigation__label"
+          class="what-do-you-seek__content__navigation__label"
           for="what-do-you-seek-list"
           role="label">
           <span>
             {{home.what_do_you_seek.filter_label | safe}}
           </span>
-          <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
+          <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
             <use xlink:href="#down" />
           </svg>
         </label>
-        <div class="tuf-home-what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
-          <ul class="tuf-home-what-do-you-seek__content__navigation__items" role="listbox">
+        <div class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+          <ul class="what-do-you-seek__content__navigation__items" role="listbox">
             {% for item in home.what_do_you_seek.items %}
-            <li data-type="{{item.type}}" class="tuf-home-what-do-you-seek__content__navigation__item" tabindex="0" role="option">
+            <li data-type="{{item.type}}" class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
               {{item.type}}
             </li>
             {% endfor %}
           </ul>
-          <p class="tuf-home-what-do-you-seek__content__navigation__footnote">
+          <p class="what-do-you-seek__content__navigation__footnote">
           Or simply
           </p>
           {{
             button_link(
-              classes="tuf-home-what-do-you-seek__content__navigation__cta",
+              classes="what-do-you-seek__content__navigation__cta",
               type="primary",
               label=home.what_do_you_seek.cta.label,
               href=home.what_do_you_seek.cta.href
@@ -258,10 +258,10 @@
           }}
         </div>
       </div>
-      <div class="tuf-home-what-do-you-seek__content__cards">
-        <div class="tuf-content-padding tuf-home-what-do-you-seek__content__cards__items">
+      <div class="what-do-you-seek__content__cards">
+        <div class="tuf-content-padding what-do-you-seek__content__cards__items">
           {% for item in home.what_do_you_seek.items %}
-          <img class="tuf-home-what-do-you-seek__content__cards__item" src="/assets/img/tuf-seek-card-idle.png" />
+          <img class="what-do-you-seek__content__cards__item" src="/assets/img/tuf-seek-card-idle.png" />
           {% endfor %}
         </div>
 
@@ -269,22 +269,22 @@
           role="dialog"
           aria-modal="true"
           aria-labelledby="seek-dialog-title"
-          class="tuf-content-padding tuf-home-what-do-you-seek__dialog">
-          <div class="tuf-home-what-do-you-seek__dialog__image">
+          class="tuf-content-padding what-do-you-seek__dialog">
+          <div class="what-do-you-seek__dialog__image">
             <img src="" alt="" id="seek-dialog-image" />
           </div>
-          <div class="tuf-home-what-do-you-seek__dialog__content-wrapper">
+          <div class="what-do-you-seek__dialog__content-wrapper">
             <header>
-              <p id="seek-dialog-type" class="tuf-home-what-do-you-seek__dialog__type"></p>
-              <h3 id="seek-dialog-title" class="tuf-home-what-do-you-seek__dialog__title">
+              <p id="seek-dialog-type" class="what-do-you-seek__dialog__type"></p>
+              <h3 id="seek-dialog-title" class="what-do-you-seek__dialog__title">
               </h3>
-              <p id="seek-dialog-subtitle" class="tuf-home-what-do-you-seek__dialog__subtitle"></p>
+              <p id="seek-dialog-subtitle" class="what-do-you-seek__dialog__subtitle"></p>
             </header>
-            <div id="seek-dialog-content" class="tuf-home-what-do-you-seek__dialog__content">
+            <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
             </div>
           </div>
           <div>
-            <button class="tuf-home-what-do-you-seek__dialog__close-btn">
+            <button class="what-do-you-seek__dialog__close-btn">
               <svg role="img">
                 <use xlink:href="#close" />
               </svg>
@@ -300,13 +300,13 @@
 <!-- instagram section -->
 <section
   id="{{home.instagram.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-home-instagram">
-  <h2 class="tuf-section-title tuf-home-instagram__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding instagram">
+  <h2 class="tuf-section-title instagram__title">
     {{home.instagram.title|safe}}
   </h2>
-  <ul class="tuf-content-padding tuf-home-instagram__list" aria-label="{{home.instagram.title}}">
+  <ul class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
     {% for item in home.instagram.items %}
-    <li class="tuf-home-instagram__list__item">
+    <li class="instagram__list__item">
       <a
         href="{{item.href}}"
         target="_blank"

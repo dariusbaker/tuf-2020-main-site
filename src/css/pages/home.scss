@@ -19,7 +19,7 @@
   }
 }
 
-.tuf-home-hero {
+.hero {
   position: relative;
   display: flex;
 
@@ -144,7 +144,7 @@
   }
 }
 
-.tuf-home-mission {
+.mission {
   display: flex;
 
   flex-direction: column;
@@ -184,7 +184,7 @@
   }
 }
 
-.tuf-home-clients {
+.clients {
   $grid-size: rem(24);
   $grid-rows: 4;
 
@@ -254,7 +254,7 @@
   }
 }
 
-.tuf-home-testimonials {
+.testimonials {
   &-section {
     width: 100%;
   }
@@ -304,13 +304,13 @@
   }
 }
 
-.tuf-home-ask-ava {
+.ask-ava {
   &__title {
     text-align: right;
   }
 }
 
-.tuf-home-what-we-do {
+.what-we-do {
   &__list {
     position: relative;
     width: 100%;
@@ -528,7 +528,7 @@
   }
 }
 
-.tuf-home-case-studies {
+.case-studies {
   &__title {
     margin-left: auto;
 
@@ -579,7 +579,7 @@
   }
 }
 
-.tuf-home-what-do-you-seek {
+.what-do-you-seek {
   &__title {
     margin-left: auto;
 
@@ -951,7 +951,7 @@
   }
 }
 
-.tuf-home-instagram {
+.instagram {
   &__list {
     position: relative;
 

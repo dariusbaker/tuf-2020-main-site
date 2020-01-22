@@ -1,8 +1,8 @@
+@import '../utils/functions';
+@import '../utils/mixins';
 @import '../utils/vars';
 @import '../utils/colors';
 @import '../utils/type';
-@import '../utils/functions';
-@import '../utils/mixins';
 
 // carousel style overwrite
 .glide__bullets {
@@ -317,6 +317,8 @@
 
     max-width: rem(1440);
 
+    padding: 0;
+
     @media (min-width: rem(1310)) {
       padding: $tuf-content-padding-d;
     }
@@ -491,18 +493,8 @@
   }
 
   &__footnote {
-    padding: $tuf-content-padding;
-
     margin-top: rem(64);
     margin-bottom: rem(48);
-
-    @media (min-width: rem(600)) {
-      padding: $tuf-content-padding-t;
-    }
-
-    @media (min-width: rem(1024)) {
-      padding: $tuf-content-padding-d;
-    }
 
     &__content {
       padding: rem(24);
@@ -569,22 +561,12 @@
 
     max-width: rem(1440);
 
-    padding: $tuf-content-padding;
-
     margin-bottom: rem(48);
-
-    @media (min-width: rem(600)) {
-      padding: $tuf-content-padding-t;
-    }
 
     @media (min-width: rem(768)) {
       flex-direction: row;
 
       flex-wrap: wrap;
-    }
-
-    @media (min-width: rem(1024)) {
-      padding: $tuf-content-padding-d;
     }
 
     &__item {

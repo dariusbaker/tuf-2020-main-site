@@ -20,3 +20,13 @@
     margin-top: rem(132);
   }
 }
+
+.tuf-case-studies-content {
+  margin-top: rem(24);
+
+  &__filter {
+    display: flex;
+
+    flex-direction: row;
+  }
+}

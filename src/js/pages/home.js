@@ -32,6 +32,8 @@ class Home {
       this._CONST.seek_label_selector
     );
 
+    this._seekLabelCopyElem = this._seekLabelElem.querySelector('span');
+
     this._seekNavigationElem = document.querySelector(
       this._CONST.seek_navigation_selector
     );
@@ -75,6 +77,8 @@ class Home {
     this._seekNavOpen = false;
 
     this._seekDialogOpen = false;
+
+    this._selectedSeekType = null;
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();
@@ -127,6 +131,8 @@ class Home {
       this._seekLabelElem.addEventListener('click', this._seekLabelClickHandler);
       this._seekLabelElem.addEventListener('keydown', this._seekLabelEnterHandler);
     }
+
+    this._updateSeekFilterLabel();
   }
 
   _toggleSeekOptions() {
@@ -150,6 +156,11 @@ class Home {
     this._seekNavOpen = !this._seekNavOpen;
   }
 
+  _resetWhatDoYouSeekFilterLabel() {
+    // reset label text
+    this._seekLabelCopyElem.innerText = this._seekLabelElem.getAttribute('data-label');
+  }
+
   _closeDialogEvent() {
     if (this._seekDialogOpen) {
       // hide dialog
@@ -159,7 +170,27 @@ class Home {
       this._seekIdleItemsElem.classList.remove(this._CONST.seek_items_idle_hidden_class);
 
       this._seekDialogOpen = false;
+
+      // reset label text
+      this._updateSeekFilterLabel();
     }
+  }
+
+  _updateSeekFilterLabel() {
+    // only enable carousel if width < 1024px
+    let mql = window.matchMedia('(min-width: 1024px)');
+
+    // if it's not a dropdown, do not update the label copy
+    if (!mql.matches) {
+      if (this._selectedSeekType) {
+        this._seekLabelCopyElem.innerText = this._selectedSeekType;
+      } else {
+        this._resetWhatDoYouSeekFilterLabel();
+      }
+      return;
+    }
+
+    this._resetWhatDoYouSeekFilterLabel();
   }
 
   _showSeekEvent(e) {
@@ -170,6 +201,8 @@ class Home {
     if (!seekDetails || !seekDetails.length) {
       return;
     }
+
+    this._selectedSeekType = type;
 
     // bind content
     this._seekDialogTitleElem.innerText = seekDetails[0].title;
@@ -192,8 +225,11 @@ class Home {
       this._seekDialogElem.classList.add(this._CONST.seek_item_dialog_visible_class);
     }
 
-    // close nav
+    // close nav if not mobile
     this._toggleSeekOptions();
+
+    // update filter label
+    this._updateSeekFilterLabel();
 
     this._seekDialogOpen = true;
   }

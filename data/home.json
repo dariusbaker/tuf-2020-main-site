@@ -141,6 +141,7 @@
   "what_do_you_seek": {
     "title": "What do you seek?",
     "slug": "what-do-you-seek",
+    "filter_label": "Pick One",
     "items": [
       {
         "type": "Branding",

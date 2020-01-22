@@ -1,0 +1,22 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-case-studies-hero {
+  margin-top: rem(88);
+  margin-bottom: 0;
+
+  &__title {
+    color: transparentize($tuf-color-primary, .5);
+  }
+
+  @media (min-width: rem(768)) {
+    flex-direction: row;
+  }
+
+  @media (min-width: rem(1024)) {
+    margin-top: rem(132);
+  }
+}

@@ -42,7 +42,8 @@ function templating() {
       global: getData('global'),
       home: getData('home'),
       privacy_policy: getData('privacy-policy'),
-      case_studies: getData('case-studies')
+      case_studies: getData('case-studies'),
+      case_studies_list: getData('case-studies-list')
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))

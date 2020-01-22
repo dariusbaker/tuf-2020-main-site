@@ -1,5 +1,50 @@
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/case-studies.css">
+{% endblock %}
+
 {% block content %}
-case-studies
+<section
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-case-studies-hero">
+  <h1 class="tuf-section-title tuf-case-studies-hero__title">
+    {{case_studies_list.title|safe}}
+  </h1>
+</section>
+
+<section
+  class="tuf-section tuf-section--full-bleed tuf-case-studies-content">
+  <!-- let's grab list of "unique" case studies tag -->
+  {% set tags = [] %}
+  {% for case_study in case_studies %}
+    {% if case_study.tags %}
+      {% for tag in case_study.tags %}
+        {% if tag not in tags %}
+          {% set _ =  tags.push(tag) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="tuf-case-studies-content__filter">
+    <label for="case-studies-filter">
+      {{case_studies_list.filter_label}}
+    </label>
+    <ul id="case-studies-filter">
+      <li tabindex="0" role="option" data-type="{{case_studies_list.filter_all | safe}}">
+        {{case_studies_list.filter_all | safe}}
+      </li>
+      {% for tag in (tags | sort) %}
+      <li tabindex="0" role="option" data-type="{{tag | safe}}">
+        {{tag|safe}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- talk to us section -->
+{% include 'partials/footer.njk' %}
+<!-- end of talk to us section -->
+
 {% endblock %}

@@ -91,3 +91,15 @@ body {
     }
   }
 }
+
+.tuf-content-padding {
+  padding: $tuf-content-padding;
+
+  @media (min-width: rem(600)) {
+    padding: $tuf-content-padding-t;
+  }
+
+  @media (min-width: rem(1024)) {
+    padding: $tuf-content-padding-d;
+  }
+}

@@ -56,6 +56,9 @@
 
     justify-content: space-around;
 
+    background-color: transparent;
+    border: 0;
+
     width: rem(32);
     height: rem(32);
 
@@ -101,7 +104,9 @@
 
     transform: translate3d(-100%, 0, 0);
 
-    transition: transform .35s ease-in-out;
+    visibility: hidden;
+
+    transition: visibility 0s, transform .35s ease-in-out;
 
     &__logo {
       height: rem(30);

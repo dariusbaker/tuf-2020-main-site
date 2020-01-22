@@ -4,7 +4,7 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
-.tuf-pp-hero {
+.hero {
   margin-top: rem(88);
   margin-bottom: 0;
 
@@ -21,7 +21,7 @@
   }
 }
 
-.tuf-pp-content {
+.content {
   font-weight: $tuf-font-weight-light;
   line-height: 1.5;
   color: $tuf-color-white;

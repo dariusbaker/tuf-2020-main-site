@@ -1,5 +1,95 @@
+{% from "macros/case-study-card.njk" import case_study_card %}
+
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/case-studies.css">
+{% endblock %}
+
 {% block content %}
-case-studies
+<section
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding hero">
+  <h1 class="tuf-section-title hero__title">
+    {{case_studies_list.title|safe}}
+  </h1>
+</section>
+
+<section
+  class="tuf-section tuf-section--full-bleed content">
+  <!-- let's grab list of "unique" case studies tag -->
+  {% set tags = [] %}
+  {% for case_study in case_studies %}
+    {% if case_study.tags %}
+      {% for tag in case_study.tags %}
+        {% if tag not in tags %}
+          {% set _ =  tags.push(tag) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="content__filter">
+    <label id="case-studies-filter-label" class="content__filter__label">
+      {{case_studies_list.filter_label}}
+    </label>
+    <div class="content__filter-wrapper">
+      <button
+        data-alltype="{{case_studies_list.filter_all | safe}}"
+        class="content__filter__btn"
+        aria-haspopup="listbox"
+        aria-labelledby="case-studies-filter-label case-studies-filter-btn"
+        id="case-studies-filter-btn">
+        <span>{{case_studies_list.filter_all | safe}}</span>
+        <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
+          <use xlink:href="#down" />
+        </svg>
+      </button>
+      <ul id="case-studies-filter" class="content__filter__list">
+        <li
+          class="content__filter__list-item"
+          tabindex="0"
+          role="option"
+          data-type="{{case_studies_list.filter_all | safe}}">
+          {{case_studies_list.filter_all | safe}}
+        </li>
+        {% for tag in (tags | sort) %}
+        <li
+          class="content__filter__list-item"
+          tabindex="0"
+          role="option"
+          data-type="{{tag | safe}}">
+          {{tag|safe}}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <ul class="content__list">
+    {% set case_studies_list = case_studies | list | sort(false, false, 'order') %}
+    {% for item in case_studies_list %}
+      <li
+        data-tags="{{item.tags}}"
+        class="content__list__item content__list__item--visible">
+      {{
+        case_study_card(
+          classses = '',
+          href = '/case-studies/' + item.slug,
+          title = item.title,
+          tags = item.tags,
+          image = item.image
+        )
+      }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- talk to us section -->
+{% include 'partials/footer.njk' %}
+<!-- end of talk to us section -->
+
+{% endblock %}
+
+{% block page_script %}
+<script src="/assets/js/case-studies.min.js"></script>
 {% endblock %}

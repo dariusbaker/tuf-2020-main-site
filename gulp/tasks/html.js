@@ -8,8 +8,25 @@ const { reload } = require('./browsersync');
 const del    = require('del');
 
 function getData(type) {
-  const data = JSON.parse(fs.readFileSync(`data/${type}.json`));
-  return data;
+  let isFolder = true;
+
+  const filePath = `${CONFIG.SRC.DATA}/${type}`;
+  try {
+    isFolder = fs.lstatSync(filePath).isDirectory()
+  } catch (e) {
+    isFolder = false;
+  }
+
+  if (!isFolder) {
+    const data = JSON.parse(fs.readFileSync(`${filePath}.json`));
+    return data;
+  }
+
+  const files = fs.readdirSync(filePath);
+
+  return files.map((file) => {
+    return JSON.parse(fs.readFileSync(`${filePath}/${file}`));
+  });
 }
 
 const html = series(
@@ -25,6 +42,8 @@ function templating() {
       global: getData('global'),
       home: getData('home'),
       privacy_policy: getData('privacy-policy'),
+      case_studies: getData('case-studies'),
+      case_studies_list: getData('case-studies-list')
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))

@@ -5,23 +5,23 @@ import { debounce } from '../utils';
 class Home {
   constructor() {
     this._CONST = {
-      clients_selector: '.tuf-home-clients__list',
-      testimonials_selector: '.tuf-home-testimonials__list',
-      what_we_do_selector: '.tuf-home-what-we-do__list',
-      seek_label_selector: '.tuf-home-what-do-you-seek__content__navigation__label',
-      seek_navigation_selector: '.tuf-home-what-do-you-seek__content__navigation-wrapper',
-      seek_navigation_visible_class: 'tuf-home-what-do-you-seek__content__navigation-wrapper--visible',
-      seek_item_selector: '.tuf-home-what-do-you-seek__content__navigation__item',
-      seek_item_dialog_selector: '.tuf-home-what-do-you-seek__dialog',
-      seek_item_dialog_visible_class: 'tuf-home-what-do-you-seek__dialog--visible',
-      seek_items_idle_selector: '.tuf-home-what-do-you-seek__content__cards__items',
-      seek_items_idle_hidden_class: 'tuf-home-what-do-you-seek__content__cards__items--hidden',
+      clients_selector: '.clients__list',
+      testimonials_selector: '.testimonials__list',
+      what_we_do_selector: '.what-we-do__list',
+      seek_label_selector: '.what-do-you-seek__content__navigation__label',
+      seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
+      seek_navigation_visible_class: 'what-do-you-seek__content__navigation-wrapper--visible',
+      seek_item_selector: '.what-do-you-seek__content__navigation__item',
+      seek_item_dialog_selector: '.what-do-you-seek__dialog',
+      seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
+      seek_items_idle_selector: '.what-do-you-seek__content__cards__items',
+      seek_items_idle_hidden_class: 'what-do-you-seek__content__cards__items--hidden',
       seek_dialog_title_selector: '#seek-dialog-title',
       seek_dialog_subtitle_selector: '#seek-dialog-subtitle',
       seek_dialog_type_selector: '#seek-dialog-type',
       seek_dialog_content_selector: '#seek-dialog-content',
       seek_dialog_image_selector: '#seek-dialog-image',
-      seek_dialog_close_selector: '.tuf-home-what-do-you-seek__dialog__close-btn'
+      seek_dialog_close_selector: '.what-do-you-seek__dialog__close-btn'
     };
 
     this._whatWeDoCarousel = null;
@@ -31,6 +31,8 @@ class Home {
     this._seekLabelElem = document.querySelector(
       this._CONST.seek_label_selector
     );
+
+    this._seekLabelCopyElem = this._seekLabelElem.querySelector('span');
 
     this._seekNavigationElem = document.querySelector(
       this._CONST.seek_navigation_selector
@@ -76,6 +78,10 @@ class Home {
 
     this._seekDialogOpen = false;
 
+    this._selectedSeekType = null;
+
+    this._minWidthForSeekDesktop = '1280px';
+
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();
     this._seekLabelEnterHandler = (e) => {
@@ -113,8 +119,8 @@ class Home {
   }
 
   _initSeekNav() {
-    // only enable carousel if width < 1024px
-    let mql = window.matchMedia('(min-width: 1024px)');
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
 
     if (mql.matches) {
       this._seekLabelElem.removeAttribute('tabindex');
@@ -127,11 +133,13 @@ class Home {
       this._seekLabelElem.addEventListener('click', this._seekLabelClickHandler);
       this._seekLabelElem.addEventListener('keydown', this._seekLabelEnterHandler);
     }
+
+    this._updateSeekFilterLabel();
   }
 
   _toggleSeekOptions() {
-    // only enable carousel if width < 1024px
-    let mql = window.matchMedia('(min-width: 1024px)');
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
 
     if (mql.matches) {
       return;
@@ -150,6 +158,11 @@ class Home {
     this._seekNavOpen = !this._seekNavOpen;
   }
 
+  _resetWhatDoYouSeekFilterLabel() {
+    // reset label text
+    this._seekLabelCopyElem.innerText = this._seekLabelElem.getAttribute('data-label');
+  }
+
   _closeDialogEvent() {
     if (this._seekDialogOpen) {
       // hide dialog
@@ -159,7 +172,29 @@ class Home {
       this._seekIdleItemsElem.classList.remove(this._CONST.seek_items_idle_hidden_class);
 
       this._seekDialogOpen = false;
+
+      this._selectedSeekType = null;
+
+      // reset label text
+      this._updateSeekFilterLabel();
     }
+  }
+
+  _updateSeekFilterLabel() {
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
+
+    // if it's not a dropdown, do not update the label copy
+    if (!mql.matches) {
+      if (this._selectedSeekType) {
+        this._seekLabelCopyElem.innerText = this._selectedSeekType;
+      } else {
+        this._resetWhatDoYouSeekFilterLabel();
+      }
+      return;
+    }
+
+    this._resetWhatDoYouSeekFilterLabel();
   }
 
   _showSeekEvent(e) {
@@ -170,6 +205,8 @@ class Home {
     if (!seekDetails || !seekDetails.length) {
       return;
     }
+
+    this._selectedSeekType = type;
 
     // bind content
     this._seekDialogTitleElem.innerText = seekDetails[0].title;
@@ -192,8 +229,11 @@ class Home {
       this._seekDialogElem.classList.add(this._CONST.seek_item_dialog_visible_class);
     }
 
-    // close nav
+    // close nav if not mobile
     this._toggleSeekOptions();
+
+    // update filter label
+    this._updateSeekFilterLabel();
 
     this._seekDialogOpen = true;
   }
@@ -274,7 +314,7 @@ class Home {
   }
 
   _removeWhatWeDoGlideSlideClone() {
-    const whatWeDoSlideClones = document.querySelectorAll('.tuf-home-what-we-do__list .glide__slide--clone');
+    const whatWeDoSlideClones = document.querySelectorAll('.what-we-do__list .glide__slide--clone');
 
     whatWeDoSlideClones.forEach((elem) => {
       elem.parentNode.removeChild(elem);

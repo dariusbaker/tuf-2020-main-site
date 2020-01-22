@@ -10,7 +10,8 @@ const nunjucksEnv = function(environment) {
 module.exports = {
   SRC: {
     ROOT: SRC,
-    DATA: `${DATA}/*.json`,
+    DATA,
+    DATA_FILES: `${DATA}/*.json`,
     HTML: `${SRC}/html/pages/**/*.{njk,nunjucks,html}`,
     JS  : `${SRC}/js`,
     CSS : `${SRC}/css`,

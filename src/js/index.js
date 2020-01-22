@@ -1,4 +1,5 @@
 import Header from './components/header.js';
+import SmoothScroll from 'smooth-scroll';
 
 class TUF {
   constructor() {
@@ -7,6 +8,8 @@ class TUF {
 
     // initialise header
     new Header();
+
+    new SmoothScroll('a[href*="#"]');
   }
 }
 

@@ -13,19 +13,14 @@
 
   margin: 0 auto;
 
-  padding: $tuf-content-padding;
-
   padding-bottom: rem(64);
 
   @media (min-width: rem(600)) {
-    padding: $tuf-content-padding-t;
-
     padding-bottom: rem(64);
   }
 
   @media (min-width: rem(1024)) {
     display: none;
-    padding: $tuf-content-padding-d;
     padding-bottom: rem(64);
   }
 

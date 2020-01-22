@@ -80,6 +80,8 @@ class Home {
 
     this._selectedSeekType = null;
 
+    this._minWidthForSeekDesktop = '1280px';
+
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();
     this._seekLabelEnterHandler = (e) => {
@@ -117,8 +119,8 @@ class Home {
   }
 
   _initSeekNav() {
-    // only enable carousel if width < 1024px
-    let mql = window.matchMedia('(min-width: 1024px)');
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
 
     if (mql.matches) {
       this._seekLabelElem.removeAttribute('tabindex');
@@ -136,8 +138,8 @@ class Home {
   }
 
   _toggleSeekOptions() {
-    // only enable carousel if width < 1024px
-    let mql = window.matchMedia('(min-width: 1024px)');
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
 
     if (mql.matches) {
       return;
@@ -179,8 +181,8 @@ class Home {
   }
 
   _updateSeekFilterLabel() {
-    // only enable carousel if width < 1024px
-    let mql = window.matchMedia('(min-width: 1024px)');
+    // only enable carousel if width < this._minWidthForSeekDesktop
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
 
     // if it's not a dropdown, do not update the label copy
     if (!mql.matches) {

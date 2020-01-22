@@ -621,7 +621,7 @@
 
     margin-top: rem(24);
 
-    @media only screen and (min-width: rem(1024)) {
+    @media only screen and (min-width: rem(1280)) {
       margin-top: - rem(($tuf-section-title-d * 2) - ($tuf-section-title-d * .9));
     }
   }
@@ -639,7 +639,7 @@
       padding: $tuf-content-padding-t;
     }
 
-    @media screen and (min-width: rem(1024)) {
+    @media screen and (min-width: rem(1280)) {
       flex-direction: row;
 
       padding: $tuf-content-padding-d;
@@ -650,7 +650,7 @@
       position: relative;
       width: rem(280);
 
-      @media screen and (min-width: rem(1024)) {
+      @media screen and (min-width: rem(1280)) {
         width: auto;
       }
 
@@ -683,7 +683,7 @@
           transform: scale(1);
         }
 
-        @media screen and (min-width: rem(1024)) {
+        @media screen and (min-width: rem(1280)) {
           position: relative;
           top: auto;
           left: auto;
@@ -732,12 +732,12 @@
 
           color: $tuf-color-clickable;
 
-          @media screen and (min-width: rem(1024)) {
+          @media screen and (min-width: rem(1280)) {
             display: none;
           }
         }
 
-        @media screen and (min-width: rem(1024)) {
+        @media screen and (min-width: rem(1280)) {
           cursor: default;
           font-size: rem(16);
         }
@@ -832,6 +832,10 @@
     width: 100%;
     min-height: 100%;
 
+    box-sizing: border-box;
+
+    padding: 0 rem(16);
+
     background-color: $tuf-color-primary;
 
     visibility: hidden;
@@ -841,6 +845,8 @@
 
     @media only screen and (min-width: rem(1024)) {
       flex-direction: row;
+
+      justify-content: center;
 
       background-color: transparent;
     }
@@ -872,8 +878,6 @@
     }
 
     &__image {
-      flex-basis: 45%;
-
       text-align: center;
 
       img {
@@ -881,17 +885,20 @@
 
         margin-top: rem(32);
 
-        @media only screen and (min-width: rem(1024)) {
-          max-width: rem(360);
+        @media only screen and (min-width: rem(768)) {
+          max-width: rem(280);
 
           margin-top: 0;
+        }
+
+        @media only screen and (min-width: rem(1024)) {
+          max-width: rem(350);
         }
       }
     }
 
     &__content-wrapper {
-      flex-basis: 55%;
-
+      max-width: 100%;
       box-sizing: border-box;
 
       padding: rem(32) rem(16);
@@ -899,6 +906,7 @@
       color: $tuf-color-white;
 
       @media only screen and (min-width: rem(1024)) {
+        max-width: rem(460);
         padding: 0 rem(32);
       }
     }

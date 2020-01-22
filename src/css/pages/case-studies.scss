@@ -34,12 +34,120 @@ body {
 }
 
 .tuf-case-studies-content {
+  min-height: rem(640);
   margin-top: rem(24);
 
   &__filter {
     display: flex;
 
     flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: rem(24);
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &__label,
+    &__btn,
+    &__list {
+      font-size: rem(20);
+      font-weight: $tuf-font-weight-bold;
+
+      @media only screen and (min-width: rem(768)) {
+        font-size: rem(40);
+      }
+
+      @media only screen and (min-width: rem(1024)) {
+        font-size: rem(60);
+      }
+    }
+
+    &__label {
+      color: transparentize($tuf-color-primary, .5);
+    }
+
+    &__btn {
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      height: 100%;
+
+      padding: 0 rem(24);
+
+      background-color: transparent;
+
+      border: none;
+
+      color: $tuf-color-turqoise;
+
+      cursor: pointer;
+
+      svg {
+        width: rem(24);
+        height: rem(24);
+
+        margin-left: rem(16);
+
+        color: $tuf-color-clickable;
+
+        @media only screen and (min-width: rem(768)) {
+          width: rem(48);
+          height: rem(48);
+        }
+
+        @media only screen and (min-width: rem(1024)) {
+          width: rem(64);
+          height: rem(64);
+        }
+      }
+    }
+
+    &__list {
+      position: absolute;
+
+      top: 100%;
+      left: 0;
+
+      z-index: index($z-elements, dropdown_seek);
+
+      padding: rem(16) rem(24);
+
+      line-height: 1.5;
+
+      visibility: hidden;
+
+      background-color: $tuf-color-dropdown;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: top;
+
+      transition: opacity .25s ease, transform .25s ease-in-out;
+
+      color: $tuf-color-white;
+
+      cursor: pointer;
+
+      &-item:hover,
+      &-item:focus {
+        text-decoration: underline;
+      }
+
+      &--visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+    }
   }
 
   &__list {
@@ -77,6 +185,7 @@ body {
 
     &__item {
       width: 0;
+      height: 0;
 
       transform-origin: center;
 
@@ -86,6 +195,7 @@ body {
 
       &--visible {
         width: 100%;
+        height: auto;
 
         visibility: visible;
 

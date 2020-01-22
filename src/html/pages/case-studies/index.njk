@@ -29,35 +29,47 @@
   {% endfor %}
 
   <div class="tuf-case-studies-content__filter">
-    <label for="case-studies-filter" class="tuf-case-studies-content__filter__label">
+    <label id="case-studies-filter-label" class="tuf-case-studies-content__filter__label">
       {{case_studies_list.filter_label}}
     </label>
-    <ul id="case-studies-filter" class="tuf-case-studies-content__filter__list">
-      <li
-        class="tuf-case-studies-content__filter__list-item"
-        tabindex="0"
-        role="option"
-        data-type="{{case_studies_list.filter_all | safe}}">
-        {{case_studies_list.filter_all | safe}}
-      </li>
-      {% for tag in (tags | sort) %}
-      <li
-        class="tuf-case-studies-content__filter__list-item"
-        tabindex="0"
-        role="option"
-        data-type="{{tag | safe}}">
-        {{tag|safe}}
-      </li>
-      {% endfor %}
-    </ul>
-    <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
-      <use xlink:href="#down" />
-    </svg>
+    <div class="tuf-case-studies-content__filter-wrapper">
+      <button
+        data-alltype="{{case_studies_list.filter_all | safe}}"
+        class="tuf-case-studies-content__filter__btn"
+        aria-haspopup="listbox"
+        aria-labelledby="case-studies-filter-label case-studies-filter-btn"
+        id="case-studies-filter-btn">
+        <span>{{case_studies_list.filter_all | safe}}</span>
+        <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
+          <use xlink:href="#down" />
+        </svg>
+      </button>
+      <ul id="case-studies-filter" class="tuf-case-studies-content__filter__list">
+        <li
+          class="tuf-case-studies-content__filter__list-item"
+          tabindex="0"
+          role="option"
+          data-type="{{case_studies_list.filter_all | safe}}">
+          {{case_studies_list.filter_all | safe}}
+        </li>
+        {% for tag in (tags | sort) %}
+        <li
+          class="tuf-case-studies-content__filter__list-item"
+          tabindex="0"
+          role="option"
+          data-type="{{tag | safe}}">
+          {{tag|safe}}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
   <ul class="tuf-case-studies-content__list">
     {% set case_studies_list = case_studies | list | sort(false, false, 'order') %}
     {% for item in case_studies_list %}
-      <li class="tuf-case-studies-content__list__item tuf-case-studies-content__list__item--visible">
+      <li
+        data-tags="{{item.tags}}"
+        class="tuf-case-studies-content__list__item tuf-case-studies-content__list__item--visible">
       {{
         case_study_card(
           classses = '',
@@ -76,4 +88,8 @@
 {% include 'partials/footer.njk' %}
 <!-- end of talk to us section -->
 
+{% endblock %}
+
+{% block page_script %}
+<script src="/assets/js/case-studies.min.js"></script>
 {% endblock %}

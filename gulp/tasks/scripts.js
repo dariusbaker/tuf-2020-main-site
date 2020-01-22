@@ -12,6 +12,7 @@ function scripts() {
       entry: {
         index: './src/js/index',
         home: './src/js/pages/home',
+        'case-studies': './src/js/pages/case-studies',
       },
       output: {
         filename: '[name].min.js',

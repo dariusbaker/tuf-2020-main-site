@@ -1,3 +1,5 @@
+{% from "macros/case-study-card.njk" import case_study_card %}
+
 {% extends "base.njk" %}
 
 {% block page_styles %}
@@ -27,20 +29,47 @@
   {% endfor %}
 
   <div class="tuf-case-studies-content__filter">
-    <label for="case-studies-filter">
+    <label for="case-studies-filter" class="tuf-case-studies-content__filter__label">
       {{case_studies_list.filter_label}}
     </label>
-    <ul id="case-studies-filter">
-      <li tabindex="0" role="option" data-type="{{case_studies_list.filter_all | safe}}">
+    <ul id="case-studies-filter" class="tuf-case-studies-content__filter__list">
+      <li
+        class="tuf-case-studies-content__filter__list-item"
+        tabindex="0"
+        role="option"
+        data-type="{{case_studies_list.filter_all | safe}}">
         {{case_studies_list.filter_all | safe}}
       </li>
       {% for tag in (tags | sort) %}
-      <li tabindex="0" role="option" data-type="{{tag | safe}}">
+      <li
+        class="tuf-case-studies-content__filter__list-item"
+        tabindex="0"
+        role="option"
+        data-type="{{tag | safe}}">
         {{tag|safe}}
       </li>
       {% endfor %}
     </ul>
+    <svg role="img" class="tuf-home-what-do-you-seek__content__navigation__label__icon">
+      <use xlink:href="#down" />
+    </svg>
   </div>
+  <ul class="tuf-case-studies-content__list">
+    {% set case_studies_list = case_studies | list | sort(false, false, 'order') %}
+    {% for item in case_studies_list %}
+      <li class="tuf-case-studies-content__list__item tuf-case-studies-content__list__item--visible">
+      {{
+        case_study_card(
+          classses = '',
+          href = item.href,
+          title = item.title,
+          tags = item.tags,
+          image = item.image
+        )
+      }}
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <!-- talk to us section -->

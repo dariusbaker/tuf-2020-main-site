@@ -4,6 +4,18 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+html,
+body {
+  background: $tuf-color-primary;
+  background: linear-gradient(
+    180deg,
+    transparentize($tuf-color-secondary ,0) 0%,
+    transparentize($tuf-color-primary, 0) 30%,
+    transparentize($tuf-color-primary, 0) 30%,
+    transparentize($tuf-color-secondary, 0) 100%
+  );
+}
+
 .tuf-case-studies-hero {
   margin-top: rem(88);
   margin-bottom: 0;
@@ -28,5 +40,59 @@
     display: flex;
 
     flex-direction: row;
+  }
+
+  &__list {
+    display: flex;
+
+    flex-direction: column;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    max-width: rem(1440);
+
+    padding: $tuf-content-padding;
+
+    margin-bottom: rem(48);
+
+    @media (min-width: rem(600)) {
+      padding: $tuf-content-padding-t;
+    }
+
+    @media (min-width: rem(768)) {
+      flex-direction: row;
+
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: rem(1024)) {
+      padding: $tuf-content-padding-d;
+    }
+
+    &__item {
+      width: 0;
+
+      transform-origin: center;
+
+      visibility: hidden;
+
+      transition: visibility 0s, width .25s ease-in-out;
+
+      &--visible {
+        width: 100%;
+
+        visibility: visible;
+
+        @media (min-width: rem(768)) {
+          width: calc(100% / 3);
+        }
+      }
+    }
   }
 }

@@ -188,7 +188,8 @@
     {{home.case_studies.title|safe}}
   </h2>
   <ul class="tuf-home-case-studies__list" aria-label="{{home.case_studies.title}}">
-    {% for item in home.case_studies.items %}
+    {% set home_case_studies = case_studies | selectattr('featured_in_home') | list | sort(false, false, 'featured_in_home') %}
+    {% for item in home_case_studies %}
     <li class="tuf-home-case-studies__list__item">
     {{
       case_study_card(

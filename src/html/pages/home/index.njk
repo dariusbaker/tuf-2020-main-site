@@ -191,10 +191,11 @@
     {% set home_case_studies = case_studies | selectattr('featured_in_home') | list | sort(false, false, 'featured_in_home') %}
     {% for item in home_case_studies %}
     <li class="tuf-home-case-studies__list__item">
+
     {{
       case_study_card(
         classses = '',
-        href = item.href,
+        href = '/case-studies/' + item.slug,
         title = item.title,
         tags = item.tags,
         image = item.image

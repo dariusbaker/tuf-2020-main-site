@@ -968,13 +968,11 @@
     margin-bottom: rem(48);
 
     &__item {
-      width: calc((100% / 3) - #{rem(12) * 2});
+      width: calc((100% / 3));
 
       margin-bottom: rem(24);
 
       @media (min-width: rem(768)) {
-        width: calc((100% / 3) - #{rem(24) * 2});
-
         margin-bottom: 0;
       }
 

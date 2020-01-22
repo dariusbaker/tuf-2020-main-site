@@ -8,14 +8,14 @@
 
 {% block content %}
 <section
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding tuf-case-studies-hero">
-  <h1 class="tuf-section-title tuf-case-studies-hero__title">
+  class="tuf-section tuf-section--full-bleed tuf-section--no-padding hero">
+  <h1 class="tuf-section-title hero__title">
     {{case_studies_list.title|safe}}
   </h1>
 </section>
 
 <section
-  class="tuf-section tuf-section--full-bleed tuf-case-studies-content">
+  class="tuf-section tuf-section--full-bleed content">
   <!-- let's grab list of "unique" case studies tag -->
   {% set tags = [] %}
   {% for case_study in case_studies %}
@@ -28,14 +28,14 @@
     {% endif %}
   {% endfor %}
 
-  <div class="tuf-case-studies-content__filter">
-    <label id="case-studies-filter-label" class="tuf-case-studies-content__filter__label">
+  <div class="content__filter">
+    <label id="case-studies-filter-label" class="content__filter__label">
       {{case_studies_list.filter_label}}
     </label>
-    <div class="tuf-case-studies-content__filter-wrapper">
+    <div class="content__filter-wrapper">
       <button
         data-alltype="{{case_studies_list.filter_all | safe}}"
-        class="tuf-case-studies-content__filter__btn"
+        class="content__filter__btn"
         aria-haspopup="listbox"
         aria-labelledby="case-studies-filter-label case-studies-filter-btn"
         id="case-studies-filter-btn">
@@ -44,9 +44,9 @@
           <use xlink:href="#down" />
         </svg>
       </button>
-      <ul id="case-studies-filter" class="tuf-case-studies-content__filter__list">
+      <ul id="case-studies-filter" class="content__filter__list">
         <li
-          class="tuf-case-studies-content__filter__list-item"
+          class="content__filter__list-item"
           tabindex="0"
           role="option"
           data-type="{{case_studies_list.filter_all | safe}}">
@@ -54,7 +54,7 @@
         </li>
         {% for tag in (tags | sort) %}
         <li
-          class="tuf-case-studies-content__filter__list-item"
+          class="content__filter__list-item"
           tabindex="0"
           role="option"
           data-type="{{tag | safe}}">
@@ -64,12 +64,12 @@
       </ul>
     </div>
   </div>
-  <ul class="tuf-case-studies-content__list">
+  <ul class="content__list">
     {% set case_studies_list = case_studies | list | sort(false, false, 'order') %}
     {% for item in case_studies_list %}
       <li
         data-tags="{{item.tags}}"
-        class="tuf-case-studies-content__list__item tuf-case-studies-content__list__item--visible">
+        class="content__list__item content__list__item--visible">
       {{
         case_study_card(
           classses = '',

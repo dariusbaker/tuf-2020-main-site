@@ -2,11 +2,11 @@ class CaseStudies {
   constructor() {
     this._CONST = {
       filter_btn_selector: '#case-studies-filter-btn',
-      listitems_selector: '.tuf-case-studies-content__list__item',
-      listitems_visible_class: 'tuf-case-studies-content__list__item--visible',
+      listitems_selector: '.content__list__item',
+      listitems_visible_class: 'content__list__item--visible',
       dropdown_list_selector: '#case-studies-filter',
-      dropdown_listitems_selector: '.tuf-case-studies-content__filter__list-item',
-      dropdown_list_visible_class: 'tuf-case-studies-content__filter__list--visible',
+      dropdown_listitems_selector: '.content__filter__list-item',
+      dropdown_list_visible_class: 'content__filter__list--visible',
     };
 
     this._filterBtnElem = document.querySelector(this._CONST.filter_btn_selector);

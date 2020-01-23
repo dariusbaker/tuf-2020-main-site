@@ -11,6 +11,7 @@ class Home {
       seek_label_selector: '.what-do-you-seek__content__navigation__label',
       seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
       seek_navigation_visible_class: 'what-do-you-seek__content__navigation-wrapper--visible',
+      seek_item_selected_class: 'what-do-you-seek__content__navigation__item--selected',
       seek_item_selector: '.what-do-you-seek__content__navigation__item',
       seek_item_dialog_selector: '.what-do-you-seek__dialog',
       seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
@@ -173,6 +174,9 @@ class Home {
 
       this._seekDialogOpen = false;
 
+      // remove selected state
+      this._removeSelectedSeekItemClass();
+
       this._selectedSeekType = null;
 
       // reset label text
@@ -197,6 +201,17 @@ class Home {
     this._resetWhatDoYouSeekFilterLabel();
   }
 
+  _removeSelectedSeekItemClass() {
+    // remove selected classes before
+    if (this._selectedSeekType) {
+      const prevSelected = document.querySelector(`.${this._CONST.seek_item_selected_class}`);
+
+      if (prevSelected) {
+        prevSelected.classList.remove(this._CONST.seek_item_selected_class);
+      }
+    }
+  }
+
   _showSeekEvent(e) {
     const type = e.target.getAttribute('data-type');
 
@@ -205,6 +220,12 @@ class Home {
     if (!seekDetails || !seekDetails.length) {
       return;
     }
+
+    // remove previously selected item
+    this._removeSelectedSeekItemClass();
+
+    // add selected class
+    e.target.classList.add(this._CONST.seek_item_selected_class);
 
     this._selectedSeekType = type;
 

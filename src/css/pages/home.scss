@@ -839,6 +839,12 @@
           min-height: rem(42);
           font-size: rem(24);
           line-height: 1.75;
+
+          &--selected {
+            span::after {
+              background-color: $tuf-color-clickable;
+            }
+          }
         }
       }
     }

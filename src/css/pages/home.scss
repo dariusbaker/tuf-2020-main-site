@@ -344,26 +344,7 @@
       }
 
       &__btn {
-        display: flex;
-
-        flex-direction: row;
-
-        align-items: center;
-        justify-content: center;
-        width: rem(48);
-        height: rem(48);
-
         margin-top: rem(48);
-
-        border: rem(2) solid $tuf-color-clickable;
-        border-radius: rem(48);
-        background-color: transparent;
-
-        svg {
-          width: rem(24);
-          height: rem(24);
-          color: $tuf-color-clickable;
-        }
       }
     }
 
@@ -557,25 +538,7 @@
         }
 
         &__icon {
-          display: flex;
-
-          align-items: center;
-          justify-content: center;
-
-          width: rem(40);
-          height: rem(40);
-
           margin-right: rem(16);
-
-          border: rem(2) solid $tuf-color-clickable;
-          border-radius: rem(40);
-        }
-
-        svg {
-          width: rem(24);
-          height: rem(24);
-
-          color: $tuf-color-clickable;
         }
       }
     }
@@ -929,29 +892,7 @@
     }
 
     &__close-btn {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      width: rem(48);
-      height: rem(48);
-
       margin: 0 auto;
-
-      border: rem(2) solid $tuf-color-clickable;
-
-      border-radius: 50%;
-
-      background-color: transparent;
-
-      svg {
-        width: rem(24);
-        height: rem(24);
-
-        color: $tuf-color-clickable;
-      }
     }
 
     &__image {

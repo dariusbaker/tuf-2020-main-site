@@ -43,11 +43,12 @@
 ) %}
   {% if isButton %}
     <button
+      class="tuf-icon-circle tuf-icon-circle--btn {{classes}}"
   {% else %}
     <div
+      class="tuf-icon-circle {{classes}}"
   {% endif %}
   {% if id %} id="{{ id }}" {% endif %}
-    class="tuf-icon-circle {{classes}}"
   >
     <svg role="img">
       <use xlink:href="#{{icon}}" />

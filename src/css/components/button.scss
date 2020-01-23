@@ -65,9 +65,25 @@
   border-radius: rem(48);
   background-color: transparent;
 
+  color: $tuf-color-clickable;
+
+  transition: border-color .25s ease-out, color .25s ease-out;
+
   svg {
     width: rem(24);
     height: rem(24);
-    color: $tuf-color-clickable;
+    color: inherit;
+  }
+
+  &--btn {
+    &:focus {
+      outline: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: transparentize($tuf-color-clickable, .3);
+      border-color: transparentize($tuf-color-clickable, .3);
+    }
   }
 }

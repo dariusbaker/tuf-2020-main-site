@@ -682,11 +682,11 @@
     }
 
     &__navigation {
-      flex-basis: 30%;
       position: relative;
       width: rem(280);
 
       @media screen and (min-width: rem(1280)) {
+        flex-basis: 30%;
         width: auto;
       }
 
@@ -795,7 +795,7 @@
       }
 
       &__item {
-        height: rem(36);
+        min-height: rem(36);
 
         font-size: rem(18);
         line-height: 2;
@@ -803,8 +803,40 @@
 
         cursor: pointer;
 
+        &:focus {
+          outline: none;
+        }
+
+        span {
+          position: relative;
+
+          pointer-events: none;
+        }
+
+        span::after {
+          position: absolute;
+          display: block;
+          bottom: -.25rem;
+          left: 0;
+          display: block;
+          content: '';
+          width: 100%;
+          height: rem(2);
+
+          background-color: transparent;
+
+          transition: background-color .25s ease-in-out;
+        }
+
+        &:focus,
+        &:hover {
+          span::after {
+            background-color: $tuf-color-white;
+          }
+        }
+
         @media screen and (min-width: rem(1024)) {
-          height: rem(42);
+          min-height: rem(42);
           font-size: rem(24);
           line-height: 1.75;
         }
@@ -813,7 +845,14 @@
 
     &__cards {
       position: relative;
-      flex-basis: 70%;
+
+      margin-top: rem(24);
+
+      @media screen and (min-width: rem(1280)) {
+        flex-basis: 70%;
+
+        margin-top: 0;
+      }
 
       &__item {
         width: calc((100% - (#{rem(24)} * 3)) / 4);

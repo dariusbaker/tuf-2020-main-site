@@ -267,7 +267,7 @@
           <ul class="what-do-you-seek__content__navigation__items" role="listbox">
             {% for item in home.what_do_you_seek.items %}
             <li data-type="{{item.type}}" class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
-              {{item.type}}
+              <span>{{item.type}}</span>
             </li>
             {% endfor %}
           </ul>

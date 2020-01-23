@@ -34,3 +34,27 @@
   {{label}}
 </a>
 {% endmacro %}
+
+{% macro icon_round(
+  classes = '',
+  isButton = false,
+  id = '',
+  icon = ''
+) %}
+  {% if isButton %}
+    <button
+  {% else %}
+    <div
+  {% endif %}
+  {% if id %} id="{{ id }}" {% endif %}
+    class="tuf-icon-circle {{classes}}"
+  >
+    <svg role="img">
+      <use xlink:href="#{{icon}}" />
+    </svg>
+  {% if isButton %}
+    </button>
+  {% else %}
+    </div>
+  {% endif %}
+{% endmacro %}

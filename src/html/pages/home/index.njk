@@ -1,4 +1,4 @@
-{% from "macros/button.njk" import button_link, button %}
+{% from "macros/button.njk" import button_link, button, icon_round %}
 {% from "macros/case-study-card.njk" import case_study_card %}
 
 {% extends "base.njk" %}
@@ -126,11 +126,14 @@
       <div id="ask-ava-text" role="log" aria-live="polite">
         Hello Seeker, how may I be of assistance?
       </div>
-      <button class="ask-ava__content__text__btn" id="ask-ava-text-next">
-        <svg role="img">
-          <use xlink:href="#icon-arrow-right" />
-        </svg>
-      </button>
+      {{
+        icon_round(
+          classes = 'ask-ava__content__text__btn',
+          id = 'ask-ava-text-next',
+          icon = 'icon-arrow-right',
+          isButton = true
+        )
+      }}
     </div>
   </div>
 </section>
@@ -165,11 +168,12 @@
               {{item.footnote|safe}}
             </small>
             <div class="what-we-do__list-item__card__link">
-              <div class="what-we-do__list-item__card__link__icon">
-                <svg role="img">
-                  <use xlink:href="#icon-arrow-right" />
-                </svg>
-              </div>
+              {{
+                icon_round(
+                  classes = 'what-we-do__list-item__card__link__icon',
+                  icon = 'icon-arrow-right'
+                )
+              }}
               {{item.cta_label}}
             </div>
           </a>
@@ -309,11 +313,13 @@
             </div>
           </div>
           <div>
-            <button class="what-do-you-seek__dialog__close-btn">
-              <svg role="img">
-                <use xlink:href="#close" />
-              </svg>
-            </button>
+            {{
+              icon_round(
+                classes = 'what-do-you-seek__dialog__close-btn',
+                icon = 'close',
+                isButton = true
+              )
+            }}
           </div>
         </div>
       </div>

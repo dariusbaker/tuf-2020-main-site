@@ -311,6 +311,21 @@
             </header>
             <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
             </div>
+            <ul class="what-do-you-seek__dialog__ctas">
+              {% for item in home.what_do_you_seek.item_ctas %}
+              <li>
+                <p>{{item.title}}</p>
+                {{
+                  button_link(
+                    classes="what-do-you-seek__dialog__ctas__link",
+                    type="primary",
+                    label=item.label,
+                    href=item.href
+                  )
+                }}
+              </li>
+              {% endfor %}
+            </ul>
           </div>
           <div>
             {{

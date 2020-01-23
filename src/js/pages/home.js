@@ -16,6 +16,7 @@ class Home {
       seek_item_dialog_selector: '.what-do-you-seek__dialog',
       seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
       seek_items_idle_selector: '.what-do-you-seek__content__cards__items',
+      seek_item_cta_links_selector: '.what-do-you-seek__dialog__ctas__link',
       seek_items_idle_hidden_class: 'what-do-you-seek__content__cards__items--hidden',
       seek_dialog_title_selector: '#seek-dialog-title',
       seek_dialog_subtitle_selector: '#seek-dialog-subtitle',

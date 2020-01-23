@@ -1009,6 +1009,7 @@
 
     &__content {
       margin-top: rem(24);
+      margin-bottom: rem(48);
 
       font-size: rem(14);
 
@@ -1022,6 +1023,26 @@
 
       @media only screen and (min-width:rem(1024)) {
         font-size: rem(18);
+      }
+    }
+
+
+    &__ctas {
+      color: $tuf-color-clickable;
+
+      p {
+        margin-bottom: rem(16);
+
+        font-size: rem(14);
+        font-weight: $tuf-font-weight-regular;
+
+        @media only screen and (min-width:rem(1024)) {
+          font-size: rem(16);
+        }
+      }
+
+      &__link {
+        width: fit-content;
       }
     }
 

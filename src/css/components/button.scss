@@ -26,16 +26,21 @@
     font-size: rem(30);
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &--primary {
     border: rem(2) solid $tuf-color-clickable;
 
     background-color: transparent;
 
-    transition: border-color .25s ease-in-out;
+    transition: border-color .25s ease-in-out, color .25s ease-in-out;
 
     &:hover,
     &:focus {
       border-color: transparentize($tuf-color-clickable, .2);
+      color: transparentize($tuf-color-white, .2);
     }
   }
 

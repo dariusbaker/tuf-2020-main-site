@@ -6,16 +6,58 @@
 
 // carousel style overwrite
 .glide__bullets {
-  bottom: rem(-32);
+  bottom: rem(-48);
 
   z-index: index($z-elements, carousel_navigations);
 
   .glide__bullet {
-    background-color: transparentize($tuf-color-secondary, .7);
+    position: relative;
+
+    width: rem(32);
+    height: rem(32);
+
+    margin: 0;
+
+    background-color: transparent;
+    box-shadow: none;
+
+    border: none;
+
+    &:before {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      display: block;
+
+      width: rem(9);
+      height: rem(9);
+
+      content: '';
+
+      border-radius: 50%;
+      border: rem(2) solid transparent;
+
+      background-color: transparentize($tuf-color-secondary, .7);
+
+      transform: translate(-50%, -50%);
+
+      transition: border-color .25s ease-in-out, background-color .25s ease-in-out;
+    }
+
+    &:hover {
+      border-color: transparent;
+      &:before {
+        border-color: $tuf-color-white;
+      }
+    }
   }
 
   .glide__bullet--active {
-    background-color: $tuf-color-turqoise;
+    &:before {
+      background-color: $tuf-color-turqoise;
+    }
   }
 }
 

@@ -1128,16 +1128,30 @@
         }
       }
 
-      img {
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        background-image: attr(data-image-src url);
+        background-size: cover;
+        background-position: center;
+
         transition: opacity .25s ease-in-out;
+
+        &:before {
+          display: block;
+          width: 100%;
+          padding-top: 100%;
+
+          content: '';
+        }
       }
 
       a:hover,
       a:focus {
         outline: none;
-        img {
-          opacity: .7;
-        }
+        opacity: .7;
       }
     }
   }

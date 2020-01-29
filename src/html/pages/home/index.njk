@@ -354,14 +354,23 @@
     {% for item in home.instagram.items %}
     <li class="instagram__list__item">
       <a
+        style="background-image: url({{item.image}})"
         href="{{item.href}}"
         target="_blank"
+        aria-label="{{item.alt}}"
         rel="noopener noreferrer">
-        <img src="{{item.image}}" alt="{{item.alt}}" />
       </a>
     </li>
     {% endfor %}
   </ul>
+  <template id="instagram-feed">
+    <li class="instagram__list__item">
+      <a
+        target="_blank"
+        rel="noopener noreferrer">
+      </a>
+    </li>
+  </template>
 </section>
 <!-- end of instagram section -->
 

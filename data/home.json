@@ -20,51 +20,51 @@
     "items": [
       {
         "name": "Accenture",
-        "image": "/assets/img/tuf-client-accenture.png"
+        "image": "./assets/img/tuf-client-accenture.png"
       },
       {
         "name": "AIA",
-        "image": "/assets/img/tuf-client-aia.png"
+        "image": "./assets/img/tuf-client-aia.png"
       },
       {
         "name": "Facebook",
-        "image": "/assets/img/tuf-client-facebook.png"
+        "image": "./assets/img/tuf-client-facebook.png"
       },
       {
         "name": "River Safari",
-        "image": "/assets/img/tuf-client-rs.png"
+        "image": "./assets/img/tuf-client-rs.png"
       },
       {
         "name": "Starbucks",
-        "image": "/assets/img/tuf-client-sb.png"
+        "image": "./assets/img/tuf-client-sb.png"
       },
       {
         "name": "Robert Half",
-        "image": "/assets/img/tuf-client-rh.png"
+        "image": "./assets/img/tuf-client-rh.png"
       },
       {
         "name": "Rate",
-        "image": "/assets/img/tuf-client-rate.png"
+        "image": "./assets/img/tuf-client-rate.png"
       },
       {
         "name": "Asher",
-        "image": "/assets/img/tuf-client-asher.png"
+        "image": "./assets/img/tuf-client-asher.png"
       },
       {
         "name": "Davidsons",
-        "image": "/assets/img/tuf-client-davidsons.png"
+        "image": "./assets/img/tuf-client-davidsons.png"
       },
       {
         "name": "Fullerton",
-        "image": "/assets/img/tuf-client-fullerton.png"
+        "image": "./assets/img/tuf-client-fullerton.png"
       },
       {
         "name": "PropNex",
-        "image": "/assets/img/tuf-client-propnex.png"
+        "image": "./assets/img/tuf-client-propnex.png"
       },
       {
         "name": "Wantedly",
-        "image": "/assets/img/tuf-client-wantedly.png"
+        "image": "./assets/img/tuf-client-wantedly.png"
       }
     ]
   },
@@ -97,7 +97,7 @@
         "title": "Business & Brand Development",
         "content": "Take your business to the next level. We'll help you chart the path to success, glory & gold!",
         "footnote": "Grants available for this service<sup>*</sup>.",
-        "image": "/assets/img/tuf-do-bdd.jpg",
+        "image": "./assets/img/tuf-do-bdd.jpg",
         "href": "/case-studies",
         "cta_label": "View case studies"
       },
@@ -105,7 +105,7 @@
         "title": "Content & Communications",
         "content": "For creative pizzazz and on-point comms messaging, look no futher. We do it all.",
         "footnote": "",
-        "image": "/assets/img/tuf-do-cc.jpg",
+        "image": "./assets/img/tuf-do-cc.jpg",
         "href": "/case-studies",
         "cta_label": "View case studies"
       },
@@ -113,7 +113,7 @@
         "title": "Design & Copywriting",
         "content": "Sometimes, what you need is a specialist to execute your vision. We volunteer us.",
         "footnote": "",
-        "image": "/assets/img/tuf-do-dc.jpg",
+        "image": "./assets/img/tuf-do-dc.jpg",
         "href": "/case-studies",
         "cta_label": "View case studies"
       },
@@ -121,7 +121,7 @@
         "title": "HR & Employer Branding",
         "content": "Make brand culture, office culture. Because it's your people that drive your business. We can help.",
         "footnote": "Grants available for this service<sup>*</sup>.",
-        "image": "/assets/img/tuf-do-hre.jpg",
+        "image": "./assets/img/tuf-do-hre.jpg",
         "href": "/case-studies",
         "cta_label": "View case studies"
       }
@@ -151,7 +151,7 @@
         "content": [
           "Oh my, you’ve picked a good one. The Star card is about Hope, Renewal, Inspiration and Opportunity. Rather fitting if you’re looking to launch a new brand, or maybe reposition your business which (ahem-ahem) happens to be the specialty dish of this restaurant. Anyhoo, this is an exciting time for you and it’s imperative that you choose the right partners to get your brand done right. We’d like to recommend ourselves for the job. Give us the lowdown on your brand and we’ll come back with a concept that will leave you all starry-eyed."
         ],
-        "image": "/assets/img/tuf-home-wdys-branding.png"
+        "image": "./assets/img/tuf-home-wdys-branding.png"
       },
       {
         "type": "Creative Services",
@@ -160,7 +160,7 @@
         "content": [
           "You’ve got an idea in your pocket and a spring in your step. Your campaign will hit the market so hard, fish will fall out of trees. You’re a freakin’ genius, bud! Now all you’ve got to do is to find someone to execute the creative, which is where we come in. The Fool card speaks of new beginnings and a journey to be undertaken. Simply put, your brand will be the hero of the story we’ll write for you. As someone somewhere once said, “You just gotta have faith. Better still, a great budget."
         ],
-        "image": "/assets/img/tuf-home-wdys-creative-services.png"
+        "image": "./assets/img/tuf-home-wdys-creative-services.png"
       },
       {
         "type": "Internal Comms",
@@ -169,7 +169,7 @@
         "content": [
           "Hmm, seems like you’re experiencing a bit of a problem with internal communications. People just don’t seem to get it, do they? If so, The World is exactly the card you need to put into play. The World is about Wholeness, Integration and Involvement – a sense that everything and everyone is aligned and working in harmony towards the same goals. There’s shared purpose at work, and shared drinks after work. It’s that amazing feeling of togetherness that we want to help you achieve. Forever and ever. Amen."
         ],
-        "image": "/assets/img/tuf-home-wdys-internal-comms.png"
+        "image": "./assets/img/tuf-home-wdys-internal-comms.png"
       },
       {
         "type": "Collaboration",
@@ -178,7 +178,7 @@
         "content": [
           "Ah, The Lovers. It’s telling you to go with your heart; that we’re the right ones for you. Just you and us against the world, baby. We’ll buy roses for you, pour champagne in your cup, and serenade you with James Brown to keep your heart warm under the cold moonlight. We’ll even throw in some French to add to the romance. J’aime les tortues, ma chérie. We’ll be the Romeo to your Juliet; maybe even the Rosmah to your Najib. If you feel the same, darlin’, hit us up. We’ll be right here waiting for you."
         ],
-        "image": "/assets/img/tuf-home-wdys-collab.png"
+        "image": "./assets/img/tuf-home-wdys-collab.png"
       },
       {
         "type": "Career / Internship",
@@ -188,7 +188,7 @@
           "Ding, ding, ding! Would you like to buy a vowel? Or better yet, be one with the Universe? If you’re seeking a new career, then you’re in luck! The Wheel of Fortune signifies a reversal of fortune and opportunity, and it looks like Destiny’s telling you to take a bold step forward right now. Remember, the more interesting you make yourself out to be, the better your chances at winning.",
           "#protip: also applies to life in general."
         ],
-        "image": "/assets/img/tuf-home-wdys-careers.png"
+        "image": "./assets/img/tuf-home-wdys-careers.png"
       },
       {
         "type": "General Enquiries",
@@ -197,7 +197,7 @@
         "content": [
           "The trump card for all things business-related, The Chariot promises victory within your reach! Beat the competition senseless, engage your audience with flair, and build a brand that will last for a thousand years! Your quest to seek a brand development partner is at an end. Let’s usher in a new era of brand progress together as partners – a future filled with satisfied customers, happy stake-holders, and ice-cream for everyone. You, you and you! You’re all winners! Yassss."
         ],
-        "image": "/assets/img/tuf-home-wdys-general.png"
+        "image": "./assets/img/tuf-home-wdys-general.png"
       },
       {
         "type": "Urgent Enquiries",
@@ -206,7 +206,7 @@
         "content": [
           "You’re in deep doo-doo and you need help, stat! And because you don’t have access to the Bat-Signal, you’ve decided to call on us by picking the Tower card. Wise choice. Why? Because Batman doesn’t exist, silly. Anyway, The Tower card is about crisis, danger and destruction, making it absolutely no fun at parties. At the same time, it’s also about liberation and unexpected change, so it’s not all doom and gloom. Hit us up, and we’ll help you turn your situation around."
         ],
-        "image": "/assets/img/tuf-home-wdys-urgent.png"
+        "image": "./assets/img/tuf-home-wdys-urgent.png"
       }
     ],
     "item_ctas": [
@@ -227,17 +227,17 @@
     "items": [
       {
         "alt": "#luckycat",
-        "image": "/assets/img/tuf-home-ig-cat.jpg",
+        "image": "./assets/img/tuf-home-ig-cat.jpg",
         "href": "https://www.instagram.com/p/B4BkCwYBWVD/"
       },
       {
         "alt": "#worldoctopusday",
-        "image": "/assets/img/tuf-home-ig-octopus.jpg",
+        "image": "./assets/img/tuf-home-ig-octopus.jpg",
         "href": "https://www.instagram.com/p/B3V7q3dBDVQ/"
       },
       {
         "alt": "#internationalcoffeeday2019",
-        "image": "/assets/img/tuf-home-ig-agency.jpg",
+        "image": "./assets/img/tuf-home-ig-agency.jpg",
         "href": "https://www.instagram.com/p/B3EqejjHX4X/"
       }
     ]

@@ -2,7 +2,7 @@
   "order": 6,
   "slug": "tease",
   "title": "Tease Brand Exercise",
-  "image": "/assets/img/tuf-home-cs-tease.jpg",
+  "image": "./assets/img/tuf-home-cs-tease.jpg",
   "tags": [
     "Branding",
     "Design",

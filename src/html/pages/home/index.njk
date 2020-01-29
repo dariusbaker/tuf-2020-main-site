@@ -4,13 +4,13 @@
 {% extends "base.njk" %}
 
 {% block page_styles %}
-<link rel="stylesheet" href="/assets/css/pages/home.css">
+<link rel="stylesheet" href="./assets/css/pages/home.css">
 {% endblock %}
 
 {% block content %}
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
-  <img class="hero__bg" src="/assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
+  <img class="hero__bg" src="./assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
   <div class="hero">
     <h1 class="hero__header">
       {{home.hero.title|safe}}
@@ -111,14 +111,14 @@
   <div class="tuf-content-padding ask-ava__content">
     <div class="ask-ava__content__head" role="img" aria-label="Ava">
       <div class="ask-ava__content__head-items">
-        <img draggable="false" class="ask-ava__content__head__bg" src="/assets/img/ava.png" />
+        <img draggable="false" class="ask-ava__content__head__bg" src="./assets/img/ava.png" />
         <div class="ask-ava__content__head__lips">
-          <img draggable="false" class="ask-ava__content__head__lips--default" src="/assets/img/ava-mouth-default.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--a-e" src="/assets/img/ava-mouth-a-e.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="/assets/img/ava-mouth-c-ee.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--o" src="/assets/img/ava-mouth-o.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="/assets/img/ava-mouth-oo-w.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--s-x" src="/assets/img/ava-mouth-s-x.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--default" src="./assets/img/ava-mouth-default.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--a-e" src="./assets/img/ava-mouth-a-e.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="./assets/img/ava-mouth-c-ee.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--o" src="./assets/img/ava-mouth-o.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="./assets/img/ava-mouth-oo-w.png" />
+          <img draggable="false" class="ask-ava__content__head__lips--s-x" src="./assets/img/ava-mouth-s-x.png" />
         </div>
       </div>
     </div>
@@ -290,7 +290,7 @@
           <img
             class="what-do-you-seek__content__cards__item"
             alt="{{home.what_do_you_seek.title|safe}} tarrots card"
-            src="/assets/img/tuf-seek-card-idle.png" />
+            src="./assets/img/tuf-seek-card-idle.png" />
           {% endfor %}
         </div>
 
@@ -385,5 +385,5 @@
 <script>
   var seekList = JSON.parse('{{home.what_do_you_seek.items|json|safe}}');
 </script>
-<script src="/assets/js/home.min.js"></script>
+<script src="./assets/js/home.min.js"></script>
 {% endblock %}

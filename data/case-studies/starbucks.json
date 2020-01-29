@@ -2,7 +2,7 @@
   "order": 5,
   "slug": "starbucks",
   "title": "Starbucks BOGO Promo",
-  "image": "/assets/img/tuf-home-cs-sb.jpg",
+  "image": "./assets/img/tuf-home-cs-sb.jpg",
   "tags": [
     "Social Media",
     "Advertising"

@@ -2,7 +2,7 @@
   "order": 1,
   "slug": "aia-hr-communications",
   "title": "AIA HR Communications",
-  "image": "/assets/img/tuf-home-cs-aia.jpg",
+  "image": "./assets/img/tuf-home-cs-aia.jpg",
   "tags": [
     "Branding",
     "Design",

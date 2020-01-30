@@ -1,19 +1,29 @@
 const CONFIG     = require('../config');
-const babel      = require('gulp-babel');
 const { reload } = require('./browsersync');
 const { dest }   = require('gulp');
 const { src }    = require('gulp');
 const webpack = require('webpack-stream');
+const glob = require('glob');
+const path = require('path');
+
+const getPagesEntry = () => {
+  let entries = {};
+
+  glob
+    .sync(`${CONFIG.SRC.JS}/{!(utils|config).js,!(components|data)/**/*.js}`)
+    .forEach(item => {
+      const name = path.basename(item).replace(path.extname(item), "");
+      entries[name] = `./${item}`;
+    });
+
+  return entries;
+};
 
 function scripts() {
   return src(`${CONFIG.SRC.JS}/**/*.js`)
     .pipe(webpack({
       devtool: 'inline-source-map',
-      entry: {
-        index: './src/js/index',
-        home: './src/js/pages/home',
-        'case-studies': './src/js/pages/case-studies',
-      },
+      entry: getPagesEntry(),
       output: {
         filename: '[name].min.js',
       },

@@ -1,4 +1,5 @@
 import Glide from '@glidejs/glide';
+import Ava from '../components/ava.js';
 
 import { debounce, makeXHRJsonCall } from '../utils';
 import * as config from '../config';
@@ -6,6 +7,7 @@ import * as config from '../config';
 class Home {
   constructor() {
     this._CONST = {
+      ask_ava: '.ask-ava',
       instagram_list_selector: '.instagram__list',
       instagram_item_template_selector: '#instagram-feed',
       clients_selector: '.clients__list',
@@ -32,6 +34,8 @@ class Home {
     this._whatWeDoCarousel = null;
     this._testimonialCarousel = null;
     this._clientsCarousel = null;
+
+    this._askAva = document.querySelector(this._CONST.ask_ava);
 
     this._instagramListElem = document.querySelector(
       this._CONST.instagram_list_selector
@@ -125,6 +129,10 @@ class Home {
         this._initSeekNav();
       }, 300)
     );
+
+    if (this._askAva !== null) {
+      new Ava(this._askAva);
+    }
 
     this._getInstagramFeed();
   }

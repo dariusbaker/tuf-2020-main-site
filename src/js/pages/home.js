@@ -339,8 +339,8 @@ class Home {
 
   _initWhatWeDoCarousel() {
     this._whatWeDoCarousel = new Glide(this._CONST.what_we_do_selector, {
-      type: "slider",
-      focusAt: "center",
+      type: 'slider',
+      focusAt: 'center',
       perView: 3,
       gap: 24,
       rewind: false,
@@ -391,4 +391,13 @@ class Home {
   }
 }
 
-new Home();
+
+import(
+  /* webpackChunkName: 'tuf-data-home' */
+  '../data/home-hero.js'
+).then(
+  module => {
+    console.log(module.HOME_HERO_DATA);
+    new Home();
+  }
+);

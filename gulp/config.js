@@ -24,6 +24,7 @@ module.exports = {
     ASSETS  : `${DIST}/${ASSETS}`,
     CSS     : `${DIST}/${ASSETS}/css`,
     JS      : `${DIST}/${ASSETS}/js`,
+    DATA    : `${DIST}/${ASSETS}/js/data`,
     SVG     : `${SRC}/html/partials`,
     IMG     : `${DIST}/${ASSETS}/img`,
   },

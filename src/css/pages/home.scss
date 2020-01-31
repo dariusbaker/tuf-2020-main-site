@@ -390,6 +390,10 @@
       }
     }
 
+    &__textbox {
+      min-height: rem(1.3 * 30);
+    }
+
     &__head {
       text-align: center;
 
@@ -422,6 +426,10 @@
           will-change: opacity;
 
           transform: translate(-50%, -50%);
+
+          &:first-child {
+            opacity: 1;
+          }
         }
       }
     }

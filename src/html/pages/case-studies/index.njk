@@ -1,6 +1,10 @@
-{% from "macros/case-study-card.njk" import case_study_card %}
+{% from "macros/case-study-card.njk" import case_study_card, case_study_card_tag %}
 
 {% extends "base.njk" %}
+
+{% block head_meta %}
+<base href="/">
+{% endblock %}
 
 {% block page_styles %}
 <link rel="stylesheet" href="./assets/css/pages/case-studies.css">
@@ -52,36 +56,37 @@
           data-type="{{case_studies_list.filter_all | safe}}">
           {{case_studies_list.filter_all | safe}}
         </li>
-        {% for tag in (tags | sort) %}
-        <li
-          class="content__filter__list-item"
-          tabindex="0"
-          role="option"
-          data-type="{{tag | safe}}">
-          {{tag|safe}}
-        </li>
-        {% endfor %}
       </ul>
     </div>
   </div>
-  <ul class="content__list">
-    {% set case_studies_list = case_studies | list | sort(false, false, 'order') %}
-    {% for item in case_studies_list %}
-      <li
-        data-tags="{{item.tags}}"
-        class="content__list__item content__list__item--visible">
+  <ul id="case-studies-list" class="content__list">
+  </ul>
+
+  <template id="dropdown-item-template">
+    <li
+      class="content__filter__list-item"
+      tabindex="0"
+      role="option">
+    </li>
+  </template>
+  <template id="case-study-item-template">
+    <li
+      data-tags="{{item.tags}}"
+      class="content__list__item content__list__item--visible">
       {{
         case_study_card(
           classses = '',
-          href = '/case-studies/' + item.slug,
-          title = item.title,
-          tags = item.tags,
-          image = item.image
+          href = '/case-studies/',
+          title = '',
+          tags = [],
+          image = ''
         )
       }}
     </li>
-    {% endfor %}
-  </ul>
+  </template>
+  <template id="case-study-tag-template">
+    {{case_study_card_tag()}}
+  </template>
 </section>
 
 <!-- talk to us section -->

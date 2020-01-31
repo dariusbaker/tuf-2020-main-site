@@ -1114,18 +1114,10 @@
     &__item {
       width: calc((100% / 3));
 
-      margin-bottom: rem(24);
+      margin: rem(4);
 
       @media (min-width: rem(768)) {
-        margin-bottom: 0;
-      }
-
-      &:nth-child(2) {
-        margin: 0 rem(12);
-
-        @media (min-width: rem(768)) {
-          margin: 0 rem(24);
-        }
+        margin: rem(8);
       }
 
       a {
@@ -1135,7 +1127,7 @@
 
         background-image: attr(data-image-src url);
         background-size: cover;
-        background-position: center;
+        background-position: center center;
 
         transition: opacity .25s ease-in-out;
 

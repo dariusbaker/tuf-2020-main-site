@@ -8,6 +8,7 @@ const { watch }  = require('gulp');
 const { series } = require('gulp');
 
 function observe(done) {
+  watch(`${CONFIG.SRC.JS}/${CONFIG.SRC.DATA}/*.js`, scripts);
   watch(CONFIG.SRC.DATA_FILES, html);
   watch(`${CONFIG.SRC.ROOT}/**/*.{njk,html}`, html);
   watch(CONFIG.SRC.JS, scripts);

@@ -9,7 +9,13 @@ const { serve } = require('./gulp/tasks/browsersync');
 const { parallel } = require('gulp');
 const { series } = require('gulp');
 
+const setProdEnv = (done) => {
+  process.env.NODE_ENV = 'prod';
+  done();
+};
+
 const build = series(
+  setProdEnv,
   clean,
   parallel(svg, copy),
   parallel(styles, scripts, html)

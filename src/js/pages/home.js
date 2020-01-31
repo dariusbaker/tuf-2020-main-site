@@ -45,8 +45,8 @@ class Home {
 
     // initialise case-studies component
     import(
-      /* webpackChunkName: 'tuf-data-home-case-studies' */
-      '../data/home-case-studies.js'
+      /* webpackChunkName: 'tuf-data-case-studies' */
+      '../data/case-studies.js'
     ).then(
       module => {
         new HomeCaseStudies(module.HOME_CASE_STUDIES_DATA);

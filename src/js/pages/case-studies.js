@@ -1,5 +1,5 @@
 class CaseStudies {
-  constructor() {
+  constructor(data) {
     this._CONST = {
       filter_btn_selector: '#case-studies-filter-btn',
       listitems_selector: '.content__list__item',
@@ -8,6 +8,8 @@ class CaseStudies {
       dropdown_listitems_selector: '.content__filter__list-item',
       dropdown_list_visible_class: 'content__filter__list--visible',
     };
+
+    this._data = data;
 
     this._filterBtnElem = document.querySelector(this._CONST.filter_btn_selector);
 
@@ -76,4 +78,11 @@ class CaseStudies {
   }
 }
 
-new CaseStudies();
+import(
+  /* webpackChunkName: 'tuf-data-case-studies' */
+  '../data/case-studies.js'
+).then(
+  module => {
+    new CaseStudies(module.HOME_CASE_STUDIES_DATA);
+  }
+);

@@ -3,6 +3,7 @@ import Glide from '@glidejs/glide';
 import { debounce, makeXHRJsonCall } from '../utils';
 import HomeTestimonials from '../components/home-testimonials';
 import HomeWhatWeDo from '../components/home-what-we-do';
+import HomeCaseStudies from '../components/home-case-studies';
 
 import * as config from '../config';
 
@@ -47,6 +48,16 @@ class Home {
     ).then(
       module => {
         new HomeWhatWeDo(module.HOME_WHAT_WE_DO_DATA);
+      }
+    );
+
+    // initialise case-studies component
+    import(
+      /* webpackChunkName: 'tuf-data-home-case-studies' */
+      '../data/home-case-studies.js'
+    ).then(
+      module => {
+        new HomeCaseStudies(module.HOME_CASE_STUDIES_DATA);
       }
     );
 

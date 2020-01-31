@@ -1,5 +1,5 @@
 {% from "macros/button.njk" import button_link, button, icon_round %}
-{% from "macros/case-study-card.njk" import case_study_card %}
+{% from "macros/case-study-card.njk" import case_study_card, case_study_card_tag %}
 
 {% extends "base.njk" %}
 
@@ -209,21 +209,8 @@
   <h2 class="tuf-section-title case-studies__title">
     {{home.case_studies.title|safe}}
   </h2>
-  <ul class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
-    {% set home_case_studies = case_studies | selectattr('featured_in_home') | list | sort(false, false, 'featured_in_home') %}
-    {% for item in home_case_studies %}
-    <li class="case-studies__list__item">
-    {{
-      case_study_card(
-        classses = '',
-        href = '/case-studies/' + item.slug,
-        title = item.title,
-        tags = item.tags,
-        image = item.image
-      )
-    }}
-    </li>
-    {% endfor %}
+  <ul id="case-studies-list" class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
+
   </ul>
   {{
     button_link(
@@ -233,6 +220,23 @@
       href=home.case_studies.cta.href
     )
   }}
+
+  <template id="case-study-item-template">
+    <li class="case-studies__list__item">
+      {{
+        case_study_card(
+          classses = '',
+          href = '/case-studies/',
+          title = '',
+          tags = [],
+          image = ''
+        )
+      }}
+    </li>
+  </template>
+  <template id="case-study-tag-template">
+    {{case_study_card_tag()}}
+  </template>
 </section>
 <!-- end of case studies section -->
 

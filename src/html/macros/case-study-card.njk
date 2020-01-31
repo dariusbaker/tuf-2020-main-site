@@ -18,9 +18,13 @@
     </h3>
     <ul class="tuf-case-study-card__content__tags" aria-label="tags">
       {% for tag in tags %}
-      <li class="tuf-case-study-card__content__tags__item">{{tag}}</li>
+      {{case_study_card_tag(tag)}}
       {% endfor %}
     </ul>
   </div>
 </a>
+{% endmacro %}
+
+{% macro case_study_card_tag(tag) %}
+<li class="tuf-case-study-card__content__tags__item">{{tag}}</li>
 {% endmacro %}

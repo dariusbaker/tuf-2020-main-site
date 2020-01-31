@@ -74,30 +74,30 @@
 
 <!-- testimonials section -->
 <section id="{{home.testimonials.slug}}" class="tuf-section testimonials-section">
-  <div class="testimonials__list">
+  <div class="testimonials__list" id="testimonials-carousel">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides glide__track testimonials__list-items">
-        {% for testimonial in home.testimonials.items %}
-        <li class="glide__slide testimonials__list-item">
-          <blockquote>
-            <p>
-              {{testimonial.content|safe}}
-            </p>
-            <footer>
-              — {{testimonial.name}}
-            </footer>
-          </blockquote>
-        </li>
-        {% endfor %}
+      <ul id="testimonials-items" class="glide__slides glide__track testimonials__list-items">
       </ul>
     </div>
 
-    <div class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
-      {% for testimonial in home.testimonials.items %}
-      <button aria-label="testimonial item {{loop.index}}" class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
-      {% endfor %}
+    <div id="testimonials-pagination" class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
     </div>
   </div>
+  <template id="testimonial-item-template">
+    <li class="glide__slide testimonials__list-item">
+      <blockquote>
+        <p>
+        </p>
+        <footer>
+        </footer>
+      </blockquote>
+    </li>
+  </template>
+  <template id="testimonial-pagination-template">
+    <button
+      class="glide__bullet">
+    </button>
+  </template>
 </section>
 <!-- end of testimonials section -->
 

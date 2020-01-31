@@ -1,6 +1,8 @@
 import Glide from '@glidejs/glide';
 
 import { debounce, makeXHRJsonCall } from '../utils';
+import HomeTestimonials from '../components/home-testimonials';
+
 import * as config from '../config';
 
 class Home {
@@ -9,7 +11,6 @@ class Home {
       instagram_list_selector: '.instagram__list',
       instagram_item_template_selector: '#instagram-feed',
       clients_selector: '.clients__list',
-      testimonials_selector: '.testimonials__list',
       what_we_do_selector: '.what-we-do__list',
       seek_label_selector: '.what-do-you-seek__content__navigation__label',
       seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
@@ -28,6 +29,16 @@ class Home {
       seek_dialog_image_selector: '#seek-dialog-image',
       seek_dialog_close_selector: '.what-do-you-seek__dialog__close-btn'
     };
+
+    // initialise testimonials carousel
+    import(
+      /* webpackChunkName: 'tuf-data-home-testimonials' */
+      '../data/home-testimonials.js'
+    ).then(
+      module => {
+        new HomeTestimonials(module.HOME_TESTIMONIALS_DATA);
+      }
+    );
 
     this._whatWeDoCarousel = null;
     this._testimonialCarousel = null;
@@ -111,8 +122,6 @@ class Home {
     this._bindSeekItemsOptions();
 
     this._initClientsCarousel();
-
-    this._initTestimonialCarousel();
 
     this._initWhatWeDoCarousel();
 
@@ -330,13 +339,6 @@ class Home {
     }).mount();
   }
 
-  _initTestimonialCarousel() {
-    this._testimonialCarousel = new Glide(this._CONST.testimonials_selector, {
-      type: 'carousel',
-      perView: 1,
-    }).mount();
-  }
-
   _initWhatWeDoCarousel() {
     this._whatWeDoCarousel = new Glide(this._CONST.what_we_do_selector, {
       type: 'slider',
@@ -392,14 +394,3 @@ class Home {
 }
 
 new Home();
-
-
-// import(
-//   /* webpackChunkName: 'tuf-data-home' */
-//   '../data/home-hero.js'
-// ).then(
-//   module => {
-//     console.log(module.HOME_HERO_DATA);
-//     new Home();
-//   }
-// );

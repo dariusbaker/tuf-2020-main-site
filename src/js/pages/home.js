@@ -391,13 +391,15 @@ class Home {
   }
 }
 
+new Home();
 
-import(
-  /* webpackChunkName: 'tuf-data-home' */
-  '../data/home-hero.js'
-).then(
-  module => {
-    console.log(module.HOME_HERO_DATA);
-    new Home();
-  }
-);
+
+// import(
+//   /* webpackChunkName: 'tuf-data-home' */
+//   '../data/home-hero.js'
+// ).then(
+//   module => {
+//     console.log(module.HOME_HERO_DATA);
+//     new Home();
+//   }
+// );

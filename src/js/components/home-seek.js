@@ -3,6 +3,7 @@ import { debounce } from '../utils';
 export default class HomeSeek {
   constructor(data) {
     this._CONST = {
+      seek_navigations_selector: '#seek-navigations',
       seek_navigation_items_selector: '#seek-navigation-items',
       seek_navigation_label_selector: '#seek-navigation-items-label',
       seek_idle_cards_selector: '#seek-idle-cards',
@@ -34,6 +35,7 @@ export default class HomeSeek {
     this._seekIdleItemTemplate = document.querySelector(this._CONST.seek_idle_template_selector);
 
     // list element
+    this._seekNavigationsElem = document.querySelector(this._CONST.seek_navigations_selector);
     this._seekNavigationItemsElem = document.querySelector(this._CONST.seek_navigation_items_selector);
     this._seekIdleCardsElem = document.querySelector(this._CONST.seek_idle_cards_selector);
     this._seekNavigationLabelElem = document.querySelector(this._CONST.seek_navigation_label_selector);
@@ -110,11 +112,11 @@ export default class HomeSeek {
     }
 
     if (this._seekNavOpen) {
-      this._seekNavigationLabelElem.classList.remove(
+      this._seekNavigationsElem.classList.remove(
         this._CONST.seek_navigation_visible_class
       );
     } else {
-      this._seekNavigationLabelElem.classList.add(
+      this._seekNavigationsElem.classList.add(
         this._CONST.seek_navigation_visible_class
       );
     }

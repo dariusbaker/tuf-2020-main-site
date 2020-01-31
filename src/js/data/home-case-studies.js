@@ -8,6 +8,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Design',
       'Comms'
     ],
+    featured_in_home: 1
   },
   {
     slug: 'river-safari',
@@ -18,6 +19,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'UI/UX',
       'Tech'
     ],
+    featured_in_home: 2
   },
   {
     slug: 'rate',
@@ -27,6 +29,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Branding',
       'UI/UX'
     ],
+    featured_in_home: 3
   },
   {
     slug: 'asher',
@@ -37,6 +40,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Design',
       'UI/UX'
     ],
+    featured_in_home: 4
   },
   {
     slug: 'starbucks',
@@ -46,6 +50,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Social Media',
       'Advertising'
     ],
+    featured_in_home: 5
   },
   {
     slug: 'tease',
@@ -56,5 +61,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Design',
       'Spatial'
     ],
+    featured_in_home: 6
   }
 ];

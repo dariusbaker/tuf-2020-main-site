@@ -18,28 +18,31 @@ export default class HomeCaseStudies {
   }
 
   _renderCaseStudiesContent() {
-    this._data.forEach((item) => {
-      const contentTemplate = this._itemTemplate.content.cloneNode(true);
-      const contentLink = contentTemplate.querySelector('a');
-      contentLink.setAttribute('href', `${this._CONST.base_case_study_url}${item.slug}`);
+    this._data
+      .filter((item) => item.featured_in_home)
+      .sort((a, b) => a.featured_in_home - b.featured_in_home)
+      .forEach((item) => {
+        const contentTemplate = this._itemTemplate.content.cloneNode(true);
+        const contentLink = contentTemplate.querySelector('a');
+        contentLink.setAttribute('href', `${this._CONST.base_case_study_url}${item.slug}`);
 
-      const contentImage = contentTemplate.querySelector('img');
-      contentImage.setAttribute('src', item.image);
-      contentImage.setAttribute('alt', item.title);
+        const contentImage = contentTemplate.querySelector('img');
+        contentImage.setAttribute('src', item.image);
+        contentImage.setAttribute('alt', item.title);
 
-      const contentHeader = contentTemplate.querySelector('h3');
-      contentHeader.innerHTML = item.title;
+        const contentHeader = contentTemplate.querySelector('h3');
+        contentHeader.innerHTML = item.title;
 
-      const contentTags = contentTemplate.querySelector('ul');
-      item.tags.forEach((tag) => {
-        const tagTemplate = this._itemTagTemplate.content.cloneNode(true);
-        const tagContent = tagTemplate.querySelector('li');
-        tagContent.innerHTML = tag;
+        const contentTags = contentTemplate.querySelector('ul');
+        item.tags.forEach((tag) => {
+          const tagTemplate = this._itemTagTemplate.content.cloneNode(true);
+          const tagContent = tagTemplate.querySelector('li');
+          tagContent.innerHTML = tag;
 
-        contentTags.appendChild(tagTemplate);
+          contentTags.appendChild(tagTemplate);
+        });
+
+        this._itemsElem.appendChild(contentTemplate);
       });
-
-      this._itemsElem.appendChild(contentTemplate);
-    });
   }
 }

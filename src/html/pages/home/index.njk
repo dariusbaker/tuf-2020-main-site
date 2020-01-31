@@ -251,6 +251,7 @@
     <div class="what-do-you-seek__content">
       <div class="what-do-you-seek__content__navigation">
         <label
+          id="seek-navigation-items-label"
           data-label="{{home.what_do_you_seek.filter_label | safe}}"
           class="what-do-you-seek__content__navigation__label"
           for="what-do-you-seek-list">
@@ -262,12 +263,7 @@
           </svg>
         </label>
         <div class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
-          <ul class="what-do-you-seek__content__navigation__items" role="listbox">
-            {% for item in home.what_do_you_seek.items %}
-            <li data-type="{{item.type}}" class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
-              <span>{{item.type}}</span>
-            </li>
-            {% endfor %}
+          <ul id="seek-navigation-items" class="what-do-you-seek__content__navigation__items" role="listbox">
           </ul>
           <p class="what-do-you-seek__content__navigation__footnote">
           Or simply
@@ -283,16 +279,11 @@
         </div>
       </div>
       <div class="what-do-you-seek__content__cards">
-        <div class="tuf-content-padding what-do-you-seek__content__cards__items">
-          {% for item in home.what_do_you_seek.items %}
-          <img
-            class="what-do-you-seek__content__cards__item"
-            alt="{{home.what_do_you_seek.title|safe}} tarrots card"
-            src="/assets/img/tuf-seek-card-idle.png" />
-          {% endfor %}
+        <div id="seek-idle-cards" class="tuf-content-padding what-do-you-seek__content__cards__items">
         </div>
 
         <div
+          id="seek-dialog"
           role="dialog"
           aria-modal="true"
           aria-labelledby="seek-dialog-title"
@@ -328,6 +319,7 @@
           <div>
             {{
               icon_round(
+                id="seek-close-btn",
                 classes = 'what-do-you-seek__dialog__close-btn',
                 icon = 'close',
                 isButton = true
@@ -338,6 +330,16 @@
       </div>
     </div>
   </div>
+  <template id="seek-navigation-item-template">
+    <li class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
+      <span>{{item.type}}</span>
+    </li>
+  </template>
+  <template id="seek-idle-template">
+    <img
+      class="what-do-you-seek__content__cards__item"
+      src="/assets/img/tuf-seek-card-idle.png" />
+  </template>
 </section>
 <!-- end of what do you seek section -->
 
@@ -369,8 +371,5 @@
 
 
 {% block page_script %}
-<script>
-  var seekList = JSON.parse('{{home.what_do_you_seek.items|json|safe}}');
-</script>
 <script src="/assets/js/home.min.js"></script>
 {% endblock %}

@@ -348,18 +348,7 @@
   <h2 class="tuf-section-title instagram__title">
     {{home.instagram.title|safe}}
   </h2>
-  <ul class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
-    {% for item in home.instagram.items %}
-    <li class="instagram__list__item">
-      <a
-        style="background-image: url({{item.image}})"
-        href="{{item.href}}"
-        target="_blank"
-        aria-label="{{item.alt}}"
-        rel="noopener noreferrer">
-      </a>
-    </li>
-    {% endfor %}
+  <ul id="instagram-list" class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
   </ul>
   <template id="instagram-feed">
     <li class="instagram__list__item">

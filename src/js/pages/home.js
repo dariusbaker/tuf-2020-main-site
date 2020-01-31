@@ -1,17 +1,14 @@
 import Glide from '@glidejs/glide';
 
-import { debounce, makeXHRJsonCall } from '../utils';
+import { debounce } from '../utils';
 import HomeTestimonials from '../components/home-testimonials';
 import HomeWhatWeDo from '../components/home-what-we-do';
 import HomeCaseStudies from '../components/home-case-studies';
-
-import * as config from '../config';
+import HomeInstagram from '../components/home-instagram';
 
 class Home {
   constructor() {
     this._CONST = {
-      instagram_list_selector: '.instagram__list',
-      instagram_item_template_selector: '#instagram-feed',
       clients_selector: '.clients__list',
       seek_label_selector: '.what-do-you-seek__content__navigation__label',
       seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
@@ -61,15 +58,10 @@ class Home {
       }
     );
 
+    // load instagram feed
+    new HomeInstagram();
+
     this._clientsCarousel = null;
-
-    this._instagramListElem = document.querySelector(
-      this._CONST.instagram_list_selector
-    );
-
-    this._instagramItemTemplate = document.querySelector(
-      this._CONST.instagram_item_template_selector
-    );
 
     this._seekLabelElem = document.querySelector(
       this._CONST.seek_label_selector
@@ -148,42 +140,6 @@ class Home {
         this._initSeekNav();
       }, 300)
     );
-
-    this._getInstagramFeed();
-  }
-
-  _getInstagramFeed() {
-    makeXHRJsonCall(config.INSTAGRAM_API_URL, null, 'GET')
-      .then((res) => {
-        const items = res.data;
-
-        // if no instagram feed, load placeholder
-        if (!items && !items.length) {
-          return;
-        }
-
-        // wipe current list
-        while (this._instagramListElem.firstChild) {
-          this._instagramListElem.removeChild(this._instagramListElem.firstChild);
-        }
-
-        const max = config.MAX_INSTAGRAM_FEED > items.length ? items.length : config.MAX_INSTAGRAM_FEED;
-
-        for (let i = 0; i < max; i++) {
-          const item = items[i];
-          // clone template
-          const template = this._instagramItemTemplate.content.cloneNode(true);
-          const anchorTag = template.querySelector('a');
-          anchorTag.setAttribute('href', item.link);
-          anchorTag.setAttribute('aria-label', item.caption && item.caption.text ? item.caption.text : `Instagram feed ${i + 1}`);
-          anchorTag.setAttribute('style', `background-image: url(${item.images.standard_resolution.url})`);
-
-          this._instagramListElem.appendChild(template);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
   }
 
   _getSeekItemByType(type) {

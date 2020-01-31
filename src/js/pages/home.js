@@ -5,6 +5,7 @@ import HomeWhatWeDo from '../components/home-what-we-do';
 import HomeCaseStudies from '../components/home-case-studies';
 import HomeInstagram from '../components/home-instagram';
 import HomeSeek from '../components/home-seek';
+import HomeAva from '../components/home-ava';
 
 class Home {
   constructor() {
@@ -19,6 +20,16 @@ class Home {
     ).then(
       module => {
         new HomeTestimonials(module.HOME_TESTIMONIALS_DATA);
+      }
+    );
+
+    // initialise ava component
+    import(
+      /* webpackChunkName: 'tuf-data-home-ava' */
+      '../data/home-ava.js'
+    ).then(
+      module => {
+        new HomeAva(module.HOME_AVA_DATA);
       }
     );
 

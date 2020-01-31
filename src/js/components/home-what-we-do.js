@@ -28,7 +28,7 @@ export default class HomeWhatWeDo {
     this._paginationTemplate = document.querySelector(this._CONST.what_we_do_pagination_template_selector);
 
     this._renderWhatWeDoContent();
-    this._initWhatWeDoCarousel();
+    this._toggleWhatWeDoCarousel();
     this._attachEventListener();
   }
 

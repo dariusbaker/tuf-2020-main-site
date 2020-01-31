@@ -2,6 +2,7 @@ import Glide from '@glidejs/glide';
 
 import { debounce, makeXHRJsonCall } from '../utils';
 import HomeTestimonials from '../components/home-testimonials';
+import HomeWhatWeDo from '../components/home-what-we-do';
 
 import * as config from '../config';
 
@@ -11,7 +12,6 @@ class Home {
       instagram_list_selector: '.instagram__list',
       instagram_item_template_selector: '#instagram-feed',
       clients_selector: '.clients__list',
-      what_we_do_selector: '.what-we-do__list',
       seek_label_selector: '.what-do-you-seek__content__navigation__label',
       seek_navigation_selector: '.what-do-you-seek__content__navigation-wrapper',
       seek_navigation_visible_class: 'what-do-you-seek__content__navigation-wrapper--visible',
@@ -40,8 +40,16 @@ class Home {
       }
     );
 
-    this._whatWeDoCarousel = null;
-    this._testimonialCarousel = null;
+    // initialise what-we-do component
+    import(
+      /* webpackChunkName: 'tuf-data-home-what-we-do' */
+      '../data/home-what-we-do.js'
+    ).then(
+      module => {
+        new HomeWhatWeDo(module.HOME_WHAT_WE_DO_DATA);
+      }
+    );
+
     this._clientsCarousel = null;
 
     this._instagramListElem = document.querySelector(
@@ -123,14 +131,9 @@ class Home {
 
     this._initClientsCarousel();
 
-    this._initWhatWeDoCarousel();
-
-    this._toggleWhatWeDoCarousel();
-
     window.addEventListener(
       'resize',
       debounce(() => {
-        this._toggleWhatWeDoCarousel();
         this._initSeekNav();
       }, 300)
     );
@@ -337,59 +340,6 @@ class Home {
         }
       }
     }).mount();
-  }
-
-  _initWhatWeDoCarousel() {
-    this._whatWeDoCarousel = new Glide(this._CONST.what_we_do_selector, {
-      type: 'slider',
-      focusAt: 'center',
-      perView: 3,
-      gap: 24,
-      rewind: false,
-      startAt: 1,
-      breakpoints: {
-        1000: {
-          perView: 3,
-        },
-        900: {
-          perView: 2
-        },
-        600: {
-          perView: 1.5,
-          peek: 40
-        },
-        480: {
-          perView: 1,
-          peek: 40
-        }
-      }
-    }).mount();
-  }
-
-  _toggleWhatWeDoCarousel() {
-    // only enable carousel if width < 1310px
-    let mql = window.matchMedia('(min-width: 1310px)');
-
-    if (mql.matches) {
-      if (this._whatWeDoCarousel) {
-        this._whatWeDoCarousel.destroy();
-        this._whatWeDoCarousel = null;
-
-        // on glide destroy, it is some what failed to remove the clone items
-        // we need to do this manually
-        this._removeWhatWeDoGlideSlideClone();
-      }
-    } else {
-      this._initWhatWeDoCarousel();
-    }
-  }
-
-  _removeWhatWeDoGlideSlideClone() {
-    const whatWeDoSlideClones = document.querySelectorAll('.what-we-do__list .glide__slide--clone');
-
-    whatWeDoSlideClones.forEach((elem) => {
-      elem.parentNode.removeChild(elem);
-    });
   }
 }
 

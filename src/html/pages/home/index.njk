@@ -149,54 +149,21 @@
   <h2 class="tuf-section-title what-we-do__title">
     {{home.what_we_do.title|safe}}
   </h2>
-  <div class="what-we-do__list">
+  <div class="what-we-do__list" id="what-we-do-carousel">
     <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides glide__track what-we-do__list-items">
-        {% for item in home.what_we_do.items %}
-        <li class="glide__slide what-we-do__list-item">
-          <a
-            href="{{item.href}}"
-            class="glide__slide what-we-do__list-item__card">
-            <img
-              src="{{item.image}}"
-              alt="{{item.title}}"
-              class="what-we-do__list-item__card__image" />
-            <h3 class="what-we-do__list-item__card__title">
-              {{item.title|safe}}
-            </h3>
-            <p class="what-we-do__list-item__card__content">
-              {{item.content|safe}}
-            </p>
-            <small class="what-we-do__list-item__card__footnote">
-              {{item.footnote|safe}}
-            </small>
-            <div class="what-we-do__list-item__card__link">
-              {{
-                icon_round(
-                  classes = 'what-we-do__list-item__card__link__icon',
-                  icon = 'icon-arrow-right'
-                )
-              }}
-              {{item.cta_label}}
-            </div>
-          </a>
-        </li>
-        {% endfor %}
+      <ul id="what-we-do-items" class="glide__slides glide__track what-we-do__list-items">
       </ul>
     </div>
-    <div class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
-      {% for item in home.what_we_do.items %}
-      <button aria-label="what we do list item {{loop.index}}" class="glide__bullet" data-glide-dir="={{loop.index0}}"></button>
-      {% endfor %}
+    <div id="what-we-do-paginations" class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
     </div>
   </div>
   <div class="tuf-content-padding what-we-do__footnote">
     <div class="what-we-do__footnote__content">
-      <h4 class="what-we-do__footnote__content__title">
-        {{home.what_we_do.footnote.title}}
+      <h4
+        id="what-we-do-footnote-title"
+        class="what-we-do__footnote__content__title">
       </h4>
-      <p>
-        {{home.what_we_do.footnote.content}}
+      <p id="what-we-do-footnote-content">
       </p>
     </div>
   </div>
@@ -208,6 +175,30 @@
       href=home.what_we_do.cta.href
     )
   }}
+  <template id="what-we-do-item-template">
+    <li class="glide__slide what-we-do__list-item">
+      <a
+        class="glide__slide what-we-do__list-item__card">
+        <img
+          class="what-we-do__list-item__card__image" />
+        <h3 class="what-we-do__list-item__card__title">
+        </h3>
+        <p class="what-we-do__list-item__card__content">
+        </p>
+        <small class="what-we-do__list-item__card__footnote">
+        </small>
+        <div class="what-we-do__list-item__card__link">
+          {{
+            icon_round(
+              classes = 'what-we-do__list-item__card__link__icon',
+              icon = 'icon-arrow-right'
+            )
+          }}
+          <span></span>
+        </div>
+      </a>
+    </li>
+  </template>
 </section>
 <!-- end of what we do section -->
 

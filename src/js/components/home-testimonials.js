@@ -4,7 +4,7 @@ export default class HomeTestimonials {
   constructor(data) {
     this._CONST = {
       testimonials_item_template_selector: '#testimonial-item-template',
-      testimonials_pagination_template_selector: '#testimonial-pagination-template',
+      testimonials_pagination_template_selector: '#glidejs-pagination-template',
       testimonials_items_selector: '#testimonials-items',
       testimonials_pagination_selector: '#testimonials-pagination',
       testimonials_carousel_selector: '#testimonials-carousel',

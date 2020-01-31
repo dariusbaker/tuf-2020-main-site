@@ -8,6 +8,14 @@
 {% endblock %}
 
 {% block content %}
+<!-- common template -->
+<template id="glidejs-pagination-template">
+  <button
+    class="glide__bullet">
+  </button>
+</template>
+<!-- end of template -->
+
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
   <img class="hero__bg" src="/assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
@@ -92,11 +100,6 @@
         </footer>
       </blockquote>
     </li>
-  </template>
-  <template id="testimonial-pagination-template">
-    <button
-      class="glide__bullet">
-    </button>
   </template>
 </section>
 <!-- end of testimonials section -->

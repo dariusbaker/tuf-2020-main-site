@@ -245,7 +245,6 @@
   "talk_to_us": {
     "slug": "talk-to-us",
     "title": "Let's talk!",
-    "content": "Fill in the form, or, if you prefer,",
-    "email_label": "send us an email"
+    "content": "Fill in the form, or, if you prefer, send us an email at "
   }
 }

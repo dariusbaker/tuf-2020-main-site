@@ -10,8 +10,7 @@
         {{home.talk_to_us.title|safe}}
       </h2>
       <p class="tuf-talk-to-us__left__content">
-        {{home.talk_to_us.content}}<br/>
-        <a href="mailto:{{global.footer.email}}">{{home.talk_to_us.email_label}}</a>.
+        {{home.talk_to_us.content}} <a href="mailto:{{global.footer.email}}">{{global.footer.email}}</a>.
       </p>
     </div>
     {{footer(classes="tuf-talk-to-us__footer")}}
@@ -25,7 +24,7 @@
     </form>
     {{
       button(
-        classses = '',
+        classes = 'tuf-talk-to-us__submit',
         disabled = false,
         type = 'primary',
         id = 'submit-form-btn',

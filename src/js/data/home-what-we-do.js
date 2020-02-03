@@ -1,7 +1,7 @@
 export const HOME_WHAT_WE_DO_DATA = {
   footnote: {
     title: 'Interested in applying for the Enterprise Development Grant (EDG)?',
-    content: 'Our consultants are RMC-certified. Speak to us to find out if you’re eligible for grants up to 70%. All grants subject to approval by Enterprise Singapore.'
+    content: 'Our consultants are RMC-certified. Speak to us to find out if you’re eligible for grants up to 70%. <sup>*</sup>All grants subject to approval by Enterprise Singapore.'
   },
   items: [
     {

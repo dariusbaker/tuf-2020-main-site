@@ -75,14 +75,14 @@ class Home {
     this._clientsCarousel = new Glide(this._CONST.clients_selector, {
       type: 'carousel',
       autoplay: 3000,
-      perView: 8,
+      perView: 5,
       focusAt: 'center',
       breakpoints: {
         800: {
-          perView: 4
+          perView: 5
         },
         480: {
-          perView: 3
+          perView: 2
         }
       }
     }).mount();

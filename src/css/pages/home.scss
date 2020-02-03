@@ -227,7 +227,7 @@
 }
 
 .clients {
-  $grid-size: rem(24);
+  $grid-size: rem(40);
   $grid-rows: 4;
 
   &__carousel::before {
@@ -268,8 +268,8 @@
 
     background-size: $grid-size $grid-size;
     background-image:
-      linear-gradient(to right, transparentize($tuf-color-secondary, .8) rem(1), transparent rem(1)),
-      linear-gradient(to bottom, transparentize($tuf-color-secondary, .8) rem(1), transparent rem(1));
+      linear-gradient(to right, $tuf-color-card-border rem(1), transparent rem(1)),
+      linear-gradient(to bottom, $tuf-color-card-border rem(1), transparent rem(1));
 
 
     @media (min-width: rem(600)) {
@@ -291,7 +291,7 @@
 
     img {
       width: auto;
-      height: rem(46);
+      height: rem(80);
     }
   }
 }

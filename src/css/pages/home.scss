@@ -306,13 +306,13 @@
 
     &-item {
       blockquote {
-        font-size: rem(18);
+        font-size: rem(36);
       }
 
       blockquote p {
-        margin-bottom:  rem(24);
+        margin-bottom: rem(24);
 
-        text-align: center;
+        text-align: left;
 
         font-weight: $tuf-font-weight-bold;
 
@@ -325,6 +325,8 @@
         color: $tuf-color-white;
 
         text-align: right;
+
+        font-size: rem(24);
 
         @media (min-width: rem(1024)) {
           text-align: center;

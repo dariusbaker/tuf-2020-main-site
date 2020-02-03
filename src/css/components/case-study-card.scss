@@ -25,9 +25,12 @@
 
     box-sizing: border-box;
 
-    padding: rem(24);
+    padding: rem(40);
 
-    &__title,
+    &__title {
+      color: $tuf-color-yellow;
+    }
+
     &__tags {
       color: $tuf-color-clickable;
     }

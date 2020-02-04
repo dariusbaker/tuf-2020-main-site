@@ -231,8 +231,11 @@
 }
 
 .clients {
-  $grid-size: rem(40);
-  $grid-rows: 4;
+  $grid-size: rem(20);
+  $grid-rows: 6;
+
+  $grid-size-d: rem(40);
+  $grid-rows-d: 4;
 
   &__carousel::before {
     display: block;
@@ -252,6 +255,10 @@
   &__list-bg {
     width: 100%;
     height: calc((#{$grid-size} * #{$grid-rows}) + #{rem(1)});
+
+    @media (min-width: rem(1024)) {
+      height: calc((#{$grid-size-d} * #{$grid-rows-d}) + #{rem(1)});
+    }
   }
 
   &__list-bg {
@@ -278,6 +285,7 @@
     }
 
     @media (min-width: rem(1024)) {
+      background-size: $grid-size-d $grid-size-d;
       width: calc(100% - (#{rem(48)} * 2));
       margin: 0 rem(48);
     }
@@ -291,7 +299,11 @@
 
     img {
       width: auto;
-      height: rem(80);
+      height: rem(60);
+
+      @media (min-width: rem(1024)) {
+        height: rem(80);
+      }
     }
   }
 }

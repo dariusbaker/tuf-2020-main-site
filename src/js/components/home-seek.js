@@ -3,6 +3,7 @@ import { debounce } from '../utils';
 export default class HomeSeek {
   constructor(data) {
     this._CONST = {
+      seek_idle_card_selector: '.what-do-you-seek__content__cards__item',
       seek_navigations_selector: '#seek-navigations',
       seek_navigation_items_selector: '#seek-navigation-items',
       seek_navigation_label_selector: '#seek-navigation-items-label',
@@ -43,6 +44,7 @@ export default class HomeSeek {
     this._seekNavigationLabelElem = document.querySelector(this._CONST.seek_navigation_label_selector);
     this._seekNavigationLabelCopyElem = this._seekNavigationLabelElem.querySelector('span');
     this._seekCardsPanelElem = document.querySelector(this._CONST.seek_cards_panel_selector);
+    this._seekIdleCardsItemElem = document.querySelectorAll(this._CONST.seek_idle_card_selector);
 
     // dialog related element
     this._seekCloseBtnElem = document.querySelector(this._CONST.seek_close_btn_selector);
@@ -269,7 +271,7 @@ export default class HomeSeek {
   }
 
   _renderSeekContent() {
-    this._data.items.forEach((item) => {
+    this._data.items.forEach((item, i) => {
       // render navigation
       const navItemTemplate = this._seekNavigationItemTemplate.content.cloneNode(true);
       const navItem = navItemTemplate.querySelector('li');
@@ -280,11 +282,9 @@ export default class HomeSeek {
       this._seekNavigationItemsElem.appendChild(navItemTemplate);
 
       // render idle card
-      const idleCardTemplate = this._seekIdleItemTemplate.content.cloneNode(true);
-      const idleCard = idleCardTemplate.querySelector('img');
+      const idleCard = this._seekIdleCardsItemElem[i];
       idleCard.setAttribute('alt', `${item.type} tarrots card`);
-
-      this._seekIdleCardsElem.appendChild(idleCardTemplate);
+      idleCard.setAttribute('src', item.image);
     });
   }
 

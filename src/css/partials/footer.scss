@@ -5,14 +5,16 @@
 @import '../utils/mixins';
 
 .tuf-talk-to-us {
-  display: flex;
+  &__content {
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  @media screen and (min-width: rem(1024)) {
-    flex-direction: row;
+    @media screen and (min-width: rem(1024)) {
+      flex-direction: row;
 
-    justify-content: space-between;
+      justify-content: space-between;
+    }
   }
 
   &__left {

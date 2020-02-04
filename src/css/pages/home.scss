@@ -200,6 +200,8 @@
 
     align-items: center;
 
+    padding: 0;
+
     max-width: rem(768);
   }
 
@@ -236,6 +238,10 @@
 
   $grid-size-d: rem(40);
   $grid-rows-d: 4;
+
+  &__carousel {
+    position: relative;
+  }
 
   &__carousel::before {
     display: block;

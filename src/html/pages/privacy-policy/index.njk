@@ -1,46 +1,54 @@
 {% extends "base.njk" %}
 
+{% block head_meta %}
+<base href="/">
+{% endblock %}
+
 {% block page_styles %}
 <link rel="stylesheet" href="./assets/css/pages/privacy-policy.css">
 {% endblock %}
 
 {% block content %}
 <section
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding hero">
-  <h1 class="tuf-section-title hero__title">
-    {{privacy_policy.title|safe}}
-  </h1>
+  class="tuf-section hero">
+  <div class="tuf-section__content">
+    <h1 class="tuf-section-title hero__title">
+      {{privacy_policy.title|safe}}
+    </h1>
+  </div>
 </section>
 
 <section
-  class="tuf-section tuf-section--full-bleed content">
-  {% for item in privacy_policy.items %}
-    <h2 class="content__title">
-      {{item.title|safe}}
-    </h2>
-    {% if item.content %}
-    <p>
-      {{item.content|safe}}
-    </p>
-    {% else %}
-      <ol class="content__ordered-list--1">
-      {% for subitem in item.items %}
-        <li>
-          {{subitem.content|safe}}
-          {% if subitem.subitems %}
-            <ol class="content__ordered-list--2">
-              {% for microitem in subitem.subitems %}
-              <li>
-                {{microitem|safe}}
-              </li>
-              {% endfor %}
-            </ol>
-          {% endif %}
-        </li>
-      {% endfor %}
-      </ol>
-    {% endif %}
-  {% endfor %}
+  class="tuf-section content">
+  <div class="tuf-section__content">
+    {% for item in privacy_policy.items %}
+      <h2 class="content__title">
+        {{item.title|safe}}
+      </h2>
+      {% if item.content %}
+      <p>
+        {{item.content|safe}}
+      </p>
+      {% else %}
+        <ol class="content__ordered-list--1">
+        {% for subitem in item.items %}
+          <li>
+            {{subitem.content|safe}}
+            {% if subitem.subitems %}
+              <ol class="content__ordered-list--2">
+                {% for microitem in subitem.subitems %}
+                <li>
+                  {{microitem|safe}}
+                </li>
+                {% endfor %}
+              </ol>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ol>
+      {% endif %}
+    {% endfor %}
+  </div>
 </section>
 
 <!-- talk to us section -->

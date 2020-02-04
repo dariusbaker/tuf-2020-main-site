@@ -2,34 +2,36 @@
 {% from "macros/button.njk" import button %}
 
 <section
-  class="tuf-section tuf-section--full-bleed tuf-talk-to-us"
+  class="tuf-section tuf-talk-to-us"
   id="{{home.talk_to_us.slug}}">
-  <div class="tuf-talk-to-us__left">
-    <div>
-      <h2 class="tuf-talk-to-us__left__title">
-        {{home.talk_to_us.title|safe}}
-      </h2>
-      <p class="tuf-talk-to-us__left__content">
-        {{home.talk_to_us.content}} <a href="mailto:{{global.footer.email}}">{{global.footer.email}}</a>.
-      </p>
+  <div class="tuf-section__content tuf-talk-to-us__content">
+    <div class="tuf-talk-to-us__left">
+      <div>
+        <h2 class="tuf-talk-to-us__left__title">
+          {{home.talk_to_us.title|safe}}
+        </h2>
+        <p class="tuf-talk-to-us__left__content">
+          {{home.talk_to_us.content}} <a href="mailto:{{global.footer.email}}">{{global.footer.email}}</a>.
+        </p>
+      </div>
+      {{footer(classes="tuf-talk-to-us__footer")}}
     </div>
-    {{footer(classes="tuf-talk-to-us__footer")}}
-  </div>
-  <div class="tuf-talk-to-us__right">
-    <form class="tuf-talk-to-us__form">
-      <input aria-label="Name (required)" type="text" placeholder="Name*" />
-      <input aria-label="Email (required)" type="email" placeholder="Email*" />
-      <input aria-label="Contact number (optional)" type="text" placeholder="Contact No." />
-      <input aria-label="Tell us about your project (optional)" type="text" placeholder="Tell us about your project" />
-    </form>
-    {{
-      button(
-        classes = 'tuf-talk-to-us__submit',
-        disabled = false,
-        type = 'primary',
-        id = 'submit-form-btn',
-        label = 'Submit'
-      )
-    }}
+    <div class="tuf-talk-to-us__right">
+      <form class="tuf-talk-to-us__form">
+        <input aria-label="Name (required)" type="text" placeholder="Name*" />
+        <input aria-label="Email (required)" type="email" placeholder="Email*" />
+        <input aria-label="Contact number (optional)" type="text" placeholder="Contact No." />
+        <input aria-label="Tell us about your project (optional)" type="text" placeholder="Tell us about your project" />
+      </form>
+      {{
+        button(
+          classes = 'tuf-talk-to-us__submit',
+          disabled = false,
+          type = 'primary',
+          id = 'submit-form-btn',
+          label = 'Submit'
+        )
+      }}
+    </div>
   </div>
 </section>

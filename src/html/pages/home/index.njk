@@ -17,33 +17,35 @@
 <!-- end of template -->
 
 <!-- hero section -->
-<section id="{{home.hero.slug}}"  class="tuf-section tuf-section--full-bleed">
-  <img class="hero__bg" src="./assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
-  <div class="hero">
-    <h1 class="hero__header">
-      {{home.hero.title|safe}}
-    </h1>
-    <div class="hero__footnote">
-      <p>{{home.hero.footnote_1|safe}}</p>
-      <p class="hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
+<section id="{{home.hero.slug}}"  class="tuf-section">
+  <div class="tuf-section__content">
+    <img class="hero__bg" src="./assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
+    <div class="hero">
+      <h1 class="hero__header">
+        {{home.hero.title|safe}}
+      </h1>
+      <div class="hero__footnote">
+        <p>{{home.hero.footnote_1|safe}}</p>
+        <p class="hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
+      </div>
     </div>
-  </div>
-  <div class="hero__cta">
-    {{
-      button_link(
-        classes="hero__cta__link",
-        type="primary",
-        label=home.hero.cta.label,
-        href=home.hero.cta.href
-      )
-    }}
+    <div class="hero__cta">
+      {{
+        button_link(
+          classes="hero__cta__link",
+          type="primary",
+          label=home.hero.cta.label,
+          href=home.hero.cta.href
+        )
+      }}
+    </div>
   </div>
 </section>
 <!-- end of hero section -->
 
 <!-- mission section -->
 <section id="{{home.mission.slug}}" class="tuf-section mission-section">
-  <div class="mission">
+  <div class="tuf-section__content mission">
     <h2 class="mission__title">
       {{home.mission.title|safe}}
     </h2>
@@ -57,23 +59,25 @@
 <!-- clients section -->
 <section
   id="{{home.clients.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding clients-section">
-  <h2 class="tuf-section-title clients__title">
-    {{home.clients.title|safe}}
-  </h2>
-  <div class="clients__carousel">
-    <div class="clients__list-bg"></div>
-    <div class="clients__list">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides glide__track clients__list-items">
-          {% for client in home.clients.items %}
-          <li
-            aria-label="{{client.name}}"
-            class="glide__slide clients__list-item">
-            <img src="{{client.image}}" alt="{{client.name}}" />
-          </li>
-          {% endfor %}
-        </ul>
+  class="tuf-section clients-section">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title clients__title">
+      {{home.clients.title|safe}}
+    </h2>
+    <div class="clients__carousel">
+      <div class="clients__list-bg"></div>
+      <div class="clients__list">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides glide__track clients__list-items">
+            {% for client in home.clients.items %}
+            <li
+              aria-label="{{client.name}}"
+              class="glide__slide clients__list-item">
+              <img src="{{client.image}}" alt="{{client.name}}" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -82,61 +86,65 @@
 
 <!-- testimonials section -->
 <section id="{{home.testimonials.slug}}" class="tuf-section testimonials-section">
-  <div class="testimonials__list" id="testimonials-carousel">
-    <div class="glide__track" data-glide-el="track">
-      <ul id="testimonials-items" class="glide__slides glide__track testimonials__list-items">
-      </ul>
-    </div>
+  <div class="tuf-section__content">
+    <div class="testimonials__list" id="testimonials-carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul id="testimonials-items" class="glide__slides glide__track testimonials__list-items">
+        </ul>
+      </div>
 
-    <div id="testimonials-pagination" class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
+      <div id="testimonials-pagination" class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
+      </div>
     </div>
+    <template id="testimonial-item-template">
+      <li class="glide__slide testimonials__list-item">
+        <blockquote>
+          <p>
+          </p>
+          <footer>
+          </footer>
+        </blockquote>
+      </li>
+    </template>
   </div>
-  <template id="testimonial-item-template">
-    <li class="glide__slide testimonials__list-item">
-      <blockquote>
-        <p>
-        </p>
-        <footer>
-        </footer>
-      </blockquote>
-    </li>
-  </template>
 </section>
 <!-- end of testimonials section -->
 
 <!-- ask ava section -->
 <section
   id="{{home.ask_ava.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding ask-ava">
-  <h2 class="tuf-section-title tuf-section-title--right ask-ava__title">
-    {{home.ask_ava.title|safe}}
-  </h2>
-  <div class="tuf-content-padding ask-ava__content">
-    <div class="ask-ava__content__head" role="img" aria-label="Ava">
-      <div class="ask-ava__content__head-items">
-        <img draggable="false" class="ask-ava__content__head__bg" src="./assets/img/ava.png" />
-        <div class="ask-ava__content__head__lips">
-          <img draggable="false" class="ask-ava__content__head__lips--default" src="./assets/img/ava-mouth-default.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--a-e" src="./assets/img/ava-mouth-a-e.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="./assets/img/ava-mouth-c-ee.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--o" src="./assets/img/ava-mouth-o.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="./assets/img/ava-mouth-oo-w.png" />
-          <img draggable="false" class="ask-ava__content__head__lips--s-x" src="./assets/img/ava-mouth-s-x.png" />
+  class="tuf-section ask-ava">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title tuf-section-title--right ask-ava__title">
+      {{home.ask_ava.title|safe}}
+    </h2>
+    <div class="tuf-content-padding ask-ava__content">
+      <div class="ask-ava__content__head" role="img" aria-label="Ava">
+        <div class="ask-ava__content__head-items">
+          <img draggable="false" class="ask-ava__content__head__bg" src="./assets/img/ava.png" />
+          <div class="ask-ava__content__head__lips">
+            <img draggable="false" class="ask-ava__content__head__lips--default" src="./assets/img/ava-mouth-default.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--a-e" src="./assets/img/ava-mouth-a-e.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="./assets/img/ava-mouth-c-ee.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--o" src="./assets/img/ava-mouth-o.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="./assets/img/ava-mouth-oo-w.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--s-x" src="./assets/img/ava-mouth-s-x.png" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="ask-ava__content__text">
-      <div class="ask-ava__content__textbox" id="ask-ava-text" role="log" aria-live="polite">
-        Hello Seeker, how may I be of assistance?
+      <div class="ask-ava__content__text">
+        <div class="ask-ava__content__textbox" id="ask-ava-text" role="log" aria-live="polite">
+          Hello Seeker, how may I be of assistance?
+        </div>
+        {{
+          icon_round(
+            classes = 'ask-ava__content__text__btn',
+            id = 'ask-ava-text-next',
+            icon = 'icon-arrow-right',
+            isButton = true
+          )
+        }}
       </div>
-      {{
-        icon_round(
-          classes = 'ask-ava__content__text__btn',
-          id = 'ask-ava-text-next',
-          icon = 'icon-arrow-right',
-          isButton = true
-        )
-      }}
     </div>
   </div>
 </section>
@@ -145,217 +153,225 @@
 <!-- what we do section -->
 <section
   id="{{home.what_we_do.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding what-we-do-section">
-  <h2 class="tuf-section-title what-we-do__title">
-    {{home.what_we_do.title|safe}}
-  </h2>
-  <div class="what-we-do__list" id="what-we-do-carousel">
-    <div class="glide__track" data-glide-el="track">
-      <ul id="what-we-do-items" class="glide__slides glide__track what-we-do__list-items">
-      </ul>
+  class="tuf-section what-we-do-section">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title what-we-do__title">
+      {{home.what_we_do.title|safe}}
+    </h2>
+    <div class="what-we-do__list" id="what-we-do-carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul id="what-we-do-items" class="glide__slides glide__track what-we-do__list-items">
+        </ul>
+      </div>
+      <div id="what-we-do-paginations" class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
+      </div>
     </div>
-    <div id="what-we-do-paginations" class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
-    </div>
-  </div>
-  <div class="tuf-content-padding what-we-do__footnote">
-    <div class="what-we-do__footnote__content">
-      <h4
-        id="what-we-do-footnote-title"
-        class="what-we-do__footnote__content__title">
-      </h4>
-      <p id="what-we-do-footnote-content">
-      </p>
-    </div>
-  </div>
-  {{
-    button_link(
-      classes="what-we-do__cta",
-      type="primary",
-      label=home.what_we_do.cta.label,
-      href=home.what_we_do.cta.href
-    )
-  }}
-  <template id="what-we-do-item-template">
-    <li class="glide__slide what-we-do__list-item">
-      <a
-        class="glide__slide what-we-do__list-item__card">
-        <img
-          class="what-we-do__list-item__card__image" />
-        <h3 class="what-we-do__list-item__card__title">
-        </h3>
-        <p class="what-we-do__list-item__card__content">
+    <div class="tuf-content-padding what-we-do__footnote">
+      <div class="what-we-do__footnote__content">
+        <h4
+          id="what-we-do-footnote-title"
+          class="what-we-do__footnote__content__title">
+        </h4>
+        <p id="what-we-do-footnote-content">
         </p>
-        <small class="what-we-do__list-item__card__footnote">
-        </small>
-        <div class="what-we-do__list-item__card__link">
-          {{
-            icon_round(
-              classes = 'what-we-do__list-item__card__link__icon',
-              icon = 'icon-arrow-right'
-            )
-          }}
-          <span></span>
-        </div>
-      </a>
-    </li>
-  </template>
+      </div>
+    </div>
+    {{
+      button_link(
+        classes="what-we-do__cta",
+        type="primary",
+        label=home.what_we_do.cta.label,
+        href=home.what_we_do.cta.href
+      )
+    }}
+    <template id="what-we-do-item-template">
+      <li class="glide__slide what-we-do__list-item">
+        <a
+          class="glide__slide what-we-do__list-item__card">
+          <img
+            class="what-we-do__list-item__card__image" />
+          <h3 class="what-we-do__list-item__card__title">
+          </h3>
+          <p class="what-we-do__list-item__card__content">
+          </p>
+          <small class="what-we-do__list-item__card__footnote">
+          </small>
+          <div class="what-we-do__list-item__card__link">
+            {{
+              icon_round(
+                classes = 'what-we-do__list-item__card__link__icon',
+                icon = 'icon-arrow-right'
+              )
+            }}
+            <span></span>
+          </div>
+        </a>
+      </li>
+    </template>
+  </div>
 </section>
 <!-- end of what we do section -->
 
 <!-- case studies section -->
 <section
   id="{{home.case_studies.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding case-studies">
-  <h2 class="tuf-section-title tuf-section-title--right case-studies__title">
-    {{home.case_studies.title|safe}}
-  </h2>
-  <ul id="case-studies-list" class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
+  class="tuf-section case-studies">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title tuf-section-title--right case-studies__title">
+      {{home.case_studies.title|safe}}
+    </h2>
+    <ul id="case-studies-list" class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
 
-  </ul>
-  {{
-    button_link(
-      classes="case-studies__cta",
-      type="primary",
-      label=home.case_studies.cta.label,
-      href=home.case_studies.cta.href
-    )
-  }}
+    </ul>
+    {{
+      button_link(
+        classes="case-studies__cta",
+        type="primary",
+        label=home.case_studies.cta.label,
+        href=home.case_studies.cta.href
+      )
+    }}
 
-  <template id="case-study-item-template">
-    <li class="case-studies__list__item">
-      {{
-        case_study_card(
-          classses = '',
-          href = '/case-studies/',
-          title = '',
-          tags = [],
-          image = ''
-        )
-      }}
-    </li>
-  </template>
-  <template id="case-study-tag-template">
-    {{case_study_card_tag()}}
-  </template>
+    <template id="case-study-item-template">
+      <li class="case-studies__list__item">
+        {{
+          case_study_card(
+            classses = '',
+            href = '/case-studies/',
+            title = '',
+            tags = [],
+            image = ''
+          )
+        }}
+      </li>
+    </template>
+    <template id="case-study-tag-template">
+      {{case_study_card_tag()}}
+    </template>
+  </div>
 </section>
 <!-- end of case studies section -->
 
 <!-- what do you seek section -->
 <section
   id="{{home.what_do_you_seek.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding what-do-you-seek">
-  <h2 class="tuf-section-title tuf-section-title--right what-do-you-seek__title">
-    {{home.what_do_you_seek.title|safe}}
-  </h2>
-  <div class="what-do-you-seek__content-wrapper">
-    <div class="what-do-you-seek__content">
-      <div class="what-do-you-seek__content__navigation">
-        <label
-          id="seek-navigation-items-label"
-          data-label="{{home.what_do_you_seek.filter_label | safe}}"
-          class="what-do-you-seek__content__navigation__label"
-          for="what-do-you-seek-list">
-          <span>
-            {{home.what_do_you_seek.filter_label | safe}}
-          </span>
-          <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
-            <use xlink:href="#down" />
-          </svg>
-        </label>
-        <div id="seek-navigations" class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
-          <ul id="seek-navigation-items" class="what-do-you-seek__content__navigation__items" role="listbox">
-          </ul>
-          <p class="what-do-you-seek__content__navigation__footnote">
-          Or simply
-          </p>
-          {{
-            button_link(
-              classes="what-do-you-seek__content__navigation__cta",
-              type="primary",
-              label=home.what_do_you_seek.cta.label,
-              href=home.what_do_you_seek.cta.href
-            )
-          }}
-        </div>
-      </div>
-      <div id="seek-cards-panel" class="what-do-you-seek__content__cards">
-        <div id="seek-idle-cards" class="tuf-content-padding what-do-you-seek__content__cards__items">
-        </div>
-
-        <div
-          id="seek-dialog"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="seek-dialog-title"
-          class="tuf-content-padding what-do-you-seek__dialog">
-          <div class="what-do-you-seek__dialog__image">
-            <img src="" alt="" id="seek-dialog-image" />
-          </div>
-          <div class="what-do-you-seek__dialog__content-wrapper">
-            <header>
-              <p id="seek-dialog-type" class="what-do-you-seek__dialog__type"></p>
-              <h3 id="seek-dialog-title" class="what-do-you-seek__dialog__title">
-              </h3>
-              <p id="seek-dialog-subtitle" class="what-do-you-seek__dialog__subtitle"></p>
-            </header>
-            <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
-            </div>
-            <ul class="what-do-you-seek__dialog__ctas">
-              <li id="seek-dialog-contact-cta">
-                <p></p>
-                {{
-                  button_link(
-                    classes="what-do-you-seek__dialog__ctas__link",
-                    type="primary"
-                  )
-                }}
-              </li>
+  class="tuf-section what-do-you-seek">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title tuf-section-title--right what-do-you-seek__title">
+      {{home.what_do_you_seek.title|safe}}
+    </h2>
+    <div class="what-do-you-seek__content-wrapper">
+      <div class="what-do-you-seek__content">
+        <div class="what-do-you-seek__content__navigation">
+          <label
+            id="seek-navigation-items-label"
+            data-label="{{home.what_do_you_seek.filter_label | safe}}"
+            class="what-do-you-seek__content__navigation__label"
+            for="what-do-you-seek-list">
+            <span>
+              {{home.what_do_you_seek.filter_label | safe}}
+            </span>
+            <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
+              <use xlink:href="#down" />
+            </svg>
+          </label>
+          <div id="seek-navigations" class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+            <ul id="seek-navigation-items" class="what-do-you-seek__content__navigation__items" role="listbox">
             </ul>
-          </div>
-          <div>
+            <p class="what-do-you-seek__content__navigation__footnote">
+            Or simply
+            </p>
             {{
-              icon_round(
-                id="seek-close-btn",
-                classes = 'what-do-you-seek__dialog__close-btn',
-                icon = 'close',
-                isButton = true
+              button_link(
+                classes="what-do-you-seek__content__navigation__cta",
+                type="primary",
+                label=home.what_do_you_seek.cta.label,
+                href=home.what_do_you_seek.cta.href
               )
             }}
           </div>
         </div>
+        <div id="seek-cards-panel" class="what-do-you-seek__content__cards">
+          <div id="seek-idle-cards" class="tuf-content-padding what-do-you-seek__content__cards__items">
+          </div>
+
+          <div
+            id="seek-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="seek-dialog-title"
+            class="tuf-content-padding what-do-you-seek__dialog">
+            <div class="what-do-you-seek__dialog__image">
+              <img src="" alt="" id="seek-dialog-image" />
+            </div>
+            <div class="what-do-you-seek__dialog__content-wrapper">
+              <header>
+                <p id="seek-dialog-type" class="what-do-you-seek__dialog__type"></p>
+                <h3 id="seek-dialog-title" class="what-do-you-seek__dialog__title">
+                </h3>
+                <p id="seek-dialog-subtitle" class="what-do-you-seek__dialog__subtitle"></p>
+              </header>
+              <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
+              </div>
+              <ul class="what-do-you-seek__dialog__ctas">
+                <li id="seek-dialog-contact-cta">
+                  <p></p>
+                  {{
+                    button_link(
+                      classes="what-do-you-seek__dialog__ctas__link",
+                      type="primary"
+                    )
+                  }}
+                </li>
+              </ul>
+            </div>
+            <div>
+              {{
+                icon_round(
+                  id="seek-close-btn",
+                  classes = 'what-do-you-seek__dialog__close-btn',
+                  icon = 'close',
+                  isButton = true
+                )
+              }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <template id="seek-navigation-item-template">
+      <li class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
+        <span>{{item.type}}</span>
+      </li>
+    </template>
+    <template id="seek-idle-template">
+      <img
+        class="what-do-you-seek__content__cards__item"
+        src="/assets/img/tuf-seek-card-idle.png" />
+    </template>
   </div>
-  <template id="seek-navigation-item-template">
-    <li class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
-      <span>{{item.type}}</span>
-    </li>
-  </template>
-  <template id="seek-idle-template">
-    <img
-      class="what-do-you-seek__content__cards__item"
-      src="/assets/img/tuf-seek-card-idle.png" />
-  </template>
 </section>
 <!-- end of what do you seek section -->
 
 <!-- instagram section -->
 <section
   id="{{home.instagram.slug}}"
-  class="tuf-section tuf-section--full-bleed tuf-section--no-padding instagram">
-  <h2 class="tuf-section-title tuf-section-title--smaller instagram__title">
-    {{home.instagram.title|safe}}
-  </h2>
-  <ul id="instagram-list" class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
-  </ul>
-  <template id="instagram-feed">
-    <li class="instagram__list__item">
-      <a
-        target="_blank"
-        rel="noopener noreferrer">
-      </a>
-    </li>
-  </template>
+  class="tuf-section instagram">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title tuf-section-title--smaller instagram__title">
+      {{home.instagram.title|safe}}
+    </h2>
+    <ul id="instagram-list" class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
+    </ul>
+    <template id="instagram-feed">
+      <li class="instagram__list__item">
+        <a
+          target="_blank"
+          rel="noopener noreferrer">
+        </a>
+      </li>
+    </template>
+  </div>
 </section>
 <!-- end of instagram section -->
 

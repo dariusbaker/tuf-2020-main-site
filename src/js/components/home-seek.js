@@ -13,6 +13,7 @@ export default class HomeSeek {
       seek_dialog_type_selector: '#seek-dialog-type',
       seek_dialog_content_selector: '#seek-dialog-content',
       seek_dialog_image_selector: '#seek-dialog-image',
+      seek_dialog_cta_selector: '#seek-dialog-contact-cta',
       seek_navigation_item_template_selector: '#seek-navigation-item-template',
       seek_idle_template_selector: '#seek-idle-template',
       seek_close_btn_selector: '#seek-close-btn',
@@ -49,6 +50,9 @@ export default class HomeSeek {
     this._seekDialogTypeElem = document.querySelector(this._CONST.seek_dialog_type_selector);
     this._seekDialogContentElem = document.querySelector(this._CONST.seek_dialog_content_selector);
     this._seekDialogImageElem = document.querySelector(this._CONST.seek_dialog_image_selector);
+    this._seekDialogCtaElem = document.querySelector(this._CONST.seek_dialog_cta_selector);
+    this._seekDialogCtaTitleElem = this._seekDialogCtaElem.querySelector('p');
+    this._seekDialogCtaAnchorElem = this._seekDialogCtaElem.querySelector('a');
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();
@@ -186,6 +190,8 @@ export default class HomeSeek {
       return;
     }
 
+    const selectedSeekData = seekDetails[0];
+
     // remove previously selected item
     this._removeSelectedSeekItemClass();
 
@@ -195,17 +201,23 @@ export default class HomeSeek {
     this._selectedSeekType = type;
 
     // bind content
-    this._seekDialogTitleElem.innerText = seekDetails[0].title;
+    this._seekDialogTitleElem.innerText = selectedSeekData.title;
 
-    this._seekDialogSubtitleElem.innerText = seekDetails[0].subtitle;
+    this._seekDialogSubtitleElem.innerText = selectedSeekData.subtitle;
 
-    this._seekDialogTypeElem.innerText = seekDetails[0].type;
+    this._seekDialogTypeElem.innerText = selectedSeekData.type;
 
-    this._seekDialogImageElem.src = seekDetails[0].image;
+    this._seekDialogImageElem.src = selectedSeekData.image;
 
-    this._seekDialogImageElem.setAttribute('alt', seekDetails[0].title);
+    this._seekDialogImageElem.setAttribute('alt', selectedSeekData.title);
 
-    this._seekDialogContentElem.innerHTML = seekDetails[0].content.map((item) => `<p>${item}</p>`).join('');
+    this._seekDialogContentElem.innerHTML = selectedSeekData.content.map((item) => `<p>${item}</p>`).join('');
+
+    // bind cta
+    this._seekDialogCtaTitleElem.innerHTML = selectedSeekData.cta.title;
+    this._seekDialogCtaAnchorElem.innerText = selectedSeekData.cta.label;
+    const ctaHref = encodeURI(`mailto:${this._data.email}?subject=${selectedSeekData.cta.subject.trim()}`);
+    this._seekDialogCtaAnchorElem.setAttribute('href', ctaHref);
 
     if (!this._seekDialogOpen) {
       // hide idle items
@@ -225,7 +237,7 @@ export default class HomeSeek {
   }
 
   _renderSeekContent() {
-    this._data.forEach((item) => {
+    this._data.items.forEach((item) => {
       // render navigation
       const navItemTemplate = this._seekNavigationItemTemplate.content.cloneNode(true);
       const navItem = navItemTemplate.querySelector('li');
@@ -245,6 +257,6 @@ export default class HomeSeek {
   }
 
   _getSeekItemByType(type) {
-    return this._data.filter((item) => item.type === type);
+    return this._data.items.filter((item) => item.type === type);
   }
 }

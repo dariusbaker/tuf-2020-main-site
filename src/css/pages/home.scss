@@ -86,7 +86,7 @@
     }
 
     @media (min-width: rem(1024)) {
-      margin-top: rem(132);
+      margin-top: rem(162);
     }
   }
 
@@ -109,13 +109,17 @@
   }
 
   &__cta {
-    margin-top: rem(40);
+    margin-top: rem(60);
     text-align: center;
 
     @media (min-width: rem(768)) {
-      margin-top: rem(64);
+      margin-top: rem(120);
       font-size: rem(30);
     }
+  }
+
+  &__header {
+    position: relative;
   }
 
   &__cta__link {

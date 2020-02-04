@@ -211,7 +211,7 @@
 
     margin-bottom: rem(24);
 
-    @media (min-width: rem(768)) {
+    @media (min-width: rem(1024)) {
       margin: 0;
       font-size: rem(40);
     }
@@ -222,7 +222,7 @@
     font-size: rem(18);
     font-weight: $tuf-font-weight-light;
 
-    @media (min-width: rem(768)) {
+    @media (min-width: rem(1024)) {
       margin-left: rem(32);
 
       font-size: rem(24);
@@ -318,6 +318,14 @@
 
     @media (min-width: rem(728)) {
       max-width: rem(640);
+    }
+
+    @media (min-width: rem(800)) {
+      max-width: rem(768);
+    }
+
+    @media (min-width: rem(1024)) {
+      max-width: rem(900);
     }
 
     &-item {

@@ -7,7 +7,7 @@
 .tuf-button {
   display: block;
 
-  padding: rem(8) rem(24);
+  padding: rem(10) rem(32);
 
   box-sizing: border-box;
 
@@ -20,7 +20,7 @@
 
   color: $tuf-color-white;
 
-  border-radius: rem(30);
+  border-radius: rem(80);
 
   @media (min-width: rem(768)) {
     font-size: rem(30);

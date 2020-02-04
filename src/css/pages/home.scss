@@ -804,7 +804,7 @@
         align-items: center;
         margin-bottom: rem(16);
         font-size: rem(18);
-        color: transparentize($tuf-color-secondary, .7);
+        color: $tuf-color-turqoise;
 
         cursor: pointer;
 
@@ -859,28 +859,13 @@
           position: relative;
 
           pointer-events: none;
-        }
 
-        span::after {
-          position: absolute;
-          display: block;
-          bottom: -.25rem;
-          left: 0;
-          display: block;
-          content: '';
-          width: 100%;
-          height: rem(2);
-
-          background-color: transparent;
-
-          transition: background-color .25s ease-in-out;
+          transition: color .25s ease-in-out;
         }
 
         &:focus,
         &:hover {
-          span::after {
-            background-color: $tuf-color-white;
-          }
+          color: $tuf-color-clickable;
         }
 
         @media screen and (min-width: rem(1024)) {
@@ -889,8 +874,8 @@
           line-height: 1.75;
 
           &--selected {
-            span::after {
-              background-color: $tuf-color-clickable;
+            span {
+              color: $tuf-color-clickable;
             }
           }
         }
@@ -985,7 +970,9 @@
     }
 
     &__close-btn {
-      margin: 0 auto;
+      position: absolute;
+      top: rem(16);
+      right: rem(16);
     }
 
     &__image {
@@ -1022,9 +1009,13 @@
       }
     }
 
+    &__type,
+    &__title {
+      font-weight: $tuf-font-weight-x-bold;
+    }
+
     &__type {
       font-size: rem(18);
-      font-weight: $tuf-font-weight-bold;
 
       text-transform: uppercase;
 
@@ -1038,7 +1029,7 @@
 
       font-style: italic;
 
-      font-weight: $tuf-font-weight-light;
+      font-weight: $tuf-font-weight-regular;
 
       @media only screen and (min-width:rem(1024)) {
         font-size: rem(18);
@@ -1047,7 +1038,6 @@
 
     &__title {
       font-size: rem(36);
-      font-weight: $tuf-font-weight-bold;
       color: $tuf-color-yellow;
 
       @media only screen and (min-width:rem(1024)) {
@@ -1061,7 +1051,7 @@
 
       font-size: rem(14);
 
-      font-weight: $tuf-font-weight-light;
+      font-weight: $tuf-font-weight-regular;
 
       line-height: 1.6;
 
@@ -1081,8 +1071,10 @@
       p {
         margin-bottom: rem(16);
 
-        font-size: rem(14);
+        font-size: rem(16);
         font-weight: $tuf-font-weight-regular;
+
+        color: $tuf-color-yellow;
 
         @media only screen and (min-width:rem(1024)) {
           font-size: rem(16);

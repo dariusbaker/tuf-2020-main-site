@@ -878,6 +878,7 @@
 
     &__cards {
       position: relative;
+      height: 100%;
 
       margin-top: rem(24);
 
@@ -946,8 +947,6 @@
 
     padding-top: rem(24);
     padding-bottom: rem(24);
-
-    background-color: $tuf-color-primary;
 
     visibility: hidden;
     opacity: 1;

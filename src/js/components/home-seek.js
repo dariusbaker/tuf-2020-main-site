@@ -78,12 +78,25 @@ export default class HomeSeek {
       'resize',
       debounce(() => {
         this._initSeekNav();
+        this._adjustCardsPanelHeight();
       }, 300)
     );
   }
 
   _adjustCardsPanelHeight() {
-    
+    this._doubleRaF(() => {
+      this._seekCardsPanelElem.style.height = 'auto';
+
+      if (!this._seekDialogOpen) {
+        this._seekCardsPanelElem.style.height = `${this._seekIdleCardsElem.offsetHeight}px`;
+        this._seekCardsPanelElem.style.maxHeight = `${this._seekIdleCardsElem.offsetHeight}px`;
+
+        return;
+      }
+
+      this._seekCardsPanelElem.style.height = `${this._seekDialogElem.offsetHeight}px`;
+      this._seekCardsPanelElem.style.maxHeight = `${this._seekDialogElem.offsetHeight}px`;
+    });
   }
 
   _bindNavItemEvents() {
@@ -161,6 +174,8 @@ export default class HomeSeek {
 
       // reset label text
       this._updateSeekFilterLabel();
+
+      this._adjustCardsPanelHeight();
     }
   }
 
@@ -245,6 +260,12 @@ export default class HomeSeek {
     this._updateSeekFilterLabel();
 
     this._seekDialogOpen = true;
+
+    this._adjustCardsPanelHeight();
+  }
+
+  _doubleRaF(fn) {
+    requestAnimationFrame(() => requestAnimationFrame(fn));
   }
 
   _renderSeekContent() {

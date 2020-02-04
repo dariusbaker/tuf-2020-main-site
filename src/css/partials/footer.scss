@@ -5,6 +5,9 @@
 @import '../utils/mixins';
 
 .tuf-talk-to-us {
+  margin-bottom: 0;
+  background-color: $tuf-color-primary-dark;
+
   &__content {
     display: flex;
 

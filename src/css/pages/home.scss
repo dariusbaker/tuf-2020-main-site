@@ -62,24 +62,32 @@
 }
 
 .hero {
-  position: relative;
-  display: flex;
+  background: linear-gradient(
+    180deg,
+    transparentize($tuf-color-secondary ,0) 0%,
+    transparentize($tuf-color-primary, 0) 80%
+  );
 
-  flex-direction: column;
+  &__content {
+    position: relative;
+    display: flex;
 
-  justify-content: space-between;
+    flex-direction: column;
 
-  width: 100%;
-  min-height: rem(530);
+    justify-content: space-between;
 
-  margin-top: rem(88);
+    width: 100%;
+    min-height: rem(530);
 
-  @media (min-width: rem(768)) {
-    flex-direction: row;
-  }
+    margin-top: rem(88);
 
-  @media (min-width: rem(1024)) {
-    margin-top: rem(132);
+    @media (min-width: rem(768)) {
+      flex-direction: row;
+    }
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(132);
+    }
   }
 
   &__bg {
@@ -1104,6 +1112,29 @@
 }
 
 .instagram {
+  position: relative;
+
+  background-color: $tuf-color-primary-dark;
+
+  // &:before {
+  //   position: absolute;
+
+  //   top: rem(-50);
+  //   left: 0;
+
+  //   display: block;
+  //   content: '';
+
+  //   width: 100%;
+  //   height: rem(400);
+
+  //   background: linear-gradient(
+  //     180deg,
+  //     transparentize($tuf-color-primary ,0) 0%,
+  //     transparentize($tuf-color-primary-dark, 0) 60%
+  //   );
+  // }
+
   .tuf-section-title {
     color: $tuf-color-primary-light;
   }

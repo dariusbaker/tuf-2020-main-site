@@ -486,6 +486,11 @@
 }
 
 .what-we-do {
+  &__content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   &__list {
     position: relative;
     width: 100%;
@@ -691,6 +696,10 @@
 
 .case-studies {
   &__cta {
+    position: relative;
+
+    z-index: 1;
+
     width: fit-content;
 
     margin: 0 auto;

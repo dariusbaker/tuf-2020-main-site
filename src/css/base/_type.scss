@@ -10,11 +10,7 @@
 
   color: transparentize($tuf-color-secondary, .7);
 
-  @media only screen and (min-width: rem(500)) {
-    font-size: rem($tuf-section-title-t);
-  }
-
-  @media only screen and (min-width: rem(1024)) {
-    font-size: rem($tuf-section-title-d);
+  &--right {
+    text-align: right;
   }
 }

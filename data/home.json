@@ -133,14 +133,14 @@
   },
   "case_studies": {
     "slug": "case-studies",
-    "title": "Case Studies",
+    "title": "Case<br/>Studies",
     "cta": {
       "label": "View all case studies",
       "href": "/case-studies"
     }
   },
   "what_do_you_seek": {
-    "title": "What do you seek?",
+    "title": "What do<br/>you seek?",
     "slug": "what-do-you-seek",
     "filter_label": "Pick One",
     "items": [

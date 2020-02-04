@@ -587,9 +587,6 @@
 
         &__icon {
           margin-right: rem(16);
-
-          border-color: $tuf-color-yellow;
-          color: $tuf-color-yellow;
         }
       }
     }
@@ -989,10 +986,6 @@
 
     &__close-btn {
       margin: 0 auto;
-      color: $tuf-color-yellow;
-      border-color: $tuf-color-yellow;
-
-      border-width: rem(3);
     }
 
     &__image {
@@ -1098,7 +1091,6 @@
 
       &__link {
         width: fit-content;
-        border-color: $tuf-color-yellow;
       }
     }
 

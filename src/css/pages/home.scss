@@ -547,7 +547,7 @@
       &__title {
         margin: rem(24) 0;
 
-        font-size: rem(24);
+        font-size: rem(27);
 
         line-height: 1.2;
 
@@ -558,15 +558,15 @@
 
       &__content {
         margin-bottom: rem(24);
-        font-size: rem(16);
+        font-size: rem(18);
 
         @media screen and (min-width: rem(768)) {
-          font-size: rem(18);
+          font-size: rem(24);
         }
       }
 
       &__footnote {
-        font-size: rem(14);
+        font-size: rem(15);
 
         margin-bottom: rem(64);
 

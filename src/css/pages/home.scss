@@ -731,7 +731,7 @@
 
     &__navigation {
       position: relative;
-      width: rem(280);
+      width: 100%;
 
       @media screen and (min-width: rem(1280)) {
         flex-basis: 30%;
@@ -739,40 +739,27 @@
       }
 
       &-wrapper {
-        position: absolute;
-        display: block;
-        top: rem(36);
-        left: 0;
-
-        z-index: index($z-elements, dropdown_seek);
-
         width: 100%;
+        max-height: 0;
 
         box-sizing: border-box;
-
-        padding: rem(16) rem(16) rem(24);
 
         visibility: hidden;
 
         background-color: $tuf-color-dropdown;
         opacity: 0;
-        transform: scale(0);
-        transform-origin: top;
 
-        transition: opacity .25s ease, transform .25s ease-in-out;
+        transition: opacity .25s ease, max-height .25s ease-in-out;
 
         &--visible {
+          padding: rem(16) rem(24) rem(24);
           opacity: 1;
           visibility: visible;
-          transform: scale(1);
+          max-height: rem(420);
         }
 
         @media screen and (min-width: rem(1280)) {
-          position: relative;
-          top: auto;
-          left: auto;
-
-          padding: 0;
+          max-height: none;
 
           background-color: transparent;
           opacity: 1;
@@ -799,14 +786,19 @@
 
         flex-direction: row;
 
-        justify-content: space-between;
+        justify-content: space-around;
 
         align-items: center;
         margin-bottom: rem(16);
         font-size: rem(18);
         color: $tuf-color-turqoise;
+        outline: 0;
 
         cursor: pointer;
+
+        @media screen and (min-width: rem(1280)) {
+          justify-content: flex-start;
+        }
 
         &__icon {
           display: block;

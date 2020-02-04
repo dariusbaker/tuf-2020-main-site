@@ -97,11 +97,14 @@ export default class HomeSeek {
       // remove events on seek label
       this._seekNavigationLabelElem.removeEventListener('click', this._seekLabelClickHandler);
       this._seekNavigationLabelElem.removeEventListener('keydown', this._seekLabelEnterHandler);
+
+      this._seekNavigationsElem.setAttribute('aria-hidden', false);
     } else {
       this._seekNavigationLabelElem.setAttribute('tabindex', 0);
       // add events on seek label
       this._seekNavigationLabelElem.addEventListener('click', this._seekLabelClickHandler);
       this._seekNavigationLabelElem.addEventListener('keydown', this._seekLabelEnterHandler);
+      this._seekNavigationsElem.setAttribute('aria-hidden', true);
     }
 
     this._updateSeekFilterLabel();
@@ -116,10 +119,12 @@ export default class HomeSeek {
     }
 
     if (this._seekNavOpen) {
+      this._seekNavigationsElem.setAttribute('aria-hidden', true);
       this._seekNavigationsElem.classList.remove(
         this._CONST.seek_navigation_visible_class
       );
     } else {
+      this._seekNavigationsElem.setAttribute('aria-hidden', false);
       this._seekNavigationsElem.classList.add(
         this._CONST.seek_navigation_visible_class
       );

@@ -240,7 +240,11 @@
 
     width: 100%;
 
-    margin-top: calc(((60 / 375) * -100vw) / 2);
+    margin-top: calc(#{$tuf-section-title} / 2.5 * -1);
+
+    @media (min-width: $tuf-section-title-bp) {
+      margin-top: calc(#{rem($tuf-section-title-d)} / 2.5  * -1);
+    }
   }
 
   &__list,
@@ -692,7 +696,7 @@
 
     margin-top: rem(24);
 
-    @media only screen and (min-width: rem(1280)) {
+    @media (min-width: $tuf-section-title-bp) {
       margin-top: - rem(($tuf-section-title-d * 2) - ($tuf-section-title-d * .9));
     }
   }

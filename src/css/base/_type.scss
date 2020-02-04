@@ -1,5 +1,5 @@
 .tuf-section-title {
-  font-size: calc((60 / 375) * 100vw);
+  font-size: $tuf-section-title;
   font-weight: 900;
   line-height: .875;
 
@@ -9,6 +9,14 @@
   overflow: hidden;
 
   color: transparentize($tuf-color-secondary, .7);
+
+  @media (min-width: calc(240 / (60 / 375) * 1px)) {
+    font-size: rem($tuf-section-title-d);
+
+    &--smaller {
+      font-size: rem($tuf-section-title-sm);
+    }
+  }
 
   &--right {
     text-align: right;

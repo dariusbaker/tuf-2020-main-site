@@ -11,6 +11,8 @@ $tuf-font-weight-medium: 500 !default;
 $tuf-font-weight-bold: 700 !default;
 $tuf-font-weight-x-bold: 900 !default;
 
-$tuf-section-title: 60;
-$tuf-section-title-t: 100;
-$tuf-section-title-d: 180;
+$tuf-section-title: calc((60 / 375) * 100vw);
+$tuf-section-title-d: 240;
+$tuf-section-title-sm: 180;
+
+$tuf-section-title-bp: calc(240 / (60 / 375) * 1px);

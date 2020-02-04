@@ -1,3 +1,5 @@
+{% from "macros/form.njk" import talk_form with context %}
+
 {% extends "base.njk" %}
 
 {% block head_meta %}
@@ -11,7 +13,7 @@
 {% block content %}
 <section
   class="tuf-section hero">
-  <div class="tuf-section__content">
+  <div class="hero__content">
     <h1 class="tuf-section-title hero__title">
       {{privacy_policy.title|safe}}
     </h1>
@@ -52,7 +54,7 @@
 </section>
 
 <!-- talk to us section -->
-{% include 'partials/footer.njk' %}
+{{talk_form(classes='tuf-talk-to-us--gradient')}}
 <!-- end of talk to us section -->
 
 {% endblock %}

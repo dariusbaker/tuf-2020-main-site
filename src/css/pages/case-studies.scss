@@ -207,28 +207,3 @@
     }
   }
 }
-
-.tuf-talk-to-us {
-  position: relative;
-  &:before {
-    position: absolute;
-
-    top: rem(-900);
-    left: 0;
-
-    display: block;
-    content: '';
-    z-index: 0;
-
-    width: 100%;
-    height: rem(900);
-
-    pointer-events: none;
-
-    background: linear-gradient(
-      180deg,
-      transparentize($tuf-color-primary ,0) 0%,
-      transparentize($tuf-color-primary-dark, 0) 70%
-    );
-  }
-}

@@ -1,4 +1,5 @@
 {% from "macros/case-study-card.njk" import case_study_card, case_study_card_tag %}
+{% from "macros/form.njk" import talk_form with context %}
 
 {% extends "base.njk" %}
 
@@ -82,7 +83,7 @@
 </section>
 
 <!-- talk to us section -->
-{% include 'partials/footer.njk' %}
+{{talk_form(classes='tuf-talk-to-us--gradient')}}
 <!-- end of talk to us section -->
 
 {% endblock %}

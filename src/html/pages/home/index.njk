@@ -1,5 +1,7 @@
 {% from "macros/button.njk" import button_link, button, icon_round %}
 {% from "macros/case-study-card.njk" import case_study_card, case_study_card_tag %}
+{% from "macros/form.njk" import talk_form with context %}
+
 
 {% extends "base.njk" %}
 
@@ -376,7 +378,7 @@
 <!-- end of instagram section -->
 
 <!-- talk to us section -->
-{% include 'partials/footer.njk' %}
+{{talk_form()}}
 <!-- end of talk to us section -->
 
 {% endblock %}

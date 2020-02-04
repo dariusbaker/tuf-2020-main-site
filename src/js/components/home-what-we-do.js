@@ -97,11 +97,11 @@ export default class HomeWhatWeDo {
         },
         600: {
           perView: 1.5,
-          peek: 40
+          peek: 60
         },
         480: {
           perView: 1,
-          peek: 40
+          peek: 60
         }
       }
     }).mount();

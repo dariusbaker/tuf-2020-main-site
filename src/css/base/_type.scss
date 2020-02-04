@@ -4,6 +4,8 @@
   font-weight: $tuf-font-weight-bold;
   line-height: .9;
 
+  text-transform: capitalize;
+
   @media only screen and (min-width: rem(500)) {
     font-size: rem($tuf-section-title-t);
   }

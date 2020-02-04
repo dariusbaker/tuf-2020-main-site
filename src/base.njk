@@ -28,6 +28,9 @@
 
     <title>{{meta.home.title}}</title>
 
+    {% block head_meta %}
+    {% endblock %}
+
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap" rel="stylesheet">
@@ -35,8 +38,6 @@
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="./assets/img/tuf-icon-152x152.png">
 
-    {% block head_meta %}
-    {% endblock %}
 
     {% block page_styles %}
     {% endblock %}

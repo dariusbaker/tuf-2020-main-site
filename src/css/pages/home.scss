@@ -722,6 +722,10 @@
 }
 
 .what-do-you-seek {
+  position: relative;
+
+  z-index: 1;
+
   &__content-wrapper::before {
     display: block;
     content: '';
@@ -1116,26 +1120,30 @@
 
   background-color: $tuf-color-primary-dark;
 
-  // &:before {
-  //   position: absolute;
+  &:before {
+    position: absolute;
 
-  //   top: rem(-50);
-  //   left: 0;
+    top: rem(-572);
+    left: 0;
 
-  //   display: block;
-  //   content: '';
+    display: block;
+    content: '';
+    z-index: 0;
 
-  //   width: 100%;
-  //   height: rem(400);
+    width: 100%;
+    height: rem(900);
 
-  //   background: linear-gradient(
-  //     180deg,
-  //     transparentize($tuf-color-primary ,0) 0%,
-  //     transparentize($tuf-color-primary-dark, 0) 60%
-  //   );
-  // }
+    pointer-events: none;
+
+    background: linear-gradient(
+      180deg,
+      transparentize($tuf-color-primary ,0) 0%,
+      transparentize($tuf-color-primary-dark, 0) 70%
+    );
+  }
 
   .tuf-section-title {
+    position: relative;
     color: $tuf-color-primary-light;
 
     overflow: visible;

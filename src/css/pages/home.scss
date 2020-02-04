@@ -1137,6 +1137,8 @@
 
   .tuf-section-title {
     color: $tuf-color-primary-light;
+
+    overflow: visible;
   }
 
   &__list {

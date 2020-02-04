@@ -697,7 +697,7 @@
     }
 
     @media only screen and (min-width: rem(1024)) {
-      max-width: rem(840);
+      max-width: rem(900);
     }
   }
 
@@ -1089,6 +1089,10 @@
 }
 
 .instagram {
+  .tuf-section-title {
+    color: $tuf-color-primary-light;
+  }
+
   &__list {
     position: relative;
 

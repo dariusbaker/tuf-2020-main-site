@@ -1,10 +1,14 @@
 .tuf-section-title {
-  font-size: rem($tuf-section-title);
-  color: transparentize($tuf-color-secondary, .7);
-  font-weight: $tuf-font-weight-bold;
-  line-height: .9;
+  font-size: calc((60 / 375) * 100vw);
+  font-weight: 900;
+  line-height: .875;
 
   text-transform: capitalize;
+
+  /* hides horizontal scrolling that is triggered by very long words */
+  overflow: hidden;
+
+  color: transparentize($tuf-color-secondary, .7);
 
   @media only screen and (min-width: rem(500)) {
     font-size: rem($tuf-section-title-t);

@@ -7,6 +7,7 @@ export default class HomeSeek {
       seek_navigation_items_selector: '#seek-navigation-items',
       seek_navigation_label_selector: '#seek-navigation-items-label',
       seek_idle_cards_selector: '#seek-idle-cards',
+      seek_cards_panel_selector: '#seek-cards-panel',
       seek_dialog_selector: '#seek-dialog',
       seek_dialog_title_selector: '#seek-dialog-title',
       seek_dialog_subtitle_selector: '#seek-dialog-subtitle',
@@ -41,6 +42,7 @@ export default class HomeSeek {
     this._seekIdleCardsElem = document.querySelector(this._CONST.seek_idle_cards_selector);
     this._seekNavigationLabelElem = document.querySelector(this._CONST.seek_navigation_label_selector);
     this._seekNavigationLabelCopyElem = this._seekNavigationLabelElem.querySelector('span');
+    this._seekCardsPanelElem = document.querySelector(this._CONST.seek_cards_panel_selector);
 
     // dialog related element
     this._seekCloseBtnElem = document.querySelector(this._CONST.seek_close_btn_selector);
@@ -78,6 +80,10 @@ export default class HomeSeek {
         this._initSeekNav();
       }, 300)
     );
+  }
+
+  _adjustCardsPanelHeight() {
+    
   }
 
   _bindNavItemEvents() {

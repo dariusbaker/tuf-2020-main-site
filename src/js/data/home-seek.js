@@ -66,13 +66,11 @@ export const HOME_SEEK_DATA = {
         '#protip: also applies to life in general.'
       ],
       image: '/assets/img/tuf-home-wdys-careers.png',
-      cta: [
-        {
-          title: 'Be one with the Universe',
-          label: 'Talk to us',
-          subject: 'I Chose The Wheel Of Fortune: Career / internship'
-        }
-      ]
+      cta: {
+        title: 'Be one with the Universe',
+        label: 'Talk to us',
+        subject: 'I Chose The Wheel Of Fortune: Career / internship'
+      }
     },
     {
       type: 'General Enquiries',

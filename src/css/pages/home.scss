@@ -755,11 +755,13 @@
           padding: rem(16) rem(24) rem(24);
           opacity: 1;
           visibility: visible;
-          max-height: rem(420);
+          max-height: rem(600);
         }
 
         @media screen and (min-width: rem(1280)) {
           max-height: none;
+
+          padding: 0;
 
           background-color: transparent;
           opacity: 1;
@@ -878,6 +880,8 @@
       position: relative;
 
       margin-top: rem(24);
+
+      transition: max-height .25s ease-out;
 
       @media screen and (min-width: rem(1280)) {
         flex-basis: 70%;

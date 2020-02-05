@@ -118,15 +118,12 @@
     }
   }
 
-  &__header {
-    position: relative;
-  }
-
   &__cta__link {
     display: inline-block;
   }
 
   &__header {
+    position: relative;
     font-size: rem(40);
 
     line-height: 1.25;
@@ -150,6 +147,7 @@
   }
 
   &__footnote {
+    position: relative;
     display: flex;
 
     flex-direction: column;

@@ -6,11 +6,16 @@
 <link rel="stylesheet" href="./assets/css/pages/case-study-base.css">
 {% endblock %}
 
-{% block page_title %}
+{% block meta_tag %}
 <title>Case Study: River Safari</title>
+<meta property="og:url" content="{{meta.home.og_url}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{meta.home.og_title}}">
+<meta property="og:description" content="{{meta.home.og_description}}">
+<meta property="og:image" content="{{meta.home.og_image}}">
 {% endblock %}
 
-{% block head_meta %}
+{% block base_tag %}
 <base href="/">
 {% endblock %}
 

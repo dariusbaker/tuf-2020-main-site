@@ -20,17 +20,16 @@
     <link rel="icon" href="./assets/img/tuf-icon-24x24.png" sizes="24x24">
     <link rel="icon" href="./assets/img/tuf-icon-32x32.png" sizes="32x32">
 
+    {% block meta_tag %}
+    <title>{{meta.home.title}}</title>
     <meta property="og:url" content="{{meta.home.og_url}}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{meta.home.og_title}}">
     <meta property="og:description" content="{{meta.home.og_description}}">
     <meta property="og:image" content="{{meta.home.og_image}}">
-
-    {% block page_title %}
-    <title>{{meta.home.title}}</title>
     {% endblock %}
 
-    {% block head_meta %}
+    {% block base_tag %}
     {% endblock %}
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

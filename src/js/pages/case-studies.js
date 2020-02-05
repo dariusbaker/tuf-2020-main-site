@@ -12,7 +12,8 @@ class CaseStudies {
       case_study_tag_template_selector: '#case-study-tag-template',
       case_studies_list_selector: '#case-studies-list',
       dropdown_data_attr: 'data-type',
-      tags_data_attr: 'data-tags'
+      tags_data_attr: 'data-tags',
+      base_case_study_url: '/case-studies/'
     };
 
     this._data = data;

@@ -10,7 +10,7 @@
 
   color: transparentize($tuf-color-secondary, .7);
 
-  @media (min-width: calc(240 / (60 / 375) * 1px)) {
+  @media (min-width: $tuf-section-title-bp) {
     font-size: rem($tuf-section-title-d);
 
     &--smaller {
@@ -21,4 +21,8 @@
   &--right {
     text-align: right;
   }
+}
+
+.tuf-header-br {
+  display: block;
 }

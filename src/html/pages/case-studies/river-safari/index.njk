@@ -1,5 +1,35 @@
+{% from "macros/form.njk" import talk_form with context %}
+
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="./assets/css/pages/case-study-base.css">
+{% endblock %}
+
+{% block page_title %}
+<title>Case Study: River Safari</title>
+{% endblock %}
+
+{% block head_meta %}
+<base href="/">
+{% endblock %}
+
 {% block content %}
-case-studies: river safari
+<section
+  class="tuf-section hero">
+  <div class="tuf-content-padding tuf-section__content hero__content">
+    <div>
+      <h1 class="tuf-section-title hero__title">
+        River Safari<span class="tuf-header-br">Adventure Buddy</span>
+      </h1>
+      <p>
+
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- talk to us section -->
+{{talk_form()}}
+<!-- end of talk to us section -->
 {% endblock %}

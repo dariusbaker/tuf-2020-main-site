@@ -25,7 +25,11 @@
 
     box-sizing: border-box;
 
-    padding: rem(40);
+    padding: rem(24);
+
+    @media only screen and (min-width: rem(1024)) {
+      padding: rem(40);
+    }
 
     &__title {
       color: $tuf-color-yellow;

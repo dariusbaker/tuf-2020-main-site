@@ -17,8 +17,10 @@ const postcssProcessors = [
 ];
 
 function styles() {
-  return src(`${CONFIG.SRC.CSS}/**/*.scss`)
-    .pipe(sass().on('error', sass.logError))
+  return src(`${CONFIG.SRC.CSS}/**/*.{scss,css}`)
+    .pipe(sass({
+      includePaths: ['node_modules']
+    }).on('error', sass.logError))
     .pipe(postcss(postcssProcessors))
     .pipe(dest(CONFIG.DIST.CSS))
     .pipe(stream());

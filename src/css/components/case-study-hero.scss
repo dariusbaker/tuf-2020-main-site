@@ -1,0 +1,86 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+
+.cs-hero {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: rem(900);
+
+    padding-bottom: rem(40);
+
+    content: '';
+
+    pointer-events: none;
+
+    background: $tuf-color-secondary;
+    background: linear-gradient(
+      180deg,
+      transparentize($tuf-color-secondary ,0) 0%,
+      transparentize($tuf-color-primary, 1) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    margin-top: rem(108);
+    margin-bottom: 0;
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(132);
+    }
+  }
+
+
+  &__content-wrapper {
+    display: inline-block;
+  }
+
+  &__title {
+    display: inline-block;
+    line-height: 1.25;
+    color: $tuf-color-white;
+
+    @media (min-width: $tuf-section-title-bp) {
+      font-size: rem(80);
+    }
+  }
+
+  &__tags {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: rem(24);
+
+    font-size: rem(24);
+    font-weight: $tuf-font-weight-light;
+    line-height: 1.5;
+
+    color: $tuf-color-turqoise;
+
+    @media only screen and (min-width: rem(1024)) {
+      font-size: rem(36);
+    }
+
+    &__item {
+      &:not(:first-child)::before {
+        content: '•';
+        padding: 0 rem(8);
+      }
+    }
+  }
+}

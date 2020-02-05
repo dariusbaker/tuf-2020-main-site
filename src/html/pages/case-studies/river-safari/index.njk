@@ -1,3 +1,4 @@
+{% from "macros/case-study-hero.njk" import case_study_hero %}
 {% from "macros/form.njk" import talk_form with context %}
 
 {% extends "base.njk" %}
@@ -7,7 +8,7 @@
 {% endblock %}
 
 {% block meta_tag %}
-<title>Case Study: River Safari</title>
+<title>Case Study: River Safari Adventure Buddy</title>
 <meta property="og:url" content="{{meta.home.og_url}}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{meta.home.og_title}}">
@@ -20,19 +21,12 @@
 {% endblock %}
 
 {% block content %}
-<section
-  class="tuf-section hero">
-  <div class="tuf-content-padding tuf-section__content hero__content">
-    <div>
-      <h1 class="tuf-section-title hero__title">
-        River Safari<span class="tuf-header-br">Adventure Buddy</span>
-      </h1>
-      <p>
-
-      </p>
-    </div>
-  </div>
-</section>
+{{
+  case_study_hero(
+    title='River Safari<span class="tuf-header-br">Adventure Buddy</span>',
+    tags=['Mobile', 'UI/UX', 'Tech']
+  )
+}}
 
 <!-- talk to us section -->
 {{talk_form()}}

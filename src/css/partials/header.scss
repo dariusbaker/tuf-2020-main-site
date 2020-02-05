@@ -109,13 +109,16 @@
     transition: visibility 0s, transform .35s ease-in-out;
 
     &__logo {
-      height: rem(30);
+      display: flex;
+
+      align-items: center;
+      height: rem(60);
 
       margin: rem(16);
 
       img {
         width: auto;
-        height: 100%;
+        max-height: 100%;
       }
     }
 
@@ -181,10 +184,20 @@
   }
 
   &__logo {
-    height: rem(30);
+    height: rem(60);
 
-    @media (min-width: 728px) {
-      height: rem(35);
+    &__img {
+      display: none;
+
+      @media (min-width: rem(1100)) {
+        display: inline-block;
+      }
+    }
+
+    &__img--mobile {
+      @media (min-width: rem(1100)) {
+        display: none;
+      }
     }
 
     @media (min-width: rem(1300)) {

@@ -27,9 +27,13 @@
     );
   }
 
+  &:after {
+    height: rem(20);
+  }
+
   &__content {
     position: relative;
-    margin-top: rem(88);
+    margin-top: rem(108);
     margin-bottom: 0;
 
     @media (min-width: rem(1024)) {

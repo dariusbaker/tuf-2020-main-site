@@ -201,7 +201,7 @@
 
       visibility: hidden;
 
-      transition: visibility 0s, width .25s ease-in-out;
+      transition: visibility 0s;
 
       &--visible {
         width: 100%;

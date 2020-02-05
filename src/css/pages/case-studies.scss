@@ -6,7 +6,6 @@
 
 .hero {
   position: relative;
-  z-index: 1;
 
   &:before {
     position: absolute;
@@ -28,7 +27,7 @@
     background: linear-gradient(
       180deg,
       transparentize($tuf-color-secondary ,0) 0%,
-      transparentize($tuf-color-primary, 0) 100%
+      transparentize($tuf-color-primary, 1) 100%
     );
   }
 

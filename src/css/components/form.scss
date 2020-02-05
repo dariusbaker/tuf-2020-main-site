@@ -26,7 +26,7 @@
 
       background: linear-gradient(
         180deg,
-        transparentize($tuf-color-primary ,0) 0%,
+        transparentize($tuf-color-primary , 1) 0%,
         transparentize($tuf-color-primary-dark, 0) 70%
       );
     }

@@ -18,6 +18,8 @@
     width: 100%;
     height: rem(900);
 
+    padding-bottom: rem(40);
+
     content: '';
 
     pointer-events: none;
@@ -28,10 +30,6 @@
       transparentize($tuf-color-secondary ,0) 0%,
       transparentize($tuf-color-primary, 0) 100%
     );
-  }
-
-  &:after {
-    height: rem(40);
   }
 
   &__content {

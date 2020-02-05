@@ -57,11 +57,7 @@ body {
 
   padding: 0;
 
-  &:after {
-    display: block;
-    content: '';
-    height: rem(80);
-  }
+  padding-bottom: rem(80);
 
   &__content {
     width: 100%;

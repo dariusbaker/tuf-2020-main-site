@@ -2,6 +2,10 @@
 
 {% extends "base.njk" %}
 
+{% block page_title %}
+<title>{{privacy_policy.title|safe}}</title>
+{% endblock %}
+
 {% block head_meta %}
 <base href="/">
 {% endblock %}

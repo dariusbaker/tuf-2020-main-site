@@ -3,6 +3,10 @@
 
 {% extends "base.njk" %}
 
+{% block page_title %}
+<title>{{case_studies_list.title|safe}}</title>
+{% endblock %}
+
 {% block head_meta %}
 <base href="/">
 {% endblock %}

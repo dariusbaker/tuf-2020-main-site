@@ -26,7 +26,9 @@
     <meta property="og:description" content="{{meta.home.og_description}}">
     <meta property="og:image" content="{{meta.home.og_image}}">
 
+    {% block page_title %}
     <title>{{meta.home.title}}</title>
+    {% endblock %}
 
     {% block head_meta %}
     {% endblock %}

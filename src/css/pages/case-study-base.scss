@@ -4,6 +4,9 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+// aos
+@import '../../../node_modules/aos/dist/aos.css';
+
 .hero {
   position: relative;
 

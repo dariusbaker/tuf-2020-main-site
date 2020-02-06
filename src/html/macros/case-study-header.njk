@@ -1,0 +1,19 @@
+{% macro case_study_header(title = '', tags = []) %}
+<section
+  class="tuf-section cs-header">
+  <div class="tuf-content-padding tuf-section__content cs-header__content">
+    <div class="cs-header__content-wrapper">
+      <h1 class="tuf-section-title cs-header__title">
+        {{title|safe}}
+      </h1>
+      <ul class="cs-header__tags" aria-label="tags">
+        {% for tag in tags %}
+        <li class="cs-header__tags__item">
+          {{tag}}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endmacro %}

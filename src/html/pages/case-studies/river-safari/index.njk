@@ -1,4 +1,4 @@
-{% from "macros/case-study-hero.njk" import case_study_hero %}
+{% from "macros/case-study-header.njk" import case_study_header %}
 {% from "macros/form.njk" import talk_form with context %}
 {% from "macros/case-study-nav.njk" import case_study_nav %}
 
@@ -6,6 +6,7 @@
 
 {% block page_styles %}
 <link rel="stylesheet" href="./assets/css/pages/case-study-base.css">
+<link rel="stylesheet" href="./assets/css/pages/case-study-river-safari.css">
 {% endblock %}
 
 {% block meta_tag %}
@@ -23,11 +24,65 @@
 
 {% block content %}
 {{
-  case_study_hero(
+  case_study_header(
     title='River Safari<span class="tuf-header-br">Adventure Buddy</span>',
     tags=['Mobile', 'UI/UX', 'Tech']
   )
 }}
+
+<figure class="hero">
+  <img
+    src="/assets/img/case-studies/river-safari/hero__background.jpg"
+    alt="River Safari Singapore brand mascot featured in mobile app audio tour"
+  />
+</figure>
+
+<section class="intro">
+  <div class="cs-container intro__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--center">
+        <p data-aos="fade-up">
+          River Safari is Asia’s one and only river-themed safari park, home to over 8700 animals from 260 species. Popular for exhibits such as the Amazon Flooded Forest – the largest freshwater aquarium in the world – the park receives over 1 million visitors annually.
+        </p>
+      </div>
+      <div class="col-md cs-container__column cs-container__column--desktop-only">
+      </div>
+    </div>
+  </div>
+  <figure class="intro__bg-right">
+    <img
+      data-aos="fade-up"
+      src="/assets/img/case-studies/river-safari/intro__copy.png"
+      alt="introduction to mobile app development case study for River Safari Singapore" />
+  </figure>
+</section>
+
+<section class="problem">
+  <div class="cs-container problem__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--center">
+        <img
+          data-aos="fade-up"
+          src="/assets/img/case-studies/river-safari/problem__hastag.png"
+          alt="how to develop brand content for audio tour mobile app" />
+      </div>
+      <div class="col-md cs-container__column problem__content__copy">
+        <h2
+          data-aos="fade-up">
+          A Unique Problem
+        </h2>
+        <p
+          data-aos="fade-up">
+          Although the park was home to thousands of intriguing creatures, the exhibits were mostly viewing experiences. Visitors simply didn’t feel engaged enough.
+        </p>
+        <img
+          data-aos="fade-up"
+          src="/assets/img/case-studies/river-safari/problem__panda.png"
+          alt="brand content for audio tour mobile app" />
+      </div>
+    </div>
+  </div>
+</section>
 
 {{
   case_study_nav(
@@ -39,4 +94,8 @@
 <!-- talk to us section -->
 {{talk_form()}}
 <!-- end of talk to us section -->
+{% endblock %}
+
+{% block page_script %}
+<script src="./assets/js/case-study-base.min.js"></script>
 {% endblock %}

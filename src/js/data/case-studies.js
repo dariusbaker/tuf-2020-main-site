@@ -43,7 +43,7 @@ export const HOME_CASE_STUDIES_DATA = [
     featured_in_home: 4
   },
   {
-    slug: 'starbucks',
+    slug: 'starbucks-bogo',
     title: 'Starbucks BOGO Promo',
     image: '/assets/img/tuf-home-cs-sb.jpg',
     tags: [

@@ -57,9 +57,13 @@
   }
 
   &__column {
-    display: flex;
+    display: block;
 
     padding: rem(20) rem(24);
+
+    &--flex {
+      display: flex;
+    }
 
     @media screen and (min-width: rem(768)) {
       padding: rem(50) rem(65);

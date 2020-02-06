@@ -1,5 +1,6 @@
 {% from "macros/case-study-hero.njk" import case_study_hero %}
 {% from "macros/form.njk" import talk_form with context %}
+{% from "macros/case-study-nav.njk" import case_study_nav %}
 
 {% extends "base.njk" %}
 
@@ -25,6 +26,13 @@
   case_study_hero(
     title='River Safari<span class="tuf-header-br">Adventure Buddy</span>',
     tags=['Mobile', 'UI/UX', 'Tech']
+  )
+}}
+
+{{
+  case_study_nav(
+    prev_link="/case-studies/starbucks-bogo",
+    next_link="/case-studies/wantedly"
   )
 }}
 

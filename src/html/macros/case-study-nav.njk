@@ -1,0 +1,50 @@
+{% from "macros/button.njk" import icon_round %}
+{% macro case_study_nav(prev_link = '', next_link = '') %}
+<nav aria-label="Case Study Navigator" class="tuf-section cs-nav">
+  <ul class="tuf-content-padding cs-nav__list">
+    <li>
+      <a
+        aria-label="Prev Project"
+        class="cs-nav__list__item cs-nav__list__item--prev"
+        href="{{prev_link}}">
+        <span>
+          Prev Project
+        </span>
+        {{
+          icon_round(
+            classes = 'cs-nav__icon cs-nav__icon--prev',
+            icon = 'icon-arrow-right',
+            isButton = false
+          )
+        }}
+      </a>
+    </li>
+    <li>
+      <a class="cs-nav__list__item" href="/case-studies" aria-label="Case Studies">
+        {{
+          icon_round(
+            classes = 'cs-nav__icon cs-nav__icon--home',
+            icon = 'icon-home',
+            isButton = false
+          )
+        }}
+      </a>
+    </li>
+    <li>
+      <a
+        aria-label="Next Project"
+        class="cs-nav__list__item cs-nav__list__item--next"
+        href="{{next_link}}">
+        <span>Next Project</span>
+        {{
+          icon_round(
+            classes = 'cs-nav__icon',
+            icon = 'icon-arrow-right',
+            isButton = false
+          )
+        }}
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endmacro %}

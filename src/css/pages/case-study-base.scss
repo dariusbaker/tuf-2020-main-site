@@ -85,3 +85,50 @@
     }
   }
 }
+
+h2 {
+  margin-bottom: rem(8);
+
+  font-size: rem(24);
+  font-weight: $tuf-font-weight-bold;
+
+  line-height: 1.16;
+}
+
+p {
+  font-size: rem(18);
+  font-weight: $tuf-font-weight-regular;
+  line-height: 2;
+}
+
+p + p {
+  margin-top: rem(25);
+}
+
+.cs-content {
+  position: relative;
+  width: 100%;
+  flex: 1;
+
+  margin: 0 0 0 auto;
+
+  &--right {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 0;
+  }
+
+  @media screen and (min-width: rem(640)) {
+    max-width: rem(540);
+  }
+
+  @media screen and (min-width: rem(768)) {
+    max-width: rem(480);
+  }
+
+  @media screen and (min-width: rem(1024)) {
+    max-width: rem(570);
+  }
+}

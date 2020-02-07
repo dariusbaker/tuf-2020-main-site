@@ -1,0 +1,132 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.intro {
+  position: relative;
+  background-color: #0a623e;
+  color: $tuf-color-white;
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.snakes-ladders {
+  position: relative;
+  background-color: $tuf-color-white;
+  color: $tuf-color-gray;
+
+  &__content {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__bg {
+    position: relative;
+    width: 100%;
+    padding-bottom: percentage(1440 / 960);
+    left: 0;
+    background-image: url('/assets/img/case-studies/starbucks-career/snakes-ladders-support.jpg');
+    background-size: cover;
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      padding-bottom: 0;
+    }
+  }
+
+  &__beans {
+    position: relative;
+    left: 0%;
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      left: 50%;
+      width: 50%;
+    }
+  }
+}
+
+.board-games {
+  &__image {
+    width: 100%;
+  }
+}
+
+.we-knew {
+  position: relative;
+  background-color: #0a623e;
+  color: $tuf-color-white;
+
+  &__suit {
+    position: relative;
+    left: 0%;
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+
+  &__bg {
+    position: relative;
+    height: rem(500);
+    width: 100%;
+    left: 0;
+    background-image: url('/assets/img/case-studies/starbucks-career/characters.jpg');
+    background-size: cover;
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+}
+
+.guide {
+  &__image {
+    width: 100%;
+  }
+}
+
+.sure-enough {
+  background-color: #173538;
+  color: $tuf-color-white;
+
+  &__right {
+    padding-bottom: 0;
+    align-items: flex-end;
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
+
+.support {
+  display: flex;
+
+  flex-direction: column;
+
+  @media screen and (min-width: rem(768)) {
+    flex-direction: row;
+  }
+
+  &__working,
+  &__benefits {
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+}

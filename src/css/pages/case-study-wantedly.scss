@@ -1,0 +1,275 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.hero {
+  position: relative;
+  background-color: #00a4bb;
+  z-index: 10;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__trophy {
+    position: absolute;
+    top: ((478 / 550) * 100%);
+    left: ((685 / 1920) * 100%);
+    width: ((73 / 1920) * 100%);
+  }
+
+  &__man {
+    position: absolute;
+    top: ((314 / 550) * 100%);
+    left: ((159 / 1920) * 100%);
+    width: ((231 / 1920) * 100%);
+  }
+}
+
+.intro {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #2d52a1;
+
+  &__left {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.crunch {
+  position: relative;
+  color: $tuf-color-gray;
+  background-image: url('/assets/img/case-studies/wantedly/crunch__bg.png');
+  background-position: center;
+
+  &__left {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.tuf {
+  background-image: url('/assets/img/case-studies/wantedly/tuf__background.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__image {
+    width: 100%;
+    max-width: rem(668);
+  }
+}
+
+.characters {
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+  background-image: url('/assets/img/case-studies/wantedly/character__background.jpg');
+  background-size: cover;
+  background-position: right center;
+
+  &__wrapper {
+    position: relative;
+
+    .cs-container__row {
+      .cs-container__column {
+        padding: 0 rem(15);
+        margin-top: rem(40);
+
+
+        img {
+          width: 100%;
+        }
+
+        &:nth-child(1) {
+          margin-top: 0;
+        }
+
+        &:nth-child(2) {
+          @media screen and (min-width: rem(768)) {
+            margin: rem(150) 0;
+          }
+        }
+
+        &:nth-child(3) {
+          @media screen and (min-width: rem(768)) {
+            margin-top: rem(300);
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: rem(40);
+    width: 100%;
+    max-width: rem(254);
+
+    @media screen and (min-width: rem(768)) {
+      margin-top: rem(-250);
+    }
+  }
+}
+
+.fb {
+  color: $tuf-color-white;
+  background-color: #25a4b9;
+
+  &__title {
+    padding-bottom: 0;
+  }
+
+  &__content {
+    padding-right: 0;
+    padding-left: 0;
+
+    &--right {
+      padding-top: 0;
+    }
+  }
+
+  &__cards {
+    width: ((745 / 910) * 100%);
+
+    &--right {
+      float: right;
+    }
+
+    &--left {
+      float: left;
+    }
+  }
+
+  &__icons {
+    position: relative;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    width: ((300 / 910) * 100%);
+    margin: rem(40) 0;
+
+    &--right {
+      float: right;
+    }
+
+    &--left {
+      float: left;
+    }
+  }
+
+  &__support-wrapper {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    @media screen and (min-width: rem(768)) {
+      flex-direction: row;
+    }
+  }
+
+  &__support {
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      width: (100% / 3);
+    }
+  }
+}
+
+.collaterals {
+  color: $tuf-color-gray;
+  background-color: #f9d13c;
+
+  &__title {
+    padding-bottom: 0;
+  }
+
+  &__hand-wrapper {
+    display: flex;
+  }
+
+  &__bottom {
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__hand {
+    width: 100%;
+    max-width: rem(518);
+
+    align-self: flex-end;
+  }
+
+  &__pullup {
+    width: 100%;
+    max-width: rem(321);
+    margin: rem(40) auto;
+    align-self: center;
+
+    @media screen and (min-width: rem(768)) {
+      width: 60%;
+    }
+  }
+
+  &__poster {
+    padding: 0;
+
+    @media screen and (min-width: rem(768)) {
+      &:nth-child(1) {
+        margin-top: rem(100);
+      }
+
+      &:nth-child(2) {
+        margin-top: rem(60);
+      }
+
+      &:nth-child(3) {
+        margin-top: rem(20);
+      }
+    }
+  }
+}
+
+.result {
+  position: relative;
+  background-color: $tuf-color-white;
+  color: $tuf-color-gray;
+
+  &__bg {
+    position: relative;
+    height: rem(500);
+    width: 100%;
+    left: 0;
+    background-image: url('/assets/img/case-studies/wantedly/result__confetti.jpg');
+    background-size: cover;
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  &__wall {
+    position: relative;
+    left: 0%;
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+}

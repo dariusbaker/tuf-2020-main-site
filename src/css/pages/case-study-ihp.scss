@@ -1,0 +1,297 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.hero {
+  position: relative;
+}
+
+.intro {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #5fc3d9;
+
+  &__image {
+    width: 100%;
+    max-width: rem(600);
+    margin-bottom: rem(-30);
+
+    @media screen and (min-width: rem(768)) {
+      margin-bottom: rem(-50);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.over-twenty {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+
+  &__left {
+    display: flex;
+
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.keywords {
+  color: $tuf-color-white;
+  background-color: #540e4e;
+  background-image: url('/assets/img/case-studies/ihp/keywords__background.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: rem(240, 24);
+
+  @media screen and (min-width: rem(1440)) {
+    background-size: rem(240);
+  }
+
+  &__right {
+    display: flex;
+
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.personality {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: #e7e7e7;
+  padding-top: rem(120);
+  padding-bottom: rem(30);
+
+  @media screen and (min-width: rem(768)) {
+    padding-top: rem(90);
+    padding-bottom: 0;
+  }
+
+  &__title {
+    position: absolute;
+    top: rem(50);
+  }
+
+  &__triangle {
+    position: absolute;
+    bottom: 0;
+    right: rem(-30);
+    width: rem(120, 24);
+
+    @media screen and (min-width: rem(768)) {
+      right: 0;
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      width: rem(120, 16);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    padding-bottom: rem(25);
+  }
+
+  .cs-container__row {
+    min-height: rem(700);
+
+    .cs-container__column {
+      display: flex;
+
+      flex-direction: column;
+      padding-left: rem(25);
+      padding-right: rem(25);
+    }
+
+    .cs-container__column:nth-child(2) {
+      justify-content: center;
+    }
+
+    .cs-container__column:nth-child(3) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.manifesto {
+  color: $tuf-color-white;
+  background-color: #7d2175;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__left {
+    @media (min-width: rem(992)) {
+      padding-right: rem(16);
+    }
+
+    &__copy-wrapper {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__copy {
+      position: relative;
+      width: 100%;
+      padding: 0 rem(15);
+
+      @media (min-width: rem(992)) {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+      }
+    }
+  }
+
+  &__right {
+    @media (min-width: rem(992)) {
+      padding-left: rem(16);
+    }
+  }
+
+  p {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    font-size: rem(18);
+
+    span {
+      display: block;
+      color: #5fc3d9;
+    }
+  }
+}
+
+.moto {
+  &__image {
+    width: 100%;
+  }
+}
+
+.statement {
+  position: relative;
+  background-color: #fff;
+
+  &__bg {
+    position: relative;
+    height: rem(300);
+    width: 100%;
+    left: 0;
+    background-image: url('/assets/img/case-studies/ihp/mission__image.jpg');
+    background-size: cover;
+
+    @media (min-width: rem(768)) {
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+}
+
+.mission-vision {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #86578e;
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+
+  @media (min-width: rem(768)) {
+    padding-top: rem(0);
+    padding-bottom: rem(0);
+  }
+
+
+  .cs-container__column {
+    text-align: center;
+  }
+
+  &__title {
+    display: inline-block;
+    max-width: rem(236);
+
+    margin-bottom: rem(35);
+  }
+
+  &__motif--r {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: rem(200, 24);
+    height: auto;
+
+    @media (min-width: rem(1024)) {
+      height: 100%;
+      max-width: rem(200);
+    }
+  }
+
+  &__motif--br {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    max-width: rem(137, 24);
+
+    @media (min-width: rem(1024)) {
+      max-width: rem(137, 16);
+    }
+  }
+}
+
+.collaterals,
+.website {
+  background-color: $tuf-color-white;
+  color: $tuf-color-gray;
+
+  &__image {
+    width: 100%;
+
+    &--pad {
+      padding-top: rem(50);
+    }
+  }
+}
+
+.website {
+  .cs-container__column {
+    padding-bottom: 0;
+  }
+}
+
+.lead {
+  color: $tuf-color-white;
+  background-color: #5fc3d9;
+
+  .cs-container__column {
+    padding-bottom: 0;
+  }
+
+  &__left-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__right {
+    width: 100%;
+    max-width: rem(359);
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+  }
+}

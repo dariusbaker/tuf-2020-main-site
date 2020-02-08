@@ -34,6 +34,14 @@
 
       cursor: pointer;
 
+      span {
+        display: none;
+
+        @media screen and (min-width: rem(440)) {
+          display: inline;
+        }
+      }
+
       &--prev {
         text-align: right;
       }

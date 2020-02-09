@@ -4,7 +4,7 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
-.tuf-talk-to-us {
+.contact-form {
   margin-bottom: 0;
   background-color: $tuf-color-primary-dark;
 
@@ -103,35 +103,125 @@
 
     margin-bottom: rem(24);
 
-    input {
-      width: 100%;
-      height: rem(48);
+    &__input + &__input {
+      margin-top: rem(36);
+    }
 
-      margin-bottom: rem(24);
+    &__input {
+      position: relative;
 
-      background-color: transparent;
+      p {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: rem(12);
+        color: $tuf-color-red;
 
-      border: 0;
+        visibility: hidden;
+        opacity: 0;
 
-      border-bottom: rem(2) solid transparentize($tuf-color-primary, .6);
+        transition: visibility .5s, opacity .25s ease;
 
-      font-size: rem(30);
-      font-weight: $tuf-font-weight-x-bold;
-
-      color: $tuf-color-white;
-
-      @media screen and (min-width: rem(1024)) {
-        height: rem(90);
-        font-size: rem(60);
+        @media screen and (min-width: rem(768)) {
+          font-size: rem(14);
+        }
       }
 
-      &:focus {
-        outline: 0;
-        border-color: transparentize($tuf-color-primary, .2);
+      label {
+        position: absolute;
+
+        top: rem(-24);
+        left: 0;
+        opacity: 0;
+
+        font-weight: $tuf-font-weight-regular;
+        color: $tuf-color-white;
+
+        transform: translateY(30%);
+        transition: opacity .25s ease-in-out, transform .25s ease-out;
       }
 
-      &::placeholder {
-        color: transparentize($tuf-color-primary, .2);
+      textarea,
+      input {
+        width: 100%;
+        height: rem(48);
+
+        margin-bottom: rem(24);
+
+        background-color: transparent;
+
+        border: 0;
+
+        border-bottom: rem(2) solid transparentize($tuf-color-primary, .6);
+
+        font-size: rem(30);
+        font-weight: $tuf-font-weight-x-bold;
+
+        color: $tuf-color-white;
+
+        transition: border-bottom-color .25s ease-out;
+
+        @media screen and (min-width: rem(1024)) {
+          height: rem(90);
+          font-size: rem(60);
+        }
+
+        &:focus {
+          outline: 0;
+          border-color: transparentize($tuf-color-primary, .2);
+
+          + label {
+            opacity: 1;
+
+            transform: translateY(-30%);
+          }
+        }
+
+        &::placeholder {
+          text-overflow: ellipsis;
+          color: transparentize($tuf-color-primary, .2);
+
+          transition: color .25s ease-out;
+        }
+
+        [value=""] + label {
+          opacity: 0;
+
+          transform: translateY(30%);
+        }
+
+        &:focus + label,
+        &:not([value=""]) + label {
+          opacity: 1;
+
+          transform: translateY(-30%);
+        }
+
+        &:focus::placeholder {
+          color: transparent;
+        }
+      }
+
+      textarea {
+        height: rem(48 * 2);
+        resize: none;
+
+        transition: height .25s ease-in-out;
+
+        @media screen and (min-width: rem(1024)) {
+          height: rem(90 * 2);
+        }
+      }
+
+      &--error {
+        p {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        input {
+          border-bottom-color: $tuf-color-red;
+        }
       }
     }
   }

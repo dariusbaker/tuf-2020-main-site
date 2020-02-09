@@ -1,4 +1,5 @@
 import Header from './components/header.js';
+import Form from './components/form.js';
 import SmoothScroll from 'smooth-scroll';
 
 class TUF {
@@ -8,6 +9,9 @@ class TUF {
 
     // initialise header
     new Header();
+
+    // initialise form
+    new Form();
 
     new SmoothScroll('a[href*="#"]');
   }

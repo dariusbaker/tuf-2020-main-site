@@ -3,30 +3,86 @@
 
 {% macro talk_form(classes= '') %}
 <section
-  class="tuf-section tuf-talk-to-us {{classes}}"
+  class="tuf-section contact-form {{classes}}"
   id="{{home.talk_to_us.slug}}">
-  <div class="tuf-section__content tuf-content-padding tuf-talk-to-us__content">
-    <div class="tuf-talk-to-us__left">
+  <div class="tuf-section__content tuf-content-padding contact-form__content">
+    <div class="contact-form__left">
       <div>
-        <h2 class="tuf-talk-to-us__left__title">
+        <h2 class="contact-form__left__title">
           {{home.talk_to_us.title|safe}}
         </h2>
-        <p class="tuf-talk-to-us__left__content">
+        <p class="contact-form__left__content">
           {{home.talk_to_us.content}} <a href="mailto:{{global.footer.email}}">{{global.footer.email}}</a>.
         </p>
       </div>
-      {{footer(classes="tuf-talk-to-us__footer")}}
+      {{footer(classes="contact-form__footer")}}
     </div>
-    <div class="tuf-talk-to-us__right">
-      <form class="tuf-talk-to-us__form">
-        <input aria-label="Name (required)" type="text" placeholder="Name*" />
-        <input aria-label="Email (required)" type="email" placeholder="Email*" />
-        <input aria-label="Contact number (optional)" type="text" placeholder="Contact No." />
-        <input aria-label="Tell us about your project (optional)" type="text" placeholder="Tell us about your project" />
+    <div class="contact-form__right">
+      <form id="contact-form" class="contact-form__form">
+        <div class="contact-form__form__input">
+          <input
+            id="contact-name"
+            aria-label="Name (required)"
+            type="text"
+            value=""
+            placeholder="Name*"
+            type="text"
+            required
+            autocomplete="nope" />
+          <label for="contact-name">
+            Name*
+          </label>
+          <p class="contact-form__form__validate">
+            Please enter a valid name
+          </p>
+        </div>
+        <div class="contact-form__form__input">
+          <input
+            id="contact-email"
+            aria-label="Email (required)"
+            type="text"
+            value=""
+            placeholder="Email*"
+            type="email"
+            required
+            autocomplete="nope" />
+          <label for="contact-email">
+            Email*
+          </label>
+          <p class="contact-form__form__validate">
+            Please enter a valid email address
+          </p>
+        </div>
+        <div class="contact-form__form__input">
+          <input
+            id="contact-no"
+            aria-label="Contact number (optional)"
+            type="text"
+            value=""
+            placeholder="Contact No."
+            type="text"
+            autocomplete="nope" />
+          <label for="contact-no">
+            Contact No.
+          </label>
+        </div>
+        <div class="contact-form__form__input">
+          <textarea
+            id="contact-project"
+            aria-label="Tell us about your project (optional)"
+            type="text"
+            value=""
+            placeholder="Tell us about your project"
+            type="text"
+            autocomplete="nope"></textarea>
+          <label for="contact-project">
+            Tell us about your project (optional)
+          </label>
+        </div>
       </form>
       {{
         button(
-          classes = 'tuf-talk-to-us__submit',
+          classes = 'contact-form__submit',
           disabled = false,
           type = 'primary',
           id = 'submit-form-btn',

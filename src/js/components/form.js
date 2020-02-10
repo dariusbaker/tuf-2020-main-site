@@ -78,8 +78,7 @@ export default class Form {
         e.target.style.height = this._initialTextAreaHeight;
         return;
       }
-      // for box-sizing other than "content-box" use:
-      // el.style.cssText = '-moz-box-sizing:content-box';
+
       e.target.style.height = `${e.target.scrollHeight}px`;
     }, 100));
   }

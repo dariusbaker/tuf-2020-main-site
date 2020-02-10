@@ -203,13 +203,13 @@
       }
 
       textarea {
-        height: rem(48 * 2);
+        min-height: rem(48 * 2);
         resize: none;
 
         transition: height .25s ease-in-out;
 
         @media screen and (min-width: rem(1024)) {
-          height: rem(90 * 2);
+          min-height: rem(90 * 2);
         }
       }
 

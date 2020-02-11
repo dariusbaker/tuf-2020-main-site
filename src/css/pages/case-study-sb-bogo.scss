@@ -9,6 +9,7 @@
 }
 
 .hero {
+  position: relative;
   background-color: #a8dde3;
   background-image: url(/assets/img/case-studies/starbucks/hero__background.jpg);
   background-size: cover;
@@ -41,6 +42,11 @@
     width: 100%;
     max-width: rem(432);
     margin-top: rem(25);
+
+    @media screen and (min-width: rem(1024)) {
+      margin: rem(25) 0 0 auto;
+      max-width: rem(262);
+    }
   }
 
   &__bg {
@@ -194,6 +200,7 @@
 .support {
   position: relative;
   color: $tuf-color-gray;
+  background-color: #fed408;
 
   .cs-container__row {
     @media screen and (min-width: rem(768)) {

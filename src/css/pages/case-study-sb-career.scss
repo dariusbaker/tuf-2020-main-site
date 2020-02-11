@@ -4,6 +4,14 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+.hero {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
 .intro {
   position: relative;
   background-color: #0a623e;

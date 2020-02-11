@@ -279,14 +279,30 @@
 }
 
 .lead {
+  position: relative;
   color: $tuf-color-white;
   background-color: #5fc3d9;
+
+  &__bg {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+    border-bottom: rem(300) solid transparentize($tuf-color-white, .85);
+    border-right: rem(300) solid transparent;
+  }
 
   .cs-container__column {
     padding-bottom: 0;
   }
 
   &__left-wrapper {
+    display: flex;
+
+    align-items: center;
     padding-right: 0;
     padding-left: 0;
   }

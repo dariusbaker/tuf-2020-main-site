@@ -71,3 +71,13 @@ select {
 button {
   cursor: pointer;
 }
+
+/*
+ * Prevent superscript from affecting line-height. Taken from:
+ * https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/
+ */
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}

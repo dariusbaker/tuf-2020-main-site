@@ -3,7 +3,7 @@
   "theme_color": "#2465fb",
   "nav_items": [
     {
-      "label": "Our clients",
+      "label": "Our Clients",
       "href": "/#our-clients"
     },
     {
@@ -15,11 +15,11 @@
       "href": "/case-studies"
     },
     {
-      "label": "What do you seek?",
+      "label": "What Do You Seek?",
       "href": "/#what-do-you-seek"
     },
     {
-      "label": "What we do",
+      "label": "What We Do",
       "href": "/#what-we-do"
     }
   ],

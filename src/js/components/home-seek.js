@@ -287,7 +287,7 @@ export default class HomeSeek {
       const idleCard = this._seekIdleCardsItemElem[i];
       idleCard.setAttribute('alt', `${item.type} tarrots card`);
       idleCard.setAttribute('src', item.image);
-      idleCard.dataset.type = item.type;
+      idleCard.setAttribute(this._CONST.nav_data_attr, item.type);
     });
   }
 

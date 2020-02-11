@@ -9,6 +9,10 @@
 .manifesto,
 .shirt {
   position: relative;
+
+  img {
+    width: 100%;
+  }
 }
 
 .intro {
@@ -16,6 +20,12 @@
   color: $tuf-color-white;
   background-color: $tuf-color-black;
   z-index: 10;
+
+  &__content {
+    display: flex;
+
+    align-items: center;
+  }
 
   &__left {
     height: rem(300);

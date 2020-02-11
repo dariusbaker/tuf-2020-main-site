@@ -13,10 +13,17 @@ class CaseStudies {
       case_studies_list_selector: '#case-studies-list',
       dropdown_data_attr: 'data-type',
       tags_data_attr: 'data-tags',
-      base_case_study_url: '/case-studies/'
+      base_case_study_url: '/case-studies/',
+      filter_qs: 'show',
+      all_project_value: 'All Projects'
     };
 
+    this._queryStrings = new URLSearchParams(window.location.search);
+
     this._data = data;
+
+    const tags = this._data.map((item) => item.tags);
+    this._uniqueTags = [...new Set([].concat(...tags))].sort();
 
     this._filterBtnElem = document.querySelector(this._CONST.filter_btn_selector);
 
@@ -44,6 +51,12 @@ class CaseStudies {
     this._dropdownListItemsElem = document.querySelectorAll(this._CONST.dropdown_listitems_selector);
 
     this._bindFiltersEvent();
+
+    const filterQS = decodeURIComponent(this._queryStrings.get(this._CONST.filter_qs).trim());
+
+    if (filterQS && filterQS !== this._CONST.all_project_value && this._uniqueTags.includes(filterQS)) {
+      this._filterCaseStudies(filterQS);
+    }
   }
 
   _renderCaseStudiesItem() {
@@ -77,10 +90,7 @@ class CaseStudies {
   }
 
   _renderCaseStudiesFilterItem() {
-    const tags = this._data.map((item) => item.tags);
-    const uniqueTags = [...new Set([].concat(...tags))].sort();
-
-    uniqueTags.forEach((tag) => {
+    this._uniqueTags.forEach((tag) => {
       const tagItemTemplate = this._dropdownItemTemplate.content.cloneNode(true);
       const tagItem = tagItemTemplate.querySelector('li');
       tagItem.setAttribute(this._CONST.dropdown_data_attr, tag);
@@ -110,7 +120,16 @@ class CaseStudies {
 
   _handleFilterSelect(e) {
     const type = e.target.getAttribute(this._CONST.dropdown_data_attr);
+    this._filterCaseStudies(type);
+    this._toggleDropdown();
 
+    // set query string param
+    this._queryStrings.set(this._CONST.filter_qs, decodeURIComponent(type));
+
+    window.location.search = this._queryStrings.toString();
+  }
+
+  _filterCaseStudies(type) {
     if (!type) {
       return;
     }
@@ -120,8 +139,6 @@ class CaseStudies {
 
     // update list items
     this._toggleListItemsVisibilityByType(type);
-
-    this._toggleDropdown();
   }
 
   _toggleListItemsVisibilityByType(type) {

@@ -106,6 +106,10 @@ export default class HomeSeek {
       elem.addEventListener('click', this._showSeekHandler);
     });
 
+    this._seekIdleCardsItemElem.forEach(elem => {
+      elem.addEventListener('click', this._showSeekHandler);
+    });
+
     this._seekCloseBtnElem.addEventListener('click', this._seekCloseHandler);
   }
 
@@ -285,6 +289,7 @@ export default class HomeSeek {
       const idleCard = this._seekIdleCardsItemElem[i];
       idleCard.setAttribute('alt', `${item.type} tarrots card`);
       idleCard.setAttribute('src', item.image);
+      idleCard.setAttribute(this._CONST.nav_data_attr, item.type);
     });
   }
 

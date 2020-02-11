@@ -48,6 +48,10 @@
     max-width: rem(1140);
   }
 
+  @media screen and (min-width: rem(1440)) {
+    max-width: rem(1440);
+  }
+
   &__row {
     display: flex;
 

@@ -60,11 +60,16 @@
       }
     }
 
+    nav {
+      margin-top: rem(40);
+    }
+
     address {
       margin-top: rem(8);
 
       font-style: normal;
       font-size: rem(10);
+      line-height: 1.7;
       font-weight: $tuf-font-weight-regular;
 
       @media screen and (min-width: rem(768)) {
@@ -100,8 +105,8 @@
         }
 
         svg {
-          width: rem(24);
-          height: rem(24);
+          width: rem(28);
+          height: rem(28);
 
           color: $tuf-color-clickable;
         }

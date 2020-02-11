@@ -13,7 +13,7 @@ export const HOME_WHAT_WE_DO_DATA = {
       cta_label: 'View case studies'
     },
     {
-      title: 'Content, Copywriting, & Communications',
+      title: 'Content, Copywriting & Communications',
       content: 'For creative pizzazz and on-point comms messaging, look no futher. We do it all.',
       footnote: '',
       image: '/assets/img/tuf-do-cc.jpg',

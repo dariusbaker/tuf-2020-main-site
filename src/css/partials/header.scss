@@ -189,13 +189,13 @@
     &__img {
       display: none;
 
-      @media (min-width: rem(1100)) {
+      @media (min-width: rem(1330)) {
         display: inline-block;
       }
     }
 
     &__img--mobile {
-      @media (min-width: rem(1100)) {
+      @media (min-width: rem(1330)) {
         display: none;
       }
     }

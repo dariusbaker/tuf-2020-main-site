@@ -7,6 +7,10 @@
 .hero {
   position: relative;
   width: 100%;
+
+  img {
+    width: 100%;
+  }
 }
 
 .intro {
@@ -312,8 +316,22 @@
   }
 
   &__left {
+    display: flex;
+    flex-direction: column;
     background-color: $tuf-color-white;
     color: $tuf-color-gray;
+
+    &__content {
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    &__image {
+      width: 100%;
+    }
   }
 
   &__right {

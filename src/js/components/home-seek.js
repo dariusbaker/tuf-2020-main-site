@@ -102,7 +102,7 @@ export default class HomeSeek {
   }
 
   _bindNavItemEvents() {
-    this._seekNavItems.forEach(elem => {
+    [...this._seekNavItems, ...this._seekIdleCardsItemElem].forEach(elem => {
       elem.addEventListener('click', this._showSeekHandler);
     });
 
@@ -256,7 +256,9 @@ export default class HomeSeek {
     }
 
     // close nav if not mobile
-    this._toggleSeekOptions();
+    if (this._seekNavOpen) {
+      this._toggleSeekOptions();
+    }
 
     // update filter label
     this._updateSeekFilterLabel();
@@ -285,6 +287,7 @@ export default class HomeSeek {
       const idleCard = this._seekIdleCardsItemElem[i];
       idleCard.setAttribute('alt', `${item.type} tarrots card`);
       idleCard.setAttribute('src', item.image);
+      idleCard.dataset.type = item.type;
     });
   }
 

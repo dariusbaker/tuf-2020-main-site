@@ -42,6 +42,11 @@
     width: 100%;
     max-width: rem(432);
     margin-top: rem(25);
+
+    @media screen and (min-width: rem(1024)) {
+      margin: rem(25) 0 0 auto;
+      max-width: rem(262);
+    }
   }
 
   &__bg {

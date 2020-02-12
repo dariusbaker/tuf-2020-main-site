@@ -3,6 +3,16 @@ const MIN_TOLERANCE = 8;
 
 export default class Speckle {
   constructor() {
+    const _intersectionObserverOpts = {
+      root: document.querySelector('main'),
+      rootMargin: '0px',
+      threshold: .3 // setting this to .3 cause speckle visibility might be less than 50%
+    };
+
+    this._intersectionObserverCb = (entries) => this._handlerIntersection(entries);
+
+    this._intersectionObserver = new IntersectionObserver(this._intersectionObserverCb, _intersectionObserverOpts);
+
     /** @type {Array.<Object>} */
     this._specks = [];
 
@@ -24,6 +34,16 @@ export default class Speckle {
   }
 
   /**
+   * intersection observer callback handler
+   * @param {array} entries
+   */
+  _handlerIntersection(entries) {
+    entries.forEach((entry) => {
+      entry.target.dataset.animate = entry.isIntersecting;
+    });
+  }
+
+  /**
    * Gather all elements into an array with their associated properties.
    * @return {Array.<Object>}
    */
@@ -31,6 +51,9 @@ export default class Speckle {
     const $specks = [...document.querySelectorAll('.speck')];
 
     return $specks.map(($speck) => {
+      // observe intersection
+      this._intersectionObserver.observe($speck);
+
       // fallback if the "data-tolerance" attribute is missing.
       const tolerance = $speck.dataset.tolerance
         ? $speck.dataset.tolerance.split(',')
@@ -64,9 +87,12 @@ export default class Speckle {
     const rangeY = (midY - e.clientY) / midY;
 
     this._specks.forEach((speck) => {
-      const newX = Math.floor(rangeX * speck.tolerance.x) * speck.dir;
-      const newY = Math.floor(rangeY * speck.tolerance.y) * speck.dir;
-      speck.element.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
+      // only animate if data-animate is true
+      if (speck.element.dataset.animate === 'true') {
+        const newX = Math.floor(rangeX * speck.tolerance.x) * speck.dir;
+        const newY = Math.floor(rangeY * speck.tolerance.y) * speck.dir;
+        speck.element.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
+      }
     });
 
     this._isRaf = false;

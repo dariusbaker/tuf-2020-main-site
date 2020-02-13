@@ -4,16 +4,17 @@
     disabled = false,
     type = 'primary',
     id = '',
-    label = ''
+    label = '',
+    bounce = true
   )
 %}
 
 <button
-  class="tuf-button tuf-button--{{type}} {{classes}}"
+  class="tuf-button tuf-button--{{type}} {{classes}} {{ 'tuf-button--bounce' if bounce else ''}}"
   {% if id %} id="{{ id }}" {% endif %}
   {% if disabled %} disabled {% endif %}
 >
-  {{label}}
+  <span>{{label}}</span>
 </button>
 {% endmacro %}
 
@@ -23,15 +24,17 @@
   id = '',
   label = '',
   href = '',
-  target = '_self') %}
+  target = '_self',
+  bounce = true
+) %}
 <a
-  class="tuf-button tuf-button--link tuf-button--{{type}} {{classes}}"
+  class="tuf-button tuf-button--link tuf-button--{{type}} {{classes}} {{ 'tuf-button--bounce' if bounce else ''}}"
   href="{{href}}"
   target="{{target}}"
   {% if id %} id="{{ id }}" {% endif %}
   {% if target == '_blank' %} rel="noopener noreferrer" {% endif %}
   >
-  {{label}}
+  <span>{{label}}</span>
 </a>
 {% endmacro %}
 

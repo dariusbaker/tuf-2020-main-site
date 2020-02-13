@@ -21,7 +21,10 @@
         <a
           href="{{nav_item.href}}"
           class="tuf-header__nav-item">
-          {{nav_item.label}}
+          <span>{{nav_item.label}}</span>
+          <svg>
+            <rect x="1.5" y="1.5" rx="20" fill="none" stroke="currentColor" width="100%" height="100%"></rect>
+          </svg>
         </a>
         {% endfor %}
       </ul>
@@ -32,7 +35,8 @@
             classes="tuf-header__nav-item-secondary-btn",
             type="secondary",
             label=global.nav_cta.label,
-            href=global.nav_cta.href
+            href=global.nav_cta.href,
+            bounce=false
           )
         }}
       {% endif %}

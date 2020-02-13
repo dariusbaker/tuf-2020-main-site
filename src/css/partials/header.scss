@@ -283,8 +283,23 @@
   &__nav-item-secondary-btn {
     font-size: rem(14);
 
+    animation-name: button-hover;
+    animation-timing-function: ease-in-out;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
     @media (min-width: rem(768)) {
       font-size: rem(16);
     }
+  }
+}
+
+@keyframes button-hover {
+  from {
+    transform: translate3d(0, rem(-2), 0);
+  }
+  to {
+    transform: translate3d(0, rem(2), 0);
   }
 }

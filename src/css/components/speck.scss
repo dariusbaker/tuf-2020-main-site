@@ -1,0 +1,30 @@
+.speck {
+  position: absolute;
+  pointer-events: none;
+  transition: transform 1s ease-out;
+
+  &--square-6x6 {
+    top: 25%;
+    left: 4%;
+    width: rem(98);
+    height: rem(98);
+
+    @media only screen and (min-width: rem(1024)) {
+      top: 57%;
+      left: 4%;
+    }
+  }
+
+  &--diamond-outline {
+    top: 60%;
+    right: -7%;
+
+    width: rem(140);
+    min-height: rem(140);
+
+    @media only screen and (min-width: rem(1024)) {
+      top: 21%;
+      right: 16%;
+    }
+  }
+}

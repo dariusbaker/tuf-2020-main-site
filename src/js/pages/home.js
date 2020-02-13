@@ -1,3 +1,6 @@
+// Require the polyfill before requiring any other modules.
+require('intersection-observer');
+
 import Glide from '@glidejs/glide';
 
 import HomeTestimonials from '../components/home-testimonials';
@@ -6,6 +9,7 @@ import HomeCaseStudies from '../components/home-case-studies';
 import HomeInstagram from '../components/home-instagram';
 import HomeSeek from '../components/home-seek';
 import HomeAva from '../components/home-ava';
+import Speckle from '../components/speckle';
 
 class Home {
   constructor() {
@@ -65,6 +69,7 @@ class Home {
 
     // load instagram feed
     new HomeInstagram();
+    new Speckle();
 
     this._clientsCarousel = null;
 

@@ -2,7 +2,7 @@
   "order": 2,
   "slug": "river-safari",
   "title": "River Safari Adventure Buddy",
-  "image": "./assets/img/tuf-home-cs-rs.jpg",
+  "image": "/assets/img/tuf-home-cs-rs.jpg",
   "tags": [
     "Mobile",
     "UI/UX",

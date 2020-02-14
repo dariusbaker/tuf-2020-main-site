@@ -30,7 +30,7 @@ function scripts() {
           filename: '[name].min.js',
           chunkFilename: '[name].chunk.js',
           path: path.resolve(__dirname, CONFIG.DIST.JS),
-          publicPath: 'assets/js/'
+          publicPath: '/assets/js/'
         },
         optimization: {
           minimize: true,

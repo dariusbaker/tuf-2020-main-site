@@ -52,7 +52,7 @@ class CaseStudies {
 
     this._bindFiltersEvent();
 
-    const filterQS = decodeURIComponent(this._queryStrings.get(this._CONST.filter_qs).trim());
+    const filterQS = this._queryStrings.get(this._CONST.filter_qs) ? decodeURIComponent(this._queryStrings.get(this._CONST.filter_qs).trim()) : null;
 
     if (filterQS && filterQS !== this._CONST.all_project_value && this._uniqueTags.includes(filterQS)) {
       this._filterCaseStudies(filterQS);

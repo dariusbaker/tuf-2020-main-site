@@ -677,14 +677,14 @@
 
       margin: 0 auto;
 
-      text-align: center;
-
       border: rem(2) solid $tuf-color-turqoise;
 
       color: $tuf-color-white;
 
       @media (min-width: rem(768)) {
         max-width: rem(640);
+
+        text-align: center;
       }
 
       &__title {

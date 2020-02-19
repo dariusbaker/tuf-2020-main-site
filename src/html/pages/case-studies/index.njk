@@ -1,4 +1,4 @@
-{% from "macros/case-study-card.njk" import case_study_card, case_study_card_tag %}
+{% from "macros/case-study-card.njk" import case_study_card %}
 {% from "macros/form.njk" import talk_form with context %}
 
 {% extends "base.njk" %}
@@ -84,9 +84,6 @@
           )
         }}
       </li>
-    </template>
-    <template id="case-study-tag-template">
-      {{case_study_card_tag()}}
     </template>
   </div>
 </section>

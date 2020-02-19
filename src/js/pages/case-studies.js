@@ -9,7 +9,6 @@ class CaseStudies {
       dropdown_list_visible_class: 'content__filter__list--visible',
       dropdown_item_template_selector: '#dropdown-item-template',
       case_study_item_template_selector: '#case-study-item-template',
-      case_study_tag_template_selector: '#case-study-tag-template',
       case_studies_list_selector: '#case-studies-list',
       dropdown_data_attr: 'data-type',
       tags_data_attr: 'data-tags',
@@ -35,7 +34,6 @@ class CaseStudies {
 
     this._dropdownItemTemplate = document.querySelector(this._CONST.dropdown_item_template_selector);
     this._caseStudyItemTemplate = document.querySelector(this._CONST.case_study_item_template_selector);
-    this._caseStudyTagTemplate = document.querySelector(this._CONST.case_study_tag_template_selector);
 
     this._dropdownExpanded = false;
 
@@ -76,14 +74,8 @@ class CaseStudies {
       const contentHeader = caseStudyTemplate.querySelector('h3');
       contentHeader.innerHTML = item.title;
 
-      const contentTags = caseStudyTemplate.querySelector('ul');
-      item.tags.forEach((tag) => {
-        const tagTemplate = this._caseStudyTagTemplate.content.cloneNode(true);
-        const tagContent = tagTemplate.querySelector('li');
-        tagContent.innerHTML = tag;
-
-        contentTags.appendChild(tagTemplate);
-      });
+      const contentTags = caseStudyTemplate.querySelector('div.tuf-case-study-card__content__tags');
+      contentTags.innerText = item.tags.join(' • ');
 
       this._caseStudiesListElem.appendChild(caseStudyTemplate);
     });

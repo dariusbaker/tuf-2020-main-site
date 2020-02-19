@@ -3,7 +3,6 @@ export default class HomeCaseStudies {
     this._CONST = {
       case_studies_list_selector: '#case-studies-list',
       case_study_item_template_selector: '#case-study-item-template',
-      case_study_tag_template_selector: '#case-study-tag-template',
       base_case_study_url: '/case-studies/'
     };
 
@@ -12,7 +11,6 @@ export default class HomeCaseStudies {
     this._itemsElem = document.querySelector(this._CONST.case_studies_list_selector);
 
     this._itemTemplate = document.querySelector(this._CONST.case_study_item_template_selector);
-    this._itemTagTemplate = document.querySelector(this._CONST.case_study_tag_template_selector);
 
     this._renderCaseStudiesContent();
   }
@@ -33,14 +31,8 @@ export default class HomeCaseStudies {
         const contentHeader = contentTemplate.querySelector('h3');
         contentHeader.innerHTML = item.title;
 
-        const contentTags = contentTemplate.querySelector('ul');
-        item.tags.forEach((tag) => {
-          const tagTemplate = this._itemTagTemplate.content.cloneNode(true);
-          const tagContent = tagTemplate.querySelector('li');
-          tagContent.innerHTML = tag;
-
-          contentTags.appendChild(tagTemplate);
-        });
+        const contentTags = contentTemplate.querySelector('div.tuf-case-study-card__content__tags');
+        contentTags.innerText = item.tags.join(' • ');
 
         this._itemsElem.appendChild(contentTemplate);
       });

@@ -56,7 +56,7 @@ export default class HomeSeek {
     this._seekDialogImageElem = document.querySelector(this._CONST.seek_dialog_image_selector);
     this._seekDialogCtaElem = document.querySelector(this._CONST.seek_dialog_cta_selector);
     this._seekDialogCtaTitleElem = this._seekDialogCtaElem.querySelector('p');
-    this._seekDialogCtaAnchorElem = this._seekDialogCtaElem.querySelector('a');
+    this._seekDialogCtaAnchorElem = this._seekDialogCtaElem.querySelector('a span');
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
     this._seekLabelClickHandler = () => this._toggleSeekOptions();

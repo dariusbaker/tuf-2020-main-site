@@ -102,6 +102,10 @@ export default class HomeWhatWeDo {
         480: {
           perView: 1,
           peek: 60
+        },
+        320: {
+          perView: 1,
+          peek: 22
         }
       }
     }).mount();

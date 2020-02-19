@@ -1,6 +1,8 @@
 // Require the polyfill before requiring any other modules.
 require('intersection-observer');
 
+import  * as TiltJS from 'vanilla-tilt/dist/vanilla-tilt';
+
 import Glide from '@glidejs/glide';
 
 import HomeTestimonials from '../components/home-testimonials';

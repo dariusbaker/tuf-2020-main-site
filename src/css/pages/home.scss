@@ -954,6 +954,10 @@
         margin: rem(4);
 
         cursor: pointer;
+
+        &:hover {
+          z-index: 1;
+        }
       }
     }
 
@@ -979,6 +983,7 @@
       }
 
       div {
+        position: relative;
         display: flex;
 
         flex-direction: column;

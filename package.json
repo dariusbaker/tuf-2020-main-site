@@ -60,10 +60,11 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
     "@babel/runtime": "^7.2.0",
+    "@glidejs/glide": "^3.4.1",
     "aos": "^2.3.4",
     "intersection-observer": "^0.7.0",
-    "smooth-scroll": "^16.1.1"
+    "smooth-scroll": "^16.1.1",
+    "vanilla-tilt": "^1.7.0"
   }
 }

@@ -764,8 +764,8 @@
 
     margin-top: rem(24);
 
-    @media (min-width: $tuf-section-title-bp) {
-      margin-top: - rem(($tuf-section-title-d * 2) - ($tuf-section-title-d * .9));
+    @media (min-width: rem(1280)) {
+      margin-top: - rem($tuf-section-title-d - ($tuf-section-title-d * .3));
     }
   }
 
@@ -774,7 +774,7 @@
 
     flex-direction: column;
 
-    align-items: center;
+    align-items: flex-start;
 
     padding: 0;
 
@@ -973,6 +973,10 @@
       opacity: 1;
 
       transition: visibility .5s, opacity .25s ease;
+
+      @media screen and (min-width: rem(1280)) {
+        padding-top: rem($tuf-section-title-d * .6);
+      }
 
       div {
         display: flex;

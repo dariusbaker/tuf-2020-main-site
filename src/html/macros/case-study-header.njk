@@ -6,13 +6,9 @@
       <h1 class="tuf-section-title cs-header__title">
         {{title|safe}}
       </h1>
-      <ul class="cs-header__tags" aria-label="tags">
-        {% for tag in tags %}
-        <li class="cs-header__tags__item">
-          {{tag}}
-        </li>
-        {% endfor %}
-      </ul>
+      <div class="cs-header__tags" aria-label="tags">
+        {{ tags | join(' • ') }}
+      </div>
     </div>
   </div>
 </section>

@@ -747,6 +747,13 @@
 }
 
 .case-studies {
+  h2 {
+    .tuf-header-br:first-child {
+      position: relative;
+      left: -30%;
+    }
+  }
+
   &__cta {
     position: relative;
 

@@ -133,7 +133,7 @@
   },
   "case_studies": {
     "slug": "case-studies",
-    "title": "Case<span class='tuf-header-br'>Studies</span>",
+    "title": "<span class='tuf-header-br'>Case</span><span class='tuf-header-br'>Studies</span>",
     "cta": {
       "label": "View all case studies",
       "href": "case-studies"

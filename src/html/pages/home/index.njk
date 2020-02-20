@@ -147,7 +147,15 @@
           </div>
         </div>
       </div>
-      <div class="ask-ava__content__text">
+      <div class="ask-ava__content__text" id="ask-ava-text-wrapper">
+        {{
+          icon_round(
+            classes = 'ask-ava__content__text__btn ask-ava__content__text__btn--prev',
+            id = 'ask-ava-text-prev',
+            icon = 'icon-arrow-right',
+            isButton = true
+          )
+        }}
         <div class="ask-ava__content__textbox" id="ask-ava-text" role="log" aria-live="polite">
           Hello Seeker, how may I be of assistance?
         </div>

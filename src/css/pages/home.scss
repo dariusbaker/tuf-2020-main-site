@@ -439,7 +439,10 @@
     }
 
     &__text {
-      max-width: 80%;
+      position: relative;
+
+      min-height: rem(200);
+      max-height: rem(360);
       font-size: rem(30);
       font-weight: $tuf-font-weight-bold;
 
@@ -447,17 +450,56 @@
       color: $tuf-color-white;
 
       @media only screen and (min-width: rem(1024)) {
-        max-width: none;
+        height: auto;
+        max-height: rem(540);
         font-size: rem(60);
       }
 
       &__btn {
-        margin-top: rem(48);
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+
+        @media screen and (min-width: rem(1024)) {
+          top: 50%;
+          bottom: auto;
+          transform: translateY(-50%);
+
+          &:hover,
+          &:focus {
+            transform: translateY(-50%) scale(1.1);
+          }
+        }
+
+        &--prev {
+          right: auto;
+          left: 0;
+
+          svg {
+            transform: rotate(-180deg);
+          }
+        }
       }
     }
 
     &__textbox {
+      max-width: 80%;
       min-height: rem(1.3 * 30);
+
+      margin: 0 rem(56);
+
+      padding-bottom: rem(48);
+
+      box-sizing: border-box;
+
+      @media only screen and (min-width: rem(1024)) {
+        max-width: none;
+
+        margin: 0 rem(64);
+
+        padding-bottom: 0;
+      }
     }
 
     &__head {

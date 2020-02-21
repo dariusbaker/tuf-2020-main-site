@@ -1403,6 +1403,18 @@
 
   background-color: $tuf-color-primary-dark;
 
+  .speckle {
+    .speck--diamond-outline {
+      bottom: 25%;
+      right: 0;
+
+      @media only screen and (min-width:rem(1024)) {
+        bottom: 25%;
+        right: 0;
+      }
+    }
+  }
+
   &:before {
     position: absolute;
 

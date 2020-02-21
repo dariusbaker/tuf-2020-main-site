@@ -544,13 +544,24 @@
     &__text {
       position: relative;
 
-      min-height: rem(257);
-      max-height: rem(360);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      height: rem(256);
       font-size: rem(30);
       font-weight: $tuf-font-weight-bold;
 
       line-height: 1.3;
       color: $tuf-color-white;
+
+      @media only screen and (min-width: rem(1024)) {
+        height: auto;
+        font-size: rem(60);
+        align-items: center;
+        max-height: rem(540);
+      }
 
       .speckle {
         .speck--dots-6x3,
@@ -592,56 +603,43 @@
         }
       }
 
-      @media only screen and (min-width: rem(1024)) {
-        height: auto;
-        max-height: rem(540);
-        font-size: rem(60);
-      }
-
       &__btn {
-        position: absolute;
-
-        right: 0;
-        bottom: 0;
-
-        @media screen and (min-width: rem(1024)) {
-          top: 50%;
-          bottom: auto;
-          transform: translateY(-50%);
-
-          &:hover,
-          &:focus {
-            transform: translateY(-50%) scale(1.1);
-          }
-        }
+        flex: 0 0 auto;
+        align-self: flex-end;
 
         &--prev {
-          right: auto;
-          left: 0;
-
           svg {
             transform: rotate(-180deg);
           }
         }
+
+        @media only screen and (min-width: rem(1024)) {
+          align-self: inherit;
+        }
+      }
+    }
+
+    &__flextext {
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      height: calc(100% - #{rem(28)});
+
+      padding: 0 rem(8);
+
+      @media only screen and (min-width: rem(1024)) {
+        padding: 0 rem(32);
+        width: calc(100% - #{rem(96)}); // 100% minus width of two buttons
+        height: auto;
+        max-height: rem(480);
       }
     }
 
     &__textbox {
-      position: relative;
-      max-width: 80%;
-      min-height: rem(1.3 * 30);
-
-      margin: 0 rem(56);
-
-      padding-bottom: rem(48);
-
       box-sizing: border-box;
+      position: relative;
+      word-break: break-word;
 
       @media only screen and (min-width: rem(1024)) {
-        max-width: none;
-
-        margin: 0 rem(64);
-
         padding-bottom: 0;
       }
     }

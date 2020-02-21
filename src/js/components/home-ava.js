@@ -179,7 +179,7 @@ export default class HomeAva {
       this._$textBox.style.fontSize = `${fontsize}rem`;
     }
 
-    if (this._$textBox.offsetHeight > this._$textBoxWrapper.offsetHeight) {
+    if (this._$textBox.offsetHeight > this._$textBox.parentNode.offsetHeight) {
       this._fitFontSize(true);
     }
   }

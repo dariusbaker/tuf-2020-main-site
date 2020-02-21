@@ -8,6 +8,18 @@
   margin-bottom: 0;
   background-color: $tuf-color-primary-dark;
 
+  .speckle {
+    .speck--dots-6x6 {
+      display: none;
+
+      @media screen and (min-width: rem(1024)) {
+        display: block;
+        right: rem(-49);
+        bottom: rem(-80);
+      }
+    }
+  }
+
   &--gradient {
     &:before {
       position: absolute;

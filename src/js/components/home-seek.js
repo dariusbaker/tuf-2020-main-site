@@ -4,9 +4,8 @@ export default class HomeSeek {
   constructor(data) {
     this._CONST = {
       seek_idle_card_selector: '.what-do-you-seek__content__cards__item',
-      seek_navigations_selector: '#seek-navigations',
+      seek_navigation_selector: '#seek-cards-navigation',
       seek_navigation_items_selector: '#seek-navigation-items',
-      seek_navigation_label_selector: '#seek-navigation-items-label',
       seek_idle_cards_selector: '#seek-idle-cards',
       seek_cards_panel_selector: '#seek-cards-panel',
       seek_dialog_selector: '#seek-dialog',
@@ -23,11 +22,11 @@ export default class HomeSeek {
       seek_item_selected_class: 'what-do-you-seek__content__navigation__item--selected',
       seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
       seek_navigation_visible_class: 'what-do-you-seek__content__navigation-wrapper--visible',
-      seek_items_idle_hidden_class: 'what-do-you-seek__content__cards__items--hidden',
+      seek_items_idle_visible_class: 'what-do-you-seek__content__cards__items--visible',
+      seek_navigation_hidden_class: 'what-do-you-seek__content__navigation--hidden'
     };
 
-    this._minWidthForSeekDesktop = '1280px';
-    this._seekNavOpen = false;
+    this._minWidthForSeekDesktop = '1024px';
     this._seekDialogOpen = false;
     this._selectedSeekType = null;
 
@@ -38,11 +37,9 @@ export default class HomeSeek {
     this._seekIdleItemTemplate = document.querySelector(this._CONST.seek_idle_template_selector);
 
     // list element
-    this._seekNavigationsElem = document.querySelector(this._CONST.seek_navigations_selector);
+    this._seekNavigationElem = document.querySelector(this._CONST.seek_navigation_selector);
     this._seekNavigationItemsElem = document.querySelector(this._CONST.seek_navigation_items_selector);
     this._seekIdleCardsElem = document.querySelector(this._CONST.seek_idle_cards_selector);
-    this._seekNavigationLabelElem = document.querySelector(this._CONST.seek_navigation_label_selector);
-    this._seekNavigationLabelCopyElem = this._seekNavigationLabelElem.querySelector('span');
     this._seekCardsPanelElem = document.querySelector(this._CONST.seek_cards_panel_selector);
     this._seekIdleCardsItemElem = document.querySelectorAll(this._CONST.seek_idle_card_selector);
 
@@ -59,12 +56,6 @@ export default class HomeSeek {
     this._seekDialogCtaAnchorElem = this._seekDialogCtaElem.querySelector('a span');
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
-    this._seekLabelClickHandler = () => this._toggleSeekOptions();
-    this._seekLabelEnterHandler = e => {
-      if (13 == e.keyCode) {
-        this._toggleSeekOptions();
-      }
-    };
 
     this._seekCloseHandler = () => this._closeDialogEvent();
 
@@ -74,15 +65,45 @@ export default class HomeSeek {
 
     this._bindNavItemEvents();
 
-    this._initSeekNav();
+    this._setCardsVisibility();
 
     window.addEventListener(
       'resize',
       debounce(() => {
-        this._initSeekNav();
+        this._setCardsVisibility();
+        this._setNavigationVisibility();
         this._adjustCardsPanelHeight();
       }, 300)
     );
+  }
+
+  _setCardsVisibility() {
+    // do not show cards if it's on width < 1024
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
+
+    if (!mql.matches || (mql.matches && this._seekDialogOpen)) {
+      this._seekIdleCardsElem.classList.remove(this._CONST.seek_items_idle_visible_class);
+      return;
+    }
+
+    if (!this._seekDialogOpen) {
+      // show idle
+      this._seekIdleCardsElem.classList.add(this._CONST.seek_items_idle_visible_class);
+    }
+  }
+
+  _setNavigationVisibility() {
+    // do not show cards if it's on width < 1024
+    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
+
+    if (mql.matches || (!mql.matches && !this._seekDialogOpen)) {
+      this._seekNavigationElem.classList.remove(this._CONST.seek_navigation_hidden_class);
+      return;
+    }
+
+    if (this._seekDialogOpen) {
+      this._seekNavigationElem.classList.add(this._CONST.seek_navigation_hidden_class);
+    }
   }
 
   _adjustCardsPanelHeight() {
@@ -109,63 +130,10 @@ export default class HomeSeek {
     this._seekCloseBtnElem.addEventListener('click', this._seekCloseHandler);
   }
 
-  _initSeekNav() {
-    // only enable carousel if width < this._minWidthForSeekDesktop
-    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
-
-    if (mql.matches) {
-      this._seekNavigationLabelElem.removeAttribute('tabindex');
-      // remove events on seek label
-      this._seekNavigationLabelElem.removeEventListener('click', this._seekLabelClickHandler);
-      this._seekNavigationLabelElem.removeEventListener('keydown', this._seekLabelEnterHandler);
-
-      this._seekNavigationsElem.setAttribute('aria-hidden', false);
-    } else {
-      this._seekNavigationLabelElem.setAttribute('tabindex', 0);
-      // add events on seek label
-      this._seekNavigationLabelElem.addEventListener('click', this._seekLabelClickHandler);
-      this._seekNavigationLabelElem.addEventListener('keydown', this._seekLabelEnterHandler);
-      this._seekNavigationsElem.setAttribute('aria-hidden', true);
-    }
-
-    this._updateSeekFilterLabel();
-  }
-
-  _toggleSeekOptions() {
-    // only enable carousel if width < this._minWidthForSeekDesktop
-    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
-
-    if (mql.matches) {
-      return;
-    }
-
-    if (this._seekNavOpen) {
-      this._seekNavigationsElem.setAttribute('aria-hidden', true);
-      this._seekNavigationsElem.classList.remove(
-        this._CONST.seek_navigation_visible_class
-      );
-    } else {
-      this._seekNavigationsElem.setAttribute('aria-hidden', false);
-      this._seekNavigationsElem.classList.add(
-        this._CONST.seek_navigation_visible_class
-      );
-    }
-
-    this._seekNavOpen = !this._seekNavOpen;
-  }
-
-  _resetWhatDoYouSeekFilterLabel() {
-    // reset label text
-    this._seekNavigationLabelCopyElem.innerText = this._seekNavigationLabelElem.getAttribute('data-label');
-  }
-
   _closeDialogEvent() {
     if (this._seekDialogOpen) {
       // hide dialog
       this._seekDialogElem.classList.remove(this._CONST.seek_item_dialog_visible_class);
-
-      // show idle
-      this._seekIdleCardsElem.classList.remove(this._CONST.seek_items_idle_hidden_class);
 
       this._seekDialogOpen = false;
 
@@ -174,28 +142,12 @@ export default class HomeSeek {
 
       this._selectedSeekType = null;
 
-      // reset label text
-      this._updateSeekFilterLabel();
-
       this._adjustCardsPanelHeight();
+
+      this._setCardsVisibility();
+
+      this._setNavigationVisibility();
     }
-  }
-
-  _updateSeekFilterLabel() {
-    // only enable carousel if width < this._minWidthForSeekDesktop
-    let mql = window.matchMedia(`(min-width: ${this._minWidthForSeekDesktop})`);
-
-    // if it's not a dropdown, do not update the label copy
-    if (!mql.matches) {
-      if (this._selectedSeekType) {
-        this._seekNavigationLabelCopyElem.innerText = this._selectedSeekType;
-      } else {
-        this._resetWhatDoYouSeekFilterLabel();
-      }
-      return;
-    }
-
-    this._resetWhatDoYouSeekFilterLabel();
   }
 
   _removeSelectedSeekItemClass() {
@@ -248,22 +200,15 @@ export default class HomeSeek {
     this._seekDialogCtaAnchorElem.setAttribute('href', ctaHref);
 
     if (!this._seekDialogOpen) {
-      // hide idle items
-      this._seekIdleCardsElem.classList.add(this._CONST.seek_items_idle_hidden_class);
-
       // show dialog
       this._seekDialogElem.classList.add(this._CONST.seek_item_dialog_visible_class);
     }
 
-    // close nav if not mobile
-    if (this._seekNavOpen) {
-      this._toggleSeekOptions();
-    }
-
-    // update filter label
-    this._updateSeekFilterLabel();
-
     this._seekDialogOpen = true;
+
+    this._setCardsVisibility();
+
+    this._setNavigationVisibility();
 
     this._adjustCardsPanelHeight();
   }

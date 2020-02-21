@@ -31,6 +31,18 @@
     );
   }
 
+  .speckle {
+    .speck--diamond-dots-12x12 {
+      top: 5%;
+      right: 0;
+
+      @media screen and (min-width: rem(1024)) {
+        top: 5%;
+        right: 25%;
+      }
+    }
+  }
+
   &__content {
     position: relative;
     margin-top: rem(108);
@@ -51,11 +63,12 @@
   z-index: 1;
   min-height: rem(700);
 
-  // background: linear-gradient(
-  //   180deg,
-  //   transparentize($tuf-color-primary ,0) 20%,
-  //   transparentize($tuf-color-primary-dark, 0) 90%
-  // );
+  .speckle {
+    .speck--diamond-outline {
+      right: 0;
+      bottom: 0;
+    }
+  }
 
   &__filter {
     display: flex;

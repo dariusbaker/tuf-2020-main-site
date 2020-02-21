@@ -357,20 +357,16 @@
     </h2>
     <div class="what-do-you-seek__content-wrapper">
       <div class="what-do-you-seek__content">
-        <div class="what-do-you-seek__content__navigation">
+        <div class="what-do-you-seek__content__navigation" id="seek-cards-navigation">
           <label
-            id="seek-navigation-items-label"
             data-label="{{home.what_do_you_seek.filter_label | safe}}"
             class="what-do-you-seek__content__navigation__label"
             for="what-do-you-seek-list">
             <span>
               {{home.what_do_you_seek.filter_label | safe}}
             </span>
-            <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
-              <use xlink:href="#down" />
-            </svg>
           </label>
-          <div id="seek-navigations" class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+          <div class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
             <ul id="seek-navigation-items" class="what-do-you-seek__content__navigation__items" role="listbox">
             </ul>
             <p class="what-do-you-seek__content__navigation__footnote">

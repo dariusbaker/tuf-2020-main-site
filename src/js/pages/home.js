@@ -11,7 +11,6 @@ import HomeCaseStudies from '../components/home-case-studies';
 import HomeInstagram from '../components/home-instagram';
 import HomeSeek from '../components/home-seek';
 import HomeAva from '../components/home-ava';
-import Speckle from '../components/speckle';
 import { debounce } from '../utils.js';
 
 class Home {
@@ -83,7 +82,6 @@ class Home {
 
     // load instagram feed
     new HomeInstagram();
-    new Speckle();
 
     this._clientsCarousel = null;
 

@@ -53,6 +53,17 @@
       height: rem(98);
     }
   }
+
+  &--dots-6x4 {
+    width: rem(49);
+    height: rem(31);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(98);
+      height: rem(62);
+    }
+  }
+
   &--dots-20x20-triangle {
     width: rem(175);
     height: rem(175);

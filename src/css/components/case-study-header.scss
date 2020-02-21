@@ -8,6 +8,30 @@
 .cs-header {
   position: relative;
 
+  .speckle {
+    .speck--dots-6x4 {
+      bottom: rem(-80);
+      left: 0;
+    }
+
+
+    .speck--diamond-outline {
+      display: none;
+
+      @media screen and (min-width: rem(1024)) {
+        display: block;
+
+        right: 30%;
+        bottom: rem(-120);
+      }
+    }
+
+    .speck--ellipse-blue {
+      right: -1%;
+      bottom: rem(-90);
+    }
+  }
+
   &:before {
     position: absolute;
     top: 0;
@@ -44,6 +68,7 @@
 
 
   &__content-wrapper {
+    position: relative;
     display: inline-block;
   }
 

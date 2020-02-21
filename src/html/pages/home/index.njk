@@ -2,8 +2,17 @@
 {% from "macros/case-study-card.njk" import case_study_card %}
 {% from "macros/form.njk" import talk_form with context %}
 
-
 {% extends "base.njk" %}
+
+{% block meta_tag %}
+<title><?php echo $meta->home->title; ?></title>
+<meta name="description" content="<?php echo $meta->home->description; ?>">
+<meta property="og:url" content="<?php echo $meta->home->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->home->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->home->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->home->og_image; ?>">
+{% endblock %}
 
 {% block page_styles %}
 <link rel="stylesheet" href="/assets/css/pages/home.css">

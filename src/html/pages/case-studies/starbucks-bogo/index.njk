@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block meta_tag %}
-<title>Starbucks Buy One Get One Promo – The Universe Fantastic: Creative Brand Agency | Singapore</title>
-<meta property="og:url" content="http://theuniversefantastic.co/case-studies/starbucks-bogo/">
+<title><?php echo $meta->work_starbucks_bogo->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_starbucks_bogo->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_starbucks_bogo->og_url; ?>">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Starbucks Buy One Get One Promo – The Universe Fantastic: Creative Brand Agency | Singapore">
-<meta property="og:description" content="Find out how we helped Starbucks Singapore up their social media game and sell more coffee than ever before.">
-<meta property="og:image" content="http://theuniversefantastic.co/assets/images/tuf-facebook-share.jpg">
-<meta name="description" content="Find out how we helped Starbucks Singapore up their social media game and sell more coffee than ever before.">
+<meta property="og:title" content="<?php echo $meta->work_starbucks_bogo->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_starbucks_bogo->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_starbucks_bogo->og_image; ?>">
 {% endblock %}
 
 {% block base_tag %}

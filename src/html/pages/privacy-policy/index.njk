@@ -3,12 +3,13 @@
 {% extends "base.njk" %}
 
 {% block meta_tag %}
-<title>{{privacy_policy.meta_title|safe}}</title>
-<meta property="og:url" content="{{meta.home.og_url}}">
+<title><?php echo $meta->privacy->title; ?></title>
+<meta name="description" content="<?php echo $meta->privacy->description; ?>">
+<meta property="og:url" content="<?php echo $meta->privacy->og_url; ?>">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{meta.home.og_title}}">
-<meta property="og:description" content="{{meta.home.og_description}}">
-<meta property="og:image" content="{{meta.home.og_image}}">
+<meta property="og:title" content="<?php echo $meta->privacy->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->privacy->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->privacy->og_image; ?>">
 {% endblock %}
 
 {% block base_tag %}

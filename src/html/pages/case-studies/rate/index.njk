@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block meta_tag %}
-<title>Rate Logo System – The Universe Fantastic: Creative Brand Agency | Singapore</title>
-<meta property="og:url" content="http://theuniversefantastic.co/case-studies/rate/">
+<title><?php echo $meta->work_rate->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_rate->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_rate->og_url; ?>">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rate Logo System – The Universe Fantastic: Creative Brand Agency | Singapore">
-<meta property="og:description" content="Find out how we designed a logo system for Rate Singapore and what the ancient Romans had to do with it. #fintech #techstartup">
-<meta property="og:image" content="http://theuniversefantastic.co/assets/images/tuf-facebook-share.jpg">
-<meta name="description" content="Find out how we designed a logo system for Rate Singapore and what the ancient Romans had to do with it. #fintech #techstartup">
+<meta property="og:title" content="<?php echo $meta->work_rate->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_rate->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_rate->og_image; ?>">
 {% endblock %}
 
 {% block base_tag %}

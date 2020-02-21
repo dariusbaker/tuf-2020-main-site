@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block meta_tag %}
-<title>Vicious Cycles Singapore Branding – The Universe Fantastic: Creative Brand Agency | Singapore</title>
-<meta property="og:url" content="http://theuniversefantastic.co/case-studies/vicious/">
+<title><?php echo $meta->work_vicious->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_vicious->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_vicious->og_url; ?>">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vicious Cycles Singapore Branding – The Universe Fantastic: Creative Brand Agency | Singapore">
-<meta property="og:description" content="Find out how we forged a lifestyle brand for Vicious Cycles Singapore. Spoiler alert: involves iron, oil, and lots of swag.">
-<meta property="og:image" content="http://theuniversefantastic.co/assets/images/tuf-facebook-share.jpg">
-<meta name="description" content="Find out how we forged a lifestyle brand for Vicious Cycles Singapore. Spoiler alert: involves iron, oil, and lots of swag.">
+<meta property="og:title" content="<?php echo $meta->work_vicious->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_vicious->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_vicious->og_image; ?>">
 {% endblock %}
 
 {% block base_tag %}

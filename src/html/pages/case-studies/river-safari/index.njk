@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block meta_tag %}
-<title>River Safari Adventure Buddy – The Universe Fantastic: Creative Brand Agency | Singapore</title>
-<meta property="og:url" content="http://theuniversefantastic.co/case-studies/river-safari/">
+<title><?php echo $meta->work_river_safari->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_river_safari->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_river_safari->og_url; ?>">
 <meta property="og:type" content="website">
-<meta property="og:title" content="River Safari Adventure Buddy – The Universe Fantastic: Creative Brand Agency | Singapore">
-<meta property="og:description" content="Find out how we helped River Safari Singapore jazz up their park experience and learnt about monkey pee in the process.">
-<meta property="og:image" content="http://theuniversefantastic.co/assets/images/tuf-facebook-share.jpg">
-<meta name="description" content="Find out how we helped River Safari Singapore jazz up their park experience and learnt about monkey pee in the process.">
+<meta property="og:title" content="<?php echo $meta->work_river_safari->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_river_safari->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_river_safari->og_image; ?>">
 {% endblock %}
 
 {% block base_tag %}

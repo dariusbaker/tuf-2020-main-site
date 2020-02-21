@@ -1,11 +1,11 @@
 
 {% from "macros/footer.njk" import footer with context %}
+<?php $meta = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/meta.json')); ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="{{meta.home.description}}">
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
     <meta name="referrer" content="no-referrer" />
 
@@ -21,12 +21,6 @@
     <link rel="icon" href="/assets/img/tuf-icon-32x32.png" sizes="32x32">
 
     {% block meta_tag %}
-    <title>{{meta.home.title}}</title>
-    <meta property="og:url" content="{{meta.home.og_url}}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{meta.home.og_title}}">
-    <meta property="og:description" content="{{meta.home.og_description}}">
-    <meta property="og:image" content="{{meta.home.og_image}}">
     {% endblock %}
 
     {% block base_tag %}

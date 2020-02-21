@@ -42,5 +42,10 @@ module.exports = {
   NUNJUCKS_OPTIONS: {
     path: [`./src/html`, `./src`],
     manageEnv: nunjucksEnv
-  }
+  },
+
+  FILES_TO_COPY: [
+    'manifest.json',
+    'meta.json'
+  ]
 };

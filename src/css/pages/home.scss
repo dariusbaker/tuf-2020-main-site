@@ -300,7 +300,9 @@
 
     display: block;
 
-    width: 100%;
+    width: rem(1441);
+
+    max-width: rem(1441);
 
     transform: translateX(-50%);
 

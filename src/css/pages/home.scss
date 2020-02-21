@@ -898,6 +898,18 @@
 }
 
 .case-studies {
+  .speckle {
+    .speck--diamond-dots-12x12 {
+      top: -1.4%;
+      left: -10%;
+
+      @media screen and (min-width: rem(768)) {
+        top: 0;
+        left: 6%;
+      }
+    }
+  }
+
   h2 {
     .tuf-header-br:first-child {
       position: relative;

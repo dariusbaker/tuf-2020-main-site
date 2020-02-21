@@ -857,7 +857,21 @@
     margin-top: rem(64);
     margin-bottom: rem(48);
 
+    .speckle {
+      display: none;
+
+      @media screen and (min-width: rem(1024)) {
+        display: block;
+      }
+
+      .speck--dots-6x6 {
+        right: rem(-32);
+        bottom: rem(-49);
+      }
+    }
+
     &__content {
+      position: relative;
       padding: rem(24);
       box-sizing: border-box;
 

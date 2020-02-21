@@ -44,6 +44,16 @@
     }
   }
 
+  &--dots-6x6 {
+    width: rem(49);
+    height: rem(49);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(98);
+      height: rem(98);
+    }
+  }
+
   &--diamond-outline {
     width: rem(70);
     height: rem(70);

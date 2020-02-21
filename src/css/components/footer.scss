@@ -107,18 +107,18 @@
         &:nth-child(even) {
           margin: 0 rem(16);
         }
+      }
+    }
 
-        svg {
-          width: rem(28);
-          height: rem(28);
+    &__icon {
+      width: rem(28);
+      height: rem(28);
 
-          color: $tuf-color-clickable;
+      color: $tuf-color-clickable;
 
-          @media screen and (min-width: rem(1024)) {
-            width: rem(37);
-            height: rem(37);
-          }
-        }
+      @media screen and (min-width: rem(1024)) {
+        width: rem(32);
+        height: rem(32);
       }
     }
   }

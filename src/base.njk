@@ -21,6 +21,13 @@
     <link rel="icon" href="/assets/img/tuf-icon-32x32.png" sizes="32x32">
 
     {% block meta_tag %}
+    <title><?php echo $meta->home->title; ?></title>
+    <meta name="description" content="<?php echo $meta->home->description; ?>">
+    <meta property="og:url" content="<?php echo $meta->home->og_url; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php echo $meta->home->og_title; ?>">
+    <meta property="og:description" content="<?php echo $meta->home->og_description; ?>">
+    <meta property="og:image" content="<?php echo $meta->home->og_image; ?>">
     {% endblock %}
 
     {% block base_tag %}
@@ -32,7 +39,6 @@
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/tuf-icon-152x152.png">
-
 
     {% block page_styles %}
     {% endblock %}

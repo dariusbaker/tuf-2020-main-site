@@ -110,6 +110,7 @@
   justify-content: center;
   width: rem(48);
   height: rem(48);
+  padding: 0; // reset padding defined by <button> default style
   overflow: hidden;
 
   border: 0; // removes border on <button> elements
@@ -144,6 +145,22 @@
   &--btn {
     &:focus {
       outline: none;
+    }
+  }
+
+  &--ava {
+    @media only screen and (max-width: rem(1024)) {
+      width: rem(28);
+      height: rem(28);
+
+      &:after {
+        border-width: rem(2);
+      }
+
+      svg {
+        width: rem(16);
+        height: rem(16);
+      }
     }
   }
 

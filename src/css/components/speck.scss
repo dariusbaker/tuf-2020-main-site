@@ -15,8 +15,28 @@
   transition: transform 1s ease-out;
 
   &--square-6x6 {
-    width: rem(98);
-    height: rem(98);
+    width: rem(49);
+    height: rem(49);
+
+    @media screen and (min-width: rem(768)) {
+      width: rem(64);
+      height: rem(64);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(98);
+      height: rem(98);
+    }
+  }
+
+  &--dots-6x3 {
+    width: rem(49);
+    height: rem(22);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(98);
+      height: rem(44);
+    }
   }
 
   &--diamond-outline {
@@ -46,6 +66,16 @@
     @media screen and (min-width: rem(1024)) {
       width: rem(200);
       height: rem(200);
+    }
+  }
+
+  &--ellipse-purple {
+    width: rem(50);
+    height: rem(50);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(100);
+      height: rem(100);
     }
   }
 }

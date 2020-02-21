@@ -1,5 +1,5 @@
 /** @type {number} */
-const DEFAULT_FRAME_SKIP = 1;
+const DEFAULT_FRAME_SKIP = 0;
 const LIP_CHANGE_COUNT   = 2; // Number of renders to skip before changing lips
 const BASE_FONT_SIZE     = 16;
 

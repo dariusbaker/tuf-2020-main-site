@@ -20,8 +20,13 @@
   }
 
   &--diamond-outline {
-    width: rem(140);
-    min-height: rem(140);
+    width: rem(70);
+    height: rem(70);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(140);
+      height: rem(140);
+    }
   }
 
   &--diamond-dots-12x12 {

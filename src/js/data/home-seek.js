@@ -59,8 +59,8 @@ export const HOME_SEEK_DATA = {
     },
     {
       type: 'Career / Internship',
-      title: 'The Lovers',
-      subtitle: 'Commitment, Partnerships, Relationships, That hottie in the lift this morning',
+      title: 'Wheel Of Fortune',
+      subtitle: 'Destiny, Luck, Chance, Vanna White',
       content: [
         'Ding, ding, ding! Would you like to buy a vowel? Or better yet, be one with the Universe? If you’re seeking a new career, then you’re in luck! The Wheel of Fortune signifies a reversal of fortune and opportunity, and it looks like Destiny’s telling you to take a bold step forward right now. Remember, the more interesting you make yourself out to be, the better your chances at winning.',
         '#protip: also applies to life in general.'

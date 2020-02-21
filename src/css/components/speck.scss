@@ -53,6 +53,15 @@
       height: rem(98);
     }
   }
+  &--dots-20x20-triangle {
+    width: rem(175);
+    height: rem(175);
+
+    @media screen and (min-width: rem(1024)) {
+      width: rem(350);
+      height: rem(350);
+    }
+  }
 
   &--diamond-outline {
     width: rem(70);

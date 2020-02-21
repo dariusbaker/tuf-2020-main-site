@@ -1,6 +1,8 @@
+import SmoothScroll from 'smooth-scroll';
+
+import Speckle from './components/speckle';
 import Header from './components/header.js';
 import Form from './components/form.js';
-import SmoothScroll from 'smooth-scroll';
 
 class TUF {
   constructor() {
@@ -14,6 +16,8 @@ class TUF {
     new Form();
 
     new SmoothScroll('a[href*="#"]');
+
+    new Speckle();
   }
 }
 

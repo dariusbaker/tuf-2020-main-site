@@ -90,6 +90,10 @@
       font-weight: $tuf-font-weight-bold;
 
       color: $tuf-color-white;
+
+      @media screen and (min-width: rem(1024)) {
+        font-size: rem(36);
+      }
     }
 
     &__list {
@@ -109,6 +113,11 @@
           height: rem(28);
 
           color: $tuf-color-clickable;
+
+          @media screen and (min-width: rem(1024)) {
+            width: rem(37);
+            height: rem(37);
+          }
         }
       }
     }

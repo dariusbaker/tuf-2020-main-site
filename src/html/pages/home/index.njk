@@ -21,7 +21,7 @@
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section hero">
   <div class="tuf-content-padding tuf-section__content">
-    <div class="hero__speckle">
+    <div class="speckle">
       <img
         data-animate="true"
         data-tolerance="8"
@@ -61,6 +61,18 @@
 <!-- mission section -->
 <section id="{{home.mission.slug}}" class="tuf-section mission-section">
   <div class="tuf-section__content tuf-content-padding mission">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20,10"
+        class="speck speck--diamond-dots-12x12"
+        src="/assets/img/specks/diamond-dots-12x12-dark.png" />
+      <img
+        data-animate="true"
+        data-tolerance="20,10"
+        class="speck speck--ellipse-blue"
+        src="/assets/img/specks/ellipse-blue.png" />
+    </div>
     <h2 class="mission__title">
       {{home.mission.title|safe}}
     </h2>
@@ -101,7 +113,7 @@
 
 <!-- testimonials section -->
 <section id="{{home.testimonials.slug}}" class="tuf-section testimonials-section">
-  <div class="tuf-section__content tuf-content-padding">
+  <div class="tuf-section__content tuf-content-padding testimonials__content">
     <div class="testimonials__list" id="testimonials-carousel">
       <div class="glide__track" data-glide-el="track">
         <ul id="testimonials-items" class="glide__slides glide__track testimonials__list-items">

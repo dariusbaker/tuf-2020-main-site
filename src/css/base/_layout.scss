@@ -60,6 +60,7 @@ body {
   padding-bottom: rem(80);
 
   &__content {
+    position: relative;
     width: 100%;
     max-width: rem(1440);
     margin: 0 auto;

@@ -1,11 +1,12 @@
-const CONFIG     = require('../config');
-const data       = require('gulp-data');
-const fs         = require('fs');
-const htmlmin    = require('gulp-htmlmin');
-const nunjucks   = require('gulp-nunjucks-render');
-const { src, dest, series }    = require('gulp');
+const CONFIG   = require('../config');
+const data     = require('gulp-data');
+const del      = require('del');
+const fs       = require('fs');
+const htmlmin  = require('gulp-htmlmin');
+const nunjucks = require('gulp-nunjucks-render');
+const rename   = require('gulp-rename');
+const { src, dest, series } = require('gulp');
 const { reload } = require('./browsersync');
-const del    = require('del');
 
 function getData(type) {
   let isFolder = true;
@@ -47,6 +48,7 @@ function templating() {
     }))
     .pipe(nunjucks(CONFIG.NUNJUCKS_OPTIONS))
     .pipe(htmlmin(CONFIG.HTMLMIN_OPTIONS))
+    .pipe(rename({extname: '.php'}))
     .pipe(dest(CONFIG.DIST.ROOT));
 }
 
@@ -55,7 +57,7 @@ function cleanHomeFolder() {
 }
 
 function moveHomePageFolderToRoot() {
-  return src(`${CONFIG.DIST.ROOT}/home/index.html`)
+  return src(`${CONFIG.DIST.ROOT}/home/index.php`)
     .pipe(dest(CONFIG.DIST.ROOT))
     .pipe(reload());
 }

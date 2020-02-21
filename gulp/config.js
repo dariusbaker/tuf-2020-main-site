@@ -1,7 +1,8 @@
-const ASSETS = 'assets';
-const DIST   = 'dist';
-const SRC    = 'src';
-const DATA   = 'data';
+const ASSETS   = 'assets';
+const DIST     = 'dist';
+const SRC      = 'src';
+const DATA     = 'data';
+const PHP_PORT = 8000;
 
 const nunjucksEnv = function(environment) {
   environment.addFilter('json', JSON.stringify);
@@ -34,8 +35,13 @@ module.exports = {
     collapseWhitespace: true,
   },
 
+  CONNECT_PHP_OPTIONS: {
+    base: DIST,
+    port: PHP_PORT,
+  },
+
   BROWSERSYNC_OPTIONS: {
-    server: DIST,
+    proxy: `127.0.0.1:${PHP_PORT}`,
     notify: false,
   },
 

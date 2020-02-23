@@ -52,6 +52,8 @@ module.exports = {
 
   FILES_TO_COPY: [
     'manifest.json',
-    'meta.json'
+    'meta.json',
+    'talk-to-us.php',
+    `${SRC}/php/**/*.php`,
   ]
 };

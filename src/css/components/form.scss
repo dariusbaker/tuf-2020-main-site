@@ -126,17 +126,6 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        font-size: rem(12);
-        color: $tuf-color-red;
-
-        visibility: hidden;
-        opacity: 0;
-
-        transition: visibility .5s, opacity .25s ease;
-
-        @media screen and (min-width: rem(768)) {
-          font-size: rem(14);
-        }
       }
 
       label {
@@ -227,14 +216,39 @@
 
       &--error {
         p {
-          visibility: visible;
-          opacity: 1;
+          visibility: visible !important;
+          opacity: 1 !important;
         }
 
         input {
           border-bottom-color: $tuf-color-red;
         }
       }
+    }
+
+    .error,
+    .success,
+    &__message {
+      font-size: rem(12);
+      color: $tuf-color-red;
+
+      visibility: hidden;
+      opacity: 0;
+
+      transition: visibility .5s, opacity .25s ease;
+
+      @media screen and (min-width: rem(768)) {
+        font-size: rem(14);
+      }
+
+      &--visible {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .success {
+      color: $tuf-color-yellow;
     }
   }
 

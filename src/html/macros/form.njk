@@ -26,12 +26,14 @@
       {{footer(classes="contact-form__footer")}}
     </div>
     <div class="contact-form__right">
-      <form id="contact-form" class="contact-form__form">
+      <form
+        name="talk-to-us-form"
+        id="contact-form"
+        class="contact-form__form">
         <div class="contact-form__form__input">
           <input
             id="contact-name"
             aria-label="Name (required)"
-            type="text"
             value=""
             placeholder="Name*"
             type="text"
@@ -41,7 +43,7 @@
           <label for="contact-name">
             Name*
           </label>
-          <p class="contact-form__form__validate">
+          <p class="contact-form__form__validate error">
             Please enter a valid name
           </p>
         </div>
@@ -49,7 +51,6 @@
           <input
             id="contact-email"
             aria-label="Email (required)"
-            type="text"
             value=""
             placeholder="Email*"
             type="email"
@@ -59,7 +60,7 @@
           <label for="contact-email">
             Email*
           </label>
-          <p class="contact-form__form__validate">
+          <p class="contact-form__form__validate error">
             Please enter a valid email address
           </p>
         </div>
@@ -67,7 +68,6 @@
           <input
             id="contact-no"
             aria-label="Contact number (optional)"
-            type="text"
             value=""
             placeholder="Contact No."
             type="text"
@@ -81,16 +81,17 @@
           <textarea
             id="contact-project"
             aria-label="Tell us about your project (optional)"
-            type="text"
             value=""
             placeholder="Tell us about your project"
-            type="text"
             name="sender_project"
             autocomplete="nope"></textarea>
           <label for="contact-project">
             Tell us about your project (optional)
           </label>
         </div>
+        <p id="form-message" class="contact-form__form__message">
+          Problem occurs in submitting request, please try again.
+        </p>
       </form>
       {{
         button(

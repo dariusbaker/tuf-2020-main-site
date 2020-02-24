@@ -69,12 +69,32 @@
   background-color: #fed408;
 
   &__col {
+    position: relative;
     flex-direction: column;
 
     justify-content: flex-start;
 
     p {
       margin-top: rem(30);
+      text-align: center;
+    }
+
+    &:first-child:after {
+      @media screen and (min-width: rem(1024)) {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        content: '';
+
+        width: rem(8);
+        height: 84%;
+
+        margin: rem(48) 0;
+
+        background-image: repeating-radial-gradient($tuf-color-white, $tuf-color-white rem(2), transparent rem(2), transparent 100%);
+        background-size: rem(8) rem(8);
+      }
     }
   }
 
@@ -115,6 +135,10 @@
     flex-direction: column;
 
     color: $tuf-color-white;
+
+    p {
+      width: 100%;
+    }
   }
 
   &__right {
@@ -135,8 +159,8 @@
   }
 
   &__ferns {
-    top: rem(40);
-    left: 0;
+    top: rem(346);
+    left: rem(-70);
     width: rem(188);
     height: rem(367);
   }
@@ -215,7 +239,14 @@
     text-align: center;
     background-color: #fed408;
     background-image: url('/assets/img/case-studies/starbucks/support__background.jpg');
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    p {
+      max-width: rem(360);
+      text-align: center;
+    }
 
     &__image {
       width: 100%;

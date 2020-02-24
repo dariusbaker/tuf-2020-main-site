@@ -114,7 +114,9 @@
     align-items: flex-end;
 
     &__image {
-      width: 100%;
+      width: auto;
+
+      max-height: rem(190);
     }
   }
 }

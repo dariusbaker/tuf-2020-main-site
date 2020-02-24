@@ -8,10 +8,16 @@
 .cs-header {
   position: relative;
 
+  padding-bottom: rem(38);
+
   .speckle {
     .speck--dots-6x4 {
-      bottom: rem(-80);
+      bottom: rem(-30);
       left: 0;
+
+      @media screen and (min-width: rem(1024)) {
+        left: 4%;
+      }
     }
 
 
@@ -22,13 +28,13 @@
         display: block;
 
         right: 30%;
-        bottom: rem(-120);
+        bottom: rem(-72);
       }
     }
 
     .speck--ellipse-blue {
       right: -1%;
-      bottom: rem(-90);
+      bottom: rem(-42);
     }
   }
 
@@ -89,8 +95,6 @@
 
     justify-content: center;
 
-    margin-top: rem(24);
-
     font-size: rem(24);
     font-weight: $tuf-font-weight-light;
     line-height: 1.5;
@@ -98,14 +102,10 @@
     color: $tuf-color-turqoise;
 
     @media only screen and (min-width: rem(1024)) {
-      font-size: rem(36);
-    }
+      justify-content: flex-start;
 
-    &__item {
-      &:not(:first-child)::before {
-        content: '•';
-        padding: 0 rem(8);
-      }
+      margin-left: 15%;
+      font-size: rem(36);
     }
   }
 }

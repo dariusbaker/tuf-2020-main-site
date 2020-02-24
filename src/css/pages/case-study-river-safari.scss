@@ -47,8 +47,10 @@
     }
 
     img {
-      width: 100%;
+      width: auto;
+      height: auto;
       max-width: rem(631);
+      max-height: rem(190);
     }
   }
 }
@@ -63,8 +65,19 @@
       display: block;
 
       img {
-        width: 100%;
+        display: block;
+        width: auto;
+        height: auto;
+        max-height: rem(347);
         align-self: center;
+
+        margin: 0 auto;
+        margin-top: rem(58);
+
+        @media screen and (min-width: rem(1024)) {
+          margin-right: 0;
+          margin-left: 0;
+        }
       }
     }
   }
@@ -113,20 +126,6 @@
       max-width: none;
     }
 
-    &__motif {
-      position: absolute;
-      display: none;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      width: auto;
-      transform: translateX(100%);
-
-      @media screen and (min-width: rem(1440)) {
-        display: block;
-      }
-    }
-
     table {
       tr {
         td {
@@ -157,6 +156,14 @@
 .canola {
   background-color: #4aa3d3;
   color: $tuf-color-white;
+
+  &__left {
+    max-width: 100%;
+
+    @media screen and (min-width: rem(1024)) {
+      max-width: 50%;
+    }
+  }
 
   &__right {
     padding: 0;
@@ -190,14 +197,31 @@
   color: $tuf-color-gray;
 
   &__left {
+
+    @media screen and (min-width: rem(1024)) {
+      max-width: 50%;
+    }
+
     &__image {
-      width: 50%;
+      width: auto;
+      height: auto;
+      max-height: rem(149);
       margin: rem(40) 0;
     }
   }
 
   &__right {
     padding: 0;
+
+    align-items: flex-end;
+
+    img {
+      width: auto;
+      height: auto;
+
+      max-width: rem(740);
+      max-height: rem(431);
+    }
   }
 }
 
@@ -331,6 +355,10 @@
       flex-direction: column;
 
       justify-content: space-between;
+
+      .highlight {
+        color: #eb0a73;
+      }
     }
 
     &__image {

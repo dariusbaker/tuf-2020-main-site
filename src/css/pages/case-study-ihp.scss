@@ -78,6 +78,7 @@
   position: relative;
   color: $tuf-color-gray;
   background-color: #e7e7e7;
+  background: radial-gradient($tuf-color-white, #e7e7e7);
   padding-top: rem(120);
   padding-bottom: rem(30);
 
@@ -112,22 +113,12 @@
   }
 
   .cs-container__row {
-    min-height: rem(700);
-
     .cs-container__column {
       display: flex;
 
       flex-direction: column;
       padding-left: rem(25);
       padding-right: rem(25);
-    }
-
-    .cs-container__column:nth-child(2) {
-      justify-content: center;
-    }
-
-    .cs-container__column:nth-child(3) {
-      justify-content: flex-end;
     }
   }
 }
@@ -178,6 +169,7 @@
     span {
       display: block;
       color: #5fc3d9;
+      font-style: italic;
     }
   }
 }

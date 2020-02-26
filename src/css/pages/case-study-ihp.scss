@@ -456,6 +456,8 @@
   }
 
   .cs-container__row {
+    flex-wrap: nowrap;
+
     @media screen and (min-width: rem(1366)) {
       flex-direction: row;
     }
@@ -480,8 +482,13 @@
     }
   }
 
-  .cs-container__row {
-
+  &__right  {
+    img {
+      max-width: none;
+      max-height: rem(560);
+      width: auto;
+      height: 100%;
+    }
   }
 }
 

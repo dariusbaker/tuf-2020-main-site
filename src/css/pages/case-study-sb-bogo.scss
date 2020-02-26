@@ -6,6 +6,13 @@
 
 .cs-container {
   color: #212529;
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+  }
 }
 
 .hero {

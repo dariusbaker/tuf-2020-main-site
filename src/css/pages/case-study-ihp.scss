@@ -454,6 +454,35 @@
   .cs-container__column {
     padding-bottom: 0;
   }
+
+  .cs-container__row {
+    @media screen and (min-width: rem(1366)) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(1366)) {
+      padding-right: 0 !important;
+    }
+
+    &__figures {
+      text-align: center;
+
+      img {
+        max-width: 46%;
+        height: auto;
+
+        &:first-child {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+
+  .cs-container__row {
+
+  }
 }
 
 .lead {

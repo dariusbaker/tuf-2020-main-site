@@ -9,6 +9,16 @@
 
   &__column {
     @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
       padding-right: rem(112);
       padding-left: rem(112);
     }

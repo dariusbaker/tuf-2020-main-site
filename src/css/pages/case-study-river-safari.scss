@@ -4,6 +4,14 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+.cs-container {
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      // padding-left:
+    }
+  }
+}
+
 .hero {
   position: relative;
   width: 100%;

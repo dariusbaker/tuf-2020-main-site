@@ -4,6 +4,32 @@
 @import '../utils/functions';
 @import '../utils/mixins';
 
+.cs-container {
+  max-width: rem(1920);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
 .hero {
   position: relative;
 
@@ -113,6 +139,26 @@
   }
 
   .cs-container__row {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(158);
+      padding-left: rem(158);
+    }
+
     .cs-container__column {
       display: flex;
 
@@ -127,13 +173,34 @@
   color: $tuf-color-white;
   background-color: #7d2175;
 
-  &__image {
+  img {
     width: 100%;
   }
 
+  &__left,
+  &__right {
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
   &__left {
-    @media (min-width: rem(992)) {
-      padding-right: rem(16);
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(47);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(56);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(115);
     }
 
     &__copy-wrapper {
@@ -148,16 +215,75 @@
       width: 100%;
       padding: 0 rem(15);
 
-      @media (min-width: rem(992)) {
-        flex: 0 0 66.666667%;
-        max-width: 66.666667%;
+      @media screen and (min-width: rem(1100)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1200)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1370)) {
+        padding-left: rem(28);
+        padding-left: rem(28);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
       }
     }
   }
 
   &__right {
-    @media (min-width: rem(992)) {
-      padding-left: rem(16);
+    @media screen and (min-width: rem(1024)) {
+      padding-left: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-left: rem(47);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-left: rem(56);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-left: rem(115);
+    }
+
+    &__copy {
+      @media screen and (min-width: rem(1100)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1200)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1370)) {
+        padding-left: rem(28);
+        padding-left: rem(28);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
     }
   }
 
@@ -218,6 +344,27 @@
     text-align: center;
   }
 
+  &__left,
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(24) !important;
+      text-align: right !important;
+    }
+
+    &__content {
+      text-align: center;
+      @media screen and (min-width: rem(768)) {
+        display: inline-block;
+      }
+    }
+  }
+
   &__title {
     display: inline-block;
     max-width: rem(236);
@@ -264,6 +411,45 @@
   }
 }
 
+.collaterals {
+  &__left,
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(768)) {
+      padding-right: 0 !important;
+    }
+  }
+
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      padding-left: 0 !important;
+    }
+
+    p {
+      @media screen and (min-width: rem(768)) {
+        padding-left: rem(40);
+      }
+
+      @media screen and (min-width: rem(1366)) {
+        padding-left: rem(90);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(120);
+      }
+
+      @media screen and (min-width: rem(1960)) {
+        padding-left: rem(220);
+      }
+    }
+  }
+}
+
 .website {
   .cs-container__column {
     padding-bottom: 0;
@@ -287,16 +473,26 @@
     border-right: rem(300) solid transparent;
   }
 
+  .cs-container__row {
+    align-items: center;
+  }
+
   .cs-container__column {
     padding-bottom: 0;
   }
 
   &__left-wrapper {
-    display: flex;
+    padding-right: 0 !important;
+  }
 
-    align-items: center;
-    padding-right: 0;
-    padding-left: 0;
+  &__right-wrapper {
+    padding-left: 0 !important;
+  }
+
+  &__center-wrapper {
+    @media screen and (min-width: rem(768)) {
+      padding: 0 rem(24) !important;
+    }
   }
 
   &__right {

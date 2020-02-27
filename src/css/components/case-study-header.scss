@@ -20,7 +20,6 @@
       }
     }
 
-
     .speck--diamond-outline {
       display: none;
 
@@ -80,10 +79,14 @@
 
   &__title {
     display: inline-block;
-    line-height: 1.25;
+
+    font-size: (36 / 375) * 100vw;
+    font-weight: 900;
+    line-height: (100 / 80);
+    text-transform: capitalize;
     color: $tuf-color-white;
 
-    @media (min-width: $tuf-section-title-bp) {
+    @media (min-width: rem(floor(80 / (36 / 375)))) {
       font-size: rem(80);
     }
   }

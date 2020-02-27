@@ -65,10 +65,6 @@
       top: rem(30);
       left: 50%;
       transform: translate(-50%, 0) !important;
-
-      @media screen and (min-width:rem(768)) {
-        top: 0;
-      }
     }
   }
 }

@@ -177,6 +177,11 @@
     width: 100%;
   }
 
+  .cs-container__row {
+    max-width: rem(1920);
+    margin: 0 auto;
+  }
+
   &__left,
   &__right {
     width: 100%;
@@ -535,9 +540,10 @@
   flex-wrap: wrap;
   max-width: rem(512);
   padding-top: rem(48);
+  margin: 0 auto;
 
   @media screen and (min-width: rem(1024)) {
-    max-width: none;
+    max-width: rem(1920);
   }
 
   &__left {

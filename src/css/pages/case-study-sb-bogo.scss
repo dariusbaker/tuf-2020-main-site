@@ -139,11 +139,16 @@
 
   &__fruits {
     width: 60%;
-    max-width: 311px;
+    max-width: rem(232);
     transform: translateY(rem(24));
+    align-self: flex-start;
 
     @media screen and (min-width: rem(768)) {
       transform: translateY(rem(50));
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      align-self: inherit;
     }
   }
 
@@ -169,10 +174,10 @@
   }
 
   &__balloons {
-    bottom: rem(300);
+    bottom: rem(144);
     right: rem(120);
-    width: rem(103);
-    height: rem(212);
+    width: rem(80);
+    height: rem(164);
   }
 
   &__ferns {
@@ -218,11 +223,6 @@
 
   &__flamingo {
     position: relative;
-    //margin-top: rem(30);
-
-    @media screen and (min-width: rem(768)) {
-      margin-top: rem(60);
-    }
 
     img {
       width: 100%;

@@ -791,6 +791,10 @@
 
       cursor: pointer;
 
+      &__frame {
+        overflow: hidden;
+      }
+
       &:focus {
         outline: none;
       }
@@ -798,6 +802,15 @@
       &:hover,
       &:focus {
         border-color: $tuf-color-turqoise;
+      }
+
+      &:focus &__image,
+      &:hover &__image {
+        transform: scale(1.1);
+      }
+
+      &__image {
+        transition: transform .2s ease-in-out;
       }
 
       &__title,

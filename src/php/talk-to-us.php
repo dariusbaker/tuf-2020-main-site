@@ -1,5 +1,6 @@
 <?php
-  define('SEND_TO', 'funkage@gmail.com');
+  //define('SEND_TO', 'funkage@gmail.com');
+  define('SEND_TO', 'seek@theuniversefantastic.co');
   define('SUBJECT', '%s wants to talk.');
 
   use PHPMailer\PHPMailer\Exception;

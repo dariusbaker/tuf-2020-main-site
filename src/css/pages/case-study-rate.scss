@@ -151,6 +151,10 @@
   background-color: $tuf-color-white;
 
   &__right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     padding-bottom: 0;
   }
 
@@ -169,8 +173,8 @@
   }
 
   &__copy {
-    margin-top: rem(160);
-    max-width: rem(430);
+    margin: rem(132) auto;
+    max-width: rem(318);
   }
 
   &__lego {
@@ -199,14 +203,11 @@
     &-1 {
       width: 100%;
       margin: rem(40) 0;
-
-      @media screen and (min-width: rem(768)) {
-        width: rem(621, 36);
-        margin: rem(100) 0 rem(100) 5%;
-      }
+      max-width: rem(464);
 
       @media screen and (min-width: rem(1024)) {
-        width: rem(621, 24);
+        width: percentage(350 / 512);
+        margin: rem(100) 0 rem(100) 5%;
       }
     }
   }
@@ -214,28 +215,25 @@
   &__right {
     &-1 {
       width: 100%;
+      max-width: rem(440);
 
       @media screen and (min-width: rem(768)) {
-        width: rem(588, 36);
         margin: 0 10% 0 0;
       }
 
       @media screen and (min-width: rem(1024)) {
-        width: rem(588, 24);
+        width: percentage(335 / 512);
       }
     }
 
     &-2 {
       width: 100%;
+      max-width: rem(448);
       margin-top: rem(40);
 
-      @media screen and (min-width: rem(768)) {
-        width: rem(599, 36);
-        margin: rem(100) 0 0 10%;
-      }
-
       @media screen and (min-width: rem(1024)) {
-        width: rem(599, 24);
+        width: percentage(338 / 512);
+        margin: rem(100) 0 0 10%;
       }
     }
   }

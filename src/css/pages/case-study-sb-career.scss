@@ -114,7 +114,9 @@
     width: 100%;
     left: 0;
     background-image: url('/assets/img/case-studies/starbucks-career/characters.jpg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #d7d7d7;
 
     @media screen and (min-width: rem(768)) {
       position: absolute;

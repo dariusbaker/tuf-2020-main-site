@@ -8,10 +8,12 @@
   )
 %}
 <a href="{{href}}" class="tuf-case-study-card {{classes}}">
-  <img
-    class="tuf-case-study-card__image"
-    src="{{image}}"
-    alt="{{title}}" />
+  <div class="tuf-case-study-card__frame">
+    <img
+      class="tuf-case-study-card__image"
+      src="{{image}}"
+      alt="{{title}}" />
+  </div>
   <div class="tuf-case-study-card__content">
     <h3 class="tuf-case-study-card__content__title">
       {{title}}

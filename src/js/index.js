@@ -1,6 +1,7 @@
 import SmoothScroll from 'smooth-scroll';
 
 import Speckle from './components/speckle';
+import Particles from './components/particles';
 import Header from './components/header.js';
 import Form from './components/form.js';
 
@@ -18,6 +19,9 @@ class TUF {
     new SmoothScroll('a[href*="#"]');
 
     new Speckle();
+
+    const particles = new Particles();
+    particles.init();
   }
 }
 

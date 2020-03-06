@@ -15,6 +15,24 @@
     }
   }
 
+  &:hover &__frame,
+  &:focus &__frame {
+    transform: scale3d(1.05, 1.05, 1.05);
+    box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, .5);
+  }
+
+  &__frame {
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform .125s ease-in-out, box-shadow .125s linear;
+  }
+
+  &:hover &__image,
+  &:focus &__image {
+    transform: scale(1.1);
+    transition: transform 8s linear;
+  }
+
   &__image {
     width: 100%;
     height: auto;

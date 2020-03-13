@@ -8,15 +8,22 @@ const PARTICLE_HEIGHT = 32;
 
 export default class Particles {
   constructor() {
+    this._$particles = document.querySelector('.particles');
+
+    if (this._$particles === null) {
+      return false;
+    }
+
     this._dmz = this._createDMZ();
     this._zones = this._createZones(ZONES_QUANTITY);
     this._particlesQuantity = PARTICLES_PER_ZONE * ZONES_QUANTITY;
-    this._$particles = document.querySelector('.particles');
 
     this._currentSwitch = 0;
+
+    this._init();
   }
 
-  init() {
+  _init() {
     for (let i = 0; i < this._particlesQuantity; i++) {
       this._$particles.appendChild(this._createParticle().element);
     }

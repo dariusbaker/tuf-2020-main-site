@@ -20,8 +20,7 @@ class TUF {
 
     new Speckle();
 
-    const particles = new Particles();
-    particles.init();
+    new Particles();
   }
 }
 

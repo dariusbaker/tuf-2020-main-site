@@ -1,6 +1,6 @@
 const PARTICLES_PER_ZONE = 1;
 const ZONE_COLUMNS = 2;
-const ZONES_QUANTITY = 6; // only multiples of 2 permitted
+const ZONES_QUANTITY = 8; // only multiples of 2 permitted
 const THRESHOLD_WIDTH = .5;
 const THRESHOLD_HEIGHT = .75;
 const PARTICLE_WIDTH = 32;
@@ -86,6 +86,7 @@ export default class Particles {
       setTimeout(() => {
         particle.element.parentNode.removeChild(particle.element);
       }, 250);
+
       particle.zone.switch = particle.zone.switch ? 0 : 1;
     }
 
@@ -106,12 +107,21 @@ export default class Particles {
     const zone = this._getRandomZone();
     const position = this._getRandomPosition(zone);
     const $element = document.getElementById(`particle-${zone.particleId}`).content.cloneNode(true).querySelector('.particle');
+    const $image = $element.querySelector('.particle__image');
+
+    // min. of 1s, add random increments of .25s (0, .25, 5, .75, 1)
+    const randomAnimationDuration = 1 + Math.floor(Math.random() * 5) / 4;
+
+    // min. of 4s, add random range from 0 to 7.
+    const lifespan = (4 + Math.floor(Math.random() * 8)) * 1000;
+
+    $image.style.animationDuration = `${randomAnimationDuration}s`;
 
     const particle = {
       zone,
       position,
+      lifespan,
       element: $element,
-      lifespan: (4 + Math.floor(Math.random() * 8)) * 1000,
     };
 
     window.setTimeout(
@@ -124,7 +134,7 @@ export default class Particles {
     $element.classList.add('particle');
     setTimeout(() => {
       $element.classList.add('particle--visible');
-    }, 250);
+    }, 100);
     $element.style.top = `${position.y}px`;
     $element.style.left = `${position.x}px`;
 

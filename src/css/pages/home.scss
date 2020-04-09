@@ -86,11 +86,18 @@
 }
 
 .hero {
+  min-height: 100vh;
   background: linear-gradient(
     180deg,
     transparentize($tuf-color-secondary ,0) 0%,
     transparentize($tuf-color-primary, 0) 80%
   );
+
+  padding-bottom: rem(32);
+
+  @media (min-width: rem(768)) {
+    padding-bottom: rem(80);
+  }
 
   .speckle {
     .speck--square-6x6 {
@@ -128,12 +135,15 @@
     justify-content: space-between;
 
     width: 100%;
-    min-height: rem(530);
+    //min-height: rem(530);
+    height: 69vh;
 
     margin-top: rem(108);
 
     @media (min-width: rem(768)) {
       flex-direction: row;
+      min-height: rem(530);
+      height: auto;
     }
 
     @media (min-width: rem(1024)) {
@@ -160,7 +170,7 @@
   }
 
   &__cta {
-    margin-top: rem(60);
+    margin-top: rem(28);
     text-align: center;
 
     @media (min-width: rem(768)) {

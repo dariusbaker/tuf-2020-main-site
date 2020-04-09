@@ -31,6 +31,11 @@
 
 <!-- hero section -->
 <section id="{{home.hero.slug}}"  class="tuf-section hero">
+  <div class="video-bg">
+    <video class="video-bg__video" muted autoplay loop>
+      <source src="/assets/video/hero.mp4">
+    </video>
+  </div>
   <div class="tuf-content-padding tuf-section__content">
     <div class="speckle">
       <img
@@ -46,7 +51,6 @@
         src="/assets/img/specks/diamond-outline.png" />
     </div>
     <div class="hero__content">
-      <img class="hero__bg" src="/assets/img/hero-hand.png" alt="{{home.hero.title|safe}}" />
       <h1 class="hero__header">
         {{home.hero.title|safe}}
       </h1>

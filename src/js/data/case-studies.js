@@ -40,14 +40,14 @@ export const HOME_CASE_STUDIES_DATA = [
     featured_in_home: 4
   },
   {
-    slug: 'ihp',
-    title: 'Branding for IHP Singapore',
-    image: '/assets/img/case-studies/ihp/thumbnail.jpg',
+    slug: 'rate',
+    title: 'Rate Logo System',
+    image: '/assets/img/case-studies/rate/thumbnail.jpg',
     tags: [
       'Branding',
-      'UI/UX',
-      'Web'
+      'UI/UX'
     ],
+    featured_in_home: 5
   },
   {
     slug: 'starbucks-career',
@@ -60,13 +60,13 @@ export const HOME_CASE_STUDIES_DATA = [
     featured_in_home: 6
   },
   {
-    slug: 'rate',
-    title: 'Rate Logo System',
-    image: '/assets/img/case-studies/rate/thumbnail.jpg',
+    slug: 'ihp',
+    title: 'Branding for IHP Singapore',
+    image: '/assets/img/case-studies/ihp/thumbnail.jpg',
     tags: [
       'Branding',
-      'UI/UX'
+      'UI/UX',
+      'Web'
     ],
-    featured_in_home: 5
   }
 ];

@@ -17,6 +17,7 @@ module.exports = {
     JS        : `${SRC}/js`,
     CSS       : `${SRC}/css`,
     IMG       : `${SRC}/img`,
+    VIDEO     : `${SRC}/video`,
     SVG       : `${SRC}/svg`,
   },
 
@@ -28,6 +29,7 @@ module.exports = {
     DATA    : `${DIST}/${ASSETS}/js/data`,
     SVG     : `${SRC}/html/partials`,
     IMG     : `${DIST}/${ASSETS}/img`,
+    VIDEO   : `${DIST}/${ASSETS}/video`,
   },
 
   HTMLMIN_OPTIONS: {

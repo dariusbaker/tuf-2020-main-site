@@ -10,6 +10,12 @@ function copyImages() {
     .pipe(reload());
 }
 
+function copyVideos() {
+  return src(`${CONFIG.SRC.VIDEO}/**`)
+    .pipe(dest(CONFIG.DIST.VIDEO))
+    .pipe(reload());
+}
+
 function copyEverythingElse() {
   return src(CONFIG.FILES_TO_COPY, {allowEmpty: true})
     .pipe(dest(CONFIG.DIST.ROOT))
@@ -17,7 +23,7 @@ function copyEverythingElse() {
 }
 
 function copy(done) {
-  return parallel(copyImages, copyEverythingElse)(done);
+  return parallel(copyVideos, copyImages, copyEverythingElse)(done);
 }
 
 module.exports = copy;

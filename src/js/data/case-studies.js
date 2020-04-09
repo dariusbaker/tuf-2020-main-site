@@ -48,7 +48,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'UI/UX',
       'Web'
     ],
-    featured_in_home: 5
   },
   {
     slug: 'starbucks-career',
@@ -68,6 +67,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Branding',
       'UI/UX'
     ],
-    featured_in_home: 7
+    featured_in_home: 5
   }
 ];

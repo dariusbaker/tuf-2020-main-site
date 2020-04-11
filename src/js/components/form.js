@@ -12,8 +12,8 @@ export default class Form {
     };
 
     this._MSG = {
-      error: 'Problem occurs in submitting request, please try again.',
-      success: 'Request submitted, we will be in touch soon'
+      error: 'Oops, it seems like there\'s glitch a the Universe. Please try again.',
+      success: 'The Universe has received your transmission. We shall respond shortly. Thank you!'
     };
 
     this._CLASS = {

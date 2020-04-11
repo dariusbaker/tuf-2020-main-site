@@ -90,7 +90,7 @@ export default class Form {
   }
 
   _removeMessage() {
-    this._msgElem.className = 'contact-form__message';
+    this._msgElem.className = 'contact-form__form__message';
   }
 
   _bindRequiredInputFocusEvent() {

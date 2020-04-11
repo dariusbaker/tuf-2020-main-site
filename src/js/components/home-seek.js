@@ -17,7 +17,7 @@ export default class HomeSeek {
       seek_dialog_cta_selector: '#seek-dialog-contact-cta',
       seek_navigation_item_template_selector: '#seek-navigation-item-template',
       seek_idle_template_selector: '#seek-idle-template',
-      seek_close_btn_selector: '#seek-close-btn',
+      seek_close_btn_selector: '.what-do-you-seek__dialog__close',
       nav_data_attr: 'data-type',
       seek_item_selected_class: 'what-do-you-seek__content__navigation__item--selected',
       seek_item_dialog_visible_class: 'what-do-you-seek__dialog--visible',
@@ -44,7 +44,7 @@ export default class HomeSeek {
     this._seekIdleCardsItemElem = document.querySelectorAll(this._CONST.seek_idle_card_selector);
 
     // dialog related element
-    this._seekCloseBtnElem = document.querySelector(this._CONST.seek_close_btn_selector);
+    this._seekCloseBtnElem = document.querySelectorAll(this._CONST.seek_close_btn_selector);
     this._seekDialogElem = document.querySelector(this._CONST.seek_dialog_selector);
     this._seekDialogTitleElem = document.querySelector(this._CONST.seek_dialog_title_selector);
     this._seekDialogSubtitleElem = document.querySelector(this._CONST.seek_dialog_subtitle_selector);
@@ -127,7 +127,9 @@ export default class HomeSeek {
       elem.addEventListener('click', this._showSeekHandler);
     });
 
-    this._seekCloseBtnElem.addEventListener('click', this._seekCloseHandler);
+    this._seekCloseBtnElem.forEach(($button) => {
+      $button.addEventListener('click', this._seekCloseHandler);
+    });
   }
 
   _closeDialogEvent() {

@@ -457,24 +457,29 @@
               </header>
               <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
               </div>
-              <ul class="what-do-you-seek__dialog__ctas">
-                <li id="seek-dialog-contact-cta">
-                  <p></p>
-                  {{
-                    button_link(
-                      classes="what-do-you-seek__dialog__ctas__link",
-                      type="primary",
-                      href="#talk-to-us"
-                    )
-                  }}
-                </li>
-              </ul>
+              <div class="what-do-you-seek__dialog__ctas" id="seek-dialog-contact-cta">
+                <p></p>
+                {{
+                  button_link(
+                    classes="what-do-you-seek__dialog__ctas__link",
+                    type="primary",
+                    href="#talk-to-us"
+                  )
+                }}
+                {{
+                  icon_round(
+                    classes = "what-do-you-seek__dialog__ctas__close what-do-you-seek__dialog__close",
+                    icon = 'close',
+                    isButton = true
+                  )
+                }}
+              </div>
             </div>
             <div>
               {{
                 icon_round(
                   id="seek-close-btn",
-                  classes = 'what-do-you-seek__dialog__close-btn',
+                  classes = 'what-do-you-seek__dialog__close-btn what-do-you-seek__dialog__close',
                   icon = 'close',
                   isButton = true
                 )

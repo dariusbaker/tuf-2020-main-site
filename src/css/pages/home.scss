@@ -1426,9 +1426,15 @@
 
 
     &__ctas {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
       color: $tuf-color-clickable;
 
       p {
+        flex: 0 0 auto;
+        width: 100%;
         margin-bottom: rem(16);
 
         font-size: rem(16);
@@ -1443,6 +1449,15 @@
 
       &__link {
         width: fit-content;
+      }
+
+      &__close {
+        margin-left: rem(16);
+
+        @media only screen and (min-width:rem(1024)) {
+          visibility: hidden;
+          pointer-events: none;
+        }
       }
     }
 

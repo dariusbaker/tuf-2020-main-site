@@ -89,11 +89,8 @@ export default class HomeWhatWeDo {
       rewind: false,
       startAt: 1,
       breakpoints: {
-        1000: {
-          perView: 3,
-        },
-        900: {
-          perView: 2
+        1056: {
+          perView: 2,
         },
         600: {
           perView: 1.5,
@@ -112,8 +109,8 @@ export default class HomeWhatWeDo {
   }
 
   _toggleWhatWeDoCarousel() {
-    // only enable carousel if width < 1310px
-    let mql = window.matchMedia('(min-width: 1310px)');
+    // only enable carousel if width < 1056
+    let mql = window.matchMedia('(min-width: 1056px)');
 
     if (mql.matches) {
       if (this._whatWeDoCarousel) {
@@ -125,7 +122,7 @@ export default class HomeWhatWeDo {
         this._removeWhatWeDoGlideSlideClone();
       }
     } else {
-      this._initWhatWeDoCarousel();
+      this._whatWeDoCarousel == null && this._initWhatWeDoCarousel();
     }
   }
 

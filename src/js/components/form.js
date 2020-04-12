@@ -53,12 +53,19 @@ export default class Form {
 
         fetch(this._API, {
           method: 'post',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-          },
           body: data
         })
         .then((res) => {
+          res.text().then((message) => {
+            if (message == '1') {
+              this._showMessage();
+              return;
+            } else {
+              this._showMessage(true);
+            }
+          }).catch((error) => {
+            this._showMessage(true);
+          })
           if (res.status >= 200 && res.status < 300) {
             this._showMessage();
             return;

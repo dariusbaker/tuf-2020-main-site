@@ -11,10 +11,10 @@
   require './phpmailer/PHPMailer.php';
   require './phpmailer/SMTP.php';
 
-  $name    = $_REQUEST['sender_name'];
-  $email   = $_REQUEST['sender_email'];
-  $contact = $_REQUEST['sender_contact'];
-  $message = $_REQUEST['sender_project'];
+  $name    = $_POST['sender_name'];
+  $email   = $_POST['sender_email'];
+  $contact = $_POST['sender_contact'];
+  $message = $_POST['sender_project'];
 
   $clean = array(
     'name'    => filter_var(trim($name),    FILTER_SANITIZE_STRING),
@@ -33,7 +33,7 @@
   );
 
   if (strlen($clean['message']) > 0) {
-    $body .= ', who had the following message for you:';
+    $body .= ', who has the following message for you:';
     $body .= '<br>';
     $body .= $clean['message'];
   } else {

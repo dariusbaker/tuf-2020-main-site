@@ -31,8 +31,10 @@ export default class HomeTestimonials {
       const contentTemplate = this._itemTemplate.content.cloneNode(true);
       const contentBody = contentTemplate.querySelector('p');
       contentBody.innerHTML = item.content;
-      const contentFooter = contentTemplate.querySelector('footer');
-      contentFooter.innerHTML = item.name;
+      const contentName = contentTemplate.querySelector('.testimonials__list-item__name');
+      const contentJob = contentTemplate.querySelector('.testimonials__list-item__job');
+      contentName.innerHTML = item.name;
+      contentJob.innerHTML = item.job;
 
       this._itemsElem.appendChild(contentTemplate);
 

@@ -490,13 +490,21 @@
         color: $tuf-color-turqoise;
       }
 
-      blockquote footer {
+      &__name,
+      &__job {
+        display: block;
         font-weight: $tuf-font-weight-light;
 
         color: $tuf-color-white;
 
-        text-align: right;
+        text-align: left;
 
+        @media (min-width: rem(1024)) {
+          text-align: center;
+        }
+      }
+
+      &__name {
         font-size: rem(18);
 
         @media (min-width: rem(768)) {
@@ -505,7 +513,18 @@
 
         @media (min-width: rem(1024)) {
           font-size: rem(24);
-          text-align: center;
+        }
+      }
+
+      &__job {
+        font-size: rem(15);
+
+        @media (min-width: rem(768)) {
+          font-size: rem(17);
+        }
+
+        @media (min-width: rem(1024)) {
+          font-size: rem(21);
         }
       }
 

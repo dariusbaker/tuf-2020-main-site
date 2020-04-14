@@ -498,10 +498,6 @@
         color: $tuf-color-white;
 
         text-align: left;
-
-        @media (min-width: rem(1024)) {
-          text-align: center;
-        }
       }
 
       &__name {
@@ -518,14 +514,6 @@
 
       &__job {
         font-size: rem(15);
-
-        @media (min-width: rem(768)) {
-          font-size: rem(17);
-        }
-
-        @media (min-width: rem(1024)) {
-          font-size: rem(21);
-        }
       }
 
       blockquote p::before {

@@ -48,7 +48,7 @@ export const HOME_SEEK_DATA = {
       title: 'The Lovers',
       subtitle: 'Commitment, Partnerships, Relationships, That hottie in the lift this morning',
       content: [
-        'Ah, The Lovers. It’s telling you to go with your heart; that we’re the right ones for you. Just you and us against the world, baby. We’ll buy roses for you, pour champagne in your cup, and serenade you with James Brown to keep your heart warm under the cold moonlight. We’ll even throw in some French to add to the romance. J’aime les tortues, ma chérie. We’ll be the Romeo to your Juliet; maybe even the Rosmah to your Najib. If you feel the same, darlin’, hit us up. We’ll be right here waiting for you.'
+        'Ah, The Lovers. It’s telling you to go with your heart; that we’re the right ones for you. Just you and us against the world, baby. We’ll buy roses for you, pour champagne in your cup, and serenade you with James Brown to keep your heart warm under the cold moonlight. We’ll even throw in some French to add to the romance. <em>J’aime les tortues, ma chérie.</em> We’ll be the Romeo to your Juliet; maybe even the Rosmah to your Najib. If you feel the same, darlin’, hit us up. We’ll be right here waiting for you.'
       ],
       image: '/assets/img/tuf-home-wdys-collab.png',
       cta: {

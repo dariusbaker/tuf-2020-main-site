@@ -65,6 +65,14 @@
       {
         "name": "Wantedly",
         "image": "/assets/img/tuf-client-wantedly.png"
+      },
+      {
+        "name": "Allianz",
+        "image": "/assets/img/tuf-client-allianz.png"
+      },
+      {
+        "name": "Amgen",
+        "image": "/assets/img/tuf-client-amgen.png"
       }
     ]
   },

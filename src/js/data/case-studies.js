@@ -22,7 +22,7 @@ export const HOME_CASE_STUDIES_DATA = [
   },
   {
     slug: 'wantedly',
-    title: 'Wantedly Brand Communications',
+    title: 'Wantedly SG Brand Launch',
     image: '/assets/img/case-studies/wantedly/thumbnail.jpg',
     tags: [
       'Branding',
@@ -32,7 +32,7 @@ export const HOME_CASE_STUDIES_DATA = [
   },
   {
     slug: 'vicious',
-    title: 'Vicious Cycles Singapore Branding',
+    title: 'Ride Without Fear',
     image: '/assets/img/case-studies/vicious/thumbnail.jpg',
     tags: [
       'Branding'
@@ -41,7 +41,7 @@ export const HOME_CASE_STUDIES_DATA = [
   },
   {
     slug: 'rate',
-    title: 'Rate Logo System',
+    title: 'Rate Rebrand  ',
     image: '/assets/img/case-studies/rate/thumbnail.jpg',
     tags: [
       'Branding',
@@ -61,7 +61,7 @@ export const HOME_CASE_STUDIES_DATA = [
   },
   {
     slug: 'ihp',
-    title: 'Branding for IHP Singapore',
+    title: 'Healthcare Your Business Deserves',
     image: '/assets/img/case-studies/ihp/thumbnail.jpg',
     tags: [
       'Branding',

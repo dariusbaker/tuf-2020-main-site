@@ -199,7 +199,7 @@ export default class HomeSeek {
     this._seekDialogCtaTitleElem.innerHTML = selectedSeekData.cta.title;
     this._seekDialogCtaAnchorElem.innerText = selectedSeekData.cta.label;
     const ctaHref = encodeURI(`mailto:${this._data.email}?subject=${selectedSeekData.cta.subject.trim()}`);
-    this._seekDialogCtaAnchorElem.setAttribute('href', ctaHref);
+    this._seekDialogCtaAnchorElem.parentNode.setAttribute('href', ctaHref);
 
     if (!this._seekDialogOpen) {
       // show dialog

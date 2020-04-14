@@ -51,6 +51,7 @@ export default class HomeTestimonials {
     this._testimonialCarousel = new Glide(this._CONST.testimonials_carousel_selector, {
       type: 'carousel',
       perView: 1,
+      autoplay: 5000,
     }).mount();
   }
 }

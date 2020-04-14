@@ -14,18 +14,30 @@
     animation-name: hover;
     animation-timing-function: ease-in-out;
 
-    &--0  {
-      width: rem(28);
+    &--0 {
+      width: rem(20);
+
+      @media (min-width: rem(728)) {
+        width: rem(28);
+      }
     }
 
     &--1,
     &--3{
-      width: rem(40);
+      width: rem(28);
+
+      @media (min-width: rem(728)) {
+        width: rem(40);
+      }
     }
 
     &--2,
-    &--4  {
-      width: rem(63);
+    &--4 {
+      width: rem(44);
+
+      @media (min-width: rem(728)) {
+        width: rem(63);
+      }
     }
   }
 

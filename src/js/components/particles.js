@@ -1,8 +1,8 @@
 const PARTICLES_PER_ZONE = 1;
 const ZONE_COLUMNS = 2;
 const ZONES_QUANTITY = 8; // only multiples of 2 permitted
-const THRESHOLD_WIDTH = .5;
-const THRESHOLD_HEIGHT = .75;
+const THRESHOLD_WIDTH = .6;
+const THRESHOLD_HEIGHT = .8;
 const PARTICLE_WIDTH = 32;
 const PARTICLE_HEIGHT = 32;
 
@@ -14,11 +14,14 @@ export default class Particles {
       return false;
     }
 
-    this._dmz = this._createDMZ();
-    this._zones = this._createZones(ZONES_QUANTITY);
-    this._particlesQuantity = PARTICLES_PER_ZONE * ZONES_QUANTITY;
+    let numOfZones = window.innerWidth <= 480
+      ? ZONES_QUANTITY - 2
+      : ZONES_QUANTITY;
 
     this._currentSwitch = 0;
+    this._dmz = this._createDMZ();
+    this._zones = this._createZones(numOfZones);
+    this._particlesQuantity = PARTICLES_PER_ZONE * numOfZones;
 
     this._init();
   }
@@ -51,13 +54,11 @@ export default class Particles {
 
   _createZones(quantity) {
     const rows = Math.ceil(quantity / ZONE_COLUMNS);
-    const remainder = quantity % ZONE_COLUMNS;
     const midX = Math.floor(window.innerWidth / ZONE_COLUMNS);
     const midY = Math.floor(window.innerHeight / rows);
 
     let row = 0;
     let column = 0;
-    let count = 0;
     let zones = [];
 
     for (row; row < rows; row++) {

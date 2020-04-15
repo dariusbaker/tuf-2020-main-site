@@ -20,7 +20,7 @@ export const HOME_SEEK_DATA = {
       title: 'The Fool',
       subtitle: 'New Beginnings, Adventure, Limitless Potential, That One Guy in Every Meeting',
       content: [
-        'You’ve got an idea in your pocket and a spring in your step. Your campaign will hit the market so hard, fish will fall out of trees. You’re a freakin’ genius, bud! Now all you’ve got to do is to find someone to execute the creative, which is where we come in. The Fool card speaks of new beginnings and a journey to be undertaken. Simply put, your brand will be the hero of the story we’ll write for you. As someone somewhere once said, “You just gotta have faith. Better still, a great budget.'
+        'You’ve got an idea in your pocket and a spring in your step. Your campaign will hit the market so hard, fish will fall out of trees. You’re a freakin’ genius, bud! Now all you’ve got to do is to find someone to execute the creative, which is where we come in. The Fool card speaks of new beginnings and a journey to be undertaken. Simply put, your brand will be the hero of the story we’ll write for you. As someone somewhere once said, "You just gotta have faith. Better still, a great budget."'
       ],
       image: '/assets/img/tuf-home-wdys-creative-services.png',
       cta: {

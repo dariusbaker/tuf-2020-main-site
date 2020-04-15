@@ -1,0 +1,108 @@
+{% from "macros/footer.njk" import footer with context %}
+{% from "macros/button.njk" import button %}
+
+{% macro talk_form(classes= '') %}
+<section
+  class="tuf-section contact-form {{classes}}"
+  id="{{home.talk_to_us.slug}}">
+  <div class="tuf-section__content tuf-content-padding contact-form__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20"
+        data-dir="1"
+        class="speck speck--dots-6x6"
+        src="/assets/img/specks/dots-6x6.png" />
+    </div>
+    <div class="contact-form__left">
+      <div>
+        <h2 class="contact-form__left__title">
+          {{home.talk_to_us.title|safe}}
+        </h2>
+        <p class="contact-form__left__content">
+          {{home.talk_to_us.content|safe}}
+        </p>
+      </div>
+      {{footer(classes="contact-form__footer")}}
+    </div>
+    <div class="contact-form__right">
+      <form
+        name="talk-to-us-form"
+        id="contact-form"
+        class="contact-form__form">
+        <div class="contact-form__form__input">
+          <input
+            id="contact-name"
+            aria-label="Name (required)"
+            value=""
+            placeholder="Name*"
+            type="text"
+            name="sender_name"
+            required
+            autocomplete="nope" />
+          <label for="contact-name">
+            Name*
+          </label>
+          <p class="contact-form__form__validate error">
+            Please enter a valid name
+          </p>
+        </div>
+        <div class="contact-form__form__input">
+          <input
+            id="contact-email"
+            aria-label="Email (required)"
+            value=""
+            placeholder="Email*"
+            type="email"
+            name="sender_email"
+            required
+            autocomplete="nope" />
+          <label for="contact-email">
+            Email*
+          </label>
+          <p class="contact-form__form__validate error">
+            Please enter a valid email address
+          </p>
+        </div>
+        <div class="contact-form__form__input">
+          <input
+            id="contact-no"
+            aria-label="Contact number (optional)"
+            value=""
+            placeholder="Contact No."
+            type="text"
+            name="sender_contact"
+            autocomplete="nope" />
+          <label for="contact-no">
+            Contact No.
+          </label>
+        </div>
+        <div class="contact-form__form__input">
+          <textarea
+            id="contact-project"
+            aria-label="Tell us about your project (optional)"
+            value=""
+            placeholder="Tell us about your project"
+            name="sender_project"
+            autocomplete="nope"></textarea>
+          <label for="contact-project">
+            Tell us about your project (optional)
+          </label>
+        </div>
+        <p id="form-message" class="contact-form__form__message">
+          Problem occurs in submitting request, please try again.
+        </p>
+      </form>
+      {{
+        button(
+          classes = 'contact-form__submit',
+          disabled = false,
+          type = 'primary',
+          id = 'submit-form-btn',
+          label = 'Submit'
+        )
+      }}
+    </div>
+  </div>
+</section>
+{% endmacro %}

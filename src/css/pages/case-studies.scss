@@ -1,0 +1,235 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.hero {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: rem(900);
+
+    padding-bottom: rem(40);
+
+    content: '';
+
+    pointer-events: none;
+
+    background: $tuf-color-secondary;
+    background: linear-gradient(
+      180deg,
+      transparentize($tuf-color-secondary ,0) 0%,
+      transparentize($tuf-color-primary, 1) 100%
+    );
+  }
+
+  &__title--case-studies span {
+    transform: translate(10%, 0);
+  }
+
+  .speckle {
+    .speck--diamond-dots-12x12 {
+      top: 5%;
+      right: 0;
+
+      @media screen and (min-width: rem(1024)) {
+        top: 5%;
+        right: 25%;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-top: rem(108);
+    margin-bottom: 0;
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(132);
+    }
+  }
+
+  &__title {
+    color: $tuf-color-dropdown-label;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: rem(700);
+
+  .speckle {
+    .speck--diamond-outline {
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__filter {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: rem(48);
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &__label,
+    &__btn,
+    &__list {
+      font-size: rem(20);
+      font-weight: $tuf-font-weight-bold;
+
+      @media only screen and (min-width: rem(768)) {
+        font-size: rem(40);
+      }
+
+      @media only screen and (min-width: rem(1024)) {
+        font-size: rem(60);
+      }
+    }
+
+    &__label {
+      color: #fff;
+    }
+
+    &__btn {
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      height: 100%;
+
+      padding: 0 rem(24);
+
+      background-color: transparent;
+
+      border: none;
+
+      color: $tuf-color-turqoise;
+
+      cursor: pointer;
+
+      svg {
+        width: rem(24);
+        height: rem(24);
+
+        margin-left: rem(16);
+
+        color: $tuf-color-clickable;
+
+        @media only screen and (min-width: rem(768)) {
+          width: rem(48);
+          height: rem(48);
+        }
+
+        @media only screen and (min-width: rem(1024)) {
+          width: rem(64);
+          height: rem(64);
+        }
+      }
+    }
+
+    &__list {
+      position: absolute;
+
+      top: 100%;
+      left: 0;
+
+      z-index: index($z-elements, dropdown_seek);
+
+      padding: rem(16) rem(24);
+
+      line-height: 1.5;
+
+      visibility: hidden;
+
+      background-color: $tuf-color-dropdown;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: top;
+
+      transition: opacity .25s ease, transform .25s ease-in-out;
+
+      color: $tuf-color-white;
+
+      cursor: pointer;
+
+      &-item:hover,
+      &-item:focus {
+        text-decoration: underline;
+      }
+
+      &--visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+
+
+    z-index: 1;
+    display: flex;
+
+    flex-direction: column;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: rem(48);
+
+    @media (min-width: rem(768)) {
+      flex-direction: row;
+
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 0;
+      height: 0;
+
+      transform-origin: center;
+
+      visibility: hidden;
+
+      transition: visibility 0s;
+
+      &--visible {
+        width: 100%;
+        height: auto;
+
+        visibility: visible;
+
+        @media (min-width: rem(768)) {
+          width: calc(100% / 3);
+        }
+      }
+    }
+  }
+}

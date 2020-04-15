@@ -1,0 +1,93 @@
+$default-font-size: 16;
+
+/**
+ * Returns hex value of color in map.
+ * @param {string} $name
+ * @return hex value
+ */
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+/**
+ * Calculates and returns value of pixels in REM (root EM).
+ * @param {number} $pixels
+ * @param {number} $font-size Font size to divide by; defaults to 16
+ * @return Value in REM. Example: 16 = 1rem
+ */
+@function rem($pixels, $font-size: $default-font-size) {
+  @return ($pixels / $font-size) * 1rem;
+}
+
+/**
+ * Generates a border using the box-shadow property.
+ * @param {pixels}       $border-thickness
+ * @param {CSS variable} $color
+ * @return box-shadow property value
+ */
+@function shadow-border($border-thickness: 1px, $color: --color-athens-gray) {
+  @return inset 0 0 0 #{$border-thickness} var(#{$color});
+}
+
+/**
+ * Generates a resting state (gray) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-resting($border-thickness: 1px) {
+  @return shadow-border($border-thickness);
+}
+
+/**
+ * Generates a disabled state (gray) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-disabled($border-thickness: 1px) {
+  @return shadow-border($border-thickness, --color-mystic);
+}
+
+/**
+ * Generates a active state (blue) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-active($border-thickness: 1px) {
+  @return shadow-border($border-thickness, --color-dodger-blue);
+}
+
+/**
+ * Generates a active state (blue) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-field-resting() {
+  @return shadow-border(1px, --color-mystic);
+}
+
+/**
+ * Generates a active state (blue) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-field-active() {
+  @return shadow-border(1px, --color-athens-gray), 0 rem(2) rem(24) 0 rgba(color(mystic), .5);
+}
+
+/**
+ * Generates a active state (blue) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-field-disabled() {
+  @return shadow-border-field-resting();
+}
+
+/**
+ * Generates a active state (blue) border using the box-shadow property.
+ * @param {pixels} $border-thickness
+ * @return box-shadow property value
+ */
+@function shadow-border-field-error() {
+  @return shadow-border(1px, --color-watermelon);
+}

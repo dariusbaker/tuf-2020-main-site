@@ -1,5 +1,171 @@
+{% from "macros/case-study-header.njk" import case_study_header %}
+{% from "macros/form.njk" import talk_form with context %}
+{% from "macros/case-study-nav.njk" import case_study_nav %}
+
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/case-study-base.css">
+<link rel="stylesheet" href="/assets/css/pages/case-study-sb-career.css">
+{% endblock %}
+
+{% block meta_tag %}
+<title><?php echo $meta->work_starbucks_career->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_starbucks_career->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_starbucks_career->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->work_starbucks_career->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_starbucks_career->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_starbucks_career->og_image; ?>">
+{% endblock %}
+
+{% block base_tag %}
+<base href="/">
+{% endblock %}
+
 {% block content %}
-case-studies: starbucks career
+{{
+  case_study_header(
+    title='Starbucks Career Guide',
+    tags=['Employer Branding', 'Internal Comms']
+  )
+}}
+
+<section class="hero">
+  <img
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/hero__background.jpg"
+    alt="example of creative hr campaign branding for Starbucks Singapore"
+    data-aos="fade-up" />
+</section>
+
+<section class="intro">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--flex">
+        <p
+          data-aos="fade-up">
+          When Starbucks approached us to create a career guide for prospective hires, we jumped at the chance to deliver some great creative work, served piping hot.
+        </p>
+      </div>
+      <div class="col-md cs-container__column cs-container__column--center intro__content">
+        <img
+          draggable="false"
+          src="/assets/img/case-studies/starbucks-career/intro__coffee.png"
+          alt="creative illustration done for Starbucks employer branding project"
+          data-aos="fade-up" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="snakes-ladders">
+  <div class="snakes-ladders__bg"></div>
+  <div class="cs-container snake-ladders__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column  cs-container__column--center">
+      </div>
+      <div class="col-md cs-container__column  cs-container__column--center">
+        <p
+          data-aos="fade-up">
+          Because career progression is much like a board game with a linear plot, we decided to draw inspiration from one of the most popular board games in the world – Snakes & Ladders.
+        </p>
+        <img
+          draggable="false"
+          src="/assets/img/case-studies/starbucks-career/snakes-ladders__game.jpg"
+          alt="brand creative reference for human resource project"
+          data-aos="fade-up" />
+      </div>
+    </div>
+  </div>
+  <img
+    class="snakes-ladders__beans"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/snakes-ladders__beans.jpg"
+    alt="creative HR campaign branding work for Starbucks Dingapore" />
+</section>
+
+<section class="board-games">
+  <img
+    class="board-games__image"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/board-game__kv.jpg"
+    alt="creative ways to recruit talents for Starbucks Singapore employer brand campaign" />
+</section>
+
+<section class="we-knew">
+  <div class="we-knew__bg"></div>
+  <div class="cs-container we-knew__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column  cs-container__column--center">
+        <p
+          data-aos="fade-up">
+          We knew that this could be a seminal piece of work for the Starbucks Employer brand, so we designed in a way that each individual character element could be adapted  another purpose.
+        </p>
+      </div>
+      <div class="col-md cs-container__column  cs-container__column--center">
+      </div>
+    </div>
+  </div>
+  <img
+    class="we-knew__suit"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/suit.jpg"
+    alt="creative hr campaign branding work for Starbucks Singapore" />
+</section>
+
+<section class="guide">
+  <img
+    class="guide__image"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/guide.jpg"
+    alt="Starbucks singapore career guide creative brochure design " />
+</section>
+
+<section class="sure-enough">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column  cs-container__column--center">
+        <p
+          data-aos="fade-up">
+          And sure enough, we were soon tasked to create various other collaterals with the same theme, keeping the tone of the Starbucks employer brand consistent throughout.
+        </p>
+      </div>
+      <div class="col-md cs-container__column cs-container__column--flex  cs-container__column--center sure-enough__right">
+        <img
+          class="sure-enough__right__image"
+          draggable="false"
+          src="/assets/img/case-studies/starbucks-career/cafe.png"
+          alt="illustration for creative human resource campaign"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <img
+    class="support__working"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/support--working.jpg"
+    alt="creative talent recruitment strategy for Starbucks Singapore" />
+    <img class="support__benefits"
+    draggable="false"
+    src="/assets/img/case-studies/starbucks-career/support--benefits.jpg"
+    alt="internal brand communications and good talent retention strategy for Starbucks Singapore" />
+</section>
+
+{{
+  case_study_nav(
+    prev_link="/case-studies/rate",
+    next_link="/case-studies/ihp"
+  )
+}}
+
+<!-- talk to us section -->
+{{talk_form()}}
+<!-- end of talk to us section -->
+{% endblock %}
+
+{% block page_script %}
+<script src="/assets/js/case-study-base.min.js"></script>
 {% endblock %}

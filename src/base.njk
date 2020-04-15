@@ -1,45 +1,99 @@
-{% set appTitle = 'The Universe Fantastic' %}
+
+{% from "macros/footer.njk" import footer with context %}
+<?php $meta = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/meta.json')); ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Jameson is a browser-based email editor.">
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
     <meta name="referrer" content="no-referrer" />
 
-    <meta name="application-name" content="{{ appTitle }}">
-    <meta name="theme-color" content="#2465fb">
+    <meta name="application-name" content="{{global.app_title}}">
+    <meta name="theme-color" content="{{global.theme_color}}">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="{{ appTitle }}">
+    <meta name="apple-mobile-web-app-title" content="{{ global.app_title }}">
 
-    <meta property="og:url" content="http://theuniversefantastic.co/">
+    <link rel="icon" href="/assets/img/tuf-icon-16x16.png" sizes="16x16">
+    <link rel="icon" href="/assets/img/tuf-icon-24x24.png" sizes="24x24">
+    <link rel="icon" href="/assets/img/tuf-icon-32x32.png" sizes="32x32">
+
+    {% block meta_tag %}
+    <title><?php echo $meta->home->title; ?></title>
+    <meta name="description" content="<?php echo $meta->home->description; ?>">
+    <meta property="og:url" content="<?php echo $meta->home->og_url; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="✨Shoot for the Stars✨- The Universe Fantastic: Creative Brand Agency 🇸🇬">
-    <meta property="og:description" content="We’ve got pizza to share and loads of love to give. Yeah, we talkin’ about pizza dripping with love sauce. Mmm, brand love. Talk to us!">
-    <meta property="og:image" content="http://theuniversefantastic.co/assets/images/tuf-facebook-share.jpg">
+    <meta property="og:title" content="<?php echo $meta->home->og_title; ?>">
+    <meta property="og:description" content="<?php echo $meta->home->og_description; ?>">
+    <meta property="og:image" content="<?php echo $meta->home->og_image; ?>">
+    {% endblock %}
 
-    <title>✨Shoot for the Stars✨- The Universe Fantastic: Creative Brand Agency | Singapore</title>
+    {% block base_tag %}
+    {% endblock %}
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/tuf-icon-152x152.png">
 
-    <script type="module" src="/assets/js/index.js"></script>
+    {% block page_styles %}
+    {% endblock %}
   </head>
 
   <body class="not-ready">
+    {% include 'partials/header.njk' %}
+
     <!-- START main -->
-    <main class="main">
+    <main id="main" class="main">
       {% block content %}
       {% endblock %}
     </main>
     <!-- END main -->
+
+    {% block footer %}
+    <!-- footer section -->
+    {{footer(classes="tuf-footer")}}
+    <!-- end of footer section -->
+    {% endblock %}
+
+    <div aria-hidden="true" hidden>
     {% include 'partials/sprite.svg' %}
+    </div>
+
+    <div class="tuf-backdrop">
+    </div>
+
+    <template id="particle-0">
+      <div class="particle">
+        <img src="/assets/img/particles/cross-1.png" class="particle__image particle__image--0" />
+      </div>
+    </template>
+    <template id="particle-1">
+      <div class="particle">
+        <img src="/assets/img/particles/hoop-1.png" class="particle__image particle__image--1" />
+      </div>
+    </template>
+    <template id="particle-2">
+      <div class="particle">
+        <img src="/assets/img/particles/zigzag-1.png" class="particle__image particle__image--2" />
+      </div>
+    </template>
+    <template id="particle-3">
+      <div class="particle">
+        <img src="/assets/img/particles/hoop-2.png" class="particle__image particle__image--3" />
+      </div>
+    </template>
+    <template id="particle-4">
+      <div class="particle">
+        <img src="/assets/img/particles/zigzag-2.png" class="particle__image particle__image--4" />
+      </div>
+    </template>
   </body>
+  <script src="/assets/js/index.min.js"></script>
+  {% block page_script %}
+  {% endblock %}
 </html>

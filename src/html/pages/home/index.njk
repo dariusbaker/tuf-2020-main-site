@@ -1,5 +1,544 @@
+{% from "macros/button.njk" import button_link, button, icon_round %}
+{% from "macros/case-study-card.njk" import case_study_card %}
+{% from "macros/form.njk" import talk_form with context %}
+
 {% extends "base.njk" %}
 
+{% block meta_tag %}
+<title><?php echo $meta->home->title; ?></title>
+<meta name="description" content="<?php echo $meta->home->description; ?>">
+<meta property="og:url" content="<?php echo $meta->home->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->home->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->home->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->home->og_image; ?>">
+{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/home.css">
+{% endblock %}
+
 {% block content %}
-case-studies: home
+<div class="particles"></div>
+
+<!-- common template -->
+<template id="glidejs-pagination-template">
+  <button
+    class="glide__bullet">
+  </button>
+</template>
+<!-- end of template -->
+
+<!-- hero section -->
+<section id="{{home.hero.slug}}"  class="tuf-section hero">
+  <div class="video-bg">
+    <video class="video-bg__video" muted autoplay loop playsinline>
+      <source src="/assets/video/hero.mp4" type="video/mp4">
+      <source src="/assets/video/hero.webm" type="video/webm">
+    </video>
+  </div>
+  <div class="tuf-content-padding tuf-section__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="10"
+        data-dir="1"
+        class="speck speck--square-6x6"
+        src="/assets/img/specks/square-6x6.png" />
+      <img
+        data-animate="true"
+        data-tolerance="20,10"
+        class="speck speck--diamond-outline"
+        src="/assets/img/specks/diamond-outline.png" />
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__header">
+        {{home.hero.title|safe}}
+      </h1>
+      <div class="hero__footnote">
+        <p>{{home.hero.footnote_1|safe}}</p>
+        <p class="hero__footnote-highlight">{{home.hero.footnote_2|safe}}</p>
+      </div>
+    </div>
+    <div class="hero__cta">
+      {{
+        button_link(
+          classes="hero__cta__link",
+          type="primary",
+          label=home.hero.cta.label,
+          href=home.hero.cta.href
+        )
+      }}
+    </div>
+  </div>
+</section>
+<!-- end of hero section -->
+
+<!-- mission section -->
+<section id="{{home.mission.slug}}" class="tuf-section mission-section">
+  <div class="tuf-section__content tuf-content-padding mission">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20"
+        class="speck speck--diamond-dots-12x12"
+        src="/assets/img/specks/diamond-dots-12x12-dark.png" />
+      <img
+        data-animate="true"
+        data-tolerance="30"
+        data-dir="1"
+        class="speck speck--ellipse-blue"
+        src="/assets/img/specks/ellipse-blue.png" />
+    </div>
+    <h2 class="mission__title">
+      {{home.mission.title|safe}}
+    </h2>
+    <p class="mission__content">
+      {{home.mission.content|safe}}
+    </p>
+  </div>
+</section>
+<!-- end of mission section -->
+
+<!-- clients section -->
+<section
+  id="{{home.clients.slug}}"
+  class="tuf-section clients-section">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title clients__title">
+      {{home.clients.title|safe}}
+    </h2>
+    <div class="clients__carousel">
+      <div class="clients__list-bg"></div>
+      <div class="clients__list">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides glide__track clients__list-items">
+            {% for client in home.clients.items %}
+            <li
+              aria-label="{{client.name}}"
+              class="glide__slide clients__list-item">
+              <img src="{{client.image}}" alt="{{client.name}}" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end of clients section -->
+
+<!-- testimonials section -->
+<section id="{{home.testimonials.slug}}" class="tuf-section testimonials">
+  <div class="tuf-section__content tuf-content-padding">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20"
+        class="speck speck--diamond-outline"
+        src="/assets/img/specks/diamond-outline-light.png" />
+    </div>
+    <div class="testimonials__list" id="testimonials-carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul id="testimonials-items" class="glide__slides glide__track testimonials__list-items">
+        </ul>
+      </div>
+
+      <div id="testimonials-pagination" class="glide__bullets testimonials__list-paginations" data-glide-el="controls[nav]">
+      </div>
+    </div>
+    <template id="testimonial-item-template">
+      <li class="glide__slide testimonials__list-item">
+        <blockquote>
+          <p>
+          </p>
+          <footer>
+            <span class="testimonials__list-item__name">
+            </span>
+            <span class="testimonials__list-item__job">
+            </span>
+          </footer>
+        </blockquote>
+      </li>
+    </template>
+  </div>
+</section>
+<!-- end of testimonials section -->
+
+<!-- ask ava section -->
+<section
+  id="{{home.ask_ava.slug}}"
+  class="tuf-section ask-ava">
+  <div class="tuf-section__content">
+    <h2 class="tuf-section-title tuf-section-title--right ask-ava__title">
+      {{home.ask_ava.title|safe}}
+    </h2>
+    <div class="tuf-content-padding ask-ava__content">
+      <div class="speckle">
+        <img
+          data-animate="true"
+          data-tolerance="30"
+          data-dir="1"
+          class="speck speck--dots-6x3"
+          src="/assets/img/specks/dots-6x3.png" />
+        <img
+          data-animate="true"
+          data-tolerance="10"
+          class="speck speck--diamond-outline"
+          src="/assets/img/specks/diamond-outline-light.png" />
+        <img
+          data-animate="true"
+          data-tolerance="20"
+          data-dir="1"
+          class="speck speck--ellipse-purple"
+          src="/assets/img/specks/ellipse-purple.png" />
+      </div>
+      <div class="ask-ava__content__head" role="img" aria-label="Ava">
+        <div class="ask-ava__content__head-items">
+          <img draggable="false" class="ask-ava__content__head__bg" src="/assets/img/ava.png" />
+          <div class="ask-ava__content__head__lips">
+            <img draggable="false" class="ask-ava__content__head__lips--default" src="/assets/img/ava-mouth-default.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--a-e" src="/assets/img/ava-mouth-a-e.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--c-ee" src="/assets/img/ava-mouth-c-ee.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--o" src="/assets/img/ava-mouth-o.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--oo-w" src="/assets/img/ava-mouth-oo-w.png" />
+            <img draggable="false" class="ask-ava__content__head__lips--s-x" src="/assets/img/ava-mouth-s-x.png" />
+          </div>
+        </div>
+      </div>
+      <div class="ask-ava__content__text" id="ask-ava-text-wrapper">
+        <div class="ask-ava__content__text__btn ask-ava__content__text__btn--prev">
+        {{
+          icon_round(
+            classes = 'tuf-icon-circle--ava',
+            id = 'ask-ava-text-prev',
+            icon = 'icon-arrow-right',
+            isButton = true
+          )
+        }}
+        </div>
+        <div class="ask-ava__content__flextext">
+          <div class="ask-ava__content__textbox" id="ask-ava-text" role="log" aria-live="polite">
+            Hello Seeker, how may I be of assistance?
+          </div>
+        </div>
+        <div class="ask-ava__content__text__btn">
+        {{
+          icon_round(
+            classes = 'tuf-icon-circle--ava',
+            id = 'ask-ava-text-next',
+            icon = 'icon-arrow-right',
+            isButton = true
+          )
+        }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end of ask ava section -->
+
+<!-- what we do section -->
+<section
+  id="{{home.what_we_do.slug}}"
+  class="tuf-section what-we-do-section">
+  <div class="tuf-section__content what-we-do__content">
+    <h2 class="tuf-section-title what-we-do__title">
+      {{home.what_we_do.title|safe}}
+    </h2>
+    <div class="what-we-do__list" id="what-we-do-carousel">
+      <div class="glide__track" data-glide-el="track">
+        <ul id="what-we-do-items" class="glide__slides glide__track what-we-do__list-items">
+        </ul>
+      </div>
+      <div id="what-we-do-paginations" class="glide__bullets what-we-do__list-paginations" data-glide-el="controls[nav]">
+      </div>
+    </div>
+    <div class="tuf-content-padding what-we-do__footnote">
+      <div class="what-we-do__footnote__content">
+        <div class="speckle">
+          <img
+            data-animate="true"
+            data-tolerance="20"
+            class="speck speck--dots-6x6"
+            src="/assets/img/specks/dots-6x6.png" />
+        </div>
+        <h4
+          id="what-we-do-footnote-title"
+          class="what-we-do__footnote__content__title">
+        </h4>
+        <p id="what-we-do-footnote-content">
+        </p>
+      </div>
+    </div>
+    {{
+      button_link(
+        classes="what-we-do__cta",
+        type="primary",
+        label=home.what_we_do.cta.label,
+        href=home.what_we_do.cta.href
+      )
+    }}
+    <template id="what-we-do-item-template">
+      <li class="glide__slide what-we-do__list-item">
+        <a class="glide__slide what-we-do__list-item__card">
+          <div class="what-we-do__list-item__card__frame">
+            <img class="what-we-do__list-item__card__image" />
+          </div>
+          <h3 class="what-we-do__list-item__card__title">
+          </h3>
+          <p class="what-we-do__list-item__card__content">
+          </p>
+          <small class="what-we-do__list-item__card__footnote">
+          </small>
+          <div class="what-we-do__list-item__card__link">
+            {{
+              icon_round(
+                classes = 'what-we-do__list-item__card__link__icon',
+                icon = 'icon-arrow-right'
+              )
+            }}
+            <span></span>
+          </div>
+        </a>
+      </li>
+    </template>
+  </div>
+</section>
+<!-- end of what we do section -->
+
+<!-- case studies section -->
+<section
+  id="{{home.case_studies.slug}}"
+  class="tuf-section case-studies">
+  <div class="tuf-section__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="30"
+        data-dir="1"
+        class="speck speck--diamond-dots-12x12"
+        src="/assets/img/specks/diamond-dots-12x12.png" />
+    </div>
+    <h2 class="tuf-section-title tuf-section-title--right case-studies__title">
+      {{home.case_studies.title|safe}}
+    </h2>
+    <ul id="case-studies-list" class="tuf-content-padding case-studies__list" aria-label="{{home.case_studies.title}}">
+
+    </ul>
+    {{
+      button_link(
+        classes="case-studies__cta",
+        type="primary",
+        label=home.case_studies.cta.label,
+        href=home.case_studies.cta.href
+      )
+    }}
+
+    <template id="case-study-item-template">
+      <li class="case-studies__list__item">
+        {{
+          case_study_card(
+            classses = '',
+            href = '/case-studies/',
+            title = '',
+            tags = [],
+            image = ''
+          )
+        }}
+      </li>
+    </template>
+  </div>
+</section>
+<!-- end of case studies section -->
+
+<!-- what do you seek section -->
+<section
+  id="{{home.what_do_you_seek.slug}}"
+  class="tuf-section what-do-you-seek">
+  <div class="tuf-section__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="30"
+        class="speck speck--dots-20x20-triangle"
+        src="/assets/img/specks/dots-20x20-triangle.png" />
+    </div>
+    <h2 class="tuf-section-title tuf-section-title--right what-do-you-seek__title">
+      {{home.what_do_you_seek.title|safe}}
+    </h2>
+    <div class="what-do-you-seek__content-wrapper">
+      <div class="what-do-you-seek__content">
+        <div class="what-do-you-seek__content__navigation" id="seek-cards-navigation">
+          <label
+            data-label="{{home.what_do_you_seek.filter_label | safe}}"
+            class="what-do-you-seek__content__navigation__label"
+            for="what-do-you-seek-list">
+            <span>
+              {{home.what_do_you_seek.filter_label | safe}}
+            </span>
+          </label>
+          <div class="what-do-you-seek__content__navigation-wrapper" aria-hidden="false">
+            <ul id="seek-navigation-items" class="what-do-you-seek__content__navigation__items" role="listbox">
+            </ul>
+            <p class="what-do-you-seek__content__navigation__footnote">
+            Or simply
+            </p>
+            {{
+              button_link(
+                classes="what-do-you-seek__content__navigation__cta",
+                type="primary",
+                label=home.what_do_you_seek.cta.label,
+                href=home.what_do_you_seek.cta.href
+              )
+            }}
+          </div>
+        </div>
+        <div id="seek-cards-panel" class="what-do-you-seek__content__cards">
+          <div id="seek-idle-cards" class="tuf-content-padding what-do-you-seek__content__cards__items">
+            <div>
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+            </div>
+            <div>
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+            </div>
+            <div>
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+            </div>
+            <div>
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+            </div>
+            <div>
+              <img
+                data-tilt
+                data-tilt-scale="1.1"
+                role="button"
+                class="what-do-you-seek__content__cards__item" />
+            </div>
+          </div>
+
+          <div
+            id="seek-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="seek-dialog-title"
+            class="tuf-content-padding what-do-you-seek__dialog">
+            <div class="what-do-you-seek__dialog__image">
+              <img src="" alt="" id="seek-dialog-image" />
+            </div>
+            <div class="what-do-you-seek__dialog__content-wrapper">
+              <header>
+                <p id="seek-dialog-type" class="what-do-you-seek__dialog__type"></p>
+                <h3 id="seek-dialog-title" class="what-do-you-seek__dialog__title">
+                </h3>
+                <p id="seek-dialog-subtitle" class="what-do-you-seek__dialog__subtitle"></p>
+              </header>
+              <div id="seek-dialog-content" class="what-do-you-seek__dialog__content">
+              </div>
+              <div class="what-do-you-seek__dialog__ctas" id="seek-dialog-contact-cta">
+                <p></p>
+                {{
+                  button_link(
+                    classes="what-do-you-seek__dialog__ctas__link",
+                    type="primary",
+                    href="#talk-to-us"
+                  )
+                }}
+                {{
+                  icon_round(
+                    classes = "what-do-you-seek__dialog__ctas__close what-do-you-seek__dialog__close",
+                    icon = 'close',
+                    isButton = true
+                  )
+                }}
+              </div>
+            </div>
+            <div>
+              {{
+                icon_round(
+                  id="seek-close-btn",
+                  classes = 'what-do-you-seek__dialog__close-btn what-do-you-seek__dialog__close',
+                  icon = 'close',
+                  isButton = true
+                )
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <template id="seek-navigation-item-template">
+      <li class="what-do-you-seek__content__navigation__item" tabindex="0" role="option">
+        <span>{{item.type}}</span>
+      </li>
+    </template>
+  </div>
+</section>
+<!-- end of what do you seek section -->
+
+<!-- instagram section -->
+<section
+  id="{{home.instagram.slug}}"
+  class="tuf-section instagram">
+  <div class="tuf-section__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20"
+        data-dir="1"
+        class="speck speck--diamond-outline"
+        src="/assets/img/specks/diamond-outline.png" />
+    </div>
+    <h2 class="tuf-section-title tuf-section-title--smaller instagram__title">
+      {{home.instagram.title|safe}}
+    </h2>
+    <ul id="instagram-list" class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
+    </ul>
+    <template id="instagram-feed">
+      <li class="instagram__list__item">
+        <a
+          target="_blank"
+          rel="noopener noreferrer">
+        </a>
+      </li>
+    </template>
+  </div>
+</section>
+<!-- end of instagram section -->
+
+<!-- talk to us section -->
+{{talk_form()}}
+<!-- end of talk to us section -->
+
+{% endblock %}
+
+
+{% block page_script %}
+<script src="/assets/js/home.min.js"></script>
 {% endblock %}

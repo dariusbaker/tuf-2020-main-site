@@ -1,0 +1,70 @@
+{% from "macros/form.njk" import talk_form with context %}
+
+{% extends "base.njk" %}
+
+{% block meta_tag %}
+<title><?php echo $meta->privacy->title; ?></title>
+<meta name="description" content="<?php echo $meta->privacy->description; ?>">
+<meta property="og:url" content="<?php echo $meta->privacy->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->privacy->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->privacy->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->privacy->og_image; ?>">
+{% endblock %}
+
+{% block base_tag %}
+<base href="/">
+{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/privacy-policy.css">
+{% endblock %}
+
+{% block content %}
+<section
+  class="tuf-section hero">
+  <div class="tuf-section__content hero__content">
+    <h1 class="tuf-section-title hero__title">
+      {{privacy_policy.title|safe}}
+    </h1>
+  </div>
+</section>
+
+<section
+  class="tuf-section content">
+  <div class="tuf-section__content tuf-content-padding">
+    {% for item in privacy_policy.items %}
+      <h2 class="content__title">
+        {{item.title|safe}}
+      </h2>
+      {% if item.content %}
+      <p>
+        {{item.content|safe}}
+      </p>
+      {% else %}
+        <ol class="content__ordered-list--1">
+        {% for subitem in item.items %}
+          <li>
+            {{subitem.content|safe}}
+            {% if subitem.subitems %}
+              <ol class="content__ordered-list--2">
+                {% for microitem in subitem.subitems %}
+                <li>
+                  {{microitem|safe}}
+                </li>
+                {% endfor %}
+              </ol>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ol>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- talk to us section -->
+{{talk_form(classes='contact-form--gradient')}}
+<!-- end of talk to us section -->
+
+{% endblock %}

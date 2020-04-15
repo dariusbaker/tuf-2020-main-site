@@ -1,10 +1,6 @@
 const clean = require('./gulp/tasks/clean');
 const copy = require('./gulp/tasks/copy');
-const {
-  html,
-  moveHomePageFolderToRoot,
-  cleanHomeFolder,
-} = require('./gulp/tasks/html');
+const {html} = require('./gulp/tasks/html');
 const observe = require('./gulp/tasks/observe');
 const scripts = require('./gulp/tasks/scripts');
 const styles = require('./gulp/tasks/styles');
@@ -13,12 +9,16 @@ const { serve } = require('./gulp/tasks/browsersync');
 const { parallel } = require('gulp');
 const { series } = require('gulp');
 
+const setProdEnv = (done) => {
+  process.env.NODE_ENV = 'prod';
+  done();
+};
+
 const build = series(
+  setProdEnv,
   clean,
   parallel(svg, copy),
-  parallel(styles, scripts, html),
-  moveHomePageFolderToRoot,
-  cleanHomeFolder
+  parallel(styles, scripts, html)
 );
 
 const dev = series(
@@ -33,7 +33,6 @@ exports.build = build;
 exports.copy  = copy;
 exports.css   = styles;
 exports.html  = html;
-exports.moveHomePageFolderToRoot = moveHomePageFolderToRoot;
 exports.js    = scripts;
 exports.serve = dev;
 exports.svg   = svg;

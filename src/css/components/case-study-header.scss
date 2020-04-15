@@ -1,0 +1,114 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+
+.cs-header {
+  position: relative;
+
+  padding-bottom: rem(38);
+
+  .speckle {
+    .speck--dots-6x4 {
+      bottom: rem(-30);
+      left: 0;
+
+      @media screen and (min-width: rem(1024)) {
+        left: 4%;
+      }
+    }
+
+    .speck--diamond-outline {
+      display: none;
+
+      @media screen and (min-width: rem(1024)) {
+        display: block;
+
+        right: 30%;
+        bottom: rem(-72);
+      }
+    }
+
+    .speck--ellipse-blue {
+      right: -1%;
+      bottom: rem(-42);
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: rem(900);
+
+    padding-bottom: rem(40);
+
+    content: '';
+
+    pointer-events: none;
+
+    background: $tuf-color-secondary;
+    background: linear-gradient(
+      180deg,
+      transparentize($tuf-color-secondary ,0) 0%,
+      transparentize($tuf-color-primary, 1) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    margin-top: rem(108);
+    margin-bottom: 0;
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(132);
+    }
+  }
+
+
+  &__content-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__title {
+    display: inline-block;
+
+    font-size: (36 / 375) * 100vw;
+    font-weight: 900;
+    line-height: (100 / 80);
+    text-transform: capitalize;
+    color: $tuf-color-white;
+
+    @media (min-width: rem(floor(80 / (36 / 375)))) {
+      font-size: rem(80);
+    }
+  }
+
+  &__tags {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: rem(24);
+    font-weight: $tuf-font-weight-light;
+    line-height: 1.5;
+
+    color: $tuf-color-turqoise;
+
+    @media only screen and (min-width: rem(1024)) {
+      justify-content: flex-start;
+
+      margin-left: rem(138);
+      font-size: rem(36);
+    }
+  }
+}

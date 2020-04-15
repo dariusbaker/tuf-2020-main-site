@@ -1,0 +1,26 @@
+{%
+  macro case_study_card(
+    classses = '',
+    href = '',
+    title = '',
+    tags = [],
+    image = ''
+  )
+%}
+<a href="{{href}}" class="tuf-case-study-card {{classes}}">
+  <div class="tuf-case-study-card__frame">
+    <img
+      class="tuf-case-study-card__image"
+      src="{{image}}"
+      alt="{{title}}" />
+  </div>
+  <div class="tuf-case-study-card__content">
+    <h3 class="tuf-case-study-card__content__title">
+      {{title}}
+    </h3>
+    <div class="tuf-case-study-card__content__tags">
+      {{ tags | join(' • ') }}
+    </div>
+  </div>
+</a>
+{% endmacro %}

@@ -1,0 +1,74 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.hero {
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: rem(900);
+
+    padding-bottom: rem(20);
+
+    content: '';
+
+    pointer-events: none;
+
+    background: $tuf-color-secondary;
+    background: linear-gradient(
+      180deg,
+      transparentize($tuf-color-secondary ,0) 0%,
+      transparentize($tuf-color-primary, 0) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    margin-top: rem(108);
+    margin-bottom: 0;
+
+    @media (min-width: rem(1024)) {
+      margin-top: rem(132);
+    }
+  }
+
+  &__title {
+    color: $tuf-color-dropdown-label;
+
+    overflow: visible;
+  }
+}
+
+.content {
+  position: relative;
+
+  z-index: 1;
+  font-weight: $tuf-font-weight-light;
+  line-height: 1.5;
+  color: $tuf-color-white;
+
+  &__title {
+    margin: rem(48) 0 rem(24);
+    font-weight: $tuf-font-weight-bold;
+  }
+
+  &__ordered-list {
+    &--1 {
+      list-style-type: decimal;
+      margin-left: rem(20);
+    }
+
+    &--2 {
+      list-style-type: lower-latin;
+      margin-left: rem(40);
+      margin-bottom: rem(16);
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+// aos
+@import '../../../node_modules/aos/dist/aos';
+
+@import '../components/case-study-header';
+@import '../components/case-study-nav';
+
+.col-md {
+  position: relative;
+
+  width: 100%;
+  min-height: rem(1);
+
+  padding: 0 rem(15);
+
+  @media screen and (min-width: rem(768)) {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+
+.cs-container {
+  width: 100%;
+
+  padding: 0 rem(15);
+
+  margin: 0 auto;
+
+  @media screen and (min-width: rem(576)) {
+    max-width: rem(540);
+  }
+
+  @media screen and (min-width: rem(768)) {
+    max-width: rem(720);
+  }
+
+  @media screen and (min-width: rem(992)) {
+    max-width: rem(960);
+  }
+
+  @media screen and (min-width: rem(1200)) {
+    max-width: rem(1140);
+  }
+
+  @media screen and (min-width: rem(1440)) {
+    max-width: rem(1440);
+  }
+
+  &__row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    margin: 0 rem(-15);
+  }
+
+  &__column {
+    display: block;
+
+    padding: rem(20) rem(24);
+
+    &--flex {
+      display: flex;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      padding: rem(50) rem(65);
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--desktop-only {
+      display: none;
+
+      @media screen and (min-width: rem(768)) {
+        display: flex;
+      }
+    }
+  }
+}
+
+h2 {
+  margin-bottom: rem(8);
+
+  font-size: rem(24);
+  font-weight: $tuf-font-weight-bold;
+
+  line-height: 1.5;
+}
+
+p {
+  font-size: rem(18);
+  font-weight: $tuf-font-weight-regular;
+  line-height: 2;
+}
+
+p + p {
+  margin-top: rem(25);
+}
+
+.cs-content {
+  position: relative;
+  width: 100%;
+  flex: 1;
+
+  margin: 0 0 0 auto;
+
+  &--right {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0 0;
+  }
+
+  @media screen and (min-width: rem(640)) {
+    max-width: rem(540);
+  }
+
+  @media screen and (min-width: rem(768)) {
+    max-width: rem(480);
+  }
+
+  @media screen and (min-width: rem(1024)) {
+    max-width: rem(570);
+  }
+}

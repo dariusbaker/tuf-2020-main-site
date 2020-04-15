@@ -1,0 +1,76 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.cs-nav {
+  padding-top: rem(48);
+  padding-bottom: rem(48);
+
+  background-color: $tuf-color-primary-dark;
+
+  &__list {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+
+      height: rem(40);
+
+      font-size: rem(18);
+      font-weight: $tuf-font-weight-medium;
+
+      color: $tuf-color-white;
+
+      cursor: pointer;
+
+      span {
+        display: none;
+
+        @media screen and (min-width: rem(440)) {
+          display: inline;
+        }
+      }
+
+      &--prev {
+        text-align: right;
+      }
+
+      &--next {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__icon {
+    width: rem(40);
+    height: rem(40);
+
+    margin: 0 rem(16);
+
+    &--home {
+      margin: 0 rem(4);
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+
+    svg {
+      width: rem(26);
+      height: rem(26);
+    }
+  }
+}

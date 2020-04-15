@@ -1,0 +1,28 @@
+@import 'utils/vars';
+@import 'utils/colors';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/helpers';
+@import 'utils/type';
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/layout';
+@import 'base/type';
+
+// glide carousel
+// Required Core Stylesheet
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+// components
+@import 'components/button';
+@import 'components/case-study-card';
+@import 'components/footer';
+@import 'components/form';
+@import 'components/speck';
+@import 'components/particles';
+
+// partials
+@import 'partials/header';

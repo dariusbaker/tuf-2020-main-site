@@ -1,0 +1,617 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.cs-container {
+  max-width: rem(1920);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.intro {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #5fc3d9;
+
+  &__image {
+    width: 100%;
+    max-width: rem(600);
+    margin-bottom: rem(-30);
+
+    @media screen and (min-width: rem(768)) {
+      margin-bottom: rem(-50);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.over-twenty {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+
+  &__left {
+    display: flex;
+
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.keywords {
+  color: $tuf-color-white;
+  background-color: #540e4e;
+  background-image: url('/assets/img/case-studies/ihp/keywords__background.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: rem(240, 24);
+
+  @media screen and (min-width: rem(1440)) {
+    background-size: rem(240);
+  }
+
+  &__right {
+    display: flex;
+
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.personality {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: #e7e7e7;
+  background: radial-gradient($tuf-color-white, #e7e7e7);
+  padding-top: rem(120);
+  padding-bottom: rem(30);
+
+  @media screen and (min-width: rem(768)) {
+    padding-top: rem(90);
+    padding-bottom: 0;
+  }
+
+  &__title {
+    position: absolute;
+    top: rem(50);
+  }
+
+  &__triangle {
+    position: absolute;
+    bottom: 0;
+    right: rem(-30);
+    width: rem(120, 24);
+
+    @media screen and (min-width: rem(768)) {
+      right: 0;
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      width: rem(120, 16);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    padding-bottom: rem(25);
+  }
+
+  .cs-container__row {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(158);
+      padding-left: rem(158);
+    }
+
+    .cs-container__column {
+      display: flex;
+
+      flex-direction: column;
+      padding-left: rem(25);
+      padding-right: rem(25);
+    }
+  }
+}
+
+.manifesto {
+  color: $tuf-color-white;
+  background-color: #7d2175;
+
+  img {
+    width: 100%;
+  }
+
+  .cs-container__row {
+    max-width: rem(1920);
+    margin: 0 auto;
+  }
+
+  &__left,
+  &__right {
+    width: 100%;
+
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(47);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(56);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(115);
+    }
+
+    &__copy-wrapper {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__copy {
+      position: relative;
+      width: 100%;
+      padding: 0 rem(15);
+
+      @media screen and (min-width: rem(1100)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1200)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1370)) {
+        padding-left: rem(28);
+        padding-left: rem(28);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+    }
+  }
+
+  &__right {
+    @media screen and (min-width: rem(1024)) {
+      padding-left: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-left: rem(47);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-left: rem(56);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-left: rem(115);
+    }
+
+    &__copy {
+      @media screen and (min-width: rem(1100)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1200)) {
+        padding-left: rem(20);
+        padding-left: rem(20);
+      }
+
+      @media screen and (min-width: rem(1370)) {
+        padding-left: rem(28);
+        padding-left: rem(28);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(25);
+        padding-left: rem(25);
+      }
+    }
+  }
+
+  p {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    font-size: rem(18);
+
+    span {
+      display: block;
+      color: #5fc3d9;
+      font-style: italic;
+    }
+  }
+}
+
+.moto {
+  &__image {
+    width: 100%;
+  }
+}
+
+.statement {
+  position: relative;
+  background-color: #fff;
+
+  &__bg {
+    position: relative;
+    height: rem(300);
+    width: 100%;
+    left: 0;
+    background-image: url('/assets/img/case-studies/ihp/mission__image.jpg');
+    background-size: cover;
+
+    @media (min-width: rem(768)) {
+      position: absolute;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+}
+
+.mission-vision {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #86578e;
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+
+  @media (min-width: rem(768)) {
+    padding-top: rem(0);
+    padding-bottom: rem(0);
+  }
+
+
+  .cs-container__column {
+    text-align: center;
+  }
+
+  &__left,
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(24) !important;
+      text-align: right !important;
+    }
+
+    &__content {
+      text-align: center;
+      @media screen and (min-width: rem(768)) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    max-width: rem(236);
+
+    margin-bottom: rem(35);
+  }
+
+  &__motif--r {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: rem(200, 24);
+    height: auto;
+
+    @media (min-width: rem(1024)) {
+      height: 100%;
+      max-width: rem(200);
+    }
+  }
+
+  &__motif--br {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    max-width: rem(137, 24);
+
+    @media (min-width: rem(1024)) {
+      max-width: rem(137, 16);
+    }
+  }
+}
+
+.collaterals,
+.website {
+  background-color: $tuf-color-white;
+  color: $tuf-color-gray;
+
+  &__image {
+    width: 100%;
+
+    &--pad {
+      padding-top: rem(50);
+    }
+  }
+}
+
+.collaterals {
+  &__left,
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(768)) {
+      padding-right: 0 !important;
+    }
+  }
+
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      padding-left: 0 !important;
+    }
+
+    p {
+      @media screen and (min-width: rem(768)) {
+        padding-left: rem(40);
+      }
+
+      @media screen and (min-width: rem(1366)) {
+        padding-left: rem(90);
+      }
+
+      @media screen and (min-width: rem(1440)) {
+        padding-left: rem(120);
+      }
+
+      @media screen and (min-width: rem(1960)) {
+        padding-left: rem(220);
+      }
+    }
+  }
+}
+
+.website {
+  .cs-container__column {
+    padding-bottom: 0;
+  }
+
+  .cs-container__row {
+    @media screen and (min-width: rem(1366)) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    @media screen and (min-width: rem(1366)) {
+      padding-right: 0 !important;
+    }
+
+    &__figures {
+      text-align: center;
+
+      img {
+        max-width: 46%;
+        height: auto;
+
+        &:first-child {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+}
+
+.lead {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: #5fc3d9;
+
+  &__bg {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+    border-bottom: rem(300) solid transparentize($tuf-color-white, .85);
+    border-right: rem(300) solid transparent;
+  }
+
+  .cs-container__row {
+    align-items: center;
+  }
+
+  .cs-container__column {
+    padding-bottom: 0;
+  }
+
+  &__left-wrapper {
+    padding-right: 0 !important;
+  }
+
+  &__right-wrapper {
+    padding-left: 0 !important;
+  }
+
+  &__center-wrapper {
+    @media screen and (min-width: rem(768)) {
+      padding: 0 rem(24) !important;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    max-width: rem(359);
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+  }
+}
+
+.revamp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: rem(512);
+  padding-top: rem(48);
+  margin: 0 auto;
+
+  @media screen and (min-width: rem(1024)) {
+    max-width: rem(1920);
+  }
+
+  &__left {
+    flex: 0 0 100%;
+    padding-bottom: rem(48);
+
+    @media screen and (min-width: rem(1366)) {
+      flex: 0 0 67%;
+    }
+  }
+
+  &__right {
+    flex: 0 0 100%;
+
+    @media screen and (min-width: rem(1366)) {
+      flex: 0 0 33%;
+      padding: 0 rem(15);
+    }
+
+    img {
+      display: block;
+      max-width: rem(480);
+      margin: 0 auto;
+    }
+  }
+
+  &__snippets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__desc {
+    flex: 0 0 100%;
+    padding: 0 rem(9) rem(56);
+    max-width: rem(496);
+
+    @media screen and (min-width: rem(1024)) {
+      padding: 0 0 rem(32);
+      margin-left: rem(48 - 15);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      margin-left: rem(92 - 15);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-left: rem(240 - 15);
+    }
+  }
+
+  &__masthead,
+  &__facts {
+    flex: 0 0 100%;
+
+    @media screen and (min-width: rem(1024)) {
+      flex: 0 0 50%;
+      padding: 0 rem(15);
+    }
+  }
+
+  &__facts img {
+    display: block;
+
+    @media screen and (min-width: rem(1024)) {
+      width: 88%;
+      margin: 0 auto;
+    }
+  }
+}

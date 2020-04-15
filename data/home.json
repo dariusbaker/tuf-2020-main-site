@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "slug": "home-hero",
+    "title": "Greetings from the&nbsp;Universe Fantastic",
+    "footnote_1": "The creative brand agency of the",
+    "footnote_2": "Past, Present & Future.",
+    "cta": {
+      "href": "#talk-to-us",
+      "label": "Talk to us"
+    }
+  },
+  "mission": {
+    "slug": "our-mission",
+    "title": "Our mission<span class='tuf-header-br'>is simple:</span>",
+    "content": "To build businesses and brands so well that all may prosper under the light of the Universe across cultures, space and time."
+  },
+  "clients": {
+    "slug": "our-clients",
+    "title": "Our clients",
+    "items": [
+      {
+        "name": "Accenture",
+        "image": "/assets/img/tuf-client-accenture.png"
+      },
+      {
+        "name": "AIA",
+        "image": "/assets/img/tuf-client-aia.png"
+      },
+      {
+        "name": "Facebook",
+        "image": "/assets/img/tuf-client-facebook.png"
+      },
+      {
+        "name": "River Safari",
+        "image": "/assets/img/tuf-client-rs.png"
+      },
+      {
+        "name": "Starbucks",
+        "image": "/assets/img/tuf-client-sb.png"
+      },
+      {
+        "name": "Robert Half",
+        "image": "/assets/img/tuf-client-rh.png"
+      },
+      {
+        "name": "Rate",
+        "image": "/assets/img/tuf-client-rate.png"
+      },
+      {
+        "name": "Asher",
+        "image": "/assets/img/tuf-client-asher.png"
+      },
+      {
+        "name": "Davidsons",
+        "image": "/assets/img/tuf-client-davidsons.png"
+      },
+      {
+        "name": "Fullerton",
+        "image": "/assets/img/tuf-client-fullerton.png"
+      },
+      {
+        "name": "PropNex",
+        "image": "/assets/img/tuf-client-propnex.png"
+      },
+      {
+        "name": "Wantedly",
+        "image": "/assets/img/tuf-client-wantedly.png"
+      },
+      {
+        "name": "Allianz",
+        "image": "/assets/img/tuf-client-allianz.png"
+      },
+      {
+        "name": "Amgen",
+        "image": "/assets/img/tuf-client-amgen.png"
+      }
+    ]
+  },
+  "testimonials": {
+    "slug": "testimonials"
+  },
+  "what_we_do": {
+    "slug": "what-we-do",
+    "title": "What we do",
+    "cta": {
+      "label": "Talk to us",
+      "href": "#talk-to-us"
+    }
+  },
+  "ask_ava": {
+    "slug": "ask-ava",
+    "title": "Ask Ava"
+  },
+  "case_studies": {
+    "slug": "case-studies",
+    "title": "<span class='tuf-header-br'>Case</span><span class='tuf-header-br'>Studies</span>",
+    "cta": {
+      "label": "View all case studies",
+      "href": "case-studies"
+    }
+  },
+  "what_do_you_seek": {
+    "title": "What do<span class='tuf-header-br'>you seek?</span>",
+    "slug": "what-do-you-seek",
+    "filter_label": "Pick One",
+    "cta": {
+      "href": "#talk-to-us",
+      "label": "Talk to us"
+    }
+  },
+  "instagram": {
+    "slug": "instagram",
+    "title": "The Universe Fantastagram"
+  },
+  "talk_to_us": {
+    "slug": "talk-to-us",
+    "title": "Let's talk!",
+    "content": "Fill in the form or drop us an email at <a href=\"mailto:seek@theuniversefantastic.co\">seek@theuniversefantastic.co</a><br>if that’s your thang."
+  }
+}

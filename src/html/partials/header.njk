@@ -1,0 +1,90 @@
+{% from "macros/button.njk" import button_link %}
+
+<header class="tuf-header-wrapper">
+  <a href="#main" class="tuf-header__skip">
+    Skip to content
+  </a>
+  <div class="tuf-header tuf-header--transparent">
+    <a href="/" class="tuf-header__logo">
+      <img
+        class="tuf-header__logo__img"
+        src="/assets/img/tuf-logo.png"
+        alt="{{global.app_title}}" />
+      <img
+        class="tuf-header__logo__img--mobile"
+        src="/assets/img/tuf-icon.png"
+        alt="{{global.app_title}}" />
+    </a>
+    <nav class="tuf-header__nav">
+      <ul class="tuf-header__nav-items">
+        {% for nav_item in global.nav_items %}
+        <a
+          href="{{nav_item.href}}"
+          class="tuf-header__nav-item">
+          <span>{{nav_item.label}}</span>
+          <svg>
+            <rect x="1.5" y="1.5" rx="20" fill="none" stroke="currentColor" width="100%" height="100%"></rect>
+          </svg>
+        </a>
+        {% endfor %}
+      </ul>
+
+      {% if global.nav_cta %}
+        {{
+          button_link(
+            classes="tuf-header__nav-item-secondary-btn",
+            type="secondary",
+            label=global.nav_cta.label,
+            href=global.nav_cta.href,
+            bounce=false
+          )
+        }}
+      {% endif %}
+    </nav>
+    <button
+      aria-label="Open the navigation drawer"
+      aria-expanded="false"
+      aria-controls="tuf-nav-drawer"
+      class="tuf-header__mobile-menu-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <aside
+    id="tuf-nav-drawer"
+    tab-index="0"
+    aria-label="Navigation drawer"
+    aria-hidden="true"
+    class="tuf-header__nav-drawer">
+    <a href="/" class="tuf-header__nav-drawer__logo">
+      <img
+        src="/assets/img/tuf-logo.png"
+        alt="{{global.app_title}}" />
+    </a>
+    <nav class="tuf-header__nav-drawer__nav">
+      <ul class="tuf-header__nav-drawer__nav-items">
+        {% for nav_item in global.nav_items %}
+        <a
+          href="{{nav_item.href}}"
+          class="tuf-header__nav-item tuf-header__nav-drawer__nav-item">
+          {{nav_item.label}}
+        </a>
+        {% endfor %}
+      </ul>
+
+      <div class="tuf-header__nav-drawer__nav-secondary">
+      {% if global.nav_cta %}
+        {{
+          button_link(
+            classes="tuf-header__nav-item-secondary-btn tuf-header__nav-drawer__nav-item",
+            type="secondary",
+            label=global.nav_cta.label,
+            href=global.nav_cta.href
+          )
+        }}
+      {% endif %}
+      </div>
+    </nav>
+  </aside>
+</header>

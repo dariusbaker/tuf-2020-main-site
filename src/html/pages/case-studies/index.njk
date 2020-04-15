@@ -1,5 +1,115 @@
+{% from "macros/case-study-card.njk" import case_study_card %}
+{% from "macros/form.njk" import talk_form with context %}
+
 {% extends "base.njk" %}
 
+{% block meta_tag %}
+<title><?php echo $meta->work->title; ?></title>
+<meta name="description" content="<?php echo $meta->work->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->work->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work->og_image; ?>">
+{% endblock %}
+
+{% block base_tag %}
+<base href="/">
+{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/case-studies.css">
+{% endblock %}
+
 {% block content %}
-case-studies
+<section
+  class="tuf-section hero">
+  <div class="tuf-section__content hero__content">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="30"
+        class="speck speck--diamond-dots-12x12"
+        src="/assets/img/specks/diamond-dots-12x12.png" />
+    </div>
+    <h1 class="tuf-section-title hero__title hero__title--case-studies">
+      {{case_studies_list.title|safe}}
+    </h1>
+  </div>
+</section>
+
+<section
+  class="tuf-section content">
+  <div class="tuf-section__content tuf-content-padding">
+    <div class="speckle">
+      <img
+        data-animate="true"
+        data-tolerance="20"
+        data-dir="1"
+        class="speck speck--diamond-outline"
+        src="/assets/img/specks/diamond-outline.png" />
+    </div>
+    <div class="content__filter">
+      <label id="case-studies-filter-label" class="content__filter__label">
+        {{case_studies_list.filter_label}}
+      </label>
+      <div class="content__filter-wrapper">
+        <button
+          data-alltype="{{case_studies_list.filter_all | safe}}"
+          class="content__filter__btn"
+          aria-haspopup="listbox"
+          aria-labelledby="case-studies-filter-label case-studies-filter-btn"
+          id="case-studies-filter-btn">
+          <span>{{case_studies_list.filter_all | safe}}</span>
+          <svg role="img" class="what-do-you-seek__content__navigation__label__icon">
+            <use xlink:href="#down" />
+          </svg>
+        </button>
+        <ul id="case-studies-filter" class="content__filter__list">
+          <li
+            class="content__filter__list-item"
+            tabindex="0"
+            role="option"
+            data-type="{{case_studies_list.filter_all | safe}}">
+            {{case_studies_list.filter_all | safe}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul id="case-studies-list" class="content__list">
+    </ul>
+
+    <template id="dropdown-item-template">
+      <li
+        class="content__filter__list-item"
+        tabindex="0"
+        role="option">
+      </li>
+    </template>
+    <template id="case-study-item-template">
+      <li
+        data-tags="{{item.tags}}"
+        class="content__list__item content__list__item--visible">
+        {{
+          case_study_card(
+            classses = '',
+            href = '/case-studies/',
+            title = '',
+            tags = [],
+            image = ''
+          )
+        }}
+      </li>
+    </template>
+  </div>
+</section>
+
+<!-- talk to us section -->
+{{talk_form(classes='contact-form--gradient')}}
+<!-- end of talk to us section -->
+
+{% endblock %}
+
+{% block page_script %}
+<script src="/assets/js/case-studies.min.js"></script>
 {% endblock %}

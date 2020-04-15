@@ -1,0 +1,198 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.tuf-button {
+  position: relative;
+  display: block;
+
+  padding: rem(12) rem(32);
+
+  box-sizing: border-box;
+
+  font-size: rem(22);
+
+  font-weight: $tuf-font-weight-bold;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  color: $tuf-color-white;
+
+  border: 0; // removes border on <button> elements
+  border-radius: rem(80);
+
+  transition: color .25s linear;
+  overflow: hidden;
+
+  @media (min-width: rem(768)) {
+    font-size: rem(30);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 102%;
+    padding-bottom: 102%;
+    border-radius: 50%;
+    background-color: $tuf-color-yellow;
+
+    transform: scale(0) translate3d(-50%, -50%, 0);
+    transform-origin: 0 0;
+    transition: transform .25s var(--ease-expo-out);
+    content: "";
+  }
+
+  &--primary {
+    background-color: transparent;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+      border: rem(3) solid $tuf-color-yellow;
+      border-radius: rem(80);
+      pointer-events: none;
+
+      content: "";
+    }
+  }
+
+  &--secondary {
+    background-color: $tuf-color-primary;
+  }
+
+  span {
+    position: relative;
+  }
+
+  @media (hover: hover) {
+    &--bounce {
+      transition: color .25s linear, transform .25s var(--ease-back-out);
+      transform: scale(1);
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $tuf-color-secondary;
+
+      &:before {
+        transform: scale(1) translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+}
+
+.tuf-icon-circle {
+  position: relative;
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+  width: rem(48);
+  height: rem(48);
+  padding: 0; // reset padding defined by <button> default style
+  overflow: hidden;
+
+  border: 0; // removes border on <button> elements
+  border-radius: rem(48);
+  background-color: transparent;
+
+  color: $tuf-color-yellow;
+
+  transition: border-color .25s ease-out, color .25s ease-out;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border: rem(3) solid $tuf-color-yellow;
+    border-radius: rem(48);
+    pointer-events: none;
+
+    content: "";
+  }
+
+  svg {
+    position: relative;
+    width: rem(30);
+    height: rem(30);
+    color: inherit;
+  }
+
+  &--btn {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--ava {
+    @media only screen and (max-width: rem(1024)) {
+      width: rem(28);
+      height: rem(28);
+
+      &:after {
+        border-width: rem(2);
+      }
+
+      svg {
+        width: rem(16);
+        height: rem(16);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    transition: color .25s linear, transform .25s var(--ease-back-out);
+    transform: scale(1);
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 102%;
+      padding-bottom: 102%;
+      border-radius: 50%;
+      background-color: $tuf-color-yellow;
+
+      transform: scale(0) translate3d(-50%, -50%, 0);
+      transform-origin: 0 0;
+      transition: transform .25s var(--ease-expo-out);
+      content: "";
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+      color: $tuf-color-secondary;
+
+      &:before {
+        transform: scale(1) translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+}

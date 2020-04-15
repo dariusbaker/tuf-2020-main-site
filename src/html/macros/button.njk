@@ -1,0 +1,64 @@
+{%
+  macro button(
+    classes = '',
+    disabled = false,
+    type = 'primary',
+    id = '',
+    label = '',
+    bounce = true
+  )
+%}
+
+<button
+  class="tuf-button tuf-button--{{type}} {{classes}} {{ 'tuf-button--bounce' if bounce else ''}}"
+  {% if id %} id="{{ id }}" {% endif %}
+  {% if disabled %} disabled {% endif %}
+>
+  <span>{{label}}</span>
+</button>
+{% endmacro %}
+
+{% macro button_link(
+  classes = '',
+  type = 'primary',
+  id = '',
+  label = '',
+  href = '',
+  target = '_self',
+  bounce = true
+) %}
+<a
+  class="tuf-button tuf-button--link tuf-button--{{type}} {{classes}} {{ 'tuf-button--bounce' if bounce else ''}}"
+  href="{{href}}"
+  target="{{target}}"
+  {% if id %} id="{{ id }}" {% endif %}
+  {% if target == '_blank' %} rel="noopener noreferrer" {% endif %}
+  >
+  <span>{{label}}</span>
+</a>
+{% endmacro %}
+
+{% macro icon_round(
+  classes = '',
+  isButton = false,
+  id = '',
+  icon = ''
+) %}
+  {% if isButton %}
+    <button
+      class="tuf-icon-circle tuf-icon-circle--btn {{classes}}"
+  {% else %}
+    <div
+      class="tuf-icon-circle {{classes}}"
+  {% endif %}
+  {% if id %} id="{{ id }}" {% endif %}
+  >
+    <svg role="img">
+      <use xlink:href="#{{icon}}" />
+    </svg>
+  {% if isButton %}
+    </button>
+  {% else %}
+    </div>
+  {% endif %}
+{% endmacro %}

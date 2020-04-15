@@ -10,14 +10,20 @@ function copyImages() {
     .pipe(reload());
 }
 
-function copyManifest() {
-  return src('manifest.json')
+function copyVideos() {
+  return src(`${CONFIG.SRC.VIDEO}/**`)
+    .pipe(dest(CONFIG.DIST.VIDEO))
+    .pipe(reload());
+}
+
+function copyEverythingElse() {
+  return src(CONFIG.FILES_TO_COPY, {allowEmpty: true})
     .pipe(dest(CONFIG.DIST.ROOT))
     .pipe(reload());
 }
 
 function copy(done) {
-  return parallel(copyImages, copyManifest)(done);
+  return parallel(copyVideos, copyImages, copyEverythingElse)(done);
 }
 
 module.exports = copy;

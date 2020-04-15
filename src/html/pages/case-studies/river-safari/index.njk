@@ -1,5 +1,394 @@
+{% from "macros/case-study-header.njk" import case_study_header %}
+{% from "macros/form.njk" import talk_form with context %}
+{% from "macros/case-study-nav.njk" import case_study_nav %}
+
 {% extends "base.njk" %}
 
+{% block page_styles %}
+<link rel="stylesheet" href="/assets/css/pages/case-study-base.css">
+<link rel="stylesheet" href="/assets/css/pages/case-study-river-safari.css">
+{% endblock %}
+
+{% block meta_tag %}
+<title><?php echo $meta->work_river_safari->title; ?></title>
+<meta name="description" content="<?php echo $meta->work_river_safari->description; ?>">
+<meta property="og:url" content="<?php echo $meta->work_river_safari->og_url; ?>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $meta->work_river_safari->og_title; ?>">
+<meta property="og:description" content="<?php echo $meta->work_river_safari->og_description; ?>">
+<meta property="og:image" content="<?php echo $meta->work_river_safari->og_image; ?>">
+{% endblock %}
+
+{% block base_tag %}
+<base href="/">
+{% endblock %}
+
 {% block content %}
-case-studies: river safari
+{{
+  case_study_header(
+    title='River Safari<span class="tuf-header-br">Adventure Buddy</span>',
+    tags=['Mobile', 'UI/UX', 'Tech']
+  )
+}}
+
+<figure class="hero">
+  <img
+    src="/assets/img/case-studies/river-safari/hero__background.jpg"
+    alt="River Safari Singapore brand mascot featured in mobile app audio tour"
+  />
+</figure>
+
+<section class="intro">
+  <div class="cs-container intro__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--center">
+        <p data-aos="fade-up">
+          River Safari is Asia’s one and only river-themed safari park, home to over 8700 animals from 260 species. Popular for exhibits such as the Amazon Flooded Forest – the largest freshwater aquarium in the world – the park receives over 1 million visitors annually.
+        </p>
+      </div>
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--desktop-only">
+      </div>
+    </div>
+  </div>
+  <figure class="intro__bg-right">
+    <img
+      data-aos="fade-up"
+      src="/assets/img/case-studies/river-safari/intro__copy.png"
+      alt="introduction to mobile app development case study for River Safari Singapore" />
+  </figure>
+</section>
+
+<section class="problem">
+  <div class="cs-container problem__content">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--center">
+        <img
+          data-aos="fade-up"
+          src="/assets/img/case-studies/river-safari/problem__hastag.png"
+          alt="how to develop brand content for audio tour mobile app" />
+      </div>
+      <div class="col-md cs-container__column cs-container__column--flex problem__content__copy">
+        <h2
+          data-aos="fade-up">
+          A Unique Problem
+        </h2>
+        <p
+          data-aos="fade-up">
+          Although the park was home to thousands of intriguing creatures, the exhibits were mostly viewing experiences. Visitors simply didn’t feel engaged enough.
+        </p>
+        <img
+          data-aos="fade-up"
+          src="/assets/img/case-studies/river-safari/problem__panda.png"
+          alt="brand content for audio tour mobile app" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="adventure">
+  <div class="adventure__left">
+    <div class="cs-content">
+      <div class="cs-container__column">
+        <h2
+          data-aos="fade-up">
+            An Adventure In The Making
+        </h2>
+        <p data-aos="fade-up">
+          After several rounds of discussions and brainstorming with the River Safari team, we decided to produce an audio tour app to elevate the park experience.
+        </p>
+        <p data-aos="fade-up">
+          Laying out the functional objectives right at the start helped to guide the design, writing and development process.
+        </p>
+      </div>
+    </div>
+    <img
+      src="/assets/img/case-studies/river-safari/adventure__monkey.jpg"
+      alt="planning audio tour content for a top theme park in Asia" />
+  </div>
+  <div class="adventure__right">
+    <img
+      src="/assets/img/case-studies/river-safari/adventure__croc.jpg"
+      alt="planning audio tour content for River Safari Singapore mobile app" />
+    <div class="cs-content cs-content--right">
+      <div class="cs-container__column" data-aos="fade-up">
+        <table>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+              <td>
+                <h3>#APPGOALS</h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="adventure__right__icon"
+                  draggable="false"
+                  src="/assets/img/case-studies/river-safari/appgoal__heart.png"
+                  alt="Must add to the park experience, not disrupt it.">
+              </td>
+              <td>
+                Must add to the park experience, not disrupt it.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="adventure__right__icon"
+                  draggable="false"
+                  src="/assets/img/case-studies/river-safari/appgoal__ux.png"
+                  alt="Intuitive interface to make it usable for visitors of all ages.">
+              </td>
+              <td>
+                Intuitive interface to make it usable for visitors of all ages.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="adventure__right__icon"
+                  draggable="false"
+                  src="/assets/img/case-studies/river-safari/appgoal__thumb.png"
+                  alt="Provide value for visitors throughout their entire journey around the park.">
+              </td>
+              <td>
+                Provide value for visitors throughout their entire journey around the park.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  class="adventure__right__icon"
+                  draggable="false"
+                  src="/assets/img/case-studies/river-safari/appgoal__timer.png"
+                  alt="Minimal load times – must facilitate zippy download packages.">
+              </td>
+              <td>
+                Minimal load times – must facilitate zippy download packages.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="canola">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column canola__left">
+        <h2 data-aos="fade-up">
+          Introducing Canola the Manatee, <span class="tuf-header-br">Part-time tour guide, full-time friend.</span>
+        </h2>
+        <p data-aos="fade-up">
+          The audio tour was also the perfect vehicle to allow visitors to be introduced to River Safari’s new brand mascot, Canola the Manatee.
+        </p>
+        <p data-aos="fade-up">
+          Cast in the role of Adventure Buddy, her job was to show visitors around and tell them all sort of neat things about the park and animals.
+        </p>
+      </div>
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--center canola__right">
+        <img
+          class="canola__image"
+          src="/assets/img/case-studies/river-safari/canola__image.jpg"
+          alt="Introducing brand mascot for river safari singapore mobile app" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notes">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--desktop-only">
+      </div>
+      <div class="col-md cs-container__column">
+        <img
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/notes__tuf.png"
+          alt="creating brand content for audio tour mobile app"
+          data-aos="fade-up" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="planning">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column planning__left">
+        <div class="planning__desc">
+          <h2 data-aos="fade-up">
+            Planning
+          </h2>
+          <img
+            class="planning__left__image"
+            draggable="false"
+            src="/assets/img/case-studies/river-safari/planning__chart.png"
+            alt="Straightforward, Simple, Intuitive"
+            data-aos="fade-up" />
+          <p data-aos="fade-up">
+            These were our 3 guiding principles when planning the app’s user journey. Especially important, because we knew that the app would be used by kids as well as adults.
+          </p>
+        </div>
+      </div>
+      <div class="col-md planning__right">
+        <img
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/planning__wireframe.png"
+          alt="good ui design and ux design best practices"
+          data-aos="fade-up" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map">
+  <div class="map__left">
+    <img
+      class="map__left__bg-image"
+      draggable="false"
+      src="/assets/img/case-studies/river-safari/map__phone.jpg"
+      alt="ux design for mobile app for River Safari Singapore" />
+
+    <div class="cs-content map__left__content">
+      <div class="cs-container__column">
+        <h2 data-aos="fade-up">
+          The Map In The App
+        </h2>
+        <p data-aos="fade-up">
+          Designing the map in the app based on the exact physical layout of the park allows visitors to use the app for navigation within the park.
+        </p>
+        <img
+          class="map__left__image"
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/map__icon.png"
+          alt="example of good ux design and best practices for ui design"
+          data-aos="fade-up" />
+      </div>
+    </div>
+  </div>
+  <div class="map__right">
+    <div class="map__right__top">
+      <div class="cs-container__column map__right__top__content">
+        <h2 data-aos="fade-up">
+          Modular Content
+        </h2>
+        <p data-aos="fade-up">
+          We wrote and designed content in a modular format so that the River Safari team could add or remove content without breaking the tour narrative.
+        </p>
+        <img
+          class="map__right__top__image"
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/map__croc.png"
+          alt="crocodile planning brand content for audio tour mobile app"
+          data-aos="fade-up" />
+      </div>
+    </div>
+    <div class="map__right__bottom">
+      <div class="cs-container__column map__right__bottom__content">
+        <h2 data-aos="fade-up">
+          Scripting & Content
+        </h2>
+        <p data-aos="fade-up">
+          Guided by the animal experts of River Safari, our writing team crafted 7 different scripts based on 7 river systems, with specific profiles on nearly 200 different animals.
+        </p>
+      </div>
+      <img
+        class="map__right__bottom__image"
+        draggable="false"
+        src="/assets/img/case-studies/river-safari/map__wa.png"
+        alt="Scriptwriting, brand storytelling, and content creation for river safari singapore mobile app"
+        data-aos="fade-left" />
+    </div>
+  </div>
+</section>
+
+<section class="insight">
+  <div class="cs-container">
+    <div class="cs-container__row">
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--center">
+        <img
+          class="insight__image"
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/insight__tuf--mobile.png"
+          alt="flamingoes are a great example of brand content for River Safari Singapore"
+          data-aos="fade-up" />
+        <img
+          class="insight__image--desktop"
+          draggable="false"
+          src="/assets/img/case-studies/river-safari/insight__tuf--desktop.png"
+          alt="flamingoes are a great example of brand content for River Safari Singapore"
+          data-aos="fade-up" />
+      </div>
+      <div class="col-md cs-container__column cs-container__column--flex cs-container__column--desktop-only">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="development">
+  <div class="development__left">
+    <img
+      class="development__left__image"
+      draggable="false"
+      src="/assets/img/case-studies/river-safari/development__panda.jpg"
+      alt="example of featured brand content on mobile app" />
+
+    <div class="cs-content development__left__content">
+      <div class="cs-container__column">
+        <h2 data-aos="fade-up">
+          App Development
+        </h2>
+        <p data-aos="fade-up">
+          Having our app development partners onboard since the very first day was a huge advantage. <span class="highlight">Originally Us</span> provided us with the necessary technical coordination and support throughout the project, ensuring that work flowed smoothly from creative to development phases.
+        </p>
+      </div>
+
+      <img
+        class="development__left__content__image"
+        draggable="false"
+        src="/assets/img/case-studies/river-safari/development__app.jpg"
+        alt="proximity beacons are an example of digital innovation in Singapore" />
+    </div>
+  </div>
+  <div class="development__right">
+    <div class="cs-content cs-content--right development__right__content">
+      <div class="cs-container__column">
+        <h2 data-aos="fade-up">
+          Regardless of race, language or religion
+        </h2>
+        <p data-aos="fade-up">
+          One of the biggest challenges came in translation – we had to ensure that every nuance and shade of meaning carried across 6 different languages so all park visitors could enjoy the audio tour content without compromise.
+        </p>
+      </div>
+    </div>
+    <figure>
+      <img
+        draggable="false"
+        src="/assets/img/case-studies/river-safari/development__language.jpg"
+        alt="example of good mobile ui design and storytelling through mobile app" />
+      <img
+        draggable="false"
+        src="/assets/img/case-studies/river-safari/development__manatee.jpg"
+        alt="example of featured brand content on mobile app" />
+    </figure>
+  </div>
+</section>
+
+{{
+  case_study_nav(
+    prev_link="/case-studies/starbucks-bogo",
+    next_link="/case-studies/wantedly"
+  )
+}}
+
+<!-- talk to us section -->
+{{talk_form()}}
+<!-- end of talk to us section -->
+{% endblock %}
+
+{% block page_script %}
+<script src="/assets/js/case-study-base.min.js"></script>
 {% endblock %}

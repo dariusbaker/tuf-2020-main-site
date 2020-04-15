@@ -179,8 +179,12 @@
     background-color: #6d4a2b;
     color: $tuf-color-white;
 
+    font-weight: $tuf-font-weight-regular;
+
     .cs-content--right {
       margin: 0 auto;
+
+      max-width: rem(640);
     }
 
     &__icon {
@@ -196,7 +200,7 @@
           padding-bottom: rem(10);
 
           &:first-child {
-            padding-right: rem(20);
+            padding-right: rem(40);
           }
 
           h3 {
@@ -378,8 +382,8 @@
 
     &__image {
       display: block;
-      margin: rem(40) auto 0;
-      max-width: rem(110);
+      margin: rem(40) 0;
+      max-width: rem(146);
     }
   }
 

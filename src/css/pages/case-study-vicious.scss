@@ -41,6 +41,10 @@
   }
 }
 
+.hero {
+  z-index: 2;
+}
+
 .intro {
   position: relative;
   color: $tuf-color-white;
@@ -62,9 +66,11 @@
 
     &__image {
       position: absolute;
-      top: rem(30);
+      bottom: rem(-16);
       left: 50%;
       transform: translate(-50%, 0) !important;
+
+      max-width: rem(385);
     }
   }
 }

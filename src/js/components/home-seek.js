@@ -57,6 +57,8 @@ export default class HomeSeek {
 
     this._showSeekHandler = (e) => this._showSeekEvent(e);
 
+    this._escHandler = (e) => this._handleEscape(e);
+
     this._seekCloseHandler = () => this._closeDialogEvent();
 
     this._renderSeekContent();
@@ -75,6 +77,17 @@ export default class HomeSeek {
         this._adjustCardsPanelHeight();
       }, 300)
     );
+
+    document.addEventListener('keyup', this._escHandler);
+  }
+
+  _handleEscape (event) {
+    const key = event.which || event.keyCode;
+
+    if (key === 27) {
+      this._closeDialogEvent();
+      event.stopPropagation();
+    }
   }
 
   _setCardsVisibility() {

@@ -113,6 +113,7 @@
     left: 0;
     background-image: url('/assets/img/case-studies/starbucks/intro__image.jpg');
     background-size: cover;
+    background-position: center;
 
     @media screen and (min-width: rem(768)) {
       position: absolute;
@@ -285,9 +286,9 @@
 
   .cs-container__row {
     @media screen and (min-width: rem(768)) {
-      flex: 0 0 83.333333%;
-      max-width: 83.333333%;
-      margin-left: 8.333333%;
+      flex: 0 0 68.333333%;
+      max-width: 68.333333%;
+      margin-left: 16.333333%;
     }
   }
 
@@ -322,7 +323,7 @@
   }
 
   &__bg-fireworks {
-    left: 75%;
+    right: 0;
     background-image: url('/assets/img/case-studies/starbucks/support__background--fireworks.jpg');
   }
 

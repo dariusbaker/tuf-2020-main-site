@@ -22,7 +22,7 @@
   color: $tuf-color-white;
 
   border: 0; // removes border on <button> elements
-  border-radius: rem(80);
+  border-radius: rem(80) !important;
 
   transition: color .25s linear;
   overflow: hidden;
@@ -63,7 +63,7 @@
       width: 100%;
       height: 100%;
       border: rem(3) solid $tuf-color-yellow;
-      border-radius: rem(80);
+      border-radius: rem(80) !important;
       pointer-events: none;
 
       content: "";

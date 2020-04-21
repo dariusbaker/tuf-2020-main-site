@@ -32,6 +32,7 @@
 
 .hero {
   position: relative;
+  z-index: 2;
 
   img {
     width: 100%;
@@ -85,11 +86,24 @@
       width: 50%;
     }
   }
+
+  &__board {
+    margin-top: 10%;
+  }
 }
 
 .board-games {
+  background-color: #d9d2c4;
+  text-align: center;
+
   &__image {
     width: 100%;
+    max-width: rem(960);
+    margin: 10% 0;
+
+    @media screen and (min-width: rem(768)) {
+      width: 72%;
+    }
   }
 }
 
@@ -117,6 +131,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #d7d7d7;
+    background-position: 0 50%;
 
     @media screen and (min-width: rem(768)) {
       position: absolute;
@@ -124,12 +139,21 @@
       width: 50%;
       height: 100%;
     }
+
+    @media screen and (min-width: rem(1440)) {
+      background-size: rem(714);
+    }
   }
 }
 
 .guide {
+  background-color: #fff;
+
   &__image {
+    display: block;
     width: 100%;
+    max-width: rem(1680);
+    margin: 0 auto;
   }
 }
 

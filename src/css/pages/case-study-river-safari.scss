@@ -25,6 +25,7 @@
 
 .hero {
   position: relative;
+  z-index: 2;
   width: 100%;
 
   img {
@@ -85,18 +86,13 @@
 
       img {
         display: block;
-        width: auto;
+        width: 75%;
         height: auto;
-        max-height: rem(347);
+        max-width: rem(412);
         align-self: center;
 
         margin: 0 auto;
-        margin-top: rem(58);
-
-        @media screen and (min-width: rem(1024)) {
-          margin-right: 0;
-          margin-left: 0;
-        }
+        margin-top: rem(50);
       }
     }
   }
@@ -135,7 +131,7 @@
     color: $tuf-color-gray;
 
     img {
-      width: 100%;
+      width: 80%;
     }
 
     .cs-content {
@@ -179,8 +175,12 @@
     background-color: #6d4a2b;
     color: $tuf-color-white;
 
+    font-weight: $tuf-font-weight-regular;
+
     .cs-content--right {
       margin: 0 auto;
+
+      max-width: rem(640);
     }
 
     &__icon {
@@ -196,7 +196,7 @@
           padding-bottom: rem(10);
 
           &:first-child {
-            padding-right: rem(20);
+            padding-right: rem(40);
           }
 
           h3 {
@@ -231,15 +231,18 @@
   &__right {
     padding: 0;
     max-width: 100%;
+    overflow: hidden;
   }
 
   &__image {
+    width: 100%;
+
     @media screen and (min-width: rem(768)) {
       position: absolute;
-      height: 100%;
-      width: auto;
-      max-width: none;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 769px;
     }
   }
 }
@@ -378,8 +381,9 @@
 
     &__image {
       display: block;
-      margin: rem(40) auto 0;
-      max-width: rem(110);
+      width: 40%;
+      margin: rem(40) auto;
+      max-width: rem(146);
     }
   }
 

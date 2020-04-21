@@ -320,19 +320,23 @@
 
   &__hand {
     width: 100%;
-    max-width: rem(518);
+    max-width: rem(388);
 
     align-self: flex-end;
+
+    @media screen and (min-width: rem(768)) {
+      width: 75%;
+    }
   }
 
   &__pullup {
     width: 100%;
-    max-width: rem(321);
+    max-width: rem(241);
     margin: rem(40) auto;
     align-self: center;
 
     @media screen and (min-width: rem(768)) {
-      width: 60%;
+      width: 47%;
     }
   }
 

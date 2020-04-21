@@ -32,6 +32,7 @@
 
 .hero {
   position: relative;
+  z-index: 2;
 
   img {
     width: 100%;
@@ -265,6 +266,8 @@
     }
 
     &__copy {
+      padding: 0;
+
       @media screen and (min-width: rem(1100)) {
         padding-left: rem(20);
         padding-left: rem(20);
@@ -288,6 +291,26 @@
       @media screen and (min-width: rem(1920)) {
         padding-left: rem(25);
         padding-left: rem(25);
+      }
+    }
+  }
+
+  &__strapline {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-bottom: rem(36);
+
+    @media screen and (min-width: rem(768)) {
+      padding-bottom: 5%;
+    }
+
+    img {
+      width: 80%;
+      max-width: rem(850);
+
+      @media screen and (min-width: rem(768)) {
+        width: 50%;
       }
     }
   }
@@ -322,6 +345,7 @@
     left: 0;
     background-image: url('/assets/img/case-studies/ihp/mission__image.jpg');
     background-size: cover;
+    background-position: 50% 50%;
 
     @media (min-width: rem(768)) {
       position: absolute;
@@ -512,6 +536,7 @@
   }
 
   &__left-wrapper {
+    padding-top: 0;
     padding-right: 0 !important;
   }
 

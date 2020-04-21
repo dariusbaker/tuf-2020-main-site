@@ -48,13 +48,14 @@
   }
 
   &__image {
+    display: block;
     position: relative;
-    left: 0;
     width: 100%;
     max-width: rem(533);
+    margin: 0 auto;
 
     @media screen and (min-width: rem(768)) {
-      position: absolute;
+      left: 0;
       top: 50%;
       transform: translateY(-50%) !important;
     }
@@ -86,7 +87,7 @@
     display: block;
     margin: 0 auto;
     margin-top: rem(40);
-    width: 100%;
+    width: 40%;
     max-width: rem(220);
   }
 }

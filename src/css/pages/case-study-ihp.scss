@@ -382,8 +382,8 @@
 
   &__left {
     @media screen and (min-width: rem(768)) {
-      padding-right: rem(24) !important;
-      text-align: right !important;
+      //padding-right: rem(24) !important;
+      //text-align: right !important;
     }
 
     &__content {
@@ -532,16 +532,17 @@
   }
 
   .cs-container__column {
-    padding-bottom: 0;
+    //padding-bottom: 0;
   }
 
   &__left-wrapper {
-    padding-top: 0;
-    padding-right: 0 !important;
+    //padding-top: 0;
+    //padding-right: 0 !important;
   }
 
   &__right-wrapper {
-    padding-left: 0 !important;
+    align-self: flex-end;
+    padding: 0 !important;
   }
 
   &__center-wrapper {

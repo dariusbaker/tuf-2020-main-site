@@ -33,8 +33,10 @@ export default class HomeTestimonials {
       contentBody.innerHTML = item.content;
       const contentName = contentTemplate.querySelector('.testimonials__list-item__name');
       const contentJob = contentTemplate.querySelector('.testimonials__list-item__job');
+      const contentLogo = contentTemplate.querySelector('.testimonials__img');
       contentName.innerHTML = item.name;
       contentJob.innerHTML = item.job;
+      contentLogo.src = item.logo;
 
       this._itemsElem.appendChild(contentTemplate);
 

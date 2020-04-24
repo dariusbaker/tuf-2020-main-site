@@ -445,6 +445,27 @@
     }
   }
 
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+  }
+
+  &__img {
+    margin-right: rem(16);
+    width: auto;
+    height: rem(36);
+  }
+
   &__list-paginations {
     bottom: rem(-48);
   }

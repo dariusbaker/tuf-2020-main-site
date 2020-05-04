@@ -35,7 +35,8 @@ export const HOME_CASE_STUDIES_DATA = [
     title: 'Ride Without Fear',
     image: '/assets/img/case-studies/vicious/thumbnail.jpg',
     tags: [
-      'Branding'
+      'Branding',
+      'Design'
     ],
     featured_in_home: 4
   },

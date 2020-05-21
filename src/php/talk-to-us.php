@@ -41,7 +41,16 @@
   }
 
   $mail = new PHPMailer;
-  $mail->setFrom($clean['email'], $clean['name']);
+
+  $mail->isSMTP();
+  //$mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
+  $mail->Host = 'mail.theuniversefantastic.co';
+  $mail->Port = 587;
+  $mail->SMTPAuth = true;
+  $mail->Username = 'noreply@theuniversefantastic.co';
+  $mail->Password = sprintf('%s', 'w_vz9[lC]9WR3zxk');
+
+  $mail->setFrom('noreply@theuniversefantastic.co', 'The Universe');
   $mail->addReplyTo($clean['email'], $clean['name']);
   $mail->addAddress(SEND_TO);
   $mail->Subject = SUBJECT;

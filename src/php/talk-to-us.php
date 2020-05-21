@@ -1,7 +1,7 @@
 <?php
   //define('SEND_TO', 'funkage@gmail.com');
   define('SEND_TO', 'seek@theuniversefantastic.co');
-  define('SUBJECT', '%s wants to talk.');
+  define('SUBJECT', 'New transmission received');
 
   use PHPMailer\PHPMailer\Exception;
   use PHPMailer\PHPMailer\PHPMailer;
@@ -23,31 +23,37 @@
     'message' => filter_var(trim($message), FILTER_SANITIZE_STRING),
   );
 
-  $body = 'Dear Universe,';
-  $body .= '<br><br>';
-  $body .= sprintf(
-    'Please reach out to <b>%s</b>, at <b>%s</b> or <b>%s</b>',
+  $body = sprintf(
+    'Ding ding! You\'ve just received a new transmission from %s, contactable via %s',
     $clean['name'],
-    $clean['email'],
-    $clean['contact']
+    $clean['email']
   );
 
-  if (strlen($clean['message']) > 0) {
-    $body .= ', who has the following message for you:';
-    $body .= '<br>';
-    $body .= $clean['message'];
-  } else {
-    $body .= '.';
+  if (strlen($clean['contact']) > 0) {
+    $body .= sprintf(' or %s', $clean['contact']);
   }
 
-  $body .= '<br><br>';
-  $body .= 'Amen';
+  if (strlen($clean['message']) > 0) {
+    $body .= '! Transmission as follows:<br><br>';
+    $body .= $clean['message'];
+  } else {
+    $body .= '!';
+  }
 
   $mail = new PHPMailer;
-  $mail->setFrom($clean['email'], $clean['name']);
+
+  $mail->isSMTP();
+  //$mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
+  $mail->Host = 'mail.theuniversefantastic.co';
+  $mail->Port = 587;
+  $mail->SMTPAuth = true;
+  $mail->Username = 'noreply@theuniversefantastic.co';
+  $mail->Password = sprintf('%s', 'w_vz9[lC]9WR3zxk');
+
+  $mail->setFrom('noreply@theuniversefantastic.co', 'TUF.CO');
   $mail->addReplyTo($clean['email'], $clean['name']);
   $mail->addAddress(SEND_TO);
-  $mail->Subject = sprintf(SUBJECT, $clean['name']);
+  $mail->Subject = SUBJECT;
   $mail->msgHTML($body);
 
   if ($mail->send()) {

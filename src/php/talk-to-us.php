@@ -34,7 +34,7 @@
   }
 
   if (strlen($clean['message']) > 0) {
-    $body .= '! Transmission as follows:<br>';
+    $body .= '! Transmission as follows:<br><br>';
     $body .= $clean['message'];
   } else {
     $body .= '!';
@@ -50,7 +50,7 @@
   $mail->Username = 'noreply@theuniversefantastic.co';
   $mail->Password = sprintf('%s', 'w_vz9[lC]9WR3zxk');
 
-  $mail->setFrom('noreply@theuniversefantastic.co', 'The Universe');
+  $mail->setFrom('noreply@theuniversefantastic.co', 'TUF.CO');
   $mail->addReplyTo($clean['email'], $clean['name']);
   $mail->addAddress(SEND_TO);
   $mail->Subject = SUBJECT;

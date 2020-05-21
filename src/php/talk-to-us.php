@@ -24,7 +24,7 @@
   );
 
   $body = sprintf(
-    'Ding ding! You’ve just received a new transmission from %s, contactable via %s',
+    'Ding ding! You\'ve just received a new transmission from %s, contactable via %s',
     $clean['name'],
     $clean['email']
   );

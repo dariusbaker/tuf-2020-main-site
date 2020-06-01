@@ -14,7 +14,7 @@ export const HOME_WHAT_WE_DO_DATA = {
     },
     {
       title: 'Content, Copywriting & Communications',
-      content: 'For creative pizzazz and on-point comms messaging, look no futher. We do it all.',
+      content: 'For creative pizzazz and on-point comms messaging, look no further. We do it all.',
       footnote: '',
       image: '/assets/img/tuf-do-cc.jpg',
       href: '/case-studies?show=Branding',

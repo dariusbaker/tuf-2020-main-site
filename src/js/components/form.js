@@ -90,10 +90,6 @@ export default class Form {
     classNames.forEach((name) => {
       this._msgElem.classList.add(name);
     });
-
-    setTimeout(() => {
-      this._removeMessage();
-    }, 5000);
   }
 
   _removeMessage() {

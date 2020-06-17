@@ -8,7 +8,7 @@ class CaseStudyBase {
   _init() {
     AOS.init({
       startEvent: 'DOMContentLoaded',
-      once: true
+      once: false
     });
   }
 }

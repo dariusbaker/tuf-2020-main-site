@@ -1,5 +1,14 @@
 export const HOME_CASE_STUDIES_DATA = [
   {
+    slug: 'facebook-watch',
+    title: 'Facebook Watch SG Guide',
+    image: '/assets/img/case-studies/fb-watch/thumbnail.jpg',
+    tags: [
+      'Comms',
+      'Design'
+    ],
+  },
+  {
     slug: 'starbucks-bogo',
     title: 'Starbucks BOGO Promo',
     image: '/assets/img/case-studies/starbucks/thumbnail.jpg',

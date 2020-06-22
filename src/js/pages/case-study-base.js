@@ -6,7 +6,9 @@ class CaseStudyBase {
   }
 
   _init() {
-    AOS.init({ once: true });
+    $(document).ready(function() {
+      setTimeout(function(){ AOS.init({once: true}); }, 500);
+    });
   }
 }
 

@@ -1,5 +1,15 @@
 export const HOME_CASE_STUDIES_DATA = [
   {
+    slug: 'aia-financial-sense',
+    title: 'AIA Financial Sense',
+    image: '/assets/img/case-studies/aia-fs/thumbnail.jpg',
+    tags: [
+      'Comms',
+      'Design',
+      'Motion Graphics'
+    ],
+  },
+  {
     slug: 'facebook-watch',
     title: 'Facebook Watch SG Guide',
     image: '/assets/img/case-studies/fb-watch/thumbnail.jpg',

@@ -1,0 +1,607 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+$whenever-color-blue: #1877f2;
+$creators-color-beige: #eae0da;
+$OGS-color-pink: #f8c9cf;
+
+/** Override case-study-header.scss **/
+.cs-header {
+
+  &__content-wrapper {
+    @media screen and (max-width: rem(1023)) {
+      width: 90%;
+    }
+
+    @media screen and (width: rem(1024)) {
+      width: 70%;
+    }
+  }
+  
+  &__tags {
+    @media screen and (max-width: rem(1023)) {
+      justify-content: flex-start;
+      margin-left: rem(50);
+    }
+  }
+}
+
+.cs-container {
+  max-width: rem(1920);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
+.animate_image {
+  animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: hover;
+  animation-timing-function: ease-in-out;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 100%;
+  }
+}
+
+.intro {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+
+  &__left {
+    align-self: center;
+
+    @media screen and (min-width: rem(1920)) {
+      padding: 0 rem(150);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: rem(435);
+    max-width: rem(870);
+
+    @media screen and (min-width: rem(1920)) {
+      padding: 0 rem(100) 0 0;
+    }
+  }
+
+  &__image {
+    transform: translateY(22%) !important;
+
+    @media screen and (min-width:rem(800)) and (max-width: rem(1000))
+    {
+      width: rem(875);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: rem(875);
+    }
+  }
+
+}
+
+.project-popcorn {
+  background-image: url('/assets/img/case-studies/fb-watch/popcorn_background.jpg');
+  background-size: cover;
+  background-position: 70% 0;
+  z-index: 2;
+  color: $tuf-color-white;
+
+  @media screen and (max-width: rem(600)) {
+    background-position: 65% 0;
+  }
+
+  &__text__column {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: rem(50);
+    margin-bottom: rem(50);
+
+    @media screen and (max-width: rem(600)) {
+      margin-top: rem(30);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      background-image: url('/assets/img/case-studies/fb-watch/popcorn_text_mobile.png');
+      min-height: rem(320);
+    }
+
+    @media screen and (min-width: rem(1025)) {
+      background-image: url('/assets/img/case-studies/fb-watch/popcorn_image_holder.png');
+    }
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: rem(36);
+
+    @media screen and (max-width: rem(1024)) {
+      display: none;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0;
+
+    @media screen and (min-width: rem(768)) {
+      padding-top: rem(50);
+    }
+  }
+  
+  img {
+    width: 100%;
+  }
+}
+
+.project-cover {
+  background-image: url('/assets/img/case-studies/fb-watch/cover_background.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__left {
+    @media screen and (min-width: rem(768)) {
+      //padding: rem(50) !important;
+      padding: 0 !important;
+    }
+  }
+
+  &__image__left {}
+
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      padding: 0 !important;
+    }
+  }
+
+  &__image__right {
+    @media screen and (min-width: rem(768)) {
+      margin-right: rem(-100) !important;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: rem(960);
+  }
+}
+
+.project-whenever {
+  color: $tuf-color-white;
+  background-color: $whenever-color-blue;
+
+  @media screen and (min-width: rem(200)) {
+    width: 100vw;
+  }
+
+  &__image__flower {
+    display: none;
+
+    @media screen and (min-width: rem(1920)) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: rem(30);
+    }
+  }
+
+  &__image__emojis {
+    position: absolute;
+    bottom: rem(100);
+    right: rem(300);
+  }
+
+  &__left {
+    background-image: url('/assets/img/case-studies/fb-watch/whenever_image_left.jpg');
+    background-size: cover;
+    background-position: bottom right;
+    height: rem(480);
+
+    @media screen and (max-width: rem(1023)) {
+      min-width: 100vw;
+    }
+  }
+
+  &__right {
+    background-image: url('/assets/img/case-studies/fb-watch/whenever_image_right.jpg');
+    background-size: cover;
+    background-position: right;
+
+    @media screen and (min-width: rem(2000)) {
+      min-width: 60vw;
+      height: rem(480);
+    }
+  }
+
+  &__images__row {
+    @media screen and (min-width: rem(2000)) {
+      width: 100vw;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    min-height: rem(190);
+  }
+}
+
+.project-creators {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+
+  color: $tuf-color-gray;
+  background-color: $creators-color-beige;
+
+  @media screen and (max-width: rem(599)) {
+    background-image: url('/assets/img/case-studies/fb-watch/creators_background_mobile.png');
+  }
+
+  @media screen and (min-width: rem(600)) {
+    background-image: url('/assets/img/case-studies/fb-watch/creators_background.jpg');
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__images__row {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__images__column {
+    position: relative;
+  }
+
+  &__image__left {
+    position: absolute;
+    bottom: 0;
+    left: rem(10);
+
+    @media screen and (max-width: rem(600)) {
+      width: 80%;
+      bottom: rem(-40);
+      left: rem(-100);
+    }
+  }
+
+  &__cupcakes__row {}
+
+  &__cupcakes__column {
+    padding: 0 !important;
+  }
+
+  &__image__cupcakes {
+    @media screen and (max-width: rem(1024)) {
+      display: none;
+    }
+  }
+
+  &__image__right,
+  &__image__emojis {
+    position: absolute;
+    bottom: 0;
+    right: rem(10);
+
+    @media screen and (max-width: rem(600)) {
+      width: 50%;
+      right: rem(-10);
+    }
+
+    @media screen and (min-width: rem(1950)) {
+      position: relative;
+      transform: translateY(30%) !important;
+    }
+  }
+}
+
+.project-OGS {
+  color: $tuf-color-gray;
+  background-color: $OGS-color-pink;
+
+  &__top__left,
+  &__top__right,
+  &__bottom__left,
+  &__bottom__right {
+    width: 100%;
+    min-height: rem(280);
+    box-sizing: border-box;
+
+    @media screen and (min-width: rem(1024)) {
+      height: rem(560);
+    }
+  }
+
+  &__top__left {
+    background-image: url('/assets/img/case-studies/fb-watch/ogs_image_homegrown.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (max-width: rem(420)) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
+
+  &__top__right {
+    background-image: url('/assets/img/case-studies/fb-watch/ogs_image_capture.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    align-items: flex-start;
+    height: rem(560);
+  }
+
+  &__top__right__text {
+    position: absolute;
+    width:85%;
+  }
+
+  &__bottom__left {
+    background-image: url('/assets/img/case-studies/fb-watch/ogs_storytellers_background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    align-items: flex-end;
+
+    @media screen and (max-width:rem(1023)) {
+      height: rem(700);
+    }
+  }
+
+  &__bottom__left__text {
+    position: absolute;
+    width: 50%;
+    margin-left: rem(50);
+
+    @media screen and (max-width: rem(834)) {
+      width: 80%;
+      margin: 0;
+      top: 20%;
+    }
+
+    @media screen and (width: rem(600)) {
+      top: 30%;
+    }
+
+    @media screen and (min-width:rem(835)) and (max-width: rem(1024))
+    {
+      width: 80%;
+      margin: 0;
+      top: 30%;
+    }
+  }
+
+  &__bottom__left__image {
+    position: absolute;
+    bottom: 0;
+    left: rem(10);
+
+    @media screen and (max-width: rem(900)) {
+      bottom: rem(-65);
+    }
+
+    @media screen and (min-width:rem(901)) and (max-width: rem(1024))
+    {
+      bottom: rem(-130);
+    }
+  }
+
+  &__bottom__right {
+    background-image: url('/assets/img/case-studies/fb-watch/ogs_image_pro_tips.jpg');
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (max-width: rem(420)) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cs-container {
+    @media screen and (min-width: rem(2000)) {
+      width: 100vw;
+      margin: 0;
+    }
+  }
+
+  .cs-container__row {
+    @media screen and (min-width: rem(2000)) {
+      width: 100vw;
+    }
+  }
+}
+
+.project-einvite {
+  background-image: url('/assets/img/case-studies/fb-watch/einvite_background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+
+  color: $tuf-color-white;
+
+  &__left,
+  &__middle,
+  &__right {
+    box-sizing: border-box;
+  }
+
+  &__left {
+    padding: 0 !important;
+
+    @media screen and (max-width: rem(1023)) {
+      display: none !important;
+    }
+  }
+
+  &__image__left {
+    min-width: rem(200);
+    max-width: rem(401);
+    align-self: flex-end;
+
+    @media screen and (min-width:rem(1024)) and (max-width: rem(1365)) {
+      position: absolute;
+      left: -25%;
+      bottom: 0;
+    }
+  }
+
+  &__middle {
+    padding: 0 !important;
+  }
+
+  &__image__middle {
+    min-width: rem(241);
+    max-width: rem(582);
+    align-self: center;
+
+    @media screen and (max-width: rem(1023)) {
+      width: 100% !important;
+    }
+  }
+
+  &__image__middle {
+    overflow: hidden !important;
+    min-width: rem(291) !important;
+    max-width: rem(582) !important;
+  }
+
+  &__right {
+    padding: 0 !important;
+
+    @media screen and (max-width: rem(1023)) {
+      display: none !important;
+    }
+  }
+
+  &__image__right {
+    min-width: rem(166);
+    max-width: rem(332);
+    align-self: flex-end;
+
+    @media screen and (min-width:rem(1024)) and (max-width: rem(1365)) {
+      position: absolute;
+      right: -25%;
+      bottom: 0;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+.project-end {
+  background-image: url('/assets/img/case-studies/fb-watch/end_background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  min-height: rem(400);
+  
+  color: $tuf-color-gray;
+
+  @media screen and (max-width: rem(1024)) {
+    background-position-x: left;
+  }
+
+  &__emojis {
+    display: none;
+
+    @media screen and (min-width: rem(1366)) {
+      display: block;
+      position: absolute;
+      left: rem(20);
+      width: 98% !important;
+    }
+  }
+
+  &__left {
+    padding-bottom: 0 !important;
+
+    @media screen and (min-width: rem(768)) {
+      justify-content: flex-end;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__image__left {
+    min-width: rem(201);
+    max-width: rem(402);
+    align-self: flex-end;
+  }
+
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      justify-content: flex-start;
+      padding-left: rem(50) !important;
+    }
+  }
+
+  &__text {}
+
+  .cs-container__column {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__content__row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
+  img {
+    width: 100%;
+  }
+}

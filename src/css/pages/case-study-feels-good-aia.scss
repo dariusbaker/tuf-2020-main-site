@@ -1,0 +1,844 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+.cs-container {
+  max-width: rem(1920);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 100%;
+  }
+}
+
+.intro {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+  .awards__warpper {
+    position: relative;
+    padding-bottom: rem(26);
+    .tuf-button--link {
+      font-size: rem(12);
+      border-radius: 0 0 rem(12) rem(12) !important;
+      width: rem(100);
+      padding: rem(5) rem(10);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: rem(-50);
+      &:before {
+        border-radius: 0 0 rem(12) rem(12) !important;
+      }
+    }
+    .more {
+      display: none;
+    }
+    .less {
+      display: block;
+    }
+    @media screen and (min-width: rem(1024)) {
+      padding-bottom: rem(0);
+      .tuf-button--link { 
+        display: none;
+      }     
+    }
+  }
+  .awards {
+    background: $tuf-color-yellow;
+    box-shadow: inset -1px 0px 19px 0px rgba(0,0,0,0.15);
+    border-radius: 0 0 rem(24) rem(24);
+    margin: 0 rem(-15);
+    position: relative;
+    overflow: hidden;    
+    background-image: url('/assets/img/case-studies/feels-good-aia/award-symbol-mobile.png');
+    background-repeat: no-repeat;
+    background-position: right rem(28);
+    @media screen and (min-width: rem(1024)) {
+          height: inherit;
+          margin: 0 rem(32);
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          zoom: 85%;
+          background-image: url('/assets/img/case-studies/feels-good-aia/award-symbol.png');
+          background-position: center bottom;
+          background-size: auto rem(80);
+          padding-bottom: rem(0);
+    }
+    @media screen and (min-width: rem(1366)) {
+      zoom: 90%;
+      margin: 0 rem(5);
+      background-size: auto rem(100);
+    }
+    @media screen and (min-width: rem(1920)) {
+      margin: 0 rem(100);
+      zoom: 100%;
+      background-size: auto rem(110);
+    }
+    &__logo {
+      margin-top: rem(28);
+      margin-left: rem(26);
+      width: rem(256);
+      @media screen and (min-width: rem(1024)) {
+        margin-top: inherit;
+        margin-left: rem(-20);
+        max-height: rem(45);
+        width: auto;
+      }
+      @media screen and (min-width: rem(1366)) {
+        max-height: rem(62);
+      }
+      @media screen and (min-width: rem(1920)) {
+        margin-left: rem(40);
+      }
+    }
+    h3 {
+      color: $tuf-color-primary;
+      margin: rem(18) 0 rem(30) rem(26);
+      font-size: rem(16);
+      @media screen and (min-width: rem(640)) {
+        text-align: center;
+      }
+      @media screen and (min-width: rem(1024)) {
+        text-align: left;
+        margin: rem(15) 0 0 rem(-20);
+        background: url('../../img/case-studies/feels-good-aia/award-diamond.png') no-repeat top left;
+        background-size: rem(100) rem(100);
+        padding: rem(14) 0 rem(24) rem(42);
+        font-size: rem(18);
+        line-height: rem(20);
+      } 
+      @media screen and (min-width: rem(1366)) {
+        margin: rem(20) rem(162) 0 rem(0);
+        padding-top: rem(18);
+        background-size: auto auto;
+        font-size: rem(24);
+        line-height: inherit;
+      }
+      @media screen and (min-width: rem(1920)) {
+        margin: rem(20) rem(162) 0 rem(20);
+      }
+    }
+    &__categories {
+       max-width: 212px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      margin-bottom: rem(30);
+      @media screen and (min-width: rem(640)) {
+        max-width: rem(408);
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(20);
+      }
+      @media screen and (min-width: rem(1024)) {
+          margin: unset;
+          position: absolute;
+          left: calc(50% + 130px);
+          zoom: 85%;
+      }
+      @media screen and (min-width: rem(1366)) {
+        max-width: rem(430);
+        width: rem(430);
+        position: absolute;
+        left: calc(50% + 130px);
+        zoom: 100%;
+      }
+      h4 {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $tuf-color-primary;
+        font-size: rem(14);
+        margin-bottom: rem(10);
+        @media screen and (min-width: rem(1024)) {
+          margin-bottom: rem(0);
+        }
+      }
+      &__column {
+        border: 2px solid #eb0a73;
+        padding: rem(9) rem(18);
+        font-size: rem(14);
+        strong {
+          color: $tuf-color-primary;
+          display: block;
+        }
+        &__left {
+          border-bottom: none;
+        }
+        @media screen and (min-width: rem(640)) {
+          width: 50%;
+          margin-top: rem(5);
+          margin-bottom: rem(5);
+          padding: rem(5) rem(13);
+          &__left {
+            border-bottom: 2px solid #eb0a73;
+            border-right-width: 0;
+          }
+        }
+        @media screen and (min-width: rem(1366)) {
+          padding: rem(8) rem(18)
+        }
+      }
+    }
+    &__ball {
+      position: absolute;
+      bottom: rem(-57);
+      left: rem(35);
+      @media screen and (min-width: rem(1024)) {
+        bottom: inherit;
+        left: inherit;
+        right: rem(-55);
+        top: rem(-45);
+      }
+      @media screen and (min-width: rem(1920)) {
+        top: rem(-32);
+        right: rem(40);
+      }
+    }
+    &__line-grf{
+      position: absolute;
+      bottom: rem(30);
+      right: rem(-18);
+      @media screen and (min-width: rem(1024)) {
+        bottom: inherit;
+        top: rem(48);
+        z-index: 1;
+        right: rem(-24);
+      }
+      @media screen and (min-width: rem(1920)) {
+        top: rem(62);
+        right: rem(190);
+      }
+    }
+    &__ring-bottom {
+      position: absolute;
+      left: rem(-10);
+      top: calc(100% - 178px);
+      @media screen and (min-width: rem(1024)) {
+        left:calc(50% + 35px);
+        top: inherit;
+        bottom: rem(-10);
+      }
+      @media screen and (min-width: rem(1366)) {
+        left:calc(50% + 40px);
+      }
+      @media screen and (min-width: rem(1920)) {
+        left:calc(50% + 50px);
+      }
+    }
+  }
+  .hide-more {
+    .awards__ring-bottom, .awards__categories,  .awards__ball, .awards__line-grf {
+      display: none;
+    }
+    .less {
+      display: none !important;
+    }
+    .more {
+      display: block !important;
+    }
+    @media screen and (min-width: rem(1024)) {
+      .awards__ring-bottom, .awards__ball, .awards__line-grf {
+        display: block;
+      }
+      .awards__categories {
+        display: flex;
+      }
+    }
+  }
+  .cs-container__row {
+    margin: 0;
+  }
+  &__left {
+    padding: rem(24) rem(24) rem(50);
+    @media screen and (min-width: rem(1024)) {
+      padding-top: rem(0);
+      padding-bottom: rem(0);
+      display: flex;
+      align-items: center;
+      height: rem(250);
+    }
+  }
+  &__right {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    text-align: center;
+    @media screen and (min-width: rem(768)) {
+      padding-top: rem(40);
+    }
+     @media screen and (min-width: rem(1024)) {
+      padding-top: 0;
+      text-align: left;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  &__text {
+    max-width: rem(240);
+    @media screen and (min-width: rem(768)) {
+      margin-bottom: rem(20);
+    }
+    @media screen and (min-width: rem(1024)) {
+      margin-bottom: inherit;
+      align-self: center;
+      max-width: rem(272);
+    }
+    @media screen and (min-width: rem(1366)) {
+      max-width: rem(360);
+    }
+    @media screen and (min-width: rem(1920)) {
+      max-width: rem(360);
+      margin-left: rem(-60);
+    }
+  }
+   &__clip_characters {
+    max-width: rem(86);
+    height: rem(105);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    @media screen and (min-width: rem(1024)) {
+      max-width: rem(130);
+      height: rem(190);
+      margin-left: inherit;
+      margin-right: inherit;
+      position: absolute;
+      right: rem(46);
+      bottom: 0;
+    }
+    @media screen and (min-width: rem(1366)) {
+      max-width: rem(172);
+      height: rem(210);
+      right: rem(46);
+    }
+    @media screen and (min-width: rem(1920)) {
+      right: rem(182);
+    }
+    img {
+      width: rem(86);
+      height: auto;
+      @media screen and (min-width: rem(1024)) {
+        width: rem(130);
+        height: rem(190);
+      }
+      @media screen and (min-width: rem(1366)) {
+        width: rem(172);
+        height: rem(210);
+      }
+      @media screen and (min-width: rem(1920)) {
+        width: rem(172);
+        height: rem(210);
+      }
+    }
+  }
+}
+
+.over-twenty {
+  position: relative;
+  color: $tuf-color-white;
+  background-color: $tuf-color-crimson;
+  @media screen and (min-width: rem(1366)) {
+    .cs-container__column {
+      padding-left: rem(20);
+    }
+  }
+  @media screen and (min-width: rem(1920)) {
+    .cs-container__column {
+      padding-left: rem(160);
+    }
+  }
+  &__left {
+    padding-top: 0;
+    @media screen and (min-width: rem(1024)) {
+      padding-top: rem(40);
+      padding-bottom: rem(40);
+      padding-left: rem(15);
+    }
+    @media screen and (min-width: rem(1366)) {
+      padding-top: rem(0);
+      padding-bottom: rem(0);
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.manifesto {
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+
+  .cs-container__row {
+    max-width: rem(1920);
+    margin: 0 auto;
+  }
+
+  &__left,
+  &__right {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
+  &__left {
+    .cs-container {
+      padding: 0;
+    }
+    padding-bottom: rem(0);
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(23);
+      padding-left: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding: rem(62) rem(30) rem(62) rem(32);
+    }
+    @media screen and (min-width: rem(1440)) {
+      padding-left: rem(30 );
+      padding-right: rem(32);
+    }
+    @media screen and (min-width: rem(1920)) {
+      padding: rem(80) rem(62);
+    }
+
+    &__copy-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__copy {
+      position: relative;
+      width: 100%;
+      padding: 0 0 rem(38);
+      @media screen and (min-width: rem(1024)) {
+        padding: 0 rem(30) rem(50);
+      }
+      @media screen and (min-width: rem(1366)) {
+        padding-left: rem(70 );
+        padding-right: rem(50);
+      }
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(182);
+        padding-right: rem(182);
+      }
+    }
+  }
+
+  &__right {
+    .cs-container {
+      padding: 0;
+    }
+    @media screen and (min-width: rem(1024)) {
+      padding-left: rem(23);
+      padding-right: rem(23);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding: rem(62) rem(32) rem(62) rem(30);
+    }
+    @media screen and (min-width: rem(1440)) {
+      padding-left: rem(30 );
+      padding-right: rem(32);
+    }
+    @media screen and (min-width: rem(1920)) {
+      padding: rem(80) rem(62);
+    }
+
+    &__copy {
+      padding: 0;
+      padding-top: rem(35);
+      @media screen and (min-width: rem(1024)) {
+        padding-left: rem(15);
+        padding-right: rem(15);
+        padding-top: rem(50);
+      }
+      @media screen and (min-width: rem(1366)) {
+        padding-left: rem(50);
+        padding-right: rem(50);
+      }
+      @media screen and (min-width: rem(1920)) {
+        padding-left: rem(182);
+        padding-right: rem(182);
+      }
+    }
+  }
+
+  .pillar-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media screen and (min-width: rem(1024)) {
+      justify-content: space-between;
+      margin-bottom: rem(100);
+    }
+    @media screen and (min-width: rem(1366)) {
+      max-width: rem(1205);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    li {
+      list-style: none;
+      width: 50%;
+      text-align: center;
+      margin-bottom: rem(28);
+      @media screen and (min-width: rem(640)) {
+        width: 33.333%;
+      }
+      @media screen and (min-width: rem(768)) {
+        width: 20%;
+      }
+      @media screen and (min-width: rem(1024)) {
+        width: auto;
+        margin-bottom: rem(0);
+      }
+    }
+  }
+  .hint-info {
+    @media screen and (min-width: rem(1024)) {
+      padding: 0 rem(110);
+    }
+    @media screen and (min-width: rem(1366)) {
+      padding: 0 rem(50);
+    }
+  }
+  &__strategic {
+    display: block;
+    width: 100%;
+    text-align: center;
+    img {
+      width: auto;
+    }
+    @media screen and (min-width: rem(768)) {
+      padding-bottom: 5%;
+    }
+    @media screen and (min-width: rem(1024)) {
+      padding-bottom: 0;
+    }
+    &__img {
+      display: none;
+      @media screen and (min-width: rem(1024)) {
+        display: inline-block;
+        margin: rem(45) 0;
+      }
+      @media screen and (min-width: rem(1366)) {
+      }
+      @media screen and (min-width: rem(1920)) {
+        margin: rem(56) 0;
+      }
+    }
+    &__mobile {
+      display: inline-block;
+      margin: rem(30) auto rem(54);
+      @media screen and (min-width: rem(1024)) {
+        display: none;
+      }
+    }
+  }
+  .hr-logo {
+    padding: rem(28) 0;
+    &__left {
+      padding: rem(28) 0;
+      video {
+        max-width: rem(144);
+        height: rem(78);
+        margin: 0 auto;
+        @media screen and (min-width: rem(1024)) {
+          max-width: rem(184);
+          height: rem(100);
+        }
+        @media screen and (min-width: rem(1366)) {
+          max-width: rem(245);
+          height: rem(132);
+        }
+        @media screen and (min-width: rem(1920)) {
+          max-width: rem(328);
+          height: rem(176);
+        }
+      }
+    }
+    &__right {
+      text-align: center;
+      padding: rem(28) 0;
+      video {
+        max-width: rem(276);
+        height: rem(78);
+        margin: 0 auto;
+        @media screen and (min-width: rem(1024)) {
+          max-width: rem(353);
+          height: rem(100);
+        }
+        @media screen and (min-width: rem(1366)) {
+          max-width: rem(471);
+          height: rem(132);
+        }
+        @media screen and (min-width: rem(1920)) {
+          max-width: rem(629);
+          height: rem(176);
+        }
+      }
+    }
+  }
+}
+
+.feelgood__graphic {
+  background: url('../../img/case-studies/feels-good-aia/feelgood__graphic.png') no-repeat bottom left #fff;
+  background-size: rem(210);
+  @media (min-width: rem(1366)) {
+    background-size: inherit;
+  }
+
+}
+.tagline {
+  position: relative;
+  color: $tuf-color-white;
+  
+  text-align: center;
+  background: #ff9900;
+  background: -moz-linear-gradient(top,  #ff9900 0%, #ff9900 33%, #f15a22 33%, #f15a22 66%, #f15a22 66%, #fed3a0 66%, #fed3a0 100%);
+  background: -webkit-linear-gradient(top,  #ff9900 0%,#ff9900 33%,#f15a22 33%,#f15a22 66%,#f15a22 66%,#fed3a0 66%,#fed3a0 100%);
+  background: linear-gradient(to bottom,  #ff9900 0%,#ff9900 33%,#f15a22 33%,#f15a22 66%,#f15a22 66%,#fed3a0 66%,#fed3a0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#fed3a0',GradientType=0 );
+  padding: rem(30) 0;
+  @media (min-width: rem(768)) {
+    padding-top: rem(0);
+    padding-bottom: rem(0);
+  }
+  @media (min-width: rem(1024)) {
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+  }
+  @media (min-width: rem(1920)) {
+    padding-top: rem(63);
+    padding-bottom: rem(63);
+  }
+  &__hero {
+    width: 100%;
+    margin: rem(30) auto 0;
+    max-width: rem(1476);
+    @media (min-width: rem(1024)) {
+      max-width: rem(810);
+    }
+    @media (min-width: rem(1366)) {
+      max-width: rem(1123);
+    }
+    @media (min-width: rem(1920)) {
+      max-width: rem(1483);
+    }
+  }
+
+  .cs-container__column {
+    text-align: center;
+  }
+
+  &__left,
+  &__right {
+    @media screen and (min-width: rem(768)) {
+      max-width: 50%;
+    }
+  }
+
+  &__left {
+    &__content {
+      text-align: center;
+      @media screen and (min-width: rem(768)) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    max-width: rem(236);
+
+    margin-bottom: rem(35);
+  }
+
+  &__motif--r {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: rem(200, 24);
+    height: auto;
+
+    @media (min-width: rem(1024)) {
+      height: 100%;
+      max-width: rem(200);
+    }
+  }
+
+  &__motif--br {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    max-width: rem(137, 24);
+
+    @media (min-width: rem(1024)) {
+      max-width: rem(137, 16);
+    }
+  }
+}
+
+.collaterals {
+  background: #fed3a0;
+  padding: rem(18) 0;
+  @media (min-width: rem(1024)) {
+    padding: rem(60) rem(15);
+  }
+  p {
+    padding-left: rem(15);
+    @media (min-width: rem(1920)) {
+      padding-left: rem(180);
+    }
+  }
+  img {
+    @media (min-width: rem(1920)) {
+      width: 100%;
+    }
+  }
+  .collateral-banner {
+      &__left {
+         text-align: center;
+         padding: rem(18) rem(24);
+        @media (min-width: rem(1366)) {
+          padding: rem(42) rem(60);
+        }
+        @media (min-width: rem(1920)) {
+          padding: rem(57) rem(85);
+        }
+      }
+      &__mid {
+        text-align: center;
+        padding: rem(18) rem(24);
+        @media (min-width: rem(1366)) {
+          padding: rem(42) rem(60);
+        }
+        @media (min-width: rem(1920)) {
+          padding: rem(57) rem(85);
+        }
+      }
+      &__right {
+        text-align: center;
+        padding: rem(18) rem(24);
+        @media (min-width: rem(1366)) {
+          padding: rem(42) rem(60);
+        }
+        @media (min-width: rem(1920)) {
+          padding: rem(57) rem(85);
+        }
+      }     
+  }
+}
+
+.lead {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+  &__content{
+    padding: 0;
+    @media (min-width: rem(1024)) {
+          display: flex;
+          align-items: center;
+    }
+  }
+  &__left {
+    @media (min-width: rem(768)) {
+      width: 100%;
+    }
+    @media (min-width: rem(1024)) {
+      max-width: rem(356);
+      height: 100%;
+    }
+    @media (min-width: rem(1366)) {
+      max-width: rem(457);
+    }
+    @media (min-width: rem(1920)) {
+      max-width: rem(640);
+    }
+  }
+  &__right {
+    padding: rem(54) rem(24) rem(156);
+    position: relative;
+    @media (min-width: rem(1024)){
+      padding: rem(50) rem(62);
+      position: initial;
+    }
+    @media (min-width: rem(1366)){
+      padding: 0 rem(80);
+    }
+    @media (min-width: rem(1920)){
+      padding: 0 rem(320) 0 rem(60);
+    }
+  }
+  &__ring-top {
+    position: absolute;
+    top:0;
+    right: rem(60);
+    width: rem(56);
+    @media (min-width: rem(1920)){
+      width: rem(102);
+    }
+  }
+   &__ring-bottom {
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: rem(156);
+    @media (min-width: rem(1920)){
+      width: rem(320);
+    }
+  }
+   .lead_title {
+      margin-top: rem(54);
+      @media (min-width: rem(1024)){
+        margin-top: rem(45);
+        max-width: rem(408);
+      }
+      @media (min-width: rem(1920)){
+        max-width: inherit;
+      }
+  }
+ }

@@ -6,7 +6,7 @@ class CaseStudyBase {
   }
 
   _init() {
-    AOS.init({ once: true });
+    AOS.init({ startEvent: 'load', once: true });
   }
 }
 

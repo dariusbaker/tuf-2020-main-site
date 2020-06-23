@@ -6,8 +6,11 @@ class CaseStudyBase {
   }
 
   _init() {
-    $(document).ready(function() {
-      setTimeout(function(){ AOS.init({once: true}); }, 500);
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        setTimeout(function () {
+          AOS.init({once: true});
+        }, 500);
     });
   }
 }

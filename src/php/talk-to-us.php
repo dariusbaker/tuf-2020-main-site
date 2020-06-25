@@ -53,7 +53,7 @@
   $mail->setFrom('noreply@theuniversefantastic.co', 'TUF.CO');
   $mail->addReplyTo($clean['email'], $clean['name']);
   $mail->addAddress(SEND_TO);
-  $mail->Subject = SUBJECT;
+  $mail->Subject = sprintf('New transmission received from %s', $clean['name']);
   $mail->msgHTML($body);
 
   if ($mail->send()) {

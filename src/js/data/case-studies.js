@@ -9,7 +9,7 @@ export const HOME_CASE_STUDIES_DATA = [
            slug: 'feels-good-aia',
            title: '#feelsgoodtobeAIA',
            image: '/assets/img/case-studies/feels-good-aia/thumbnail.jpg',
-           tags: ['Branding', 'Design', 'Internal Comms'],
+           tags: ['Employer Branding', 'Design', 'Internal Comms'],
          },
          {
            slug: 'fb-comms',

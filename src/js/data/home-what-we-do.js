@@ -17,7 +17,7 @@ export const HOME_WHAT_WE_DO_DATA = {
       content: 'For creative pizzazz and on-point comms messaging, look no further. We do it all.',
       footnote: '',
       image: '/assets/img/tuf-do-cc.jpg',
-      href: '/case-studies?show=Branding',
+      href: '/case-studies?show=Comms',
       cta_label: 'View case studies'
     },
     {
@@ -25,7 +25,7 @@ export const HOME_WHAT_WE_DO_DATA = {
       content: 'Make brand culture, office culture. Because it’s your people that drive your business. We can help.',
       footnote: 'Grants available for this service<sup>*</sup>.',
       image: '/assets/img/tuf-do-hre.jpg',
-      href: '/case-studies?show=Branding',
+      href: '/case-studies/?show=Employer+Branding',
       cta_label: 'View case studies'
     }
   ]

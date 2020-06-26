@@ -385,14 +385,21 @@
     padding: rem(20) rem(42);
     order: 1;
     position: relative;
+    overflow: hidden;
     &:after {
       content: "";
       position: absolute;
       width: rem(290);
       height: rem(290);
-      right: 0;
-      bottom: rem(-160);
+      right: rem(-30);
+      bottom: rem(-30);
       background: url('/assets/img/case-studies/fb-comms/work_bg.png') no-repeat right bottom;
+      background-size: 50% 50%;
+      @media screen and (min-width: rem(768)) {
+        right: 0;
+        bottom: rem(-160);
+        background-size: 100% 100%;
+      }        
       @media screen and (min-width: rem(1920)) {
         bottom: rem(0);
       }

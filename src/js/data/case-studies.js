@@ -19,6 +19,25 @@ export const HOME_CASE_STUDIES_DATA = [
     ],
   },
   {
+    slug: 'feels-good-aia',
+    title: '#FeelsgoodtobeAIA',
+    image: '/assets/img/case-studies/feels-good-aia/thumbnail.jpg',
+    tags: [
+      'Employer Branding',
+      'Design',
+      'Internal Comms'
+    ],
+  },
+  {
+    slug: 'fb-comms',
+    title: 'Facebook Communications',
+    image: '/assets/img/case-studies/fb-comms/thumbnail.jpg',
+    tags: [
+      'Comms',
+      'Copywriting'
+    ],
+  },
+  {
     slug: 'starbucks-bogo',
     title: 'Starbucks BOGO Promo',
     image: '/assets/img/case-studies/starbucks/thumbnail.jpg',

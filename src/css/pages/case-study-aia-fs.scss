@@ -1,0 +1,807 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+$actionplan-color: #ffe9ce;
+$anchor-color: #eee;
+$endgoal-color: #efe9e4;
+
+$video-width-800: rem(800);
+$video-width-600: rem(600);
+$video-width-450: rem(450);
+$video-width-320: rem(320);
+
+/** Override case-study-header.scss **/
+.cs-header {
+
+  &__content-wrapper {
+    @media screen and (max-width: rem(1023)) {
+      width: 90%;
+    }
+
+    @media screen and (width: rem(1024)) {
+      width: 70%;
+    }
+  }
+
+  &__tags {
+    @media screen and (max-width: rem(1023)) {
+      justify-content: flex-start;
+      margin-left: rem(50);
+    }
+  }
+}
+
+.cs-container {
+  max-width: rem(2560);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 100%;
+  }
+}
+
+.project-diversification {
+  position: relative;
+  color: $tuf-color-gray;
+  background-color: $tuf-color-white;
+
+  &__right {
+    @media screen and (max-width: rem(1280)) {
+      padding-left: rem(20) !important;
+    }
+
+    @media screen and (min-width: rem(1281)) and (max-width: rem(1919)) {
+      padding-left: rem(50) !important;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-left: rem(80) !important;
+    }
+  }
+
+  &__image__left {
+    position: absolute;
+    left: 0;
+
+    @media screen and (max-width: rem(1024)) {
+      display: none;
+    }
+  }
+
+  &__image__right {
+    position: absolute;
+    right: rem(100);
+    bottom: 0;
+
+    @media screen and (max-width: rem(1919)) {
+      right: rem(50);
+    }
+  }
+
+  &__text__left {
+    padding-bottom: rem(50);
+
+    @media screen and (min-width: rem(1281)) and (max-width: rem(1919)) {
+      margin-left: 35%;
+      width: 70%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-left: 20%;
+      width: 100%;
+    }
+  }
+
+  &__text__right {
+    @media screen and (max-width: rem(1023)) {
+      padding: rem(30) 0 rem(250);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      padding: rem(100) rem(120) 0 0;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding: rem(100) rem(50) 0;
+    }
+  }
+
+  &__video__left,
+  &__video__right {
+    @media screen and (max-width: rem(834)) {
+      width: $video-width-320;
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+      width: $video-width-450;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      width: $video-width-600;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: $video-width-800;
+    }
+  }
+
+  &__video__left {
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      margin-left: -3%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-left: -30%;
+    }
+
+    @media screen and (min-width: rem(1921)) {
+      margin-left: 20%;
+    }
+  }
+
+  &__video__left,
+  &__video__right {
+    @media screen and (max-width: rem(600)) {
+      align-self: center;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @media screen and (min-width: rem(768)) {
+      width: 50%;
+    }
+  }
+}
+
+.project-actionplan {
+  color: $tuf-color-gray;
+  background-color: $actionplan-color;
+  z-index: 2;
+
+  &__col__top {
+    padding-bottom: 0;
+  }
+
+  &__text01 {
+    order: 1;
+
+    position: absolute;
+    top: rem(110);
+
+    @media screen and (min-width: rem(600)) and (max-width: rem(834)) {
+      top: rem(50);
+    }
+
+    @media screen and (max-width: rem(1919)) {
+      left: 0;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      left: rem(50);
+    }
+  }
+
+  &__text__top {
+    order: 2;
+    width: 40%;
+
+    @media screen and (max-width: rem(1023)) {
+      width: 100%;
+    }
+  }
+
+  &__mobile__spacer {
+    @media screen and (max-width: rem(599)) {
+      margin-top: 20%;
+      display: block;
+    }
+  }
+
+  &__video__top {
+    order: 3;
+
+    @media screen and (max-width: rem(1023)) {
+      margin-top: rem(50);
+      margin-bottom: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      align-self: flex-end;
+      margin-top: rem(-210);
+    }
+
+    @media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
+      align-self: flex-end;
+      margin-top: rem(-180);
+      transform: translateX(10%) !important;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      margin-top: rem(-150);
+      margin-left: 62%;
+    }
+  }
+
+  &__image__top {
+    order: 4;
+
+    width: 100%;
+    transform: translateY(12%) !important;
+
+    @media screen and (min-width: rem(1024)) {
+      width: 40%;
+    }
+
+    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
+      margin-top: -5%
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-top: -15%;
+    }
+  }
+
+  &__col__middle {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @media screen and (min-width: rem(1366)) {
+      padding-left: rem(80) !important;
+    }
+  }
+
+  &__video__middle {
+    order: 1;
+
+    @media screen and (max-width: rem(1023)) {
+      align-self: center;
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      align-self: flex-start !important;
+      margin-bottom: rem(50);
+    }
+  }
+
+  &__text02 {
+    order: 2;
+    position: absolute;
+    left: 0;
+
+    @media screen and (max-width: rem(599)) {
+      top: rem(230);
+    }
+
+    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
+      top: rem(400);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      top: 0;
+      left: 54%;
+    }
+  }
+
+  &__text__middle {
+    order: 3;
+
+    width: 100%;
+
+    @media screen and (max-width: rem(1023)) {
+      margin-top: rem(90);
+      margin-bottom: rem(90);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      position: absolute;
+        top: rem(40);
+        left: 60%;
+        width: 35%;
+    }
+  }
+
+  &__image__middle {
+    order: 4;
+    width: 100%;
+
+    @media screen and (min-width: rem(1024)) {
+      align-self: flex-end;
+      width: 45%;
+      margin-top: -10%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      transform: translateX(10%) !important;
+    }
+  }
+
+  &__col__bottom {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__video__bottom {
+    order: 1;
+
+    @media screen and (max-width: rem(1023)) {
+      margin-bottom: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
+      align-self: flex-start !important;
+      margin-left: 50%;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      align-self: flex-end !important;
+    }
+  }
+
+  &__text03 {
+    order: 2;
+    position: absolute;
+    left: 0;
+
+    @media screen and (max-width: rem(599)) {
+      top: rem(230);
+    }
+
+    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
+      top: rem(400);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      left: rem(50);
+    }
+  }
+
+  &__text__bottom {
+    order: 3;
+    align-self: flex-start;
+
+    @media screen and (max-width: rem(1023)) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
+      margin-top: rem(30);
+      margin-bottom: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      position: absolute;
+      width: 40%;
+      top: rem(20);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      position: absolute;
+      width: 25%;
+      top: rem(40);
+    }
+  }
+
+  &__image__bottom {
+    order: 4;
+    width: 100%;
+
+    @media screen and (min-width: rem(1024)) {
+      width: 45%;
+      margin-top: -10%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-top: -15%;
+      margin-left: rem(-130);
+    }
+  }
+
+  &__video {
+    align-self: center;
+    z-index: 2;
+
+    @media screen and (max-width: rem(767)) {
+      width: 100% !important;
+    }
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      width: 100% !important;
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      width: 50% !important;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.project-anchor {
+  background-color: $anchor-color;
+
+  &__left {
+    padding-bottom: 0;
+  }
+
+  &__image {
+    @media screen and (min-width: rem(768)) and (max-width: rem(834)) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.project-presents {
+  background-image: url('/assets/img/case-studies/aia-fs/presents_background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: $tuf-color-white;
+
+  &__col__two {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @media screen and (min-width: rem(1920)) {
+      padding-left: rem(100) !important;
+    }
+  }
+
+  &__col__three {
+    padding-top: 0 !important;
+  }
+
+  &__col__four {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__col__five {
+    padding-top: 0;
+
+    @media screen and (max-width: rem(600)) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__text__intro {
+    align-self: flex-start;
+    order: 1;
+  }
+
+  &__text__one,
+  &__text__two,
+  &__text__three,
+  &__text__four,
+  &__text__five {
+    text-align: center;
+
+    @media screen and (min-width: rem(1920)) {
+      width: $video-width-800;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      width: $video-width-600;
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+      width: $video-width-450;
+    }
+
+    @media screen and (max-width: rem(834)) {
+      width: $video-width-320;
+      align-self: center !important;
+    }
+  }
+
+  &__text__one {
+    order: 3;
+    align-self: flex-start;
+  }
+
+  &__text__two,
+  &__text__four {
+    order: 2;
+    align-self: flex-end;
+  }
+
+  &__text__three,
+  &__text__five {
+    order: 2;
+    align-self: flex-start;
+  }
+
+  &__image__one {
+    order: 4;
+    align-self: center;
+    margin-top: rem(20);
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      align-self: flex-end !important;
+    }
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      bottom: rem(-50);
+      right: rem(0);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      bottom: rem(-50);
+      right: rem(100);
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      max-width: rem(400);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      max-width: rem(300);
+    }
+  }
+
+  &__image__two {
+    order: 3;
+    align-self: center;
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      bottom: 0;
+      align-self: flex-start;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      max-width: rem(400);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      max-width: rem(250);
+    }
+  }
+
+  &__image__three {
+    order: 3;
+    align-self: center;
+    margin-top: rem(20);
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      bottom: 0;
+      align-self: flex-end !important;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      max-width: rem(350);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      max-width: rem(250);
+    }
+  }
+
+  &__image__four {
+    order: 3;
+    align-self: center;
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      bottom: 0;
+      align-self: flex-start;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      max-width: rem(300);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      max-width: rem(250);
+    }
+  }
+
+  &__image__five {
+    order: 3;
+    align-self: center;
+    margin-top: rem(20);
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      bottom: 0;
+      align-self: flex-end !important;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      max-width: rem(400);
+    }
+
+    @media screen and (max-width: rem(1024)) {
+      max-width: rem(250);
+    }
+  }
+  &__vimeo__wrapper {
+    position: relative;
+    height: 0;
+    //padding-top: 56.25%;
+    margin-bottom: rem(20);
+
+    @media screen and (min-width: rem(601)) {
+      margin-bottom: rem(50) !important;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-top: rem(450);
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      padding-top: rem(338);
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1919)) {
+      padding-top: rem(258);
+    }
+
+    @media screen and (max-width: rem(834)) {
+      padding-top: rem(180);
+      align-self: center;
+    }
+  }
+
+  &__vimeo__wrapper__one {
+    order: 2;
+    margin-top: rem(20);
+
+    @media screen and (min-width: rem(601)) {
+      margin-top: rem(50) !important;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      align-self: flex-start !important;
+    }
+  }
+
+  &__vimeo__wrapper__two,
+  &__vimeo__wrapper__four {
+    order: 1;
+
+    @media screen and (min-width: rem(768)) {
+      align-self: flex-end !important;
+    }
+  }
+
+  &__vimeo__wrapper__three,
+  &__vimeo__wrapper__five {
+    order: 1;
+
+    @media screen and (min-width: rem(768)) {
+      align-self: flex-start !important;
+    }
+  }
+
+  &__vimeo__iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__vimeo__wrapper,
+  &__vimeo__iframe {
+    @media screen and (min-width: rem(1920)) {
+      width: $video-width-800;
+      height: rem(450);
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      width: $video-width-600;
+      height: rem(338);
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+      width: $video-width-450;
+      height: rem(258);
+    }
+
+    @media screen and (max-width: rem(834)) {
+      width: $video-width-320;
+      height: rem(180);
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    flex-direction: column;
+    max-height: rem(750);
+  }
+}
+
+.project-endgoal {
+  background-color: $endgoal-color;
+
+  @media screen and (min-width: rem(1025)) {
+    background-image: url('/assets/img/case-studies/aia-fs/endgoal_background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__image__mobile {
+    align-self: center;
+
+    @media screen and (min-width: rem(768)) {
+      display: none;
+    }
+  }
+
+  &__left {
+    @media screen and (max-width: rem(767)) {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      background-image: url('/assets/img/case-studies/aia-fs/endgoal_image.jpg');
+      background-size: cover;
+      background-position: right;
+    }
+
+    @media screen and (min-width: rem(1441)) {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__right {
+    align-items: flex-start;
+  }
+
+  &__text {
+    width: 85%;
+  }
+
+  .cs-container__column {
+    display: flex;
+
+    @media screen and (max-width: rem(1023)) {
+      justify-content: center;
+    }
+  }
+}

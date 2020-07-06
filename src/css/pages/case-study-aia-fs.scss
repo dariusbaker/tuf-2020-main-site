@@ -8,10 +8,10 @@ $actionplan-color: #ffe9ce;
 $anchor-color: #eee;
 $endgoal-color: #efe9e4;
 
-$video-width-800: rem(800);
-$video-width-600: rem(600);
-$video-width-450: rem(450);
 $video-width-320: rem(320);
+$video-width-450: rem(450);
+$video-width-600: rem(600);
+$video-width-800: rem(800);
 
 /** Override case-study-header.scss **/
 .cs-header {
@@ -194,6 +194,10 @@ $video-width-320: rem(320);
 
   &__col__top {
     padding-bottom: 0;
+
+    //@media screen and (max-width: rem(599)) {
+    //  height: rem(750);
+    //}
   }
 
   &__text01 {
@@ -217,11 +221,28 @@ $video-width-320: rem(320);
 
   &__text__top {
     order: 2;
-    width: 40%;
 
     @media screen and (max-width: rem(1023)) {
       width: 100%;
+      margin-bottom: rem(50);
     }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1279)) {
+      width: 40%;
+      margin-bottom: rem(250);
+    }
+
+    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
+      width: 40%;
+      margin-bottom: rem(300);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: 40%;
+      margin-bottom: rem(400);
+    }
+
+
   }
 
   &__mobile__spacer {
@@ -235,44 +256,76 @@ $video-width-320: rem(320);
     order: 3;
 
     @media screen and (max-width: rem(1023)) {
-      margin-top: rem(50);
-      margin-bottom: rem(50);
+      margin-bottom: rem(180);
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+    @media screen and (min-width: rem(1024)) {
+      position: absolute;
       align-self: flex-end;
-      margin-top: rem(-210);
     }
 
-    @media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
-      align-self: flex-end;
-      margin-top: rem(-180);
-      transform: translateX(10%) !important;
+    @media screen and (min-width: rem(1366)) {
+      right: rem(80);
     }
 
-    @media screen and (min-width: rem(2000)) {
-      margin-top: rem(-150);
-      margin-left: 62%;
-    }
+    //@media screen and (max-width: rem(1023)) {
+    //  margin-top: rem(50);
+    //  margin-bottom: rem(50);
+    //}
+    //
+    //@media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+    //  align-self: flex-end;
+    //  margin-top: rem(-210);
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
+    //  align-self: flex-end;
+    //  margin-top: rem(-180);
+    //  transform: translateX(10%) !important;
+    //}
+    //
+    //@media screen and (min-width: rem(2000)) {
+    //  margin-top: rem(-150);
+    //  margin-left: 62%;
+    //}
   }
 
   &__image__top {
     order: 4;
 
-    width: 100%;
-    transform: translateY(12%) !important;
-
-    @media screen and (min-width: rem(1024)) {
-      width: 40%;
+    @media screen and (max-width: rem(1023)) {
+      align-self: center;
+      position: absolute;
+      bottom: -3%;
+      max-width: rem(282);
     }
 
-    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
-      margin-top: -5%
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      position: absolute;
+      bottom: -5%;
+      max-width: rem(400);
     }
 
     @media screen and (min-width: rem(1920)) {
-      margin-top: -15%;
+      position: absolute;
+      bottom: -7%;
+      width: rem(573);
     }
+
+    //width: 100%;
+    //transform: translateY(12%) !important;
+    //
+    //@media screen and (min-width: rem(1024)) {
+    //  width: 40%;
+    //}
+    //
+    //@media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
+    //  margin-top: -5%
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) {
+    //  margin-top: -15%;
+    //}
   }
 
   &__col__middle {
@@ -293,32 +346,48 @@ $video-width-320: rem(320);
 
     @media screen and (min-width: rem(1024)) {
       align-self: flex-start !important;
-      margin-bottom: rem(50);
+      margin-bottom: rem(150);
+    }
+
+    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
+      align-self: flex-start !important;
+      margin-bottom: rem(100);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      align-self: flex-start !important;
+      margin-bottom: rem(80);
+
     }
   }
 
   &__text02 {
     order: 2;
     position: absolute;
-    left: 0;
 
-    @media screen and (max-width: rem(599)) {
+    @media screen and (max-width: rem(767)) {
       top: rem(230);
+      left: 0;
     }
 
-    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
-      top: rem(400);
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      top: rem(300);
+      left: 0;
     }
 
-    @media screen and (min-width: rem(1024)) {
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
       top: 0;
       left: 54%;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      top: 0;
+      right: rem(650);
     }
   }
 
   &__text__middle {
     order: 3;
-
     width: 100%;
 
     @media screen and (max-width: rem(1023)) {
@@ -326,49 +395,90 @@ $video-width-320: rem(320);
       margin-bottom: rem(90);
     }
 
-    @media screen and (min-width: rem(1024)) {
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
       position: absolute;
-        top: rem(40);
-        left: 60%;
-        width: 35%;
+      top: rem(40);
+      left: 60%;
+      width: 35%;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      position: absolute;
+      top: rem(40);
+      right: rem(250);
+      width: 20%;
     }
   }
 
   &__image__middle {
     order: 4;
-    width: 100%;
 
-    @media screen and (min-width: rem(1024)) {
+    @media screen and (max-width: rem(1023)) {
+      width: rem(330);
+      align-self: center;
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
       align-self: flex-end;
-      width: 45%;
-      margin-top: -10%;
+      width: rem(500);
+      position: absolute;
+      bottom: 0;
     }
 
     @media screen and (min-width: rem(1920)) {
-      transform: translateX(10%) !important;
+      align-self: flex-end;
+      width: rem(660);
+      position: absolute;
+      bottom: 0;
+      right: rem(80);
     }
+
+    //@media screen and (min-width: rem(1024)) {
+    //  align-self: flex-end;
+    //  width: 45%;
+    //  margin-top: -10%;
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) {
+    //  transform: translateX(10%) !important;
+    //}
   }
 
   &__col__bottom {
     padding-top: 0;
     padding-bottom: 0;
+
+    @media screen and (min-width: rem(1920)) {
+      height: rem(530);
+    }
   }
 
   &__video__bottom {
     order: 1;
 
-    @media screen and (max-width: rem(1023)) {
-      margin-bottom: rem(50);
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      align-self: flex-end;
+      margin-bottom: rem(100);
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
-      align-self: flex-start !important;
-      margin-left: 50%;
+    @media screen and (min-width: rem(1920)) {
+      align-self: flex-end;
+      position: absolute;
+      right: rem(80);
     }
 
-    @media screen and (min-width: rem(2000)) {
-      align-self: flex-end !important;
-    }
+    //@media screen and (max-width: rem(1023)) {
+    //  margin-bottom: rem(50);
+    //}
+    //
+    //@media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
+    //  align-self: flex-start !important;
+    //  margin-left: 50%;
+    //}
+    //
+    //@media screen and (min-width: rem(2000)) {
+    //  align-self: flex-end !important;
+    //}
   }
 
   &__text03 {
@@ -380,76 +490,144 @@ $video-width-320: rem(320);
       top: rem(230);
     }
 
-    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
-      top: rem(400);
+    @media screen and (min-width: rem(600)) and (max-width: rem(767)) {
+      top: rem(200);
     }
 
-    @media screen and (min-width: rem(1920)) {
-      left: rem(50);
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      top: rem(300);
     }
+
+    //@media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+    //  top: rem(400);
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) {
+    //  left: rem(50);
+    //}
   }
 
   &__text__bottom {
     order: 3;
     align-self: flex-start;
 
-    @media screen and (max-width: rem(1023)) {
+    @media screen and (max-width: rem(600)) and (max-width: rem(767)) {
       width: 100%;
+      margin-top: rem(50);
+      margin-bottom: rem(50);
     }
 
-    @media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
-      margin-top: rem(30);
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      width: 100%;
+      margin-top: rem(80);
       margin-bottom: rem(50);
     }
 
     @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      position: absolute;
       width: 40%;
+      position: absolute;
       top: rem(20);
     }
 
     @media screen and (min-width: rem(1920)) {
+      width: 30%;
       position: absolute;
-      width: 25%;
-      top: rem(40);
+      top: rem(20);
     }
+
+
+    //@media screen and (max-width: rem(1023)) {
+    //  width: 100%;
+    //}
+    //
+    //@media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
+    //  margin-top: rem(30);
+    //  margin-bottom: rem(50);
+    //}
+    //
+    //@media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+    //  position: absolute;
+    //  width: 40%;
+    //  top: rem(20);
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) {
+    //  position: absolute;
+    //  width: 25%;
+    //  top: rem(40);
+    //}
   }
 
   &__image__bottom {
     order: 4;
-    width: 100%;
+
+    @media screen and (max-width: rem(1023)) {
+      width: rem(286);
+      align-self: center;
+    }
 
     @media screen and (min-width: rem(1024)) {
-      width: 45%;
-      margin-top: -10%;
+      width: rem(400);
+      position: absolute;
+      bottom: 0;
     }
 
     @media screen and (min-width: rem(1920)) {
-      margin-top: -15%;
-      margin-left: rem(-130);
+      width: rem(513);
+      position: absolute;
+      bottom: 0;
     }
+
+
+
+    //@media screen and (min-width: rem(1024)) {
+    //  width: 45%;
+    //  margin-top: -10%;
+    //}
+    //
+    //@media screen and (min-width: rem(1920)) {
+    //  margin-top: -15%;
+    //  margin-left: rem(-130);
+    //}
   }
 
   &__video {
     align-self: center;
     z-index: 2;
 
+    box-sizing: border-box;
+
     @media screen and (max-width: rem(767)) {
-      width: 100% !important;
+      //width: 100% !important;
+      width: $video-width-320;
+      border: 2px solid #00fcff;
     }
 
-    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
-      width: 100% !important;
+    @media screen and (min-width: rem(768)) and (max-width: rem(1024)) {
+      //width: 100% !important;
+      width: $video-width-450;
+      border: 2px solid green;
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      width: 50% !important;
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1679)) {
+      //width: 50% !important;
+      width: $video-width-600;
+      border: 2px solid black;
+    }
+
+    @media screen and (min-width: rem(1680)) {
+      width: $video-width-800;
+      border: 2px solid red;
     }
   }
 
   .cs-container__column {
     display: flex;
     flex-direction: column;
+
+    @media screen and (min-width: rem(1024)) {
+      //width: 50vw !important;
+    }
   }
 }
 
@@ -665,25 +843,32 @@ $video-width-320: rem(320);
     //padding-top: 56.25%;
     margin-bottom: rem(20);
 
+    box-sizing: border-box;
+
     @media screen and (min-width: rem(601)) {
       margin-bottom: rem(50) !important;
-    }
-
-    @media screen and (min-width: rem(1920)) {
-      padding-top: rem(450);
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      padding-top: rem(338);
-    }
-
-    @media screen and (min-width: rem(835)) and (max-width: rem(1919)) {
-      padding-top: rem(258);
+      border: 2px solid #00fcff;
     }
 
     @media screen and (max-width: rem(834)) {
       padding-top: rem(180);
       align-self: center;
+      border: 2px solid green;
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+      padding-top: rem(258);
+      border: 2px solid yellow;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1679)) {
+      padding-top: rem(338);
+      border: 2px solid black;
+    }
+
+    @media screen and (min-width: rem(1680)) {
+      padding-top: rem(450);
+      border: 2px solid red;
     }
   }
 
@@ -726,14 +911,9 @@ $video-width-320: rem(320);
 
   &__vimeo__wrapper,
   &__vimeo__iframe {
-    @media screen and (min-width: rem(1920)) {
-      width: $video-width-800;
-      height: rem(450);
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      width: $video-width-600;
-      height: rem(338);
+    @media screen and (max-width: rem(834)) {
+      width: $video-width-320;
+      height: rem(180);
     }
 
     @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
@@ -741,9 +921,14 @@ $video-width-320: rem(320);
       height: rem(258);
     }
 
-    @media screen and (max-width: rem(834)) {
-      width: $video-width-320;
-      height: rem(180);
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      width: $video-width-600;
+      height: rem(338);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: $video-width-800;
+      height: rem(450);
     }
   }
 
@@ -794,7 +979,7 @@ $video-width-320: rem(320);
   }
 
   &__text {
-    width: 85%;
+    width: 70%;
   }
 
   .cs-container__column {

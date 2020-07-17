@@ -1,5 +1,14 @@
 export const HOME_CASE_STUDIES_DATA = [
   {
+    slug: 'tease',
+    title: 'Tease Branding Exercise',
+    image: '/assets/img/case-studies/tease/thumbnail.jpg',
+    tags: [
+      'Branding',
+      'Design'
+    ],
+  },
+  {
     slug: 'aia-financial-sense',
     title: 'AIA Financial Sense',
     image: '/assets/img/case-studies/aia-fs/thumbnail.jpg',

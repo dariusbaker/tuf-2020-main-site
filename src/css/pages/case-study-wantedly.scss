@@ -54,6 +54,8 @@
   }
 
   &__background__mobile {
+    width: 100%;
+
     @media screen and (min-width: rem(1024)) {
       display: none;
       visibility: hidden;

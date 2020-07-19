@@ -45,6 +45,20 @@
     left: ((159 / 1920) * 100%);
     width: ((231 / 1920) * 100%);
   }
+
+  &__background {
+    @media screen and (max-width: rem(1023)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__background__mobile {
+    @media screen and (min-width: rem(1024)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 
 .intro {

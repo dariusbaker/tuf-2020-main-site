@@ -70,6 +70,20 @@ $OGS-color-pink: #f8c9cf;
   img {
     width: 100%;
   }
+
+  &__background {
+    @media screen and (max-width: rem(1023)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__background__mobile {
+    @media screen and (min-width: rem(1024)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 
 .intro {

@@ -67,6 +67,20 @@ $video-width-800: rem(800);
   img {
     width: 100%;
   }
+
+  &__background {
+    @media screen and (max-width: rem(1023)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__background__mobile {
+    @media screen and (min-width: rem(1024)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 
 .project-diversification {
@@ -222,8 +236,6 @@ $video-width-800: rem(800);
   &__mobile__spacer {}
 
   &__image__top {
-
-    //width: 100%;
     align-self: center;
 
     transform: translateY(11%) !important;

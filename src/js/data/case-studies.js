@@ -17,6 +17,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Design',
       'Motion Graphics'
     ],
+    featured_in_home: 3
   },
   {
     slug: 'facebook-watch',
@@ -26,6 +27,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Comms',
       'Design'
     ],
+    featured_in_home: 1
   },
   {
     slug: 'feels-good-aia',
@@ -36,6 +38,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Design',
       'Internal Comms'
     ],
+    featured_in_home: 2
   },
   {
     slug: 'fb-comms',
@@ -45,6 +48,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'Comms',
       'Copywriting'
     ],
+    featured_in_home: 4
   },
   {
     slug: 'starbucks-bogo',
@@ -54,7 +58,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Social Media',
       'Advertising'
     ],
-    featured_in_home: 1
   },
   {
     slug: 'river-safari',
@@ -65,7 +68,7 @@ export const HOME_CASE_STUDIES_DATA = [
       'UI/UX',
       'Tech'
     ],
-    featured_in_home: 2
+    featured_in_home: 5
   },
   {
     slug: 'wantedly',
@@ -75,7 +78,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Branding',
       'Activation/Events'
     ],
-    featured_in_home: 3
   },
   {
     slug: 'vicious',
@@ -85,7 +87,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Branding',
       'Design'
     ],
-    featured_in_home: 4
   },
   {
     slug: 'rate',
@@ -95,7 +96,6 @@ export const HOME_CASE_STUDIES_DATA = [
       'Branding',
       'UI/UX'
     ],
-    featured_in_home: 5
   },
   {
     slug: 'starbucks-career',

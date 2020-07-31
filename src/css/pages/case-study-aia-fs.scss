@@ -67,6 +67,20 @@ $video-width-800: rem(800);
   img {
     width: 100%;
   }
+
+  &__background {
+    @media screen and (max-width: rem(1023)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__background__mobile {
+    @media screen and (min-width: rem(1024)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
 
 .project-diversification {
@@ -92,7 +106,7 @@ $video-width-800: rem(800);
     position: absolute;
     left: 0;
 
-    @media screen and (max-width: rem(1024)) {
+    @media screen and (max-width: rem(1112)) {
       display: none;
     }
   }
@@ -141,15 +155,15 @@ $video-width-800: rem(800);
       width: $video-width-320;
     }
 
-    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+    @media screen and (min-width: rem(835)) and (max-width: rem(1111)) {
       width: $video-width-450;
     }
 
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+    @media screen and (min-width: rem(1112)) and (max-width: rem(1989)) {
       width: $video-width-600;
     }
 
-    @media screen and (min-width: rem(1920)) {
+    @media screen and (min-width: rem(1900)) {
       width: $video-width-800;
     }
   }
@@ -192,297 +206,146 @@ $video-width-800: rem(800);
   background-color: $actionplan-color;
   z-index: 2;
 
-  &__col__top {
+  &__col__top__left {
     padding-bottom: 0;
+  }
 
-    //@media screen and (max-width: rem(599)) {
-    //  height: rem(750);
-    //}
+  &__col__top__right {
+    justify-content: center;
+
+    @media screen and (max-width: rem(767)) {
+      display: none;
+      visibility: hidden;
+      padding: 0;
+    }
   }
 
   &__text01 {
-    order: 1;
-
     position: absolute;
-    top: rem(110);
+    left: 0;
+    top: rem(50);
 
-    @media screen and (min-width: rem(600)) and (max-width: rem(834)) {
-      top: rem(50);
-    }
-
-    @media screen and (max-width: rem(1919)) {
-      left: 0;
-    }
-
-    @media screen and (min-width: rem(1920)) {
-      left: rem(50);
+    @media screen and (min-width: rem(1680)) {
+      left: rem(80);
     }
   }
 
   &__text__top {
-    order: 2;
-
-    @media screen and (max-width: rem(1023)) {
-      width: 100%;
-      margin-bottom: rem(50);
-    }
-
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1279)) {
-      width: 40%;
-      margin-bottom: rem(250);
-    }
-
-    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
-      width: 40%;
-      margin-bottom: rem(300);
-    }
-
-    @media screen and (min-width: rem(1920)) {
-      width: 40%;
-      margin-bottom: rem(400);
-    }
-
-
   }
 
-  &__mobile__spacer {
-    @media screen and (max-width: rem(599)) {
-      margin-top: 20%;
-      display: block;
+  &__mobile__spacer {}
+
+  &__image__top {
+    align-self: center;
+
+    transform: translateY(11%) !important;
+
+    @media screen and (min-width: rem(1680)) {
+      transform: translateY(27%) !important;
     }
   }
 
   &__video__top {
-    order: 3;
-
-    @media screen and (max-width: rem(1023)) {
-      margin-bottom: rem(180);
+    @media screen and (max-width: rem(767)) {
+      display: none;
+      visibility: hidden;
     }
-
-    @media screen and (min-width: rem(1024)) {
-      position: absolute;
-      align-self: flex-end;
-    }
-
-    @media screen and (min-width: rem(1366)) {
-      right: rem(80);
-    }
-
-    //@media screen and (max-width: rem(1023)) {
-    //  margin-top: rem(50);
-    //  margin-bottom: rem(50);
-    //}
-    //
-    //@media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-    //  align-self: flex-end;
-    //  margin-top: rem(-210);
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
-    //  align-self: flex-end;
-    //  margin-top: rem(-180);
-    //  transform: translateX(10%) !important;
-    //}
-    //
-    //@media screen and (min-width: rem(2000)) {
-    //  margin-top: rem(-150);
-    //  margin-left: 62%;
-    //}
   }
 
-  &__image__top {
-    order: 4;
+  &__video__mobile__top {
+    margin-top: rem(50);
+    margin-bottom: rem(50);
+    align-self: center;
 
-    @media screen and (max-width: rem(1023)) {
-      align-self: center;
-      position: absolute;
-      bottom: -3%;
-      max-width: rem(282);
+    @media screen and (max-width: rem(599)) {
+      width: $video-width-320;
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      position: absolute;
-      bottom: -5%;
-      max-width: rem(400);
+    @media screen and (width: rem(600)) {
+      width: $video-width-450;
     }
 
-    @media screen and (min-width: rem(1920)) {
-      position: absolute;
-      bottom: -7%;
-      width: rem(573);
+    @media screen and (min-width: rem(768)) {
+      display: none;
+      visibility: hidden;
     }
-
-    //width: 100%;
-    //transform: translateY(12%) !important;
-    //
-    //@media screen and (min-width: rem(1024)) {
-    //  width: 40%;
-    //}
-    //
-    //@media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
-    //  margin-top: -5%
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) {
-    //  margin-top: -15%;
-    //}
   }
 
-  &__col__middle {
+  &__col__middle__left {
     padding-top: 0;
-    padding-bottom: 0;
+  }
 
-    @media screen and (min-width: rem(1366)) {
-      padding-left: rem(80) !important;
-    }
+  &__col__middle__right {
+    padding-bottom: 0;
   }
 
   &__video__middle {
-    order: 1;
+    align-self: center;
 
-    @media screen and (max-width: rem(1023)) {
-      align-self: center;
+    @media screen and (max-width: rem(599)) {
+      width: $video-width-320 !important;
     }
 
-    @media screen and (min-width: rem(1024)) {
-      align-self: flex-start !important;
-      margin-bottom: rem(150);
-    }
-
-    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
-      align-self: flex-start !important;
-      margin-bottom: rem(100);
-    }
-
-    @media screen and (min-width: rem(1920)) {
-      align-self: flex-start !important;
-      margin-bottom: rem(80);
-
+    @media screen and (width: rem(600)) {
+      width: $video-width-450 !important;
     }
   }
 
   &__text02 {
-    order: 2;
     position: absolute;
+    left: 0;
 
-    @media screen and (max-width: rem(767)) {
-      top: rem(230);
-      left: 0;
+    @media screen and (min-width: rem(768)) {
+      top: rem(20);
     }
 
-    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
-      top: rem(300);
-      left: 0;
-    }
-
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
-      top: 0;
-      left: 54%;
-    }
-
-    @media screen and (min-width: rem(2000)) {
-      top: 0;
-      right: rem(650);
+    @media screen and (min-width: rem(1680)) {
+      left: rem(80);
     }
   }
 
   &__text__middle {
-    order: 3;
-    width: 100%;
+    margin-bottom: rem(100);
 
-    @media screen and (max-width: rem(1023)) {
-      margin-top: rem(90);
-      margin-bottom: rem(90);
+    @media screen and (min-width: rem(600)) and (max-width: rem(767)) {
+      margin-bottom: rem(150);
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
-      position: absolute;
-      top: rem(40);
-      left: 60%;
-      width: 35%;
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      margin-bottom: rem(50);
     }
 
-    @media screen and (min-width: rem(2000)) {
-      position: absolute;
-      top: rem(40);
-      right: rem(250);
-      width: 20%;
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      margin-bottom: rem(130);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-bottom: rem(170);
     }
   }
 
   &__image__middle {
-    order: 4;
-
-    @media screen and (max-width: rem(1023)) {
-      width: rem(330);
-      align-self: center;
-    }
-
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      align-self: flex-end;
-      width: rem(500);
-      position: absolute;
-      bottom: 0;
-    }
-
-    @media screen and (min-width: rem(1920)) {
-      align-self: flex-end;
-      width: rem(660);
-      position: absolute;
-      bottom: 0;
-      right: rem(80);
-    }
-
-    //@media screen and (min-width: rem(1024)) {
-    //  align-self: flex-end;
-    //  width: 45%;
-    //  margin-top: -10%;
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) {
-    //  transform: translateX(10%) !important;
-    //}
+    //width: 100%;
+    align-self: center;
   }
 
-  &__col__bottom {
-    padding-top: 0;
+  &__col__bottom__left {
     padding-bottom: 0;
 
-    @media screen and (min-width: rem(1920)) {
-      height: rem(530);
+    @media screen and (max-width: rem(767)) {
+      padding-top: 0;
     }
   }
 
-  &__video__bottom {
-    order: 1;
+  &__col__bottom__right {
+    padding-top: 0;
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      align-self: flex-end;
-      margin-bottom: rem(100);
+    @media screen and (max-width: rem(767)) {
+      padding-bottom: 0;
     }
-
-    @media screen and (min-width: rem(1920)) {
-      align-self: flex-end;
-      position: absolute;
-      right: rem(80);
-    }
-
-    //@media screen and (max-width: rem(1023)) {
-    //  margin-bottom: rem(50);
-    //}
-    //
-    //@media screen and (min-width: rem(1024)) and (max-width: rem(1999)) {
-    //  align-self: flex-start !important;
-    //  margin-left: 50%;
-    //}
-    //
-    //@media screen and (min-width: rem(2000)) {
-    //  align-self: flex-end !important;
-    //}
   }
 
   &__text03 {
-    order: 2;
     position: absolute;
     left: 0;
 
@@ -490,134 +353,97 @@ $video-width-800: rem(800);
       top: rem(230);
     }
 
-    @media screen and (min-width: rem(600)) and (max-width: rem(767)) {
-      top: rem(200);
-    }
-
-    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+    @media screen and (width: rem(600)) {
       top: rem(300);
     }
 
-    //@media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
-    //  top: rem(400);
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) {
-    //  left: rem(50);
-    //}
+    @media screen and (min-width: rem(768)) and (max-width: rem(1024)) {
+      top: 0;
+    }
+
+    @media screen and (min-width: rem(1680)) {
+      left: rem(80);
+    }
   }
 
   &__text__bottom {
-    order: 3;
-    align-self: flex-start;
 
-    @media screen and (max-width: rem(600)) and (max-width: rem(767)) {
-      width: 100%;
+    @media screen and (max-width: rem(599)) {
       margin-top: rem(50);
-      margin-bottom: rem(50);
     }
 
-    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
-      width: 100%;
+    @media screen and (min-width: rem(600)) and (max-width: rem(767)) {
       margin-top: rem(80);
+      margin-bottom: rem(20);
+    }
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(1024)) {
+      margin-top: rem(-30);
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1679)) {
       margin-bottom: rem(50);
     }
 
-    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-      width: 40%;
-      position: absolute;
-      top: rem(20);
+    @media screen and (min-width: rem(1680)) {
+      margin-bottom: rem(130);
     }
-
-    @media screen and (min-width: rem(1920)) {
-      width: 30%;
-      position: absolute;
-      top: rem(20);
-    }
-
-
-    //@media screen and (max-width: rem(1023)) {
-    //  width: 100%;
-    //}
-    //
-    //@media screen and (min-width: rem(600)) and (max-width: rem(1023)) {
-    //  margin-top: rem(30);
-    //  margin-bottom: rem(50);
-    //}
-    //
-    //@media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
-    //  position: absolute;
-    //  width: 40%;
-    //  top: rem(20);
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) {
-    //  position: absolute;
-    //  width: 25%;
-    //  top: rem(40);
-    //}
   }
 
   &__image__bottom {
-    order: 4;
+    //width: 100%;
+    align-self: center;
 
-    @media screen and (max-width: rem(1023)) {
-      width: rem(286);
-      align-self: center;
+    @media screen and (min-width: rem(2000)) {
+      transform: translateY(13%) !important;
+    }
+  }
+
+  &__video__bottom {
+
+
+    @media screen and (max-width: rem(767)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__video__mobile__bottom {
+    @media screen and (width: rem(600)) {
+      width: $video-width-450 !important;
     }
 
-    @media screen and (min-width: rem(1024)) {
-      width: rem(400);
-      position: absolute;
-      bottom: 0;
+      @media screen and (min-width: rem(768)) {
+      display: none;
+      visibility: hidden;
     }
-
-    @media screen and (min-width: rem(1920)) {
-      width: rem(513);
-      position: absolute;
-      bottom: 0;
-    }
-
-
-
-    //@media screen and (min-width: rem(1024)) {
-    //  width: 45%;
-    //  margin-top: -10%;
-    //}
-    //
-    //@media screen and (min-width: rem(1920)) {
-    //  margin-top: -15%;
-    //  margin-left: rem(-130);
-    //}
   }
 
   &__video {
     align-self: center;
-    z-index: 2;
 
-    box-sizing: border-box;
-
-    @media screen and (max-width: rem(767)) {
-      //width: 100% !important;
-      width: $video-width-320;
-      border: 2px solid #00fcff;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (max-width: rem(835)) {
+        width: $video-width-320;
+      }
     }
 
-    @media screen and (min-width: rem(768)) and (max-width: rem(1024)) {
-      //width: 100% !important;
-      width: $video-width-450;
-      border: 2px solid green;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(836)) and (max-width: rem(1278)) {
+        width: $video-width-450;
+      }
     }
 
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1679)) {
-      //width: 50% !important;
-      width: $video-width-600;
-      border: 2px solid black;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(1279)) and (max-width: rem(1680)) {
+        width: $video-width-600;
+      }
     }
 
-    @media screen and (min-width: rem(1680)) {
-      width: $video-width-800;
-      border: 2px solid red;
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(1681)) {
+        width: $video-width-800;
+      }
     }
   }
 
@@ -625,8 +451,8 @@ $video-width-800: rem(800);
     display: flex;
     flex-direction: column;
 
-    @media screen and (min-width: rem(1024)) {
-      //width: 50vw !important;
+    @media screen and (min-width: rem(768)) {
+      width: 50vw;
     }
   }
 }
@@ -658,35 +484,57 @@ $video-width-800: rem(800);
   background-position: center;
   color: $tuf-color-white;
 
-  &__col__two {
-    padding-top: 0;
-    padding-bottom: 0;
-
-    @media screen and (min-width: rem(1920)) {
-      padding-left: rem(100) !important;
-    }
+  &__row__one {
   }
 
-  &__col__three {
-    padding-top: 0 !important;
+  &__col__one__left {
+    flex-direction: column;
+    padding-bottom: 0 !important;
   }
 
-  &__col__four {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  &__col__five {
-    padding-top: 0;
-
-    @media screen and (max-width: rem(600)) {
-      padding-bottom: 0;
-    }
+  &__col__one__right {
+    padding-bottom: 0 !important;
   }
 
   &__text__intro {
-    align-self: flex-start;
-    order: 1;
+    @media screen and (min-width: rem(768)) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__text__one {
+    @media screen and (min-width: rem(1024)) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__text__intro,
+  &__text__one,
+  &__text__two,
+  &__text__three,
+  &__text__four,
+  &__text__five {
+    align-self: center;
+
+    @media screen and (max-width: rem(834)) {
+      width: $video-width-320;
+    }
+
+    @media screen and (width: rem(600)) {
+      width: $video-width-450 !important;
+    }
+
+    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
+      width: $video-width-450;
+    }
+
+    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
+      width: $video-width-600;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: $video-width-800;
+    }
   }
 
   &__text__one,
@@ -695,212 +543,181 @@ $video-width-800: rem(800);
   &__text__four,
   &__text__five {
     text-align: center;
-
-    @media screen and (min-width: rem(1920)) {
-      width: $video-width-800;
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      width: $video-width-600;
-    }
-
-    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
-      width: $video-width-450;
-    }
-
-    @media screen and (max-width: rem(834)) {
-      width: $video-width-320;
-      align-self: center !important;
-    }
-  }
-
-  &__text__one {
-    order: 3;
-    align-self: flex-start;
-  }
-
-  &__text__two,
-  &__text__four {
-    order: 2;
-    align-self: flex-end;
-  }
-
-  &__text__three,
-  &__text__five {
-    order: 2;
-    align-self: flex-start;
   }
 
   &__image__one {
-    order: 4;
     align-self: center;
-    margin-top: rem(20);
+
+    @media screen and (max-width: rem(600)) {
+      width: 85%;
+    }
 
     @media screen and (min-width: rem(768)) {
       position: absolute;
-      align-self: flex-end !important;
+      bottom: -7%;
+      width: 50%;
+      max-width: rem(485);
     }
+  }
 
-    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
-      bottom: rem(-50);
-      right: rem(0);
+  &__vimeo__wrapper__one {
+    margin-top: rem(20);
+  }
+
+  &__row__two {
+    @media screen and (max-width: rem(600)) {
+      display: flex;
+      flex-direction: column-reverse;
+      transform: translateY(-5%);
     }
+  }
 
-    @media screen and (min-width: rem(1024)) {
-      bottom: rem(-50);
-      right: rem(100);
-    }
+  &__col__two__left {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      max-width: rem(400);
-    }
+  &__col__two__right {
+    padding-top: 0 !important;
 
-    @media screen and (max-width: rem(1024)) {
-      max-width: rem(300);
+    @media screen and (min-width: rem(768)) {
+      padding-bottom: rem(50) !important;
     }
   }
 
   &__image__two {
-    order: 3;
-    align-self: center;
+
+    @media screen and (max-width: rem(600)) {
+      align-self: center;
+      width: 85%;
+    }
 
     @media screen and (min-width: rem(768)) {
+      align-self: flex-start;
       position: absolute;
       bottom: 0;
-      align-self: flex-start;
+      width: 50%;
+      max-width: rem(508);
     }
+  }
 
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      max-width: rem(400);
+  &__text__two {}
+
+  &__vimeo__wrapper__two {}
+
+  &__row__three {
+    @media screen and (max-width: rem(600)) {
+      transform: translateY(-4%);
     }
+  }
 
-    @media screen and (max-width: rem(1024)) {
-      max-width: rem(250);
+  &__col__three__left {
+    padding-top: 0 !important;
+  }
+
+  &__col__three__right {}
+
+  &__vimeo__wrapper__three {}
+
+  &__text__three {
+    @media screen and (width: rem(1680)) {
+      margin-bottom: rem(80);
     }
   }
 
   &__image__three {
-    order: 3;
     align-self: center;
-    margin-top: rem(20);
+
+    @media screen and (max-width: rem(600)) {
+      width: 85%;
+    }
 
     @media screen and (min-width: rem(768)) {
       position: absolute;
       bottom: 0;
-      align-self: flex-end !important;
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      max-width: rem(350);
-    }
-
-    @media screen and (max-width: rem(1024)) {
-      max-width: rem(250);
+      width: 50%;
+      max-width: rem(432);
     }
   }
+
+  &__row__four {
+    @media screen and (max-width: rem(600)) {
+      display: flex;
+      flex-direction: column-reverse;
+      transform: translateY(-5%);
+    }
+  }
+
+  &__col__four__left {}
+
+  &__col__four__right {}
 
   &__image__four {
-    order: 3;
     align-self: center;
+    width: 60%;
+    max-width: rem(367);
 
-    @media screen and (min-width: rem(768)) {
+    @media screen and (min-width: rem(768)) and (max-width: rem(834)) {
       position: absolute;
       bottom: 0;
+      width: 40%;
+    }
+
+    @media screen and (min-width: rem(835)) {
+      position: absolute;
+      bottom: 0;
+      width: 35%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
       align-self: flex-start;
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      max-width: rem(300);
-    }
-
-    @media screen and (max-width: rem(1024)) {
-      max-width: rem(250);
+      left: rem(300);
     }
   }
+
+  &__vimeo__wrapper__four {}
+
+  &__text__four {}
+
+  &__row__five {
+    @media screen and (max-width: rem(600)) {
+      margin-top: -15%;
+    }
+  }
+
+  &__col__five__left {
+    padding-top: 0 !important;
+  }
+
+  &__col__five__right {
+    padding-bottom: 0 !important;
+  }
+
+  &__vimeo__wrapper__five {}
+
+  &__text__five {}
 
   &__image__five {
-    order: 3;
     align-self: center;
-    margin-top: rem(20);
+
+    @media screen and (max-width: rem(600)) {
+      width: 85%;
+    }
 
     @media screen and (min-width: rem(768)) {
       position: absolute;
       bottom: 0;
-      align-self: flex-end !important;
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      max-width: rem(400);
-    }
-
-    @media screen and (max-width: rem(1024)) {
-      max-width: rem(250);
+      width: 60%;
+      max-width: rem(560);
     }
   }
+
   &__vimeo__wrapper {
     position: relative;
     height: 0;
     //padding-top: 56.25%;
     margin-bottom: rem(20);
-
-    box-sizing: border-box;
-
-    @media screen and (min-width: rem(601)) {
-      margin-bottom: rem(50) !important;
-      border: 2px solid #00fcff;
-    }
-
-    @media screen and (max-width: rem(834)) {
-      padding-top: rem(180);
-      align-self: center;
-      border: 2px solid green;
-    }
-
-    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
-      padding-top: rem(258);
-      border: 2px solid yellow;
-    }
-
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1679)) {
-      padding-top: rem(338);
-      border: 2px solid black;
-    }
-
-    @media screen and (min-width: rem(1680)) {
-      padding-top: rem(450);
-      border: 2px solid red;
-    }
-  }
-
-  &__vimeo__wrapper__one {
-    order: 2;
-    margin-top: rem(20);
-
-    @media screen and (min-width: rem(601)) {
-      margin-top: rem(50) !important;
-    }
-
-    @media screen and (min-width: rem(768)) {
-      align-self: flex-start !important;
-    }
-  }
-
-  &__vimeo__wrapper__two,
-  &__vimeo__wrapper__four {
-    order: 1;
-
-    @media screen and (min-width: rem(768)) {
-      align-self: flex-end !important;
-    }
-  }
-
-  &__vimeo__wrapper__three,
-  &__vimeo__wrapper__five {
-    order: 1;
-
-    @media screen and (min-width: rem(768)) {
-      align-self: flex-start !important;
-    }
+    align-self: center;
   }
 
   &__vimeo__iframe {
@@ -911,38 +728,58 @@ $video-width-800: rem(800);
 
   &__vimeo__wrapper,
   &__vimeo__iframe {
-    @media screen and (max-width: rem(834)) {
-      width: $video-width-320;
-      height: rem(180);
+    @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio: 0) {
+      @media (width: rem(600)) {
+        width: $video-width-450 !important;
+        height: rem(258) !important;
+      }
     }
 
-    @media screen and (min-width: rem(835)) and (max-width: rem(1024)) {
-      width: $video-width-450;
-      height: rem(258);
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (max-width: rem(835)) {
+        width: $video-width-320;
+        height: rem(180);
+      }
     }
 
-    @media screen and (min-width: rem(1025)) and (max-width: rem(1919)) {
-      width: $video-width-600;
-      height: rem(338);
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(836)) and (max-width: rem(1278)) {
+        width: $video-width-450;
+        height: rem(258);
+      }
     }
 
-    @media screen and (min-width: rem(1920)) {
-      width: $video-width-800;
-      height: rem(450);
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(1279)) and (max-width: rem(1680)) {
+        width: $video-width-600;
+        height: rem(338);
+      }
+    }
+
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+      @media (min-width: rem(1681)) {
+        width: $video-width-800;
+        height: rem(450);
+      }
     }
   }
 
   .cs-container__column {
     display: flex;
     flex-direction: column;
-    max-height: rem(750);
+
+    @media screen and (max-width: rem(767)) {
+      padding-left: rem(20);
+      padding-right: rem(20);
+      width: 100vw;
+    }
   }
 }
 
 .project-endgoal {
   background-color: $endgoal-color;
 
-  @media screen and (min-width: rem(1025)) {
+  @media screen and (min-width: rem(1900)) {
     background-image: url('/assets/img/case-studies/aia-fs/endgoal_background.jpg');
     background-size: cover;
     background-position: center;
@@ -968,18 +805,35 @@ $video-width-800: rem(800);
       background-position: right;
     }
 
-    @media screen and (min-width: rem(1441)) {
+    @media screen and (min-width: rem(1280)) {
       background-size: contain;
       background-repeat: no-repeat;
+    }
+
+    @media screen and (min-width: rem(1900)) {
+      height: rem(480);
     }
   }
 
   &__right {
     align-items: flex-start;
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      padding-left: rem(10);
+      padding-right: rem(30);
+    }
+
+    @media screen and (min-width: rem(1900)) {
+      height: rem(480);
+    }
   }
 
   &__text {
-    width: 70%;
+    @media screen and (min-width: rem(1900)) {
+      width: 80%;
+      align-self: center;
+      justify-self: center;
+    }
   }
 
   .cs-container__column {

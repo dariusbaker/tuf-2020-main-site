@@ -505,6 +505,56 @@
 <!-- end of what do you seek section -->
 
 <!-- instagram section -->
+<?php
+  $token = 'IGQVJWSWJzbTNVQ2NXd202c3B3RldKREZAVR1ZALMFFDbFRLNVN4amNvTnkyX3JVOU9rbjBBQm40dkNaLTJCNXV1cXNhTVAwbjhaVk5NbnRYTHpna0dVdWFfQlVmOTFkdHNZATWxTZATMzYkZA6WW9uT21EdgZDZD';
+
+  // get refreshed token. it expires every 60 days but I can't be bothered
+  // about checking every 60 days, so we'll request a refresh every time
+  // the page is loaded.
+  $content = @file_get_contents(
+    sprintf('https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=%s', $token)
+  );
+
+  if ($content !== false) {
+    $data = json_decode($content);
+
+    if (property_exists($data, 'access_token')) {
+      $token = $data->access_token;
+    }
+  }
+
+  // get media
+  $content = @file_get_contents(
+    sprintf('https://graph.instagram.com/me/media?access_token=%s', $token)
+  );
+
+  if ($content !== false) {
+    $data = json_decode($content);
+    $first_three = array_slice($data->data, 0, 3);
+    $image_urls = [];
+
+    foreach ($first_three as $item) {
+      $image_content = @file_get_contents(
+        sprintf(
+          'https://graph.instagram.com/%s?fields=media_url,permalink&access_token=%s',
+          $item->id,
+          $token
+        )
+      );
+
+      $image_data = json_decode($image_content);
+
+      $image_urls[$image_data->permalink] = $image_data->media_url;
+    }
+  } else {
+    $image_urls = [
+      '17928419356345736' => 'https://scontent.cdninstagram.com/v/t51.2885-15/75388593_996213794069501_9205117838140144559_n.jpg?_nc_cat=105&_nc_sid=8ae9d6&_nc_ohc=X2QEgHeV9AsAX_MQfWw&_nc_ht=scontent.cdninstagram.com&oh=b508f9ab9916bca7fe12ce8131bbdfda&oe=5F47CD2D',
+      '17857644979664922' => 'https://scontent.cdninstagram.com/v/t51.2885-15/72330644_302076674049278_3586591252135638434_n.jpg?_nc_cat=105&_nc_sid=8ae9d6&_nc_ohc=LfurXfKslIUAX-U4JJM&_nc_ht=scontent.cdninstagram.com&oh=800cf975bc2b132413eed2c89ea76ed0&oe=5F4A0847',
+      '17930636950337571' => 'https://scontent.cdninstagram.com/v/t51.2885-15/76761660_600288730745129_6351383802518975186_n.jpg?_nc_cat=104&_nc_sid=8ae9d6&_nc_ohc=-fAY5zeWfjYAX-qNxwS&_nc_ht=scontent.cdninstagram.com&oh=5013ef3ca1fb4dfdea5afee92eacac38&oe=5F472B6A'
+    ];
+  }
+?>
+
 <section
   id="{{home.instagram.slug}}"
   class="tuf-section instagram">
@@ -521,6 +571,16 @@
       {{home.instagram.title|safe}}
     </h2>
     <ul id="instagram-list" class="tuf-content-padding instagram__list" aria-label="{{home.instagram.title}}">
+      <?php foreach ($image_urls as $key => $value) { ?>
+        <li class="instagram__list__item">
+          <a
+            style="background-image: url(<?php echo $value; ?>)"
+            href="<?php echo $key; ?>"
+            target="_blank"
+            rel="noopener noreferrer">
+          </a>
+        </li>
+      <?php } ?>
     </ul>
     <template id="instagram-feed">
       <li class="instagram__list__item">
@@ -539,7 +599,6 @@
 <!-- end of talk to us section -->
 
 {% endblock %}
-
 
 {% block page_script %}
 <script src="/assets/js/home.min.js"></script>

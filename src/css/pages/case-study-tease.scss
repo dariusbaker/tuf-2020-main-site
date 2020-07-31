@@ -1,0 +1,817 @@
+@import '../utils/vars';
+@import '../utils/colors';
+@import '../utils/type';
+@import '../utils/functions';
+@import '../utils/mixins';
+
+$tease-color-yellow: #ffd629;
+$tease-love-color-yellow: #ffe41c;
+$tease-color-cyan: #2dccd3;
+
+/** Override case-study-header.scss **/
+.cs-header {
+
+  &__content-wrapper {
+    @media screen and (max-width: rem(1023)) {
+      width: 90%;
+    }
+
+    @media screen and (width: rem(1024)) {
+      width: 70%;
+    }
+  }
+
+  &__tags {
+    @media screen and (max-width: rem(1023)) {
+      justify-content: flex-start;
+      margin-left: rem(50);
+    }
+  }
+}
+
+.cs-container {
+  max-width: rem(2560);
+
+  &__column {
+    @media screen and (min-width: rem(1024)) {
+      padding-right: rem(46);
+      padding-left: rem(46);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      padding-right: rem(94);
+      padding-left: rem(94);
+    }
+
+    @media screen and (min-width: rem(1440)) {
+      padding-right: rem(112);
+      padding-left: rem(112);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(230);
+      padding-left: rem(230);
+    }
+  }
+}
+
+.white_text {
+  color: $tuf-color-white;
+  font-size: 2.25rem;
+  line-height: 3rem;
+  font-weight: 500;
+
+  @media screen and (max-width: rem(1024)) {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 100%;
+  }
+
+  &__background {
+    @media screen and (max-width: rem(1023)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__background__mobile {
+    @media screen and (min-width: rem(1024)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+.project-intro {
+  background-color: $tease-color-yellow;
+  color: $tuf-color-gray;
+
+  &__col__left {
+    padding-bottom: 0 !important;
+    background-color: $tease-color-yellow;
+  }
+
+  &__col__right {
+    background-image: url('/assets/img/case-studies/tease/intro_image_right.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    min-height: rem(200);
+    padding-bottom: 0 !important;
+
+  }
+
+  &__text {
+    margin-bottom: rem(200);
+  }
+
+  &__image__left {
+    position: absolute;
+    bottom: -5%;
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.project-wordmark {
+  background-color: $tease-color-cyan;
+  z-index: 2;
+
+  &__col {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    @media screen and (max-width: rem(1023)) {
+      background-image: url('/assets/img/case-studies/tease/wordmark_background_mobile.png');
+      margin-top: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      background-image: url('/assets/img/case-studies/tease/wordmark_background.png');
+      margin-top: rem(60);
+    }
+  }
+
+  &__image {
+    @media screen and (max-width: rem(1023)) {
+      padding-top: rem(40);
+      padding-bottom: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      padding-top: rem(50);
+      padding-bottom: rem(60);
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.project-concept {
+  background-color: $tease-color-yellow;
+  color: $tuf-color-gray;
+
+
+  &__col__left {
+    background-image: url('/assets/img/case-studies/tease/concept_background_left.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__col__right {
+    @media screen and (max-width: rem(1023)) {
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+    }
+  }
+
+  &__text {
+    @media screen and (max-width: rem(1023)) {
+      margin-bottom: rem(250);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1365)) {
+      padding-right: rem(180);
+    }
+
+    @media screen and (min-width: rem(1366)) and (max-width: rem(1679)) {
+      padding-right: rem(200);
+    }
+
+    @media screen and (min-width: rem(1680)) {
+      padding-right: rem(150);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      margin-left: rem(-130);
+    }
+  }
+
+  &__image__left {
+    overflow: hidden;
+  }
+
+  &__image__right {
+    position: absolute;
+
+    @media screen and (max-width: rem(1023)) {
+      bottom: -10%;
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      right: rem(50);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      right: rem(120);
+      bottom: -10%;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: rem(1024)) {
+      height: rem(300);
+      max-height: rem(300);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: 50vw !important;
+    }
+  }
+}
+
+.project-stories {
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  color: $tuf-color-gray;
+
+  @media screen and (max-width: rem(767)) {
+    background-image: url('/assets/img/case-studies/tease/stories_background_mobile.jpg');
+  }
+
+  @media screen and (min-width: rem(768)) {
+    background-image: url('/assets/img/case-studies/tease/stories_background.jpg');
+  }
+
+  &__col__left {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(50) !important;
+      padding-left: rem(50) !important;
+    }
+  }
+
+  &__col__right {
+    @media screen and (min-width: rem(768)) {
+      padding-right: rem(50) !important;
+      padding-left: rem(50) !important;
+    }
+  }
+
+  &__image__bobas__mobile__top {
+    position: absolute;
+    top: rem(250);
+
+    @media screen and (min-width: rem(768)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__image__bobas__mobile__bottom {
+    position: absolute;
+    right: rem(20);
+    bottom: rem(-20);
+
+    @media screen and (min-width: rem(768)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__image__bobas__left {
+    position: absolute;
+    left: rem(20);
+    top: rem(250);
+    z-index: 2;
+
+    @media screen and (max-width: rem(767)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__image__bobas__right {
+    position: absolute;
+    bottom: 0;
+    right: rem(70);
+    z-index: 2;
+
+    @media screen and (max-width: rem(767)) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__text__left {
+    margin-bottom: rem(50);
+
+    @media screen and (min-width: rem(1024)) {
+      width: 65%;
+    }
+  }
+
+  &__text__bottom {
+      text-align: center;
+
+      @media screen and (max-width: rem(599)) {
+        margin-top: rem(-30);
+      }
+
+      @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+        width: 70%;
+        margin-top: rem(-80);
+        margin-left: rem(80);
+      }
+
+      @media screen and (min-width: rem(1024)) and (max-width: rem(1279)) {
+        margin-top: rem(-80);
+        width: 50%;
+      }
+  }
+
+  .cs-container__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.project-brand {
+  z-index: 3;
+  background-color: $tease-color-yellow;
+
+  &__col__left {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    @media screen and (max-width: rem(1279)) {
+      //background-image: url('/assets/img/case-studies/tease/brand_image_left_pattern_mobile.png');
+    }
+
+    @media screen and (min-width: rem(1280)) {
+      //background-image: url('/assets/img/case-studies/tease/brand_image_left_pattern.png');
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__col__right {
+    padding: 0 !important;
+  }
+
+  &__col__right__top {
+    background-image: url('/assets/img/case-studies/tease/brand_image_right_top.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: rem(250);
+    max-height: rem(500);
+
+    @media screen and (max-width: rem(1024)) {
+      max-height: rem(250);
+    }
+  }
+
+  &__col__right__bottom {
+    background-image: url('/assets/img/case-studies/tease/brand_image_right_bottom.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: rem(472);
+  }
+
+  &__image__left {
+    z-index: 2;
+  }
+
+  &__image__left__pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @media screen and (max-width: rem(1439)) {
+      width: 80%;
+    }
+  }
+
+  &__text__left {
+    @media screen and (max-width: rem(1024)) {
+      padding-bottom: rem(20);
+    }
+
+    @media screen and (min-width: rem(1024) and (max-width: 1279)) {
+      padding-right: rem(50);
+    }
+
+    @media screen and (min-width: rem(1280)) and (max-width: rem(1919)) {
+      padding-left: rem(80);
+      padding-right: rem(180);
+      margin-bottom: rem(30);
+    }
+
+
+    @media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
+      width: 65%;
+      text-align: right;
+      margin-left: rem(120);
+      margin-bottom: rem(30);
+    }
+    
+    @media screen and (min-width: rem(2000)) {
+      width: 50%;
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__text__right {
+    @media screen and (max-width: rem(1440)) {
+      position: absolute;
+      padding-left: rem(30);
+      padding-right: rem(30);
+    }
+
+    @media screen and (min-width: rem(1441)) and (max-width: rem(1999)) {
+      position: absolute;
+      width: 75%;
+      left: rem(80);
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      position: absolute;
+      width: 50%;
+      left: rem(80);
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.project-nostalgia {
+  background-image: url('/assets/img/case-studies/tease/nostalgia_background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: $tuf-color-white;
+
+  @media screen and (min-width: rem(768)) {
+    min-height: rem(300);
+  }
+
+  &__col__right {
+    @media screen and (max-width: rem(767)) {
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      padding-left: 0 !important;
+      padding-right: rem(80) !important;
+    }
+  }
+
+  &__text {
+    @media screen and (max-width: rem(767)) {
+      margin-bottom: rem(50);
+    }
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(1023)) {
+      margin-left: -35%;
+      margin-bottom: rem(150);
+    }
+
+    @media screen and (min-width: rem(1024)) and (max-width: rem(1919)) {
+      margin-bottom: rem(150);
+      width: 90%;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      width: 80%;
+      align-self: flex-start !important;
+    }
+  }
+
+  &__image {
+    @media screen and (max-width: rem(767)) {
+      transform: translateY(13%) !important;
+    }
+
+    @media screen and (min-width: rem(768)) {
+      position: absolute;
+      bottom: 0;
+      right: rem(40);
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      right: 0;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width: rem(768)) {
+      align-items: flex-end;
+      min-height: rem(300);
+    }
+  }
+}
+
+.project-design {
+  background-color: $tease-color-cyan;
+  color: $tuf-color-white;
+
+  &__col__left__top {
+    @media screen and (min-width: rem(1000)) {
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: rem(1920)) {
+      padding-right: rem(50);
+    }
+  }
+
+  &__col__right__top {
+    @media screen and (max-width: rem(999)) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: rem(1000)) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__col__left__bottom {
+    @media screen and (min-width: rem(1000)) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__col__right__bottom {
+    align-self: flex-end;
+    justify-content: center;
+    padding-top: 0;
+
+    @media screen and (min-width: rem(1920)) {
+      padding: 0 rem(100) 0 0 !important;
+    }
+  }
+
+  &__image__top__left {
+    width: 70%;
+
+    @media screen and (min-width: rem(1000)) and (max-width: rem(1919)) {
+      width: 55%;
+    }
+  }
+
+  &__image__top__right {
+    min-width: rem(450);
+
+    @media screen and (min-width: rem(1000)) and (max-width: rem(1365)) {
+      position: absolute;
+      min-width: rem(600);
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      position: absolute;
+      min-width: rem(750);
+    }
+  }
+
+  &__image__bottom__left1,
+  &__image__bottom__left2,
+  &__image__bottom__left3 {
+    @media screen and (min-width: rem(1000)) and (max-width: rem(1365)) {
+      width: 60%;
+    }
+
+    @media screen and (min-width: rem(1366)) and (max-width: rem(1919)) {
+      width: 70%;
+    }
+  }
+
+  &__image__bottom__left1 {
+    margin-left: -30%;
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(999)) {
+      margin-left: -50%;
+    }
+  }
+
+  &__image__bottom__left2 {
+    @media screen and (max-width: rem(767)) {
+      margin-top: -55%;
+      margin-left: 70%;
+    }
+
+    @media screen and (min-width: rem(768)) and (max-width: rem(999)) {
+      margin-left: 30%;
+      margin-top: -40%;
+    }
+
+    @media screen and (min-width: rem(1000)) {
+      margin-top: -40%;
+      margin-left: 40%;
+    }
+
+    @media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
+      margin-left: 30%;
+      margin-top: -30%;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      margin-left: 20%;
+      margin-top: -20%;
+    }
+  }
+
+  &__image__bottom__left3 {
+    @media screen and (min-width: rem(768)) and (max-width: rem(999)) {
+      margin-top: -30%;
+    }
+
+    @media screen and (min-width: rem(1000)) and (max-width: rem(1919)) {
+      margin-top: -25%;
+    }
+
+    @media screen and (min-width: rem(1920)) and (max-width: rem(1999)) {
+      margin-top: -20%;
+    }
+
+    @media screen and (min-width: rem(2000)) {
+      margin-top: -15%;
+    }
+  }
+
+  &__image__bottom__middle {
+    width: 50%;
+
+    @media screen and (max-width: rem(999)) {
+      padding-bottom: rem(30);
+    }
+
+    @media screen and (min-width: rem(1000)) and (max-width: rem(1365)) {
+      position: absolute;
+      left: -5%;
+      top: 5%;
+      width: 25%;
+    }
+
+    @media screen and (min-width: rem(1366)) {
+      position: absolute;
+      left: -10%;
+      top: 5%;
+      width: 25%;
+    }
+  }
+
+  &__image__bottom__right {
+    z-index: 2;
+    width: 80%;
+
+    @media screen and (min-width: rem(1000)) {
+      margin-top: rem(80);
+      margin-left: rem(50);
+    }
+
+    @media screen and (min-width: rem(1366)) and (max-width: rem(1919)) {
+      width: 100%;
+    }
+  }
+
+  &__image__bottom__right__pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &__text__top__left {
+    margin-bottom: rem(20);
+  }
+
+  &__text__top__right {
+    @media screen and (min-width: rem(1000)) {
+      position: absolute;
+      bottom: 10%;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (max-width: rem(1000)) {
+      min-width: 100vw;
+    }
+  }
+}
+
+.project-love {
+  background-color: $tease-love-color-yellow;
+  color: $tuf-color-gray;
+
+  &__col__left {
+
+    @media screen and (max-width: rem(1023)) {
+      padding-top: rem(50);
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      padding-right: 0;
+    }
+
+    @media screen and (min-width: rem(1280)) {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0 !important;
+    }
+  }
+
+  &__col__right {
+    flex-direction: column;
+    padding-bottom: 0;
+
+    @media screen and (max-width: rem(767)) {
+      padding-top: 0;
+    }
+
+    @media screen and (min-width: rem(1280)) {
+      padding-left: 0 !important;
+    }
+  }
+
+  &__image__left1 {
+    z-index: 2;
+
+    @media screen and (min-width: rem(600)) {
+      left: 20%;
+    }
+
+    @media screen and (min-width: rem(1024)) {
+      left: 0;
+      top: rem(100);
+    }
+
+    @media screen and (max-width: rem(1279)) {
+      position: absolute;
+      top: rem(50);
+      left: 0;
+    }
+
+    @media screen and (min-width: rem(1280)) {
+      align-self: flex-start;
+      padding-top: rem(100);
+    }
+  }
+
+  &__image__left2 {}
+
+  &__image__right {
+    align-self: flex-end;
+    position: absolute;
+    bottom: rem(-60);
+  }
+
+  &__text {
+    margin-bottom: rem(150);
+
+
+    @media screen and (min-width: rem(1024)) {
+      padding-top: rem(50);
+    }
+
+    @media screen and (min-width: rem(1680)) {
+      width: 70%;
+      margin-left: -30%;
+    }
+  }
+
+  .cs-container__column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

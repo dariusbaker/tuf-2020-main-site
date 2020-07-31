@@ -8,7 +8,6 @@ import Glide from '@glidejs/glide';
 import HomeTestimonials from '../components/home-testimonials';
 import HomeWhatWeDo from '../components/home-what-we-do';
 import HomeCaseStudies from '../components/home-case-studies';
-import HomeInstagram from '../components/home-instagram';
 import HomeSeek from '../components/home-seek';
 import HomeAva from '../components/home-ava';
 import { debounce } from '../utils.js';
@@ -79,9 +78,6 @@ class Home {
         new HomeSeek(module.HOME_SEEK_DATA);
       }
     );
-
-    // load instagram feed
-    new HomeInstagram();
 
     this._clientsCarousel = null;
 
